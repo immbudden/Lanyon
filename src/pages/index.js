@@ -11,6 +11,10 @@ import Nav from '../components/nav'
 import Carousel from 'nuka-carousel';
 // import Layout from "../components/layout"
 
+const HeaderImg = styled(Img) `
+    min-height: 100vh;
+`
+
 const HeadingOne = styled.h1 `
     font-size: 7.5rem;
     color: #FFF;
@@ -122,7 +126,7 @@ const IndexPage = (props) => (
         <FontFace />
         <Nav />
         <HeaderWrapper>
-            <Img style={{
+            <HeaderImg style={{
                 position: "absolute",
                 left: 0,
                 top: 0,
