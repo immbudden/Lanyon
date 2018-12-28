@@ -3,10 +3,11 @@ import { graphql, StaticQuery, Link } from 'gatsby'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Img from 'gatsby-image'
+import media from "styled-media-query";
 
 const NavWrapper = styled.div `
     background: #004655;
-    height: 100px;
+    height: 7.5rem;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -26,10 +27,13 @@ const NavContainer = styled.div `
     width: 90%;
 `
 
-
 const LogoContainer = styled.div `
     color: #FFF;
     flex: 1 1 0%;
+    
+    ${media.lessThan("medium")`
+        justify-content: center;
+    `}
 `
 
 const NavLinkContainer = styled.div `
@@ -38,6 +42,10 @@ const NavLinkContainer = styled.div `
     align-items: center;
     height: 100%;
     justify-content: flex-end;
+
+    ${media.lessThan("medium")`
+        display: none;
+    `}
 `
 
 const NavLink = styled(Link) `
@@ -53,7 +61,23 @@ const NavLink = styled(Link) `
     &:last-child {
         margin-right: 0;
     }
+
+    ${media.lessThan("huge")`
+        font-size: 2rem;
+    `}
+
+    ${media.lessThan("large")`
+        font-size: 1.6rem;
+        margin-right: 2rem;
+    `}
 `
+
+const Logo = styled( Img ) `
+    ${media.lessThan("medium")`
+        margin: 0 auto;
+`}
+`
+
 
 const Nav = ({ data }) => (
 
@@ -61,7 +85,7 @@ const Nav = ({ data }) => (
         <NavWrapper>
                 <NavContainer>
                                 <LogoContainer>
-                                    <Img style={{
+                                    <Logo style={{
                                         maxHeight: '32px',
                                         marginBottom: '0px',
                                         display: 'block',
@@ -87,10 +111,8 @@ const Nav = ({ data }) => (
                                     </NavLink>
                                 </NavLinkContainer>
                 </NavContainer>
-
         </NavWrapper>
     </div>
-
 )
 
 styled.div `

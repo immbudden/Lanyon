@@ -7,8 +7,10 @@ import styled from 'styled-components'
 import FontFace from '../utils/font-face'
 import HeaderWrapper from '../components/headerWrapper'
 import HeaderContainer from '../components/headerContainer'
-import Nav from '../components/nav' 
+import Nav from '../components/nav'
+import NavMobile from '../components/navMobile'
 import Carousel from 'nuka-carousel';
+import media from "styled-media-query";
 // import Layout from "../components/layout"
 
 const HeaderImg = styled(Img) `
@@ -21,6 +23,12 @@ const HeadingOne = styled.h1 `
     font-weight: 100;
     display: flex;
     margin-bottom: 5rem;
+
+    ${media.lessThan("medium")`
+        font-size: 5rem;
+        margin-top: 15rem;
+        text-align: center;
+    `}
 `
 
 const HeadingTwo = styled.h2 `
@@ -29,6 +37,11 @@ const HeadingTwo = styled.h2 `
     font-family: GillSansMTPro;
     font-weight: 100;
     display: flex;
+
+    ${media.lessThan("medium")`
+        font-size: 2rem; 
+        text-align: center;
+    `}
 `
 
 const HeadingTextContainer = styled.div `
@@ -55,6 +68,12 @@ const SectionTitle = styled.h2 `
     margin-bottom: 7.5rem;
     width: 60%;
     text-align: center;
+
+    ${media.lessThan("medium")`
+        font-size: 4rem; 
+        text-align: center;
+        width: 80%;
+    `}
 `
 
 const SectionIntro = styled.p `
@@ -65,6 +84,11 @@ const SectionIntro = styled.p `
     width: 60%;
     margin: 0 auto;
     margin-bottom: 10rem;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem; 
+        width: 100%;
+    `}
 `
 
 const ServiceWrapper = styled.div `
@@ -225,6 +249,7 @@ const IndexPage = (props) => (
                 </Slide>
             </Carousel>
         </Section>
+        <NavMobile />
     </div>
 
 )
