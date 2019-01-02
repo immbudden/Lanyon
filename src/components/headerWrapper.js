@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import media from "styled-media-query";
 
 const HeaderWrapper = styled.div `
-    margin-bottom: 10rem;
     position: relative;
     height: 100vh;
     overflow: hidden;

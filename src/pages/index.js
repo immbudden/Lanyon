@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql, StaticQuery, Link } from 'gatsby'
-import { css } from "@emotion/core"
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Img from 'gatsby-image'
 import styled from 'styled-components'
@@ -52,11 +51,18 @@ const Section = styled.div `
     background: #FFF;
 `
 
+const SectionDark = styled.div `
+    background: #004655;
+`
+
 const Container = styled.div `
     margin: 0 auto;
+    padding: 10rem 0;
     max-width: 90%;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
 `
 
 const SectionTitle = styled.h2 `
@@ -76,13 +82,60 @@ const SectionTitle = styled.h2 `
     `}
 `
 
+const SectionTitleLight = styled.h2 `
+    font-size: 5.5rem;
+    color: #FFF;
+    font-family: Didot;
+    font-weight: 100;
+    margin: 0 auto;
+    margin-bottom: 7.5rem;
+    width: 60%;
+    text-align: center;
+
+    ${media.lessThan("medium")`
+        font-size: 4rem; 
+        text-align: center;
+        width: 80%;
+    `}
+`
+
+const SectionTitleLeft = styled.h2 `
+    font-size: 5.5rem;
+    color: #004655;
+    font-family: Didot;
+    font-weight: 100;
+    margin-bottom: 7.5rem;
+    width: 40%;
+    text-align: left;
+
+    ${media.lessThan("medium")`
+        font-size: 4rem; 
+        text-align: center;
+        width: 80%;
+    `}
+`
+
 const SectionIntro = styled.p `
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: ##373737;
     font-family: GillSansMTPro;
     font-weight: 100;
     width: 60%;
     margin: 0 auto;
+    margin-bottom: 10rem;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem; 
+        width: 100%;
+    `}
+`
+
+const SectionIntroLeft = styled.p `
+    font-size: 2.2rem;
+    color: ##373737;
+    font-family: GillSansMTPro;
+    font-weight: 100;
+    width: 40%;
     margin-bottom: 10rem;
 
     ${media.lessThan("medium")`
@@ -102,6 +155,22 @@ const ServiceWrapper = styled.div `
 const ServiceContainer = styled.div `
     width: 30%;
     margin-bottom: 10rem;
+
+    &:nth-child(n+4) {
+        margin-bottom: 0;
+    }
+
+    ${media.lessThan("medium")`
+        margin-bottom: 5rem;
+        
+        &:nth-child(n+4) {
+            margin-bottom: 5rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    `}
 `
 
 const ServiceIcon = styled(Img) `
@@ -134,6 +203,7 @@ const SlideImg = styled(Img) `
     min-height: 100vh;
     
 `
+
 const CaseStudyTitle = styled.h2 `
     font-size: 10rem;
     color: #FFF;
@@ -141,6 +211,106 @@ const CaseStudyTitle = styled.h2 `
     font-weight: 100;
     margin: 0 auto;
     text-align: center;
+
+    ${media.lessThan("large")`
+        font-size: 7.5rem;
+    `}
+
+    ${media.lessThan("medium")`
+        font-size: 5rem;
+    `}
+`
+
+const LatestNewsWrapper = styled.div `
+    display: flex;
+    justify-content: flex-end;
+`
+
+const LatestNewsContainer = styled.div `
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    position: relative;
+    justify-content: flex-end;
+
+`
+
+const LatestNewsStory = styled.div `
+    display: flex;
+    flex: 0 0 48%;
+    flex-flow: row wrap;
+    height: 47.5rem;
+    margin-right: 4%;
+    margin-bottom: 7.5rem;
+    position: relative;
+    overflow: hidden;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &:nth-child(even) {
+        margin-top: -7.5rem;
+        margin-right: 0;
+    }
+`
+
+
+const LatestNewsStoryImg = styled(Img) `
+    height: 100%;
+`
+
+const LatestNewsTextWrapper = styled.div `
+    display: flex;
+    flex-flow: row wrap;
+    background: #FFF;
+    padding: 2.5rem;
+    width: 80%;
+    height: 16rem;
+    align-items: flex-end;
+`
+
+const LatestNewsStoryMeta = styled.div `
+    flex: 0 0 100%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #969696;
+`
+
+const LatestNewsStoryHeadline = styled.h4 `
+    flex: 0 0 100%;
+    font-size: 3rem;
+    color: #004655;
+    font-weight: 100;
+    margin-bottom: 0;
+`
+
+const Button = styled.button `
+    background: #199BAA;
+    color: #FFF;
+    font-size: 2rem;
+    padding: 10px 15px 5px; // Typefix
+    border: none;
+    text-transform: uppercase;
+`
+
+const ClientLogoWrapper = styled.div `
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+`
+
+const ClientLogoContainer = styled.div `
+    width: 12rem;
+    margin-right: 4%;
+
+    &:last-child {
+        margin-right: 0;
+    }
+`
+
+const ClientLogo = styled(Img) `
+    flex: 1 1 100%;
 `
 
 
@@ -249,14 +419,118 @@ const IndexPage = (props) => (
                 </Slide>
             </Carousel>
         </Section>
+        <Section>
+            <Container>
+                <SectionTitleLeft>News &amp; Events</SectionTitleLeft>
+                <SectionIntroLeft>
+                    Small sentence in here to describe what type of content we post in our news section. No longer than two lines.
+                </SectionIntroLeft>
+                <LatestNewsWrapper>
+                    <LatestNewsContainer>
+                        <LatestNewsStory>
+                            <LatestNewsStoryImg 
+                                style={{
+                                    position: "absolute",
+                                    left: 0,
+                                    top: 0,
+                                    width: "100%",
+                                    zIndex: -1,
+                                }}
+                                    fluid={props.data.newsPlaceholder.childImageSharp.fluid}
+                            />
+                            <LatestNewsTextWrapper>
+                                <LatestNewsStoryMeta>19 JAN 2018 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>News headline 1 will go right in here to grab attention</LatestNewsStoryHeadline>
+                            </LatestNewsTextWrapper>
+                        </LatestNewsStory>
+                        <LatestNewsStory>
+                            <LatestNewsStoryImg 
+                                style={{
+                                    position: "absolute",
+                                    left: 0,
+                                    top: 0,
+                                    width: "100%",
+                                    zIndex: -1,
+                                }}
+                                    fluid={props.data.newsPlaceholder.childImageSharp.fluid}
+                            />
+                            <LatestNewsTextWrapper>
+                                <LatestNewsStoryMeta>19 JAN 2018 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>News headline 2 will go right in here to grab attention</LatestNewsStoryHeadline>
+                            </LatestNewsTextWrapper>
+                        </LatestNewsStory>
+                        <LatestNewsStory>
+                            <LatestNewsStoryImg 
+                                style={{
+                                    position: "absolute",
+                                    left: 0,
+                                    top: 0,
+                                    width: "100%",
+                                    zIndex: -1,
+                                }}
+                                    fluid={props.data.newsPlaceholder.childImageSharp.fluid}
+                            />
+                            <LatestNewsTextWrapper>
+                                <LatestNewsStoryMeta>19 JAN 2018 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>News headline 3 will go right in here to grab attention</LatestNewsStoryHeadline>
+                            </LatestNewsTextWrapper>
+                        </LatestNewsStory>
+                        <LatestNewsStory>
+                            <LatestNewsStoryImg 
+                                style={{
+                                    position: "absolute",
+                                    left: 0,
+                                    top: 0,
+                                    width: "100%",
+                                    zIndex: -1,
+                                }}
+                                    fluid={props.data.newsPlaceholder.childImageSharp.fluid}
+                            />
+                            <LatestNewsTextWrapper>
+                                <LatestNewsStoryMeta>19 JAN 2018 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>News headline 4 will go right in here to grab attention</LatestNewsStoryHeadline>
+                            </LatestNewsTextWrapper>
+                        </LatestNewsStory>
+                        <Button>More Stories</Button>
+                    </LatestNewsContainer>
+                </LatestNewsWrapper>
+            </Container>
+        </Section>
+        <SectionDark>
+            <Container>
+                <SectionTitleLight>Our Clients</SectionTitleLight>
+                <ClientLogoWrapper>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.KPMG.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.NIE.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.NIW.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.QUB.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.Farrans.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.CBRE.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.DA.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                </ClientLogoWrapper>
+            </Container>
+        </SectionDark>
         <NavMobile />
     </div>
 
 )
 
-    
-
 export default IndexPage
+
 
 export const query = graphql`
     query {
@@ -300,6 +574,69 @@ export const query = graphql`
                 }
             }
 
+            newsPlaceholder: file(relativePath: { eq: "placeholders/NewsPlaceholder.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 750) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            KPMG: file(relativePath: { eq: "ClientLogos/KPMG.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            NIE: file(relativePath: { eq: "ClientLogos/NIE-Icon.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            NIW: file(relativePath: { eq: "ClientLogos/NI-Water.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            QUB: file(relativePath: { eq: "ClientLogos/QUB.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            Farrans: file(relativePath: { eq: "ClientLogos/Farrans.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            CBRE: file(relativePath: { eq: "ClientLogos/CBRE.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            DA: file(relativePath: { eq: "ClientLogos/DA.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
 
     }
 `

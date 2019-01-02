@@ -17,7 +17,7 @@ const NavWrapperMobile = styled.div `
     width: 100%;
     z-index: 500;
 
-    ${media.greaterThan("small")`
+    ${media.greaterThan("medium")`
         display: none;
     `}
 `
