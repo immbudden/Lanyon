@@ -29,7 +29,7 @@ const Container = styled.div `
     flex-direction: column;
 `
 
-const SectionTitleLeft = styled.h2 `
+const SectionTitleLeft = styled.h1 `
     font-size: 5.5rem; 
     color: #222; // Different from index.js - to consolodate 
     display: flex; // Different from index.js 
