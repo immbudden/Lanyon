@@ -48,6 +48,11 @@ const NavLinkContainer = styled.div `
     `}
 `
 
+const LogoLink = styled(Link) `
+
+`
+
+
 const NavLink = styled(Link) `
     color: #FFF;
     font-size: 2.4rem;
@@ -84,32 +89,34 @@ const Nav = ({ data }) => (
     <div>
         <NavWrapper>
                 <NavContainer>
-                                <LogoContainer>
-                                    <Logo style={{
-                                        maxHeight: '32px',
-                                        marginBottom: '0px',
-                                        display: 'block',
-                                        maxWidth: '185px'
-                                    }}
-                                        fluid={data.logo.childImageSharp.fluid} />
-                                </LogoContainer>
-                                <NavLinkContainer>
-                                    <NavLink to="/another-page/">
-                                        Our Services
-                                    </NavLink>
-                                    <NavLink to="/another-page/">
-                                        Case Studies
-                                    </NavLink>
-                                    <NavLink to="/another-page/">
-                                        News
-                                    </NavLink>
-                                    <NavLink to="/another-page/">
-                                        About
-                                    </NavLink>
-                                    <NavLink to="/another-page/">
-                                        Get in Touch
-                                    </NavLink>
-                                </NavLinkContainer>
+                    <LogoContainer>
+                        <Link to="/">
+                            <Logo style={{
+                                maxHeight: '32px',
+                                marginBottom: '0px',
+                                display: 'block',
+                                maxWidth: '185px'
+                            }}
+                                fluid={data.logo.childImageSharp.fluid} />
+                        </Link>
+                    </LogoContainer>
+                    <NavLinkContainer>
+                        <NavLink to="#services">
+                            Our Services
+                        </NavLink>
+                        <NavLink to="#caseStudies">
+                            Case Studies
+                        </NavLink>
+                        <NavLink to="/news/">
+                            News
+                        </NavLink>
+                        <NavLink to="/about/">
+                            About
+                        </NavLink>
+                        <NavLink to="/contact/">
+                            Get in Touch
+                        </NavLink>
+                    </NavLinkContainer>
                 </NavContainer>
         </NavWrapper>
     </div>

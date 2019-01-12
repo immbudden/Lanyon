@@ -335,7 +335,7 @@ const IndexPage = (props) => (
                 </HeadingTextContainer>
             </HeaderContainer>
         </HeaderWrapper>
-        <Section>
+        <Section id="services">
             <Container>
                 <SectionTitle>Our Services</SectionTitle>
                 <SectionIntro>One paragraph in here to introduce ourselves, give a little bit more information about who we are and tell visitors what we do. This paragraph should briefly describe the key pillars of the business which will be below in icons. This should be no longer than 280 characters.</SectionIntro>
@@ -367,7 +367,7 @@ const IndexPage = (props) => (
                 </ServiceWrapper>
             </Container>
         </Section>
-        <Section>
+        <Section id="caseStudies">
             <Carousel>
                 <Slide>
                         <SlideImg 

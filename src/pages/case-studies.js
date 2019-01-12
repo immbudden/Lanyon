@@ -81,6 +81,20 @@ const SlideImg = styled(Img) `
     
 `
 
+const GallerySlide = styled.div `
+    height: 40vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+`
+const GallerySlideImg = styled(Img) `
+    height: 100%;
+    min-width: 850px;
+    
+`
+
 // To consolodate end
 
 const CaseStudyIntroWrapper = styled.div `
@@ -170,9 +184,109 @@ const CenterThreeContainer = styled.div `
     width: 59%;
 `
 
-const WebsiteDesktopImg = styled(Img) `
+const VideoContainer = styled.div `
     display: flex;
     width: 100%;
+`
+
+const StatWrapper = styled.div ` // Same as about page services
+    display: flex;
+    flex: 12 1 0%;
+    justify-content: space-between;
+    // margin-right: 5rem; Different from index (needs removed)
+    flex-wrap: wrap;
+`
+
+const StatContainer = styled.div ` // Same as about page services
+    flex: 12 1 23.5%; // Different from index
+    // width: 23.5%; Different from index (to be removed)
+    margin-bottom: 0rem; // Different from about (to be removed)
+    margin-right: 2%;
+
+    &:nth-child(4n) {
+        margin-right: 0;
+    } // Different from index
+
+    &:nth-child(n+4) {
+        margin-bottom: 0;
+    } // Different from index
+
+    ${media.lessThan("medium")`
+        margin-bottom: 5rem;
+        
+        &:nth-child(n+4) {
+            margin-bottom: 5rem;
+        }
+    `}
+`
+
+const StatHeadline = styled.h3 ` // Same as about page services
+    font-size: 5rem;
+    color: #FFF;
+    font-weight: 100;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2.5rem;
+`
+
+const StatText = styled.p `
+    font-size: 2rem;
+    color: #FFF;
+    font-weight: 400;
+    margin: 0 auto;
+    text-align: center;
+`
+
+const PeopleContainer = styled.div `
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    justify-content: flex-end;
+`
+
+const PersonContainer = styled.div ` // From as about
+    display: flex;
+    flex: 1 0 22.5%; // Different
+    height: 40rem;
+    margin-right: 2.5%; // Different
+    position: relative;
+    overflow: hidden;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
+`
+
+
+const PersonImg = styled(Img) `
+    height: 100%;
+    width: 100%;
+`
+
+const PersonInfoWrapper = styled.div `
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+    background: #FFF; // Different
+`
+
+const PersonName = styled.p `
+    font-size: 1.5rem;
+    color: #222;
+    padding: 1rem;
+    padding-bottom: 0; // Different
+    margin-bottom: 0rem; // Different
+`
+
+const PersonTitle = styled.p `
+    font-size: 1.5rem;
+    color: #222;
+    padding: 1rem;
+    padding-top: 0; // Different
+    margin-bottom: 0;
+    font-weight: 100; // Different
 `
 
 const INLogoContainer = styled.div `
@@ -215,7 +329,7 @@ const SectionSubtitleLeft = styled.h3 `
 const SectionImg = styled(Img) `
     width: 100%;
     min-height: 50vh;
-    height: 75vh;
+    height: 50vh;
 `
 
 const CaseStudyIN = (props) => (
@@ -266,11 +380,127 @@ const CaseStudyIN = (props) => (
         </Section>
         <SectionColoured>
             <Container>
-                <CenterThreeContainer>
-                    <WebsiteDesktopImg fluid={props.data.WebsiteDesktopImg.childImageSharp.fluid} />
-                </CenterThreeContainer>
+                <StatWrapper>
+                <StatContainer>
+                    <StatHeadline>2000</StatHeadline>
+                    <StatText>stat around media coverage</StatText>
+                </StatContainer>
+                <StatContainer>
+                    <StatHeadline>2000</StatHeadline>
+                    <StatText>stat around media coverage</StatText>
+                </StatContainer>
+                <StatContainer>
+                    <StatHeadline>2000</StatHeadline>
+                    <StatText>stat around media coverage</StatText>
+                </StatContainer>
+                <StatContainer>
+                    <StatHeadline>2000</StatHeadline>
+                    <StatText>stat around media coverage</StatText>
+                </StatContainer>
+                </StatWrapper>
             </Container>
         </SectionColoured>
+        <Section>
+            <Container>
+                <PeopleContainer>
+                    <PersonContainer>
+                        <PersonImg 
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "100%",
+                                zIndex: 0,
+                            }}
+                                fluid={props.data.MJImg.childImageSharp.fluid}
+                        />
+                        <PersonInfoWrapper>
+                            <PersonName>Brian Conlon</PersonName>
+                            <PersonTitle>CEO - First Derivatives</PersonTitle>
+                        </PersonInfoWrapper>
+                    </PersonContainer>
+                    <PersonContainer>
+                        <PersonImg 
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "100%",
+                                zIndex: 0,
+                            }}
+                                fluid={props.data.MJImg.childImageSharp.fluid}
+                        />
+                        <PersonInfoWrapper>
+                            <PersonName>Helen Lennon</PersonName>
+                            <PersonTitle>CEO - Secure Broadcast</PersonTitle>
+                        </PersonInfoWrapper>
+                    </PersonContainer>
+                    <PersonContainer>
+                        <PersonImg 
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "100%",
+                                zIndex: 0,
+                            }}
+                                fluid={props.data.MJImg.childImageSharp.fluid}
+                        />
+                        <PersonInfoWrapper>
+                            <PersonName>Liam Nagle</PersonName>
+                            <PersonTitle>CEO - Norbrook</PersonTitle>
+                        </PersonInfoWrapper>
+                    </PersonContainer>
+                    <PersonContainer>
+                        <PersonImg 
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "100%",
+                                zIndex: 0,
+                            }}
+                                fluid={props.data.MJImg.childImageSharp.fluid}
+                        />
+                        <PersonInfoWrapper>
+                            <PersonName>Cathy Craig</PersonName>
+                            <PersonTitle>Founder - Incisiv</PersonTitle>
+                        </PersonInfoWrapper>
+                    </PersonContainer>
+                </PeopleContainer>
+            </Container>
+        </Section>
+        <Section>
+            <SectionImg fluid={props.data.INMarkLittleImg.childImageSharp.fluid} />
+        </Section>
+        <Section>
+            <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={0.5} edgeEasing="easeQuadInOut" edgeEasing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true}>
+                <GallerySlide>
+                        <GallerySlideImg 
+                        fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                </GallerySlide>
+                <GallerySlide>
+                        <GallerySlideImg 
+                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                </GallerySlide>
+                <GallerySlide>
+                        <GallerySlideImg 
+                        frameOverflow
+                        fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                </GallerySlide>
+                <GallerySlide>
+                        <GallerySlideImg 
+                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                </GallerySlide>
+            </Carousel>
+                <CenterThreeContainer>
+                    <SectionSubtitleLeft>Event &amp; Programme Management</SectionSubtitleLeft>
+                    <CaseStudyDescription>
+                        Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.
+                        <br /><br />
+                        Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.</CaseStudyDescription>
+                </CenterThreeContainer>
+        </Section>
         <Section>
             <Container>
                 <CenterThreeContainer>
@@ -281,20 +511,6 @@ const CaseStudyIN = (props) => (
                         <AscendLogoImg fluid={props.data.AscendLogoImg.childImageSharp.fluid} />
                     </AscendLogoContainer>
                     <SectionSubtitleLeft>Branding</SectionSubtitleLeft>
-                    <CaseStudyDescription>
-                        Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.
-                        <br /><br />
-                        Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.</CaseStudyDescription>
-                </CenterThreeContainer>
-            </Container>
-        </Section>
-        <Section>
-            <SectionImg fluid={props.data.INMarkLittleImg.childImageSharp.fluid} />
-        </Section>
-        <Section>
-            <Container>
-                <CenterThreeContainer>
-                    <SectionSubtitleLeft>Event &amp; Programme Management</SectionSubtitleLeft>
                     <CaseStudyDescription>
                         Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.
                         <br /><br />
@@ -365,14 +581,6 @@ export const query = graphql`
                 }
             }
 
-            WebsiteDesktopImg: file(relativePath: { eq: "case-studies/InnovationNation18/IN-desktop-website.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 1100 ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
             INLogoImg: file(relativePath: { eq: "case-studies/InnovationNation18/IN-Logo.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 480 ) {
@@ -391,7 +599,7 @@ export const query = graphql`
 
             INMarkLittleImg: file(relativePath: { eq: "case-studies/InnovationNation18/IN-Mark-Little.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: NORTH ) {
+                    fluid(maxWidth: 2500, maxHeight: 1000, cropFocus: NORTH ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -416,6 +624,14 @@ export const query = graphql`
             NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook18/NIMO-cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MJImg: file(relativePath: { eq: "people/MJ.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: EAST ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

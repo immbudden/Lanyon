@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import media from "styled-media-query";
 
 const HeroWrapper = styled.div `
-    position: relative;
     height: 50vh;
     overflow: hidden;
     display: flex;
