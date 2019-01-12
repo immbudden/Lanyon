@@ -22,9 +22,9 @@ exports.createPages = ({ graphql, actions }) => {
             }
           `
         ).then(result => {
-          if (result.errors) {
-            reject(result.errors)
-          }
+          // if (result.errors) {
+          //   reject(result.errors)
+          // }
           console.log(result)
           // Create pages for each markdown file.
           result.data.allPrismicNewsStory.edges.forEach(({ node }) => {
