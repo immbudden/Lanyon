@@ -188,7 +188,7 @@ const NewsStory = (props) => {
     const published_date = props.data.prismicNewsStory.data.published_date
     const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
     const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
-    const quote = props.data.prismicNewsStory.data.body[0].primary.quote.text
+  
     const featured_image = props.data.prismicNewsStory.data.body[1].primary.featured_image.url
     const image_caption = props.data.prismicNewsStory.data.body[1].primary.image_caption
     console.log(headline_image)
@@ -224,7 +224,7 @@ const NewsStory = (props) => {
                     <QuoteContainer>
                         <Quote>
                             <QuoteOpen>&ldquo;</QuoteOpen>
-                            <QuoteText>{quote}</QuoteText>
+                            <QuoteText></QuoteText>
                             <QuoteBy>James Bond - Partner</QuoteBy>
                             <QuoteClose>&rdquo;</QuoteClose>
                         </Quote>
@@ -295,16 +295,7 @@ export const query = graphql`
                 }
             }
 
-            body {
-                __typename
-                ... on PrismicNewsStoryBodyQuote {
-                    primary {
-                        quote {
-                            text
-                        }
-                    }
-                }
-            }
+          
 
             body {
                 ... on PrismicNewsStoryBodyFeaturedImage {
