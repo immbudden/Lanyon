@@ -190,22 +190,22 @@ const NewsStory = (props) => {
     const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
     const quote = props.data.prismicNewsStory.data.body[0].primary.quote && props.data.prismicNewsStory.data.body[0].primary.quote.text
     const featured_image = props.data.prismicNewsStory.data.body[0].primary.featured_image && props.data.prismicNewsStory.data.body[0].primary.featured_image.url
-    const image_caption = props.data.prismicNewsStory.data.body[0].primary.image_caption
+    const image_caption = props.data.prismicNewsStory.data.body[0].primary.image_caption && props.data.prismicNewsStory.data.body[0].primary.image_caption
     console.log(headline_image)
     console.log(featured_image)
     console.log(quote)
     console.log(image_caption)
 
     // checking if quote is a falsy (undefined, null, NaN etc)
-    function QuoteData (props) {
-        if (!quote)  {
-            return null;
-        } else {
-            return (
-                {quote}
-            )
-        }
-    }
+    // function QuoteData (props) {
+    //     if (!quote)  {
+    //         return null;
+    //     } else {
+    //         return (
+    //             {quote}
+    //         )
+    //     }
+    // }
     
 
     return (
@@ -269,70 +269,70 @@ export default NewsStory
 export const query = graphql`
     query ($slug:String){
         prismicNewsStory (uid:{eq: $slug}) {
-        data {
+            data {
 
-            headline_image {
-                url
-            }
+                headline_image {
+                    url
+                }
 
-            title {
-                html
-                text
-            }
+                title {
+                    html
+                    text
+                }
 
-            main_content {
-                html
-                text
-            }
+                main_content {
+                    html
+                    text
+                }
 
-            published_date
+                published_date
 
-            category {
-                document {
-                    data {
-                        category {
-                            html
-                            text
+                category {
+                    document {
+                        data {
+                            category {
+                                html
+                                text
+                            }
                         }
                     }
                 }
-            }
-            
-            author {
-                document {
-                    data {
-                        author_name {
-                            html
-                            text
+                
+                author {
+                    document {
+                        data {
+                            author_name {
+                                html
+                                text
+                            }
                         }
                     }
                 }
+
+                body {
+                    __typename
+                    ... on PrismicNewsStoryBodyQuote {
+                        primary {
+                            quote {
+                                text
+                            }
+                        }
+                    }
+                
+                    ... on PrismicNewsStoryBodyFeaturedImage {
+                        primary {
+                            featured_image {
+                                url
+                            }
+                            image_caption
+                        }
+                    }
+                }
+                
             }
 
-            body {
-                __typename
-                ... on PrismicNewsStoryBodyQuote {
-                    primary {
-                        quote {
-                            text
-                        }
-                    }
-                }
-            }
-
-            body {
-                ... on PrismicNewsStoryBodyFeaturedImage {
-                    primary {
-                        featured_image {
-                            url
-                        }
-                        image_caption
-                    }
-                }
-            }
-            
-        }
-        first_publication_date (formatString:"D MMMM YYYY")
+            first_publication_date (formatString:"D MMMM YYYY")
+        
         }
     }
-    `
+`
