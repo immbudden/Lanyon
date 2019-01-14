@@ -180,7 +180,7 @@ const FeaturedImageCaption = styled.div `
 
 const NewsStory = (props) => { 
     console.log(props)
-
+    
     const headline_image = props.data.prismicNewsStory.data.headline_image.url
     const title = props.data.prismicNewsStory.data.title.text
     const main_content = props.data.prismicNewsStory.data.main_content.html
@@ -188,11 +188,25 @@ const NewsStory = (props) => {
     const published_date = props.data.prismicNewsStory.data.published_date
     const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
     const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
-  
-    const featured_image = props.data.prismicNewsStory.data.body[1].primary.featured_image.url
-    const image_caption = props.data.prismicNewsStory.data.body[1].primary.image_caption
+    const quote = props.data.prismicNewsStory.data.body[0].primary.quote
+    const featured_image = props.data.prismicNewsStory.data.body[0].primary.featured_image.url
+    const image_caption = props.data.prismicNewsStory.data.body[0].primary.image_caption
     console.log(headline_image)
     console.log(featured_image)
+    console.log(quote)
+    console.log(image_caption)
+
+    // // checking if quote is a falsy (undefined, null, NaN etc)
+    // function QuoteData (props) {
+    //     if (!quote)  {
+    //         return null;
+    //     } else {
+    //         return (
+    //             {quote}
+    //         )
+    //     }
+    // }
+    
 
     return (
         <div>
@@ -224,7 +238,7 @@ const NewsStory = (props) => {
                     <QuoteContainer>
                         <Quote>
                             <QuoteOpen>&ldquo;</QuoteOpen>
-                            <QuoteText></QuoteText>
+                            <QuoteText>{quote}</QuoteText>
                             <QuoteBy>James Bond - Partner</QuoteBy>
                             <QuoteClose>&rdquo;</QuoteClose>
                         </Quote>
@@ -295,7 +309,16 @@ export const query = graphql`
                 }
             }
 
-          
+            body {
+                __typename
+                ... on PrismicNewsStoryBodyQuote {
+                    primary {
+                        quote {
+                            text
+                        }
+                    }
+                }
+            }
 
             body {
                 ... on PrismicNewsStoryBodyFeaturedImage {
