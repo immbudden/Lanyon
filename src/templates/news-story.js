@@ -192,13 +192,13 @@ const NewsStory = (props) => {
     //get the array
     const body = props.data.prismicNewsStory.data.body;
 
-    const {featured_image : fi0, quote: q0, image_caption : ic0} = body[0].primary;
+    const {featured_image : fi0, quote: q0} = body[0].primary;
     // above line is equivalent to:
     //  const fi0 = body[0].primary.feature_image;
     //  const q0 = body[0].primary.quote;
     // when order is reversed q0 will be undefined 
 
-    const {featured_image : fi = fi0, quote : q = q0, image_caption : ic = ic0} = body[1].primary;
+    const {featured_image : fi = fi0, quote : q = q0} = body[1].primary;
     // above line is equivalent to:
     //  const fi = body[1].primary.feature_image || fi0;
     //  const q = body[1].primary.quote || q0;
@@ -206,7 +206,7 @@ const NewsStory = (props) => {
 
     const featured_image = fi.url;
     const quote = q.text;
-    const image_caption = ic
+    
 
     // const quote = props.data.prismicNewsStory.data.body[0].primary.quote.text
     // const featured_image = props.data.prismicNewsStory.data.body[0].primary.featured_image.url
@@ -214,7 +214,7 @@ const NewsStory = (props) => {
     console.log(headline_image)
     console.log(featured_image)
     console.log(quote)
-    console.log(image_caption)
+    
 
     // checking if quote is a falsy (undefined, null, NaN etc)
     // function QuoteData (props) {
@@ -251,7 +251,7 @@ const NewsStory = (props) => {
                                 <FeaturedImageContainer>
                                     <FeaturedImage src={featured_image} />
                                 </FeaturedImageContainer>
-                                <FeaturedImageCaption>{image_caption}</FeaturedImageCaption>
+                                <FeaturedImageCaption></FeaturedImageCaption>
                             </FeaturedImageWrapper>
                         </NewsStoryTextContainer>
                     </NewsStoryContainer>
