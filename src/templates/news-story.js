@@ -179,7 +179,14 @@ const FeaturedImageCaption = styled.div `
 
 
 const NewsStory = (props) => { 
-    console.log(props)
+    console.log(props.data.prismicNewsStory.data.body)
+    
+    const body = props.data.prismicNewsStory.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+
+    const QuoteData = body.PrismicNewsStoryBodyQuote
     
     const headline_image = props.data.prismicNewsStory.data.headline_image.url
     const title = props.data.prismicNewsStory.data.title.text
@@ -188,33 +195,28 @@ const NewsStory = (props) => {
     const published_date = props.data.prismicNewsStory.data.published_date
     const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
     const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
-
-    //get the array
-    const body = props.data.prismicNewsStory.data.body;
-
-    const {featured_image : fi0, quote: q0} = body[0].primary;
-    // above line is equivalent to:
-    //  const fi0 = body[0].primary.feature_image;
-    //  const q0 = body[0].primary.quote;
-    // when order is reversed q0 will be undefined 
-
-    const {featured_image : fi = fi0, quote : q = q0} = body[1].primary;
-    // above line is equivalent to:
-    //  const fi = body[1].primary.feature_image || fi0;
-    //  const q = body[1].primary.quote || q0;
-    // when order is reversed fi0 will be assigned to fi
-
-    const featured_image = fi.url;
-    const quote = q.text;
     
+    //get the array
+    
+    // const {featured_image : fi0, quote: q0, image_caption : ic0} = body[0].primary;
+    // // above line is equivalent to:
+    // //  const fi0 = body[0].primary.feature_image;
+    // //  const q0 = body[0].primary.quote;
+    // // when order is reversed q0 will be undefined 
+
+    // const {featured_image : fi = fi0, quote : q = q0, image_caption : ic = ic0} = body[1].primary;
+    // // above line is equivalent to:
+    // //  const fi = body[1].primary.feature_image || fi0;
+    // //  const q = body[1].primary.quote || q0;
+    // // when order is reversed fi0 will be assigned to fi
+
+    // const featured_image = fi.url;
+    // const quote = q.text;
+    // const image_caption = ic;
 
     // const quote = props.data.prismicNewsStory.data.body[0].primary.quote.text
     // const featured_image = props.data.prismicNewsStory.data.body[0].primary.featured_image.url
     // const image_caption = props.data.prismicNewsStory.data.body[0].primary.image_caption
-    console.log(headline_image)
-    console.log(featured_image)
-    console.log(quote)
-    
 
     // checking if quote is a falsy (undefined, null, NaN etc)
     // function QuoteData (props) {
@@ -246,23 +248,27 @@ const NewsStory = (props) => {
                             </NewsStoryMeta>
                         </NewsStoryMetaContainer>
                         <NewsStoryTextContainer>
-                            <NewsStoryText dangerouslySetInnerHTML={{__html: main_content}} />
-                            <FeaturedImageWrapper>
-                                <FeaturedImageContainer>
-                                    <FeaturedImage src={featured_image} />
-                                </FeaturedImageContainer>
-                                <FeaturedImageCaption></FeaturedImageCaption>
-                            </FeaturedImageWrapper>
+                                <NewsStoryText dangerouslySetInnerHTML={{ __html: main_content }} />
+                                {body.PrismicNewsStoryBodyFeaturedImage && (
+                                    <FeaturedImageWrapper>
+                                        <FeaturedImageContainer>
+                                            <FeaturedImage src={body.PrismicNewsStoryBodyFeaturedImage.featured_image.url} />
+                                        </FeaturedImageContainer>
+                                        <FeaturedImageCaption>{body.PrismicNewsStoryBodyFeaturedImage.image_caption}</FeaturedImageCaption>
+                                    </FeaturedImageWrapper>
+                                )}
                         </NewsStoryTextContainer>
-                    </NewsStoryContainer>
-                    <QuoteContainer>
-                        <Quote>
-                            <QuoteOpen>&ldquo;</QuoteOpen>
-                            <QuoteText>{quote}</QuoteText>
-                            <QuoteBy>John Murnaghan - M7 Head of UK Real Estate</QuoteBy>
-                            <QuoteClose>&rdquo;</QuoteClose>
-                        </Quote>
-                    </QuoteContainer>
+                        </NewsStoryContainer>
+                        {body.PrismicNewsStoryBodyQuote && (
+                            <QuoteContainer>
+                                <Quote>
+                                    <QuoteOpen>&ldquo;</QuoteOpen>
+                                    <QuoteText>{body.PrismicNewsStoryBodyQuote.quote.text}</QuoteText>
+                                    <QuoteBy>John Murnaghan - M7 Head of UK Real Estate</QuoteBy>
+                                    <QuoteClose>&rdquo;</QuoteClose>
+                                </Quote>
+                            </QuoteContainer>
+                        )}
                 </NewsStoryWrapper>
             </Container>
         </Section>
