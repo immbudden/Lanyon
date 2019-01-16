@@ -186,6 +186,8 @@ const NewsStory = (props) => {
         [item.__typename]: item.primary
     }), {});
 
+    console.log(body)
+
     const QuoteData = body.PrismicNewsStoryBodyQuote
     
     const headline_image = props.data.prismicNewsStory.data.headline_image.url
@@ -195,24 +197,6 @@ const NewsStory = (props) => {
     const published_date = props.data.prismicNewsStory.data.published_date
     const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
     const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
-    
-    //get the array
-    
-    // const {featured_image : fi0, quote: q0, image_caption : ic0} = body[0].primary;
-    // // above line is equivalent to:
-    // //  const fi0 = body[0].primary.feature_image;
-    // //  const q0 = body[0].primary.quote;
-    // // when order is reversed q0 will be undefined 
-
-    // const {featured_image : fi = fi0, quote : q = q0, image_caption : ic = ic0} = body[1].primary;
-    // // above line is equivalent to:
-    // //  const fi = body[1].primary.feature_image || fi0;
-    // //  const q = body[1].primary.quote || q0;
-    // // when order is reversed fi0 will be assigned to fi
-
-    // const featured_image = fi.url;
-    // const quote = q.text;
-    // const image_caption = ic;
 
     // const quote = props.data.prismicNewsStory.data.body[0].primary.quote.text
     // const featured_image = props.data.prismicNewsStory.data.body[0].primary.featured_image.url
@@ -264,7 +248,7 @@ const NewsStory = (props) => {
                                 <Quote>
                                     <QuoteOpen>&ldquo;</QuoteOpen>
                                     <QuoteText>{body.PrismicNewsStoryBodyQuote.quote.text}</QuoteText>
-                                    <QuoteBy>John Murnaghan - M7 Head of UK Real Estate</QuoteBy>
+                                    <QuoteBy>{body.PrismicNewsStoryBodyQuote.quote_by.text}</QuoteBy>
                                     <QuoteClose>&rdquo;</QuoteClose>
                                 </Quote>
                             </QuoteContainer>
@@ -340,6 +324,9 @@ export const query = graphql`
                     ... on PrismicNewsStoryBodyQuote {
                         primary {
                             quote {
+                                text
+                            }
+                            quote_by {
                                 text
                             }
                         }

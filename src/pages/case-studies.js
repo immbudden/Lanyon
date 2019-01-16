@@ -112,7 +112,7 @@ const CaseStudyIntroContainer = styled.div `
     flex-direction: row;
     align-items: flex-start;
     background #FFF;
-    padding: 5rem;
+    padding: 5rem 5rem 0;
     flex-flow: row wrap;
     max-width: 72%;
 `
@@ -159,7 +159,7 @@ const CaseStudyDescription = styled.p `
     color: #222;
     line-height: 1.75;
     flex: 1 1 100%;
-    margin-bottom: 3rem;
+    margin-bottom: 0;
 `
 
 const ContactButton = styled.button `
@@ -169,6 +169,7 @@ const ContactButton = styled.button `
     padding: 10px 15px 5px; // Typefix
     border: none;
     text-transform: uppercase;
+    margin-top: 2.5rem;
 `
 
 const SectionColoured = styled.div `
@@ -242,6 +243,7 @@ const PeopleContainer = styled.div `
     flex-flow: row wrap;
     position: relative;
     justify-content: flex-end;
+    margin-top: 7.5rem;
 `
 
 const PersonContainer = styled.div ` // From as about
@@ -354,21 +356,21 @@ const CaseStudyIN = (props) => (
                         <SectionTitleLeft>Innovation Nation 2018</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
-                            <InfoText>End-to-end Event Management</InfoText>
+                            <InfoText>Event &amp; programme management <br />Sponsorship management<br />PR &amp; Communications</InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Newry, Mourne and Down Council</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>
-                                Following a competitive tender process, Lanyon Communications was successful in its bid to develop and deliver an inaugural technology and investment conference for the Newry, Mourne and Down District Council area across two days. 
+                                Following a competitive tender process, Lanyon Communications was successful in its bid to develop and deliver an inaugural technology and investment conference for the Newry, Mourne and Down District Council area across two-days. 
                                 <br /><br />
                                 Supported by Newry, Mourne and Down District Council and some of Northern Ireland’s most successful indigenous companies, including First Derivatives plc, Norbrook Laboratories and STATSports, Innovation Nation 2018 shone a light on the burgeoning tech and innovation scene in Newry and beyond. 
                                 <br /><br />
-                                Featuring keynote speakers such as Brian Conlon of First Derivatives, Liam Nagle of Norbrook Laboratories and Neva Labs’ Mark Little, it showcased how organisations, both local and international, can use the latest innovations and technology to drive their businesses into the future. 
+                                Featuring keynote speakers such as Brian Conlon of First Derivatives, Liam Nagle of Norbrook Laboratories and Kinzen’s Mark Little, it showcased how organisations, both local and international, can use the latest innovations and technology to drive their businesses into the future. 
                                 <br /><br />
-                                During the event, Lanyon Communications delivered a start-up competition (Ascend Start-up Competition 2018) along with some of Innovation Nation’s supporting partners, which boasted a prize package worth the value of £50,000. 
+                                During the event we delivered the Ascend Start-up Competition 2018, and the winner was announced at the official Innovation Nation 2018 Dinner, which was hosted in the Newry Town Hall at the end of day one.
                                 <br /><br />
-                                The winner of the competition was announced at the official Innovation Nation 2018 Dinner, which was hosted in the Newry Town Hall.
+                                The second day of the conference, known as Day of Ambition, saw hundreds of school students from throughout the Newry, Mourne and Down District inspired by the local business world and showcased some of the most cutting-edge innovation and technology. 
                                 <br /><br />
                                 Interested in working on something similar? <Bold>Let’s chat about it.</Bold>
                             </CaseStudyDescription>
@@ -402,6 +404,14 @@ const CaseStudyIN = (props) => (
         </SectionColoured>
         <Section>
             <Container>
+            <CenterThreeContainer>
+                <SectionSubtitleLeft>Event &amp; Programme Management</SectionSubtitleLeft>
+                <CaseStudyDescription>
+                    Working with key stakeholders, we researched, identified and contacted over 30 relevant speakers to secure their commitment to attending Innovation Nation 2018, and worked with them to manage their travel/accommodation/logistics.
+                    <br /><br />
+                    We had full responsibility for all staging and AV requirements, as well as all hospitality aspects of the event and successfully executed a number of complex logistical arrangements. We also managed all event photography and videography requirements throughout the conference. 
+                </CaseStudyDescription>
+            </CenterThreeContainer>
                 <PeopleContainer>
                     <PersonContainer>
                         <PersonImg 
@@ -412,7 +422,7 @@ const CaseStudyIN = (props) => (
                                 width: "100%",
                                 zIndex: 0,
                             }}
-                                fluid={props.data.MJImg.childImageSharp.fluid}
+                                fluid={props.data.BCImg.childImageSharp.fluid}
                         />
                         <PersonInfoWrapper>
                             <PersonName>Brian Conlon</PersonName>
@@ -428,7 +438,7 @@ const CaseStudyIN = (props) => (
                                 width: "100%",
                                 zIndex: 0,
                             }}
-                                fluid={props.data.MJImg.childImageSharp.fluid}
+                                fluid={props.data.HLImg.childImageSharp.fluid}
                         />
                         <PersonInfoWrapper>
                             <PersonName>Helen Lennon</PersonName>
@@ -444,7 +454,7 @@ const CaseStudyIN = (props) => (
                                 width: "100%",
                                 zIndex: 0,
                             }}
-                                fluid={props.data.MJImg.childImageSharp.fluid}
+                                fluid={props.data.LNImg.childImageSharp.fluid}
                         />
                         <PersonInfoWrapper>
                             <PersonName>Liam Nagle</PersonName>
@@ -460,7 +470,7 @@ const CaseStudyIN = (props) => (
                                 width: "100%",
                                 zIndex: 0,
                             }}
-                                fluid={props.data.MJImg.childImageSharp.fluid}
+                                fluid={props.data.CCImg.childImageSharp.fluid}
                         />
                         <PersonInfoWrapper>
                             <PersonName>Cathy Craig</PersonName>
@@ -474,34 +484,63 @@ const CaseStudyIN = (props) => (
             <SectionImg fluid={props.data.INMarkLittleImg.childImageSharp.fluid} />
         </Section>
         <Section>
-            <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={0.5} edgeEasing="easeQuadInOut" edgeEasing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true}>
-                <GallerySlide>
-                        <GallerySlideImg 
-                        fluid={props.data.MIPIMCover.childImageSharp.fluid} />
-                </GallerySlide>
-                <GallerySlide>
-                        <GallerySlideImg 
-                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                </GallerySlide>
-                <GallerySlide>
-                        <GallerySlideImg 
-                        frameOverflow
-                        fluid={props.data.MIPIMCover.childImageSharp.fluid} />
-                </GallerySlide>
-                <GallerySlide>
-                        <GallerySlideImg 
-                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                </GallerySlide>
-            </Carousel>
+            <Container>
                 <CenterThreeContainer>
-                    <SectionSubtitleLeft>Event &amp; Programme Management</SectionSubtitleLeft>
+                    <SectionSubtitleLeft>Sponsorship management</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                        Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.
+                        We developed an attractive tiered sponsorship package system that ensured a strong return on investment for all sponsors at their respective levels – these included ‘platinum’, ‘gold’, ‘silver’ and ‘supporting partner’ levels.
                         <br /><br />
-                        Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.</CaseStudyDescription>
+                        We utilised our own strong networks of private sector businesses and region-wide stakeholders to sell sponsorship – often requiring Lanyon Communications to attend face-to-face meetings with the potential sponsor, as well as numerous follow-up conversations by telephone/email to convert the sponsorship.  
+                    </CaseStudyDescription>
                 </CenterThreeContainer>
+            </Container>
+                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={0.5} edgeEasing="easeQuadInOut" edgeEasing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true}>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.INCar1Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.INCar2Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            frameOverflow
+                            fluid={props.data.INCar3Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.INCar4Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.INCar5Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.INCar6Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.INCar7Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                </Carousel>
         </Section>
+
         <Section>
+            <Container>
+            <CenterThreeContainer>
+                <SectionSubtitleLeft>PR &amp; Communications</SectionSubtitleLeft>
+                <CaseStudyDescription>
+                    We devised the key messaging for the event, which included integrating relevant pieces of research with regards to innovation and technology, both locally and globally.
+                    <br /><br />
+                    We developed and agreed a series of newsworthy media announcements, and took control of drafting all press releases, editorials, media commentaries and speaking notes, as well as liaising with the media internationally. 
+                </CaseStudyDescription>
+            </CenterThreeContainer>
+            </Container>
+        </Section>
+
+        {/* <Section>
             <Container>
                 <CenterThreeContainer>
                     <INLogoContainer>
@@ -517,16 +556,16 @@ const CaseStudyIN = (props) => (
                         Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.</CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
-        </Section>
+        </Section> */}
         <Section>
-            <SectionImg fluid={props.data.INFoodImg.childImageSharp.fluid} />
+            <SectionImg fluid={props.data.INCrowdCameraImg.childImageSharp.fluid} />
         </Section>
         <Section>
             <Container>
                 <CenterThreeContainer>
                     <SectionSubtitleLeft>Interested in working with us?</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                    One short paragraph in here which would briefly ask if the user is looking for support for a similar project, if so - we’d love to talk about it and see if there was a way to collaborate.  This paragraph should be no longer than three lines in total.
+                        One short paragraph in here which would briefly ask if the user is looking for support for a similar project, if so - we’d love to talk about it and see if there was a way to collaborate.  This paragraph should be no longer than three lines in total.
                     </CaseStudyDescription>
                     <ContactButton>Get in touch</ContactButton>
                 </CenterThreeContainer>
@@ -605,7 +644,7 @@ export const query = graphql`
                 }
             }
 
-            INFoodImg: file(relativePath: { eq: "case-studies/InnovationNation18/IN-Food.jpg" }) {
+            INCrowdCameraImg: file(relativePath: { eq: "case-studies/InnovationNation18/CrowdCamera.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -629,9 +668,89 @@ export const query = graphql`
                 }
             }
 
-            MJImg: file(relativePath: { eq: "people/MJ.jpg" }) {
+            BCImg: file(relativePath: { eq: "case-studies/InnovationNation18/BC.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: EAST ) {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            HLImg: file(relativePath: { eq: "case-studies/InnovationNation18/HL.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            LNImg: file(relativePath: { eq: "case-studies/InnovationNation18/LN.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            CCImg: file(relativePath: { eq: "case-studies/InnovationNation18/CC.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            INCar1Img: file(relativePath: { eq: "case-studies/InnovationNation18/INCar1.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            INCar2Img: file(relativePath: { eq: "case-studies/InnovationNation18/INCar2.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            INCar3Img: file(relativePath: { eq: "case-studies/InnovationNation18/INCar3.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            INCar4Img: file(relativePath: { eq: "case-studies/InnovationNation18/INCar4.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            INCar5Img: file(relativePath: { eq: "case-studies/InnovationNation18/INCar5.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            INCar6Img: file(relativePath: { eq: "case-studies/InnovationNation18/INCar6.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            INCar7Img: file(relativePath: { eq: "case-studies/InnovationNation18/INCar7.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
