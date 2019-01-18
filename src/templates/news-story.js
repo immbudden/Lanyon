@@ -295,7 +295,7 @@ export const query = graphql`
                     text
                 }
 
-                published_date
+                published_date (formatString:"D MMMM YYYY")
 
                 category {
                     document {

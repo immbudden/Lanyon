@@ -192,6 +192,8 @@ const ViewMore = styled(Link) `
 
 
 const NewsPage = (props) => { 
+
+    // This is all old code for refrence 
     // console.log(props.data.prismicNewsStory.data.body)
     
     // const body = props.data.prismicNewsStory.data.body.reduce((object, item) => ({
@@ -210,7 +212,14 @@ const NewsPage = (props) => {
     // const published_date = props.data.prismicNewsStory.data.published_date
     // const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
     // const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
-    
+
+    const newsList = props.data.allPrismicNewsStory;
+
+    // const title = node.data.title.text
+    // const short_description = node.data.short_description
+    // const published_date = node.data.published_date
+    // const author = node.data.author.document.data.author_name.text
+    // const category = node.data.category.document.data.category.text
 
     return (
         <div>
@@ -278,20 +287,24 @@ const NewsPage = (props) => {
             <NoTopContainer>
                 <NewsStoriesWrapper>
 
-                    <NewsStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg4.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </NewsStoryContainer>
+                {newsList.edges.map(({ node }, i) => (
+                    // <Link to={node.slugs} key={i} >
+                        <NewsStoryContainer>
+                            <NewsStoryImgContainer>
+                                <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg4.childImageSharp.fluid} />
+                            </NewsStoryImgContainer>
+                            <NewsStoryTextContainer>
+                                <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
+                                <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
+                                    <NewsStoryMeta>
+                                        <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{node.data.author.document[0].data.author_name.text}</Author>
+                                    </NewsStoryMeta>
+                            </NewsStoryTextContainer>
+                        </NewsStoryContainer>
+                    // </Link>
+                ))}
 
-                    <NewsStoryContainer>
+                    {/* <NewsStoryContainer>
                         <NewsStoryImgContainer>
                             <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg5.childImageSharp.fluid} />
                         </NewsStoryImgContainer>
@@ -299,7 +312,7 @@ const NewsPage = (props) => {
                             <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
                             <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
                                 <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
+                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>{node.data.category.document.data.category.text}</Category> &nbsp; &nbsp; <Author>{node.data.author.document.data.author_name.text}</Author>
                                 </NewsStoryMeta>
                         </NewsStoryTextContainer>
                     </NewsStoryContainer>
@@ -380,8 +393,8 @@ const NewsPage = (props) => {
                                     <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
                                 </NewsStoryMeta>
                         </NewsStoryTextContainer>
-                    </NewsStoryContainer>
-                    
+                    </NewsStoryContainer> */}
+
                 </NewsStoriesWrapper>
 
                 <ViewMore>View More</ViewMore>
@@ -399,6 +412,59 @@ export default NewsPage
 
 export const query = graphql`
     query {
+
+        allPrismicNewsStory (sort: {order: DESC, fields: [data___published_date]}) {
+            edges {
+              node {
+                slugs
+                id
+                tags
+                data {
+                  
+                  body {
+                    __typename
+                    ... on PrismicNewsStoryBodyFeaturedImage {
+                      primary {
+                        featured_image {
+                          url
+                        }
+                      }
+                    }
+                  }
+
+                  short_description
+                  
+                  title {
+                    text
+                  }
+                  
+                  published_date (formatString:"D MMMM YYYY")
+                  
+                  author {
+                    document {
+                      data {
+                        author_name {
+                          text
+                        }
+                      }
+                    }
+                  }
+                  
+                  category {
+                    document {
+                      data {
+                        category {
+                          text
+                        }
+                      }
+                    }
+                  }
+                  
+                }
+                
+              }
+            }
+        }
 
         NewsStoryPlaceholderImg: file(relativePath: { eq: "placeholders/NewsPlaceholder.jpg" }) {
             childImageSharp {
