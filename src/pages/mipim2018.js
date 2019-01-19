@@ -355,7 +355,7 @@ const CaseStudyMIPIM = (props) => (
                 width: "100%",
                 zIndex: -1,
             }}
-                fluid={props.data.MIPIMHeroImg.childImageSharp.fluid} />
+                fluid={props.data.MIPIMCover.childImageSharp.fluid} />
         </HeaderWrapper>
         <Section>
             <Container>
@@ -364,7 +364,11 @@ const CaseStudyMIPIM = (props) => (
                         <SectionTitleLeft>Belfast MIPIM 2018 </SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
-                            <InfoText>Stakeholder Engagement<br />End-to-end Event Management <br />Design &amp; Creative Management <br />PR &amp; Communications</InfoText>
+                            <InfoText>
+                                Position Belfast for investment on a global stage
+                                <br /><br />
+                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest
+                            </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Belfast City Council</InfoText>
                         </CaseStudyInfoContainer>
@@ -389,19 +393,19 @@ const CaseStudyMIPIM = (props) => (
                 <StatWrapper>
                 <StatContainer>
                     <StatHeadline>6m</StatHeadline>
-                    <StatText>twitter impressions</StatText>
+                    <StatText>Twitter impressions</StatText>
                 </StatContainer>
                 <StatContainer>
                     <StatHeadline>1m</StatHeadline>
-                    <StatText>twitter accounts reached</StatText>
+                    <StatText>Twitter accounts reached</StatText>
                 </StatContainer>
                 <StatContainer>
                     <StatHeadline>76</StatHeadline>
                     <StatText>pieces of coverage</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>2000</StatHeadline>
-                    <StatText>stat around media coverage</StatText>
+                    <StatHeadline>25+</StatHeadline>
+                    <StatText>events delivered</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>
@@ -502,7 +506,7 @@ const CaseStudyMIPIM = (props) => (
                 <CenterThreeContainer>
                     <SectionSubtitleLeft>Design &amp; Creative Management</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                        Lanyon implemented the city’s new ‘starburst’ look and feel across the project, as well as managing the design of the 50m2 Belfast stand and all other associated branded collateral, including a 70-page investment guide. 
+                        Lanyon implemented the city’s new ‘starburst’ look and feel across the project, as well as managing the design of the 50m<sup>2</sup> Belfast stand and all other associated branded collateral, including a 70-page investment guide. 
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
@@ -586,32 +590,60 @@ const CaseStudyMIPIM = (props) => (
         <Section>
             <Carousel>
                 <Slide>
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>NI Market Outlook 2018</CaseStudyTitle>
-                        </Container>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>NI Market Outlook 2018</CaseStudyTitle>
+                    </Container>
                 </Slide>
                 <Slide>
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.INCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>Innovation Nation 2018</CaseStudyTitle>
-                        </Container>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.LMCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
+                    </Container>
+                </Slide>
+                <Slide>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.SSCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>STATSports</CaseStudyTitle>
+                    </Container>
+                </Slide>
+                <Slide>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.INCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>Innovation Nation 2018</CaseStudyTitle>
+                    </Container>
                 </Slide>
             </Carousel>
         </Section>
@@ -624,29 +656,6 @@ export default CaseStudyMIPIM
 
 export const query = graphql`
     query {
-            MIPIMHeroImg: file(relativePath: { eq: "case-studies/MIPIM18/MIPIM-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: NORTH ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            INLogoImg: file(relativePath: { eq: "case-studies/InnovationNation18/IN-Logo.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 480 ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            AscendLogoImg: file(relativePath: { eq: "case-studies/InnovationNation18/Ascend-Logo.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 260 ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
 
             MIPIMBelfastImg: file(relativePath: { eq: "case-studies/MIPIM18/Belfast.jpg" }) {
                 childImageSharp {
@@ -658,7 +667,7 @@ export const query = graphql`
 
             MIPIMIrvineImg: file(relativePath: { eq: "case-studies/MIPIM18/EdIrvineInterview.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1000, cropFocus: CENTER ) {
+                    fluid(maxWidth: 2500, maxHeight: 1000, cropFocus: WEST ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -688,9 +697,25 @@ export const query = graphql`
                 }
             }
 
+            LMCover: file(relativePath: { eq: "case-studies/LinenMill/LM-cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            SSCover: file(relativePath: { eq: "case-studies/StatSports/SS-cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
             EIImg: file(relativePath: { eq: "case-studies/MIPIM18/EI.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -698,7 +723,7 @@ export const query = graphql`
 
             HBImg: file(relativePath: { eq: "case-studies/MIPIM18/HB.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -706,7 +731,7 @@ export const query = graphql`
 
             SAImg: file(relativePath: { eq: "case-studies/MIPIM18/SA.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -714,7 +739,7 @@ export const query = graphql`
 
             NSImg: file(relativePath: { eq: "case-studies/MIPIM18/NS.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -722,7 +747,7 @@ export const query = graphql`
 
             MIPIMCar1Img: file(relativePath: { eq: "case-studies/MIPIM18/MIPIMCar1.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -730,7 +755,7 @@ export const query = graphql`
 
             MIPIMCar2Img: file(relativePath: { eq: "case-studies/MIPIM18/MIPIMCar2.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -738,7 +763,7 @@ export const query = graphql`
 
             MIPIMCar3Img: file(relativePath: { eq: "case-studies/MIPIM18/MIPIMCar3.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -746,7 +771,7 @@ export const query = graphql`
 
             MIPIMCar4Img: file(relativePath: { eq: "case-studies/MIPIM18/MIPIMCar4.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -754,7 +779,7 @@ export const query = graphql`
 
             MIPIMCar5Img: file(relativePath: { eq: "case-studies/MIPIM18/MIPIMCar5.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -762,7 +787,7 @@ export const query = graphql`
 
             MIPIMCar6Img: file(relativePath: { eq: "case-studies/MIPIM18/MIPIMCar6.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -770,7 +795,7 @@ export const query = graphql`
 
             MIPIMCar7Img: file(relativePath: { eq: "case-studies/MIPIM18/MIPIMCar7.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

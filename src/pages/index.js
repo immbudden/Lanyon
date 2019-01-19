@@ -370,52 +370,74 @@ const IndexPage = (props) => (
         <Section id="caseStudies">
             <Carousel>
                 <Slide>
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.inCover.childImageSharp.fluid} />
-                        <Container>
-                            <HeadingTextContainer>
-                                <CaseStudyTitle>Innovation Nation 2018</CaseStudyTitle>
-                            </HeadingTextContainer>
-                        </Container>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.INCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>Innovation Nation 2018</CaseStudyTitle>
+                    </Container>
                 </Slide>
                 <Slide>
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.MIPIMCover.childImageSharp.fluid} />
-                        <Container>
-                            <HeadingTextContainer>
-                                <CaseStudyTitle>MIPIM Belfast 2018</CaseStudyTitle>
-                            </HeadingTextContainer>
-                        </Container>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>MIPIM Belfast 2018</CaseStudyTitle>
+                    </Container>
                 </Slide>
                 <Slide>
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                        <Container>
-                            <HeadingTextContainer>
-                                <CaseStudyTitle>NI Market Outlook 2018</CaseStudyTitle>
-                            </HeadingTextContainer>
-                        </Container>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>NI Market Outlook 2018</CaseStudyTitle>
+                    </Container>
+                </Slide>
+                <Slide>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.LMCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
+                    </Container>
+                </Slide>
+                <Slide>
+                    <SlideImg 
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: -1,
+                    }}
+                    fluid={props.data.SSCover.childImageSharp.fluid} />
+                    <Container>
+                            <CaseStudyTitle>STATSports</CaseStudyTitle>
+                    </Container>
                 </Slide>
             </Carousel>
         </Section>
@@ -550,7 +572,7 @@ export const query = graphql`
                 }
             }
 
-            inCover: file(relativePath: { eq: "case-studies/InnovationNation18/IN-cover.jpg" }) {
+            INCover: file(relativePath: { eq: "case-studies/InnovationNation18/IN-cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
@@ -567,6 +589,22 @@ export const query = graphql`
             }
 
             NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook18/NIMO-cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            LMCover: file(relativePath: { eq: "case-studies/LinenMill/LM-cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            SSCover: file(relativePath: { eq: "case-studies/StatSports/SS-cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
