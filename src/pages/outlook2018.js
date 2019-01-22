@@ -408,8 +408,8 @@ const CaseStudyOutlook = (props) => (
                     <StatText>pieces of coverage</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>stat in here</StatText>
+                    <StatHeadline>500</StatHeadline>
+                    <StatText>high-profile attendees</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>

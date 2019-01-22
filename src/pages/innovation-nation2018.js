@@ -384,20 +384,20 @@ const CaseStudyIN = (props) => (
             <Container>
                 <StatWrapper>
                 <StatContainer>
-                    <StatHeadline>2000</StatHeadline>
-                    <StatText>stat around media coverage</StatText>
+                    <StatHeadline>60+</StatHeadline>
+                    <StatText>units of media coverage</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>2000</StatHeadline>
-                    <StatText>stat around media coverage</StatText>
+                    <StatHeadline>996k</StatHeadline>
+                    <StatText>est. coverage views</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>2000</StatHeadline>
-                    <StatText>stat around media coverage</StatText>
+                    <StatHeadline>400+</StatHeadline>
+                    <StatText>delegates attended</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>2000</StatHeadline>
-                    <StatText>stat around media coverage</StatText>
+                    <StatHeadline>628m</StatHeadline>
+                    <StatText>online readership</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>
