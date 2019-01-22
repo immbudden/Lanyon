@@ -293,24 +293,24 @@ const CaseStudyStatSports = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Brief point 1
-                                <br />
-                                Brief point 2
-                                <br />
-                                Brief point 3
+                                To drive sales of STATSports performance monitoring technology
+                                <br /><br />
+                                To drive awareness of both its elite and consumer products
+                                <br /><br />
+                                To increase awareness of the company amongst potential investors
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>STATSports</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>
-                                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
+                                Working closely with the senior leadership team, we focused on growing sales of STATSports unique sports performance monitoring technology by driving awareness of both its elite and consumer product.
                                 <br /><br />
-                                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
+                                Given the nature of the product’s customer base, we were tasked with improving communication about the product with the major elite field sports teams from football, rugby, AFL, GAA, hockey around the world, with particular emphasis on the US market. That included contract announcements of STATSports deals with US Soccer, the Brazil Soccer Federation, the China Football Association and the Irish Rugby Football Union amongst others. 
                                 <br /><br />
-                                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin. 
+                                We were also tasked with handling communications around the launch of STATSports’ APEX Athlete Series, one aimed at consumers keen to track their performance in a similar manner to the professionals.
                                 <br /><br />
-                                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
+                                In addition, we were asked to raise awareness of the company with potential investors and other stakeholders by highlighting the underlying strength and potential of this fast-growing, exciting company. 
                                 <br /><br />
                                 Interested in working on something similar? <Bold>Let’s chat about it.</Bold>
                             </CaseStudyDescription>
@@ -324,20 +324,20 @@ const CaseStudyStatSports = (props) => (
             <Container>
                 <StatWrapper>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>media stat here</StatText>
+                    <StatHeadline>66</StatHeadline>
+                    <StatText>pieces of coverage (US Soccer announcement)</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>media stat here</StatText>
+                    <StatHeadline>967m</StatHeadline>
+                    <StatText>online readers (US Soccer announcement)</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>media stat here</StatText>
+                    <StatHeadline>907,000</StatHeadline>
+                    <StatText>coverage views (Chinese Football Association announcement)</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>media stat here</StatText>
+                    <StatHeadline>41</StatHeadline>
+                    <StatText>pieces of coverage (job expansion announcement)</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>
@@ -345,11 +345,12 @@ const CaseStudyStatSports = (props) => (
         <Section>
             <Container>
             <CenterThreeContainer>
-                <SectionSubtitleLeft>Section Title</SectionSubtitleLeft>
+                <SectionSubtitleLeft>Strategy &amp; Tactics</SectionSubtitleLeft>
                 <CaseStudyDescription>
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
-                <br /><br />
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin.
+                    We developed a key messaging document and schedule of news releases built around the company’s strategy, one which would coincide with major milestones. 
+                    Lanyon compiled content – including copy, photography and videography – and produced messaging documents for interviewees at the company, organised and hosted interviews.
+                    <br /><br />
+                    We also worked in conjunction with Invest NI to highlight the company’s expansion and plans to create 237 new jobs over the next three years, hosting the Secretary of State Karen Bradley for an official press announcement.
                 </CaseStudyDescription>
             </CenterThreeContainer>
             </Container>
@@ -360,11 +361,13 @@ const CaseStudyStatSports = (props) => (
         <Section>
             <Container>
                 <CenterThreeContainer>
-                    <SectionSubtitleLeft>Section Title</SectionSubtitleLeft>
+                    <SectionSubtitleLeft>Outcomes</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                    Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
-                <br /><br />
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin.
+                        The result was a deep penetration of coverage for the company across all media – broadcast, online, radio, print and social – for contract wins, product reviews and a major job expansion. As well as achieving significant coverage with major global media organisations, we also ensured widespread coverage of the company’s success with local media to assist with hiring during its rapid expansion.
+                        <br /><br />
+                        Coverage included Forbes magazine, BBC, The Times, Irish Times, RTE, SportsPro Media, Wareable, and a host of others.
+                        <br /><br />
+                        A host of new contracts have been won with elite teams and sales of the consumer product have rocketed.
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
@@ -400,11 +403,9 @@ const CaseStudyStatSports = (props) => (
         <Section>
             <Container>
             <CenterThreeContainer>
-                <SectionSubtitleLeft>Section Title</SectionSubtitleLeft>
+                <SectionSubtitleLeft>The Future</SectionSubtitleLeft>
                 <CaseStudyDescription>
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
-                <br /><br />
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin.
+                    Lanyon continues to work with STATSports to raise awareness of the features and benefits of the product across the world as the company’s stellar growth moves on apace. On the horizon are further contract announcements with elite teams and news of the growth of the consumer product across the world.
                 </CaseStudyDescription>
             </CenterThreeContainer>
             </Container>
@@ -418,7 +419,7 @@ const CaseStudyStatSports = (props) => (
                 <CenterThreeContainer>
                     <SectionSubtitleLeft>Interested in working with us?</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                        One short paragraph in here which would briefly ask if the user is looking for support for a similar project, if so - we’d love to talk about it and see if there was a way to collaborate.  This paragraph should be no longer than three lines in total.
+                        At Lanyon we know how to spread the word about the great work your company is doing to a wider audience. Drop us a line or give us a call to hear how we can help you.
                     </CaseStudyDescription>
                     <ContactButton>Get in touch</ContactButton>
                 </CenterThreeContainer>

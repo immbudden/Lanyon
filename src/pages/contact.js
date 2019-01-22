@@ -8,6 +8,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { Form, Field } from 'react-final-form'
 
 // To consolodate
 
@@ -21,7 +22,7 @@ const Container = styled.div `
     max-width: 90%;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 `
 
 const NoTopContainer = styled.div `
@@ -53,8 +54,9 @@ const SectionTitleLeft = styled.h2 `
     color: #004655;
     font-family: Didot;
     font-weight: 100;
+    display: flex;
+    flex: 1 1 100%;
     margin-bottom: 7.5rem;
-    width: 40%;
     text-align: left;
 
     ${media.lessThan("medium")`
@@ -84,9 +86,9 @@ const SectionParagraphLight = styled.p `
     margin-bottom: 0;
 `
 
-const ContactButtonLight = styled.button `
-    background: #FFF;
-    color: #004655;
+const ContactButton = styled.button `
+    background: #199BAA;
+    color: #FFF;
     font-size: 2rem;
     padding: 10px 15px 5px; // Typefix
     border: none;
@@ -107,21 +109,14 @@ const CenterThreeContainer = styled.div `
     width: 59%;
 `
 
-const SectionColouredSubtitleLeft = styled.h3 `
-    font-size: 4rem; 
-    color: #FFF; 
+const LeftTwoContainer = styled.div `
     display: flex;
-    flex: 1 1 100%;
-    font-family: Didot;
-    font-weight: 100;
-    margin-bottom: 5rem; 
-    text-align: left;
+    flex-direction: row;
+    justify-content: left;
+    flex-flow: row wrap;
+    flex: 0 1 38.5%;
+    margin-right: 2.5%;
 
-    ${media.lessThan("medium")`
-        font-size: 3rem; 
-        text-align: center;
-        width: 80%;
-    `}
 `
 
 const SectionImg = styled(Img) `
@@ -129,6 +124,175 @@ const SectionImg = styled(Img) `
     min-height: 50vh;
     height: 50vh;
 `
+
+
+const exampleMapStyles = [
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "saturation": 36
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 40
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    }
+] //Add some style 
 
 const MyMapComponent = compose(
     withProps({
@@ -143,10 +307,15 @@ const MyMapComponent = compose(
     <GoogleMap
       defaultZoom={17}
       defaultCenter={{ lat: 54.5869451, lng: -5.93 }}
+      defaultOptions={{ styles: exampleMapStyles }}
     >
       {props.isMarkerShown && <Marker position={{ lat: 54.5869451, lng: -5.9367179 }} />}
     </GoogleMap>
   );
+
+const onSubmit = async values => {
+    window.alert(JSON.stringify(values, 0, 2))
+}
 
 const ContactPage = (props) => (
 
@@ -158,7 +327,7 @@ const ContactPage = (props) => (
             <CenterThreeContainer>
                 <SectionTitleTop>Get in touch</SectionTitleTop>
                 <SectionParagraph>
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
+                    At Lanyon we know how to spread the word about the great work your company is doing to a wider audience. Drop us a line or give us a call to hear how we can help you.
                 </SectionParagraph>
             </CenterThreeContainer>
             </Container>
@@ -168,13 +337,56 @@ const ContactPage = (props) => (
         </Section>
         <Section>
             <Container>
-                <CenterThreeContainer>
-                    <SectionTitleLeft>Interested in working with us?</SectionTitleLeft>
+                <LeftTwoContainer>
+                    <SectionTitleLeft>How can we help you?</SectionTitleLeft>
                     <SectionParagraph>
                         One short paragraph in here which would briefly ask if the user is looking for support for a similar project, if so - we’d love to talk about it and see if there was a way to collaborate.  This paragraph should be no longer than three lines in total.
                     </SectionParagraph>
-                    <ContactButtonLight>Get in touch</ContactButtonLight>
-                </CenterThreeContainer>
+                </LeftTwoContainer>
+                <LeftTwoContainer>
+                    <Form
+                        onSubmit={onSubmit}
+                        render={({ handleSubmit, form, submitting, pristine, values }) => (
+                            <form onSubmit={handleSubmit}>
+                            <div>
+                                <label>Name</label>
+                            </div>
+                            <div>
+                                <Field
+                                name="firstName"
+                                component="input"
+                                type="text"
+                                placeholder="First Name"
+                                />
+                            </div>
+                            <div>
+                                <label>Email</label>
+                            </div>
+                            <div>
+                                <Field
+                                name="email"
+                                component="input"
+                                type="text"
+                                placeholder="hi@email.com"
+                                />
+                            </div>
+                            
+                            <div className="buttons">
+                                <button type="submit" disabled={submitting || pristine}>
+                                Submit
+                                </button>
+                                <button
+                                type="button"
+                                onClick={form.reset}
+                                disabled={submitting || pristine}
+                                >
+                                Reset
+                                </button>
+                            </div>
+                            </form>
+                        )}
+                        />
+                </LeftTwoContainer>
             </Container>
         </Section>
         <NavMobile />

@@ -486,7 +486,7 @@ const CaseStudyOutlook = (props) => (
                 <CenterThreeContainer>
                     <SectionSubtitleLeft>Interested in working with us?</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                        One short paragraph in here which would briefly ask if the user is looking for support for a similar project, if so - we’d love to talk about it and see if there was a way to collaborate.  This paragraph should be no longer than three lines in total.
+                    At Lanyon we know how to spread the word about the great work your company is doing to a wider audience. Drop us a line or give us a call to hear how we can help you.
                     </CaseStudyDescription>
                     <ContactButton>Get in touch</ContactButton>
                 </CenterThreeContainer>

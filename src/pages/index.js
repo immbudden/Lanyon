@@ -173,13 +173,19 @@ const ServiceContainer = styled.div `
     `}
 `
 
+const IconContainer = styled.div `
+    height: 12rem;
+    display: flex;
+    flex 1 1 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+`
+
 const ServiceIcon = styled(Img) `
-    max-height: 20rem;
     margin: 0 auto;
     text-align: center;
-    max-height: 200px;
     margin-bottom: 25px;
-    max-width: 118px;
+    width: 8rem;
 `
 
 const ServiceTitle = styled.h3 `
@@ -341,28 +347,40 @@ const IndexPage = (props) => (
                 <SectionIntro>One paragraph in here to introduce ourselves, give a little bit more information about who we are and tell visitors what we do. This paragraph should briefly describe the key pillars of the business which will be below in icons. This should be no longer than 280 characters.</SectionIntro>
                 <ServiceWrapper>
                     <ServiceContainer>
-                        <ServiceIcon fluid={props.data.serviceIcon.childImageSharp.fluid} />
+                        <IconContainer>
+                            <ServiceIcon fluid={props.data.MarketIntelligenceIcon.childImageSharp.fluid} />
+                            </IconContainer>
                         <ServiceTitle>Market Intelligence</ServiceTitle>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <ServiceIcon fluid={props.data.serviceIcon.childImageSharp.fluid} />
+                        <IconContainer>
+                            <ServiceIcon fluid={props.data.CorporatePositioningIcon.childImageSharp.fluid} />
+                        </IconContainer>
                         <ServiceTitle>Corporate Positioning</ServiceTitle>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <ServiceIcon fluid={props.data.serviceIcon.childImageSharp.fluid} />
+                        <IconContainer>
+                            <ServiceIcon fluid={props.data.EngagementIcon.childImageSharp.fluid} />
+                        </IconContainer>
                         <ServiceTitle>Culture and Engagement</ServiceTitle>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <ServiceIcon fluid={props.data.serviceIcon.childImageSharp.fluid} />
+                        <IconContainer>
+                            <ServiceIcon fluid={props.data.DigitalIcon.childImageSharp.fluid} />
+                        </IconContainer>
                         <ServiceTitle>Digital and Content</ServiceTitle>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <ServiceIcon fluid={props.data.serviceIcon.childImageSharp.fluid} />
+                        <IconContainer>
+                            <ServiceIcon fluid={props.data.CrisisIcon.childImageSharp.fluid} />
+                        </IconContainer>
                         <ServiceTitle>Crisis and Issue Management</ServiceTitle>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <ServiceIcon fluid={props.data.serviceIcon.childImageSharp.fluid} />
-                        <ServiceTitle>Conferences and Events</ServiceTitle>
+                        <IconContainer>
+                            <ServiceIcon fluid={props.data.EventIcon.childImageSharp.fluid} />
+                        </IconContainer>
+                            <ServiceTitle>Conferences and Events</ServiceTitle>
                     </ServiceContainer>
                 </ServiceWrapper>
             </Container>
@@ -571,6 +589,55 @@ export const query = graphql`
                     }
                 }
             }
+
+            MarketIntelligenceIcon: file(relativePath: { eq: "icons/MarketIntelligence.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            CorporatePositioningIcon: file(relativePath: { eq: "icons/CorporatePositioning.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            EngagementIcon: file(relativePath: { eq: "icons/Engagement.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            DigitalIcon: file(relativePath: { eq: "icons/Digital.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            CrisisIcon: file(relativePath: { eq: "icons/Crisis.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            EventIcon: file(relativePath: { eq: "icons/Event.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 120) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
 
             INCover: file(relativePath: { eq: "case-studies/InnovationNation18/IN-cover.jpg" }) {
                 childImageSharp {

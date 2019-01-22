@@ -293,24 +293,26 @@ const CaseStudyLinenMill = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Brief point 1
-                                <br />
-                                Brief point 2
-                                <br />
-                                Brief point 3
+                                Highlight HBO’s Game of Thrones tour at Linen Mill Studios
+                                <br /><br />
+                                Maximise media coverage of the announcement
+                                <br /><br />
+                                Co-ordinate communication with HBO and other stakeholders
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Linen Mill Studios</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>
-                                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
+                                We were tasked with highlighting HBO’s decision to locate the formal studio tour for Game of Thrones at Linen Mill Studios in Banbridge, County Down, Northern Ireland, to a global audience. 
                                 <br /><br />
-                                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
+                                The move comes after Game of Thrones filming ended and our involvement focused on maximising news coverage around the decision that the Banbridge studios will take centre stage as part of a legacy investment which will also see other filming sites opened up to the public.
                                 <br /><br />
-                                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin. 
+                                We were tasked with relaying the news in a positive fashion, not just to the media but to all stakeholders involved in the project including councils, local residents, tourism organisations and government.
                                 <br /><br />
-                                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
+                                In addition, we had to ensure co-ordination with HBO to make sure our announcements were released in tandem and in line with its strict brand guidelines. 
+                                <br /><br />
+                                Those guidelines meant that media filming and other content had to be strictly monitored by Lanyon at the site.
                                 <br /><br />
                                 Interested in working on something similar? <Bold>Let’s chat about it.</Bold>
                             </CaseStudyDescription>
@@ -324,20 +326,20 @@ const CaseStudyLinenMill = (props) => (
             <Container>
                 <StatWrapper>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>media stat here</StatText>
+                    <StatHeadline>34</StatHeadline>
+                    <StatText>pieces of coverage</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>media stat here</StatText>
+                    <StatHeadline>800m</StatHeadline>
+                    <StatText>online readership</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>media stat here</StatText>
+                    <StatHeadline>818,000</StatHeadline>
+                    <StatText>estimated coverage views</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XXX</StatHeadline>
-                    <StatText>media stat here</StatText>
+                    <StatHeadline>16,200 </StatHeadline>
+                    <StatText>social shares</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>
@@ -345,11 +347,11 @@ const CaseStudyLinenMill = (props) => (
         <Section>
             <Container>
             <CenterThreeContainer>
-                <SectionSubtitleLeft>Section Title</SectionSubtitleLeft>
+                <SectionSubtitleLeft>Strategy &amp; Tactics</SectionSubtitleLeft>
                 <CaseStudyDescription>
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
-                <br /><br />
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin.
+                    Working in conjunction with the various stakeholders, Lanyon handled all media communications around the company’s plans to base a multi-million-pound studio tour at the site which had been used as a film location by Game of Thrones for the last eight years. 
+                    <br /><br />
+                    As well as drafting statements and key messaging, we reached out to an extensive media contact list to spread news of the development across the globe.
                 </CaseStudyDescription>
             </CenterThreeContainer>
             </Container>
@@ -360,11 +362,11 @@ const CaseStudyLinenMill = (props) => (
         <Section>
             <Container>
                 <CenterThreeContainer>
-                    <SectionSubtitleLeft>Section Title</SectionSubtitleLeft>
+                    <SectionSubtitleLeft>Outcomes</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                    Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
-                <br /><br />
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin.
+                        Lanyon organised and attended interviews on location with major media organisations including BBC, RTE and ITV, securing a wealth of positive broadcast coverage, drafting messaging documents for interviewees and working closely to prepare them for the camera. 
+                        <br /><br />
+                        Print, online and social media coverage stretched across the globe including HuffPostUS, Time Magaine, The Telegraph, The Sun, Daily Mail, Lonely Planet, Conde Naste Traveller, Philippine Star, Business Insider and a host of others.
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
@@ -392,11 +394,9 @@ const CaseStudyLinenMill = (props) => (
         <Section>
             <Container>
             <CenterThreeContainer>
-                <SectionSubtitleLeft>Section Title</SectionSubtitleLeft>
+                <SectionSubtitleLeft>The Future</SectionSubtitleLeft>
                 <CaseStudyDescription>
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
-                <br /><br />
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin.
+                    Lanyon continue to work with Linen Mill Studios and will be at the heart of the development of HBO’s Game of Thrones studio tour as it is progresses over the next few months.
                 </CaseStudyDescription>
             </CenterThreeContainer>
             </Container>
@@ -410,7 +410,7 @@ const CaseStudyLinenMill = (props) => (
                 <CenterThreeContainer>
                     <SectionSubtitleLeft>Interested in working with us?</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                        One short paragraph in here which would briefly ask if the user is looking for support for a similar project, if so - we’d love to talk about it and see if there was a way to collaborate.  This paragraph should be no longer than three lines in total.
+                    At Lanyon we know how to spread the word about the great work your company is doing to a wider audience. Drop us a line or give us a call to hear how we can help you.
                     </CaseStudyDescription>
                     <ContactButton>Get in touch</ContactButton>
                 </CenterThreeContainer>

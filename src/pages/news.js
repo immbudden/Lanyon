@@ -120,7 +120,7 @@ const SecondaryHeadlineStoryContainer = styled.div `
     }
 `
 
-const NewsStoryImgContainer = styled.div `
+const NewsStoryImgContainer = styled(Link) `
     flex: 1 1 100%;
     height: 30vh;
     position: relative;
@@ -215,6 +215,12 @@ const NewsPage = (props) => {
 
     const newsList = props.data.allPrismicNewsStory;
 
+    
+    // const imageBody = props.data.allPrismicNewsStory.node.data.body.reduce((object, item) => ({
+    //     ...object,
+    //     [item.__typename]: item.primary
+    // }), {});
+
     // const title = node.data.title.text
     // const short_description = node.data.short_description
     // const published_date = node.data.published_date
@@ -288,9 +294,9 @@ const NewsPage = (props) => {
                 <NewsStoriesWrapper>
 
                 {newsList.edges.map(({ node }, i) => (
-                    // <Link to={node.slugs} key={i} >
+                    // <newsStoryLink to={node.slugs} key={i} >
                         <NewsStoryContainer>
-                            <NewsStoryImgContainer>
+                            <NewsStoryImgContainer to={node.uid} key={i}>
                                 <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg4.childImageSharp.fluid} />
                             </NewsStoryImgContainer>
                             <NewsStoryTextContainer>
@@ -303,97 +309,6 @@ const NewsPage = (props) => {
                         </NewsStoryContainer>
                     // </Link>
                 ))}
-
-                    {/* <NewsStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg5.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>{node.data.category.document.data.category.text}</Category> &nbsp; &nbsp; <Author>{node.data.author.document.data.author_name.text}</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </NewsStoryContainer>
-
-                    <NewsStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg6.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </NewsStoryContainer>
-
-                    <NewsStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg7.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </NewsStoryContainer>
-
-                    <NewsStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg4.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </NewsStoryContainer>
-
-                    <NewsStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg5.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </NewsStoryContainer>
-
-                    <NewsStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg6.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </NewsStoryContainer>
-
-                    <NewsStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg7.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>The news headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </NewsStoryContainer> */}
 
                 </NewsStoriesWrapper>
 
@@ -416,7 +331,7 @@ export const query = graphql`
         allPrismicNewsStory (sort: {order: DESC, fields: [data___published_date]}) {
             edges {
               node {
-                slugs
+                uid
                 id
                 tags
                 data {
