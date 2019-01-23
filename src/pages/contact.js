@@ -8,7 +8,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
-import { Form, Field } from 'react-final-form'
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 // To consolodate
 
@@ -112,7 +112,7 @@ const CenterThreeContainer = styled.div `
 const LeftTwoContainer = styled.div `
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: flex-start;
     flex-flow: row wrap;
     flex: 0 1 38.5%;
     margin-right: 2.5%;
@@ -125,6 +125,36 @@ const SectionImg = styled(Img) `
     height: 50vh;
 `
 
+const ContactForm = styled.form `
+    flex: 1 1 100%;
+`
+
+const FormLabel = styled.label `
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #222;
+    flex: 1 1 100%;
+    margin-bottom: 0;
+    text-transform: uppercase;
+`
+
+const FormInput = styled.input `
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #222;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+`
+
+const FormTextArea = styled.textarea `
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #222;
+    width: 100%;
+    height: 10rem;
+    padding: 1rem;
+`
 
 const exampleMapStyles = [
     {
@@ -344,48 +374,131 @@ const ContactPage = (props) => (
                     </SectionParagraph>
                 </LeftTwoContainer>
                 <LeftTwoContainer>
-                    <Form
-                        onSubmit={onSubmit}
-                        render={({ handleSubmit, form, submitting, pristine, values }) => (
-                            <form onSubmit={handleSubmit}>
+                    <Formik
+                        // Sets up our default values
+                        initialValues={{ name: "", email: "", tel: "", message: "",}}
+
+                        // Validates our data
+                        validate={values => {
+                            const errors = {};
+
+                            if (!values.name) errors.name = "You must enter your name";
+
+                            if (!values.email) errors.email = "Required";
+
+                            if (
+                            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+                            ) {
+                            errors.email = "You must supply a valid email address";
+                            }
+
+                            if (
+                            !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/m.test(values.tel)
+                            ) {
+                            errors.tel = "You must supply a valid telephone number";
+                            }
+
+                            if (!values.message) errors.message = "You must enter a message";
+
+                            return errors;
+                        }}
+
+                        // Handles our submission
+                        onSubmit={(values, { setSubmitting }) => {
+                            // This is where you could wire up axios or superagent
+                            console.log("Submitted Values:", values);
+                            // Simulates the delay of a real request
+                            setTimeout(() => setSubmitting(false), 3 * 1000);
+                        }}
+                        >
+                        {props => (
+                            <ContactForm>
+                            <FormLabel htmlFor="name">Name</FormLabel>
                             <div>
-                                <label>Name</label>
-                            </div>
-                            <div>
-                                <Field
-                                name="firstName"
-                                component="input"
-                                type="text"
-                                placeholder="First Name"
+                                <FormInput
+                                name="name"
+                                type="name"
+                                placeholder="Enter your full name"
+                                value={props.values.name}
+                                onChange={props.handleChange}
+                                onBlur={props.handleBlur}
+                                style={{
+                                    borderColor:
+                                    props.errors.name && props.touched.name && "red"
+                                }}
                                 />
+                                {props.errors.name && props.touched.name && (
+                                <div style={{ color: "red" }}>{props.errors.name}</div>
+                                )}
                             </div>
+                            <FormLabel htmlFor="email">Email</FormLabel>
                             <div>
-                                <label>Email</label>
-                            </div>
-                            <div>
-                                <Field
+                                <FormInput
                                 name="email"
-                                component="input"
-                                type="text"
-                                placeholder="hi@email.com"
+                                type="email"
+                                placeholder="Enter your email address"
+                                value={props.values.email}
+                                onChange={props.handleChange}
+                                onBlur={props.handleBlur}
+                                style={{
+                                    borderColor:
+                                    props.errors.email && props.touched.email && "red"
+                                }}
                                 />
+                                {props.errors.email && props.touched.email && (
+                                <div style={{ color: "red" }}>{props.errors.email}</div>
+                                )}
                             </div>
-                            
-                            <div className="buttons">
-                                <button type="submit" disabled={submitting || pristine}>
-                                Submit
-                                </button>
-                                <button
-                                type="button"
-                                onClick={form.reset}
-                                disabled={submitting || pristine}
-                                >
-                                Reset
-                                </button>
+                            <FormLabel htmlFor="tel">Telephone Number</FormLabel>
+                            <div>
+                                <FormInput
+                                name="tel"
+                                type="tel"
+                                placeholder="Enter your telephone number"
+                                value={props.values.tel}
+                                onChange={props.handleChange}
+                                onBlur={props.handleBlur}
+                                style={{
+                                    borderColor:
+                                    props.errors.tel && props.touched.tel && "red"
+                                }}
+                                />
+                                {props.errors.tel && props.touched.tel && (
+                                <div style={{ color: "red" }}>{props.errors.tel}</div>
+                                )}
                             </div>
-                            </form>
+                            <FormLabel htmlFor="message">Message</FormLabel>
+                            <div>
+                                <FormTextArea
+                                name="message"
+                                placeholder="Enter your telephone number"
+                                value={props.values.message}
+                                onChange={props.handleChange}
+                                onBlur={props.handleBlur}
+                                style={{
+                                    borderColor:
+                                    props.errors.message && props.touched.message && "red"
+                                }}
+                                />
+                                {props.errors.message && props.touched.message && (
+                                <div style={{ color: "red" }}>{props.errors.message}</div>
+                                )}
+                            </div>
+                            <FormInput
+                                type="submit"
+                                value="Submit"
+                                disabled={props.isSubmitting}
+                            />
+                            &nbsp;
+                            <FormInput
+                                type="reset"
+                                value="Reset"
+                                onClick={props.handleReset}
+                                disabled={!props.dirty || props.isSubmitting}
+                            />
+                            </ContactForm>
                         )}
-                        />
+                    </Formik>
                 </LeftTwoContainer>
             </Container>
         </Section>

@@ -48,8 +48,10 @@ const HeadlineNewsStoryImgContainer = styled.div `
     overflow: hidden;
 `
 
-const NewsStoryFeaturedImg = styled(Img) `
-    min-height: 100%;
+const NewsStoryFeaturedImg = styled('img') `
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 `
 
 const HeadlineNewsStoryTextWrapper = styled.div `
@@ -120,7 +122,7 @@ const SecondaryHeadlineStoryContainer = styled.div `
     }
 `
 
-const NewsStoryImgContainer = styled(Link) `
+const NewsStoryImgContainer = styled.a `
     flex: 1 1 100%;
     height: 30vh;
     position: relative;
@@ -190,42 +192,38 @@ const ViewMore = styled(Link) `
     text-transform: uppercase;
 `
 
+const renderItem = (node, props) => {
+    console.log(node)
+
+    const body = node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+
+    console.log({body})
+
+    return (
+        <NewsStoryContainer key={node.uid}>
+            {body.PrismicNewsStoryBodyFeaturedImage && (
+                <NewsStoryImgContainer href={`/news/${node.uid}`}>
+                    <NewsStoryFeaturedImg src={body.PrismicNewsStoryBodyFeaturedImage.featured_image.url} />
+                </NewsStoryImgContainer>
+            )}
+            <NewsStoryTextContainer>
+                <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
+                <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
+                <NewsStoryMeta>
+                    <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{node.data.author.document[0].data.author_name.text}</Author>
+                </NewsStoryMeta>
+            </NewsStoryTextContainer>
+        </NewsStoryContainer>
+    )
+}
+
 
 const NewsPage = (props) => { 
 
-    // This is all old code for refrence 
-    // console.log(props.data.prismicNewsStory.data.body)
-    
-    // const body = props.data.prismicNewsStory.data.body.reduce((object, item) => ({
-    //     ...object,
-    //     [item.__typename]: item.primary
-    // }), {});
-
-    // console.log(body)
-
-    // const QuoteData = body.PrismicNewsStoryBodyQuote
-    
-    // const headline_image = props.data.prismicNewsStory.data.headline_image.url
-    // const title = props.data.prismicNewsStory.data.title.text
-    // const main_content = props.data.prismicNewsStory.data.main_content.html
-    // // const published = props.data.prismicNewsStory.first_publication_date
-    // const published_date = props.data.prismicNewsStory.data.published_date
-    // const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
-    // const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
-
     const newsList = props.data.allPrismicNewsStory;
-
-    
-    // const imageBody = props.data.allPrismicNewsStory.node.data.body.reduce((object, item) => ({
-    //     ...object,
-    //     [item.__typename]: item.primary
-    // }), {});
-
-    // const title = node.data.title.text
-    // const short_description = node.data.short_description
-    // const published_date = node.data.published_date
-    // const author = node.data.author.document.data.author_name.text
-    // const category = node.data.category.document.data.category.text
 
     return (
         <div>
@@ -292,24 +290,9 @@ const NewsPage = (props) => {
             </NewsNavWrapper> */}
             <NoTopContainer>
                 <NewsStoriesWrapper>
-
-                {newsList.edges.map(({ node }, i) => (
-                    // <newsStoryLink to={node.slugs} key={i} >
-                        <NewsStoryContainer>
-                            <NewsStoryImgContainer to={node.uid} key={i}>
-                                <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg4.childImageSharp.fluid} />
-                            </NewsStoryImgContainer>
-                            <NewsStoryTextContainer>
-                                <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
-                                <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
-                                    <NewsStoryMeta>
-                                        <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{node.data.author.document[0].data.author_name.text}</Author>
-                                    </NewsStoryMeta>
-                            </NewsStoryTextContainer>
-                        </NewsStoryContainer>
-                    // </Link>
-                ))}
-
+                        {newsList.edges.map(({ node }) => {
+                            return renderItem(node, props)
+                        })}
                 </NewsStoriesWrapper>
 
                 <ViewMore>View More</ViewMore>

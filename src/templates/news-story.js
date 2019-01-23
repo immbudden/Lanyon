@@ -157,8 +157,8 @@ const FeaturedImageContainer = styled.div `
     overflow: hidden;
     display: flex;
     flex-direction: row;
-        -webkit-box-align: center;
-        align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
 `
 
 const FeaturedImage = styled("img") `
@@ -171,7 +171,7 @@ const FeaturedImageCaption = styled.div `
     background: #199BAA;
     padding: 1.5rem;
     font-size: 1.5rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
     color: #FFF;
 `
 

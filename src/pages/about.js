@@ -184,6 +184,7 @@ const PersonIntro = styled.div `
     align-items: flex-start;
     z-index: 5;
     height: 100%;
+    overflow: scroll;
     opacity: 0;
     transition: opacity 0.5s;
 
@@ -197,7 +198,7 @@ const Bold = styled.span `
 `
 
 const PersonIntroTop = styled.span `
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #FFF;
     font-weight: 100;
     margin-bottom: 5rem;
@@ -207,6 +208,7 @@ const PersonIntroBottom = styled.span `
     font-size: 1.8rem;
     color: #FFF;
     font-weight: 100;
+    
 `
 
 const ServiceList = styled.ul `
@@ -263,14 +265,18 @@ const AboutPage = (props) => (
                     />
                     <PersonInfoWrapper>
                         <PersonName>Katie Doran</PersonName>
-                        <PersonTitle>Partner</PersonTitle>
+                        <PersonTitle>Co-Founder &amp; Partner</PersonTitle>
                     </PersonInfoWrapper>
                     <PersonIntro>
                         <PersonIntroTop>
-                            <Bold>Katie DOran</Bold><br />Partner
+                            <Bold>Katie Doran</Bold><br />Co-Founder &amp; Partner
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                            Who is Katie and what does she do? Who is Katie and what does she do?
+                        With over 20 years’ experience in PR and corporate communications for a range of blue chip clients, Katie is one of the most experienced PR professionals in NI, specialising in stakeholder and investor relations, media relations and reputation management.
+                        <br /><br />
+                        Widely renowned as a leading expert in the property investment sectors, Katie demonstrates unparalleled knowledge, expertise and experience in working closely with institutional investors and investor developers across the office, retail, residential and mixed use sectors in the UK and Ireland. Her experience also spans a broad range of corporate clients across the financial, legal and health/life sciences sectors.   
+                        <br /><br />
+                        Katie sits on the Board of Catalyst Inc (formerly Northern Ireland Science Park) and is a member of the CBI’s Economic Affairs Committee in Northern Ireland.
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
@@ -283,18 +289,22 @@ const AboutPage = (props) => (
                             width: "100%",
                             zIndex: 0,
                         }}
-                            fluid={props.data.GWImg.childImageSharp.fluid}
+                            fluid={props.data.JIImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
                         <PersonName>Jonathan Ireland</PersonName>
-                        <PersonTitle>Partner</PersonTitle>
+                        <PersonTitle>Co-Founder &amp; Partner</PersonTitle>
                     </PersonInfoWrapper>
                     <PersonIntro>
                         <PersonIntroTop>
-                            <Bold>Jonathan Ireland</Bold><br />Partner
+                            <Bold>Jonathan Ireland</Bold><br />Co-Founder &amp; Partner
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                            Jonathan advises clients on a wide portfolio of issues to support their business growth and success. He sits on a number of boards within Northern Ireland and was named by Business First in the Top 40 Under 40 2016 and 2017. 
+                            A founding partner of Lanyon, Jonathan has worked with leading retail banks, international law firms, investment funds and utilities, as well as a diverse portfolio of blue chip companies drawn from a range of other business sectors in the UK, Ireland and further afield.  
+                            <br /><br />
+                            He advises clients on a wide portfolio of issues to support their business growth and success – including cultural change management and business transformation; business development and stakeholder engagement; investor relations; media relations and marketing; reputation/issues management; and sponsorship/partnership management. 
+                            <br /><br />
+                            Jonathan sits on the Boards of Thrive Audience Development, Crimestoppers and The Ireland Funds Young Leaders in Northern Ireland.  He is a member Council of the Northern Ireland Chamber of Commerce &amp; Industry and the Confederation of British Industry [CBI] 35 Under 35 Committee and is a Governor at Strathearn School. He was named by Business First in the ‘Top 40 Under 40’ 2016 and 2017.     
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
@@ -307,7 +317,7 @@ const AboutPage = (props) => (
                             width: "100%",
                             zIndex: 0,
                         }}
-                            fluid={props.data.GWImg.childImageSharp.fluid}
+                            fluid={props.data.DEImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
                         <PersonName>David Elliott</PersonName>
@@ -495,9 +505,25 @@ export default AboutPage
 
 export const query = graphql`
     query {
-            aboutHeroImg: file(relativePath: { eq: "heroes/aboutHero.jpg" }) {
+            aboutHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
+                    fluid(maxWidth: 2500, maxHeight: 1100 ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            JIImg: file(relativePath: { eq: "people/JI.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            DEImg: file(relativePath: { eq: "people/DE.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
