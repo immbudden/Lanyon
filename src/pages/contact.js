@@ -373,7 +373,7 @@ const ContactPage = (props) => (
                     </SectionParagraph>
                 </LeftTwoContainer>
                 <LeftTwoContainer>
-                    <Formik
+                    {/* <Formik
                         // Sets up our default values
                         initialValues={{ name: "", email: "", tel: "", message: "",}}
 
@@ -495,8 +495,28 @@ const ContactPage = (props) => (
                             Send
                             </LightTealButton>
                             </ContactForm>
-                        )}
-                    </Formik>
+                         )}
+                    </Formik> */}
+                    <ContactForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                            <FormLabel>Name</FormLabel>
+                            <div>
+                                <FormInput name="name" type="name" placeholder="Enter your full name" />
+                            </div>
+                            <FormInput name="bot-field" type="hidden" />
+                            <FormLabel>Email</FormLabel>
+                            <div>
+                                <FormInput name="email" type="email" placeholder="Enter your email address" />
+                            </div>
+                            <FormLabel>Telephone Number</FormLabel>
+                            <div>
+                                <FormInput name="tel" type="tel" placeholder="Enter your telephone number" />
+                            </div>
+                            <FormLabel>Message</FormLabel>
+                            <div>
+                                <FormTextArea name="message" placeholder="Enter your telephone number" />
+                            </div>
+                            <LightTealButton type="submit">Send</LightTealButton>
+                            </ContactForm>
                 </LeftTwoContainer>
             </Container>
         </Section>
