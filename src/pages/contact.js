@@ -22,7 +22,7 @@ const Container = styled.div `
     max-width: 90%;
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-wrap;
 `
 
 const NoTopContainer = styled.div `
@@ -54,8 +54,6 @@ const SectionTitleLeft = styled.h2 `
     color: #004655;
     font-family: Didot;
     font-weight: 100;
-    display: flex;
-    flex: 1 1 100%;
     margin-bottom: 7.5rem;
     text-align: left;
 
@@ -73,7 +71,7 @@ const SectionParagraph = styled.p `
     font-weight: 100;
     color: #222;
     line-height: 1.75;
-    flex: 1 1 100%;
+    
     margin-bottom: 0;
 `
 
@@ -86,11 +84,11 @@ const SectionParagraphLight = styled.p `
     margin-bottom: 0;
 `
 
-const ContactButton = styled.button `
+const LightTealButton = styled.button `
     background: #199BAA;
     color: #FFF;
     font-size: 2rem;
-    padding: 10px 15px 5px; // Typefix
+    padding: 10px 7.5rem 5px; // Typefix
     border: none;
     text-transform: uppercase;
     margin-top: 2.5rem;
@@ -111,9 +109,8 @@ const CenterThreeContainer = styled.div `
 
 const LeftTwoContainer = styled.div `
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    flex-flow: row wrap;
     flex: 0 1 38.5%;
     margin-right: 2.5%;
 
@@ -145,6 +142,7 @@ const FormInput = styled.input `
     width: 100%;
     padding: 1rem;
     margin-bottom: 2.5rem;
+    border: 2px solid #EEE;
 `
 
 const FormTextArea = styled.textarea `
@@ -154,6 +152,7 @@ const FormTextArea = styled.textarea `
     width: 100%;
     height: 10rem;
     padding: 1rem;
+    border: 2px solid #EEE;
 `
 
 const exampleMapStyles = [
@@ -412,7 +411,7 @@ const ContactPage = (props) => (
                         }}
                         >
                         {props => (
-                            <ContactForm>
+                            <ContactForm method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                             <FormLabel htmlFor="name">Name</FormLabel>
                             <div>
                                 <FormInput
@@ -431,6 +430,10 @@ const ContactPage = (props) => (
                                 <div style={{ color: "red" }}>{props.errors.name}</div>
                                 )}
                             </div>
+                            <FormInput
+                                name="bot-field"
+                                type="hidden"
+                            />
                             <FormLabel htmlFor="email">Email</FormLabel>
                             <div>
                                 <FormInput
@@ -484,18 +487,13 @@ const ContactPage = (props) => (
                                 <div style={{ color: "red" }}>{props.errors.message}</div>
                                 )}
                             </div>
-                            <FormInput
+                            <LightTealButton
                                 type="submit"
                                 value="Submit"
                                 disabled={props.isSubmitting}
-                            />
-                            &nbsp;
-                            <FormInput
-                                type="reset"
-                                value="Reset"
-                                onClick={props.handleReset}
-                                disabled={!props.dirty || props.isSubmitting}
-                            />
+                            >
+                            Send
+                            </LightTealButton>
                             </ContactForm>
                         )}
                     </Formik>
