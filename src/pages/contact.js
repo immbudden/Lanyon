@@ -411,7 +411,7 @@ const ContactPage = (props) => (
                         // }}
                         >
                         {props => (
-                            <ContactForm method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                            <ContactForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                             <FormLabel htmlFor="name">Name</FormLabel>
                             <div>
                                 <FormInput
