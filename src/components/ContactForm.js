@@ -49,15 +49,16 @@ const HoneyPot = styled('input') `
     display: none;
 `
 
-const ContactForm = ({ action, name }) => (
+const ContactForm = (props) => (
     <Form 
         key="contact-form"
         name="contact-form"
         method="POST"
-        action={'/no-cache=1'}
+        action={'#'}
         data-netlify="true"
         data-netlify-honeypot="bot-field"
     >
+        <input type="hidden" name="form-name" value="contact-form" />
         <FormLabel htmlFor="name">Name</FormLabel>
         <div>
             <FormInput name="name" type="name" placeholder="Enter your full name" />
@@ -78,9 +79,5 @@ const ContactForm = ({ action, name }) => (
         <LightTealButton type="submit">Send</LightTealButton>
     </Form>
 )
-
-ContactForm.propTypes = {
-    action: PropTypes.string.isRequired,
-};
   
 export default ContactForm;
