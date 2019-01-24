@@ -497,26 +497,46 @@ const ContactPage = (props) => (
                             </ContactForm>
                          )}
                     </Formik> */}
-                    <ContactForm netlify name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                        <FormLabel>Name</FormLabel>
+                    {/* <ContactForm netlify name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <FormLabel>Name
                         <div>
                             <FormInput name="name" type="name" placeholder="Enter your full name" />
-                        </div>
+                        </div></FormLabel>
                         <FormInput name="bot-field" type="hidden" />
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>Email
                         <div>
                             <FormInput name="email" type="email" placeholder="Enter your email address" />
-                        </div>
-                        <FormLabel>Telephone Number</FormLabel>
+                        </div></FormLabel>
+                        <FormLabel>Telephone Number
                         <div>
                             <FormInput name="tel" type="tel" placeholder="Enter your telephone number" />
-                        </div>
-                        <FormLabel>Message</FormLabel>
+                        </div></FormLabel>
+                        <FormLabel>Message
                         <div>
                             <FormTextArea name="message" placeholder="Enter your telephone number" />
-                        </div>
+                        </div></FormLabel>
                         <LightTealButton type="submit">Send</LightTealButton>
-                        </ContactForm>
+                    </ContactForm> */}
+                    <form netlify name="test-contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <label>Name
+                        <div>
+                            <input name="name" type="name" placeholder="Enter your full name" />
+                        </div></label>
+                        <input name="bot-field" type="hidden" />
+                        <label>Email
+                        <div>
+                            <input name="email" type="email" placeholder="Enter your email address" />
+                        </div></label>
+                        <label>Telephone Number
+                        <div>
+                            <input name="tel" type="tel" placeholder="Enter your telephone number" />
+                        </div></label>
+                        <label>Message
+                        <div>
+                            <textarea name="message" placeholder="Enter your telephone number" />
+                        </div></label>
+                        <button type="submit">Send</button>
+                    </form>
                 </LeftTwoContainer>
             </Container>
         </Section>
