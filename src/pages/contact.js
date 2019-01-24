@@ -8,7 +8,8 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import ContactForm from '../components/ContactForm'
+// import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 // To consolodate
 
@@ -84,16 +85,6 @@ const SectionParagraphLight = styled.p `
     margin-bottom: 0;
 `
 
-const LightTealButton = styled.button `
-    background: #199BAA;
-    color: #FFF;
-    font-size: 2rem;
-    padding: 10px 7.5rem 5px; // Typefix
-    border: none;
-    text-transform: uppercase;
-    margin-top: 2.5rem;
-`
-
 const SectionColoured = styled.div `
     background: #004655;
 `
@@ -120,39 +111,6 @@ const SectionImg = styled(Img) `
     width: 100%;
     min-height: 50vh;
     height: 50vh;
-`
-
-const ContactForm = styled.form `
-    flex: 1 1 100%;
-`
-
-const FormLabel = styled.label `
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #222;
-    flex: 1 1 100%;
-    margin-bottom: 0;
-    text-transform: uppercase;
-`
-
-const FormInput = styled.input `
-    font-size: 1.5rem;
-    font-weight: 100;
-    color: #222;
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 2.5rem;
-    border: 2px solid #EEE;
-`
-
-const FormTextArea = styled.textarea `
-    font-size: 1.5rem;
-    font-weight: 100;
-    color: #222;
-    width: 100%;
-    height: 10rem;
-    padding: 1rem;
-    border: 2px solid #EEE;
 `
 
 const exampleMapStyles = [
@@ -497,46 +455,8 @@ const ContactPage = (props) => (
                             </ContactForm>
                          )}
                     </Formik> */}
-                    {/* <ContactForm netlify name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                        <FormLabel>Name
-                        <div>
-                            <FormInput name="name" type="name" placeholder="Enter your full name" />
-                        </div></FormLabel>
-                        <FormInput name="bot-field" type="hidden" />
-                        <FormLabel>Email
-                        <div>
-                            <FormInput name="email" type="email" placeholder="Enter your email address" />
-                        </div></FormLabel>
-                        <FormLabel>Telephone Number
-                        <div>
-                            <FormInput name="tel" type="tel" placeholder="Enter your telephone number" />
-                        </div></FormLabel>
-                        <FormLabel>Message
-                        <div>
-                            <FormTextArea name="message" placeholder="Enter your telephone number" />
-                        </div></FormLabel>
-                        <LightTealButton type="submit">Send</LightTealButton>
-                    </ContactForm> */}
-                    <form netlify name="test-contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                        <label>Name
-                        <div>
-                            <input name="name" type="name" placeholder="Enter your full name" />
-                        </div></label>
-                        <input name="bot-field" type="hidden" />
-                        <label>Email
-                        <div>
-                            <input name="email" type="email" placeholder="Enter your email address" />
-                        </div></label>
-                        <label>Telephone Number
-                        <div>
-                            <input name="tel" type="tel" placeholder="Enter your telephone number" />
-                        </div></label>
-                        <label>Message
-                        <div>
-                            <textarea name="message" placeholder="Enter your telephone number" />
-                        </div></label>
-                        <button type="submit">Send</button>
-                    </form>
+                    <ContactForm />
+                
                 </LeftTwoContainer>
             </Container>
         </Section>
