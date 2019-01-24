@@ -54,7 +54,7 @@ const ContactForm = ({ action, name }) => (
         key="contact-form"
         name="contact-form"
         method="POST"
-        action={action}
+        action={'/no-cache=1'}
         data-netlify="true"
         data-netlify-honeypot="bot-field"
     >
