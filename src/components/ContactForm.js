@@ -62,7 +62,7 @@ const ContactForm = ({ action, name }) => (
         <div>
             <FormInput name="name" type="name" placeholder="Enter your full name" />
         </div>
-        <HoneyPot name="bot-field" type="name" />
+        <HoneyPot name="bot-field" type="pot-name" />
         <FormLabel htmlFor="email">Email</FormLabel>
         <div>
             <FormInput name="email" type="email" placeholder="Enter your email address" />
