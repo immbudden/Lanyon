@@ -340,9 +340,10 @@ const Button = styled.button `
     color: #FFF;
     font-size: 2rem;
     padding: 10px 15px 5px; // Typefix
-    border: none;
+    border: 2.5px solid #199BAA;
     text-transform: uppercase;
     width: 22.5rem;
+    margin-bottom: 1rem;
 `
 
 const ButtonInvert = styled.button `
@@ -356,9 +357,9 @@ const ButtonInvert = styled.button `
     width: 22.5rem;
 `
 
-const ButtonLink = styled(Link) `
+const ButtonLink = styled.a `
     text-decoration: none;
-    
+    color: inherit;
 `
 
 
@@ -417,12 +418,14 @@ const ContactPage = (props) => (
                                 <AddressText>Lanyon<br />8 Upper Crescent<br />Belfast<br />BT7 1NT</AddressText>
                             </ContactContainer>
                             <ContactContainer>
-                            <ButtonLink>
-                                <Button>028 9018 3242</Button>
-                            </ButtonLink>
-                                <ButtonLink>
-                                    <ButtonInvert>View directions</ButtonInvert>
-                                </ButtonLink>
+                            
+                                <Button>
+                                    <ButtonLink href="tel:028 9018 3242">028 9018 3242</ButtonLink>
+                                </Button>
+
+                                <ButtonInvert>
+                                    <ButtonLink href="https://www.google.com/maps/dir//Lanyon+Communications,+8+Upper+Cres,+Belfast+BT7+1NT,+UK/@54.5869451,-5.9367179,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x486109bc20580a23:0xd897711e3ade287c!2m2!1d-5.9345292!2d54.5869451">View directions</ButtonLink>
+                                </ButtonInvert>
                             </ContactContainer>
                         </ContactDetails>
                     </ContactDetailsContainer>
