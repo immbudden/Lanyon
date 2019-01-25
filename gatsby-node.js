@@ -1,3 +1,4 @@
+const createPaginatedPages = require('gatsby-paginate')
 const path = require('path')
 
 // Implement the Gatsby API “createPages”. This is called once the
@@ -27,6 +28,17 @@ exports.createPages = ({ graphql, actions }) => {
           }
           console.log(result)
           // Create pages for each markdown file.
+
+          createPaginatedPages({
+            edges: result.data.posts.edges,
+            createPage: createPage,
+            pageTemplate: 'src/templates/news-story.js',
+            pageLength: 20,
+            pathPrefix: 'news',
+            buildPath: (index, pathPrefix) =>
+              index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and this is the default
+          })
+
           result.data.allPrismicNewsStory.edges.forEach(({ node }) => {
             const path = node.uid
             createPage({

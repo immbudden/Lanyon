@@ -8,6 +8,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import markerLanyon from "../images/mapPin.png";
 import ContactForm from '../components/ContactForm'
 // import { Formik, Field, Form, ErrorMessage } from 'formik';
 
@@ -281,6 +282,86 @@ const exampleMapStyles = [
     }
 ] //Add some style 
 
+const MapWrapper = styled.div `
+    height: 50vh;
+`
+
+const MapContainer = styled.div `
+    position: absolute;
+    height: 50vh;
+    width: 100%;
+    z-index: 0;
+`
+
+const ContactDetailsContainer = styled.div `
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    height: 50vh;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+`
+
+const ContactDetails = styled.div `
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    flex: 0 0 60rem;
+    padding: 5rem;
+    z-index: 5;
+    background: #FFF;
+`
+
+const ContactContainer = styled.div `
+    flex: 1 1 47.5%;
+    margin-right: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    &:nth-child(2) {
+        margin-right: 0;
+    }
+`
+
+const AddressText = styled.p `
+    flex: 1 1 100%;
+    font-size: 2rem;
+    font-weight: 100;
+    color: #222;
+    line-height: 3rem;
+    margin-bottom: 0;
+`
+
+const Button = styled.button `
+    flex: 1 1 100%;
+    background: #199BAA;
+    color: #FFF;
+    font-size: 2rem;
+    padding: 10px 15px 5px; // Typefix
+    border: none;
+    text-transform: uppercase;
+    width: 22.5rem;
+`
+
+const ButtonInvert = styled.button `
+    flex: 1 1 100%;
+    background: #FFF;
+    color: #199BAA;
+    font-size: 2rem;
+    padding: 10px 15px 5px; // Typefix
+    border: 2.5px solid #199BAA;
+    text-transform: uppercase;
+    width: 22.5rem;
+`
+
+const ButtonLink = styled(Link) `
+    text-decoration: none;
+    
+`
+
+
 const MyMapComponent = compose(
     withProps({
       googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBYL3QlXrvdys93ouvBz1V5RqzFTpz0WUk",
@@ -296,13 +377,19 @@ const MyMapComponent = compose(
       defaultCenter={{ lat: 54.5869451, lng: -5.93 }}
       defaultOptions={{ styles: exampleMapStyles }}
     >
-      {props.isMarkerShown && <Marker position={{ lat: 54.5869451, lng: -5.9367179 }} />}
+    {/* <Marker 
+        position={{ lat: 54.5869451, lng: -5.93 }} 
+        // defaultIcon={'../images/mapPin.png'}
+      /> */}
+        {props.isMarkerShown && 
+
+            <Marker 
+                position={{ lat: 54.5869451, lng: -5.9367179 }} 
+                icon={markerLanyon}
+            />
+        }
     </GoogleMap>
   );
-
-const onSubmit = async values => {
-    window.alert(JSON.stringify(values, 0, 2))
-}
 
 const ContactPage = (props) => (
 
@@ -320,7 +407,26 @@ const ContactPage = (props) => (
             </Container>
         </Section>
         <Section>
-            <MyMapComponent isMarkerShown />
+            <MapWrapper>
+                <MapContainer>
+                    <MyMapComponent isMarkerShown />
+                </MapContainer>
+                    <ContactDetailsContainer>
+                        <ContactDetails>
+                            <ContactContainer>
+                                <AddressText>Lanyon<br />8 Upper Crescent<br />Belfast<br />BT7 1NT</AddressText>
+                            </ContactContainer>
+                            <ContactContainer>
+                            <ButtonLink>
+                                <Button>028 9018 3242</Button>
+                            </ButtonLink>
+                                <ButtonLink>
+                                    <ButtonInvert>View directions</ButtonInvert>
+                                </ButtonLink>
+                            </ContactContainer>
+                        </ContactDetails>
+                    </ContactDetailsContainer>
+            </MapWrapper>
         </Section>
         <Section>
             <Container>
