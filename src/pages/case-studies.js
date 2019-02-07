@@ -177,9 +177,7 @@ const CaseStudies = (props) => (
             <CenterThreeContainer>
                 <SectionTitleTop>Case Studies</SectionTitleTop>
                 <Paragraph>
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin. Burgdoggen pastrami ball tip chuck jerky. Short ribs filet mignon turkey, pork belly ball tip bacon leberkas beef ribs pork loin.
-                <br /><br />
-                Sample content in here Bacon ipsum dolor amet tail shank tenderloin buffalo, flank bresaola tri-tip ham pork chop. Strip steak pig turducken flank drumstick short ribs boudin ham tenderloin.
+                    At Lanyon, we are proud to work with a large and varied portfolio of leading organisations across a wide spectrum of sectors and industries. This section provides and overview of just some of the many successful client projects we have delivered in recent months. 
                 </Paragraph>
             </CenterThreeContainer>
             </Container>
@@ -192,7 +190,7 @@ const CaseStudies = (props) => (
                             <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
                         </ThreeColumnImgContainer>
                         <ThreeColumnTextContainer>
-                            <CaseStudyTitle>MIPIM Belfast 2018</CaseStudyTitle>
+                            <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
                             <CaseStudyMainBrief>Position Belfast for investment on a global stage</CaseStudyMainBrief>
                         </ThreeColumnTextContainer>
                     </ThreeColumnContainer>
@@ -201,7 +199,7 @@ const CaseStudies = (props) => (
                             <CaseStudyImg fluid={props.data.INCover.childImageSharp.fluid} />
                         </ThreeColumnImgContainer>
                         <ThreeColumnTextContainer>
-                            <CaseStudyTitle>Innovation Nation 2018</CaseStudyTitle>
+                            <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
                             <CaseStudyMainBrief>End-to-end Event Management</CaseStudyMainBrief>
                         </ThreeColumnTextContainer>
                     </ThreeColumnContainer>
@@ -210,7 +208,7 @@ const CaseStudies = (props) => (
                             <CaseStudyImg fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
                         </ThreeColumnImgContainer>
                         <ThreeColumnTextContainer>
-                            <CaseStudyTitle>NI Market Outlook 2018</CaseStudyTitle>
+                            <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
                             <CaseStudyMainBrief>Event Design, Management &amp; Delivery</CaseStudyMainBrief>
                         </ThreeColumnTextContainer>
                     </ThreeColumnContainer>

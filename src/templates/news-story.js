@@ -11,8 +11,9 @@ import media from "styled-media-query";
 
 // To consolodate 
 
-const HeroImg = styled("img") `
+const HeroImg = styled(Img) `
     width: 100%;
+    height: 100%;
     z-index: -1;
     position: fixed;
 `
@@ -161,8 +162,9 @@ const FeaturedImageContainer = styled.div `
     align-items: center;
 `
 
-const FeaturedImage = styled("img") `
+const FeaturedImage = styled(Img) `
     width: 100%;
+    height: 100%;
 `
 
 const FeaturedImageCaption = styled.div `
@@ -190,7 +192,8 @@ const NewsStory = (props) => {
 
     const QuoteData = body.PrismicNewsStoryBodyQuote
     
-    const headline_image = props.data.prismicNewsStory.data.headline_image.url
+    const headline_image = props.data.prismicNewsStory.data.headline_image.localFile.childImageSharp.fluid
+    const featured_image = body.PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid
     const title = props.data.prismicNewsStory.data.title.text
     const main_content = props.data.prismicNewsStory.data.main_content.html
     // const published = props.data.prismicNewsStory.first_publication_date
@@ -219,7 +222,7 @@ const NewsStory = (props) => {
         <FontFace />
         <Nav />
         <HeroWrapper>
-            <HeroImg src={headline_image}/>
+            <HeroImg fluid={headline_image}/>
         </HeroWrapper>
         <Section>
             <Container>
@@ -236,7 +239,7 @@ const NewsStory = (props) => {
                                 {body.PrismicNewsStoryBodyFeaturedImage && (
                                     <FeaturedImageWrapper>
                                         <FeaturedImageContainer>
-                                            <FeaturedImage src={body.PrismicNewsStoryBodyFeaturedImage.featured_image.url} />
+                                            <FeaturedImage fluid={featured_image} />
                                         </FeaturedImageContainer>
                                         <FeaturedImageCaption>{body.PrismicNewsStoryBodyFeaturedImage.image_caption}</FeaturedImageCaption>
                                     </FeaturedImageWrapper>
@@ -282,8 +285,14 @@ export const query = graphql`
             data {
 
                 headline_image {
-                    url
-                }
+                    localFile {
+                      childImageSharp {
+                        fluid(maxWidth: 2500, maxHeight: 1200, quality: 60, cropFocus: ENTROPY) {
+                          src
+                        }
+                      }
+                    }
+                  }
 
                 title {
                     html
@@ -335,7 +344,13 @@ export const query = graphql`
                     ... on PrismicNewsStoryBodyFeaturedImage {
                         primary {
                             featured_image {
-                                url
+                              localFile {
+                                childImageSharp {
+                                  fluid(maxWidth: 1000, quality: 60, cropFocus: ENTROPY) {
+                                    src
+                                  }
+                                }
+                              }
                             }
                             image_caption
                         }

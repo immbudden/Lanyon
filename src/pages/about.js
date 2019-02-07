@@ -261,7 +261,7 @@ const AboutPage = (props) => (
                             width: "100%",
                             zIndex: 0,
                         }}
-                            fluid={props.data.GWImg.childImageSharp.fluid}
+                            fluid={props.data.KDImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
                         <PersonName>Katie Doran</PersonName>
@@ -272,11 +272,13 @@ const AboutPage = (props) => (
                             <Bold>Katie Doran</Bold><br />Co-Founder &amp; Partner
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                        With over 20 years’ experience in PR and corporate communications for a range of blue chip clients, Katie is one of the most experienced PR professionals in NI, specialising in stakeholder and investor relations, media relations and reputation management.
-                        <br /><br />
-                        Widely renowned as a leading expert in the property investment sectors, Katie demonstrates unparalleled knowledge, expertise and experience in working closely with institutional investors and investor developers across the office, retail, residential and mixed use sectors in the UK and Ireland. Her experience also spans a broad range of corporate clients across the financial, legal and health/life sciences sectors.   
-                        <br /><br />
-                        Katie sits on the Board of Catalyst Inc (formerly Northern Ireland Science Park) and is a member of the CBI’s Economic Affairs Committee in Northern Ireland.
+                            A founding partner of Lanyon, Katie Doran is one of the most experienced communications specialists in Northern Ireland. She has over twenty years’ experience advising many of Northern Ireland’s leading firms across a multitude of sectors. These include law and accounting firms, financial institutions, utilities, charities, technology companies and real estate investors. 
+                            <br /><br />
+                            She regularly acts as a strategic advisor to CEOs and C-Suite across a range of internal and external communication themes, including strategy, culture, leadership communications, stakeholder engagement and issues management.
+                            <br /><br />
+                            Katie has acted as a lead advisor on a number of high profile serious situation issues, and is regarded as a “go to” person for issues management in Northern Ireland.  She is also widely renowned for her knowledge of the real estate investment sector and placemaking and has unparalleled expertise and experience in working closely with institutional investors and developers across office, residential, mixed use and regeneration developments in the UK and Ireland.
+                            <br /><br />
+                            Katie is a member of the Connect Leadership Team at Catalyst Inc, the Communications Leadership Group at Business in the Community, and she also sits on the CBI Economic Affairs Committee in NI.
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
@@ -328,31 +330,13 @@ const AboutPage = (props) => (
                             <Bold>David Elliot</Bold><br />Senior Client Director
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                        Over 17 years' experience as a business and financial journalist and editor with Belfast Telegraph, Ulster Business and Dow Jones Newswires.
-                        </PersonIntroBottom>
-                    </PersonIntro>
-                </PersonContainer>
-                <PersonContainer>
-                    <PersonImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: 0,
-                        }}
-                            fluid={props.data.MJImg.childImageSharp.fluid}
-                    />
-                    <PersonInfoWrapper>
-                        <PersonName>Matthew Jeffrey</PersonName>
-                        <PersonTitle>Associate</PersonTitle>
-                    </PersonInfoWrapper>
-                    <PersonIntro>
-                        <PersonIntroTop>
-                            <Bold>Matthew Jeffrey</Bold><br />Associate
-                        </PersonIntroTop>
-                        <PersonIntroBottom>
-                        Upon graduating from QUB, Matthew joined Lanyon in 2015 and has a particular focus on PR &amp; media engagement, design and events management.
+                            As a former business and financial journalist with over 17-years’ experience, David brings his content development, writing and media experience to bear for clients ranging from professional services, technology, financial services, education, energy, real estate and agri-food.
+                            <br /><br />
+                            David has an unapparelled global media contact base which gives Lanyon clients a distinct advantage when reaching international audiences.  He is an expert at making the complex simple given his innate ability in tackling complicated subject matter and simplifying to reach wider audiences.
+                            <br /><br />
+                            Starting his career in the agri-food sector, David moved to London to work for Dow Jones Newswires for eight years, progressing to news editor for energy market, contributing daily to the Wall Street Journal and appearing regularly on financial news channel CNBC. After moving back to Northern Ireland, David worked as Group Business Editor at The Belfast Telegraph and editor of Ulster Business magazine, while also presenting twice-daily business news slots for Downtown Radio and Cool FM and as a freelance contributor to publications ranging from BBC to The Wall Street Journal.
+                            <br /><br />
+                            David sits on the board of Crimestoppers Northern Ireland.
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
@@ -377,6 +361,30 @@ const AboutPage = (props) => (
                         </PersonIntroTop>
                         <PersonIntroBottom>
                         Gavin joined the Lanyon team in January 2016. He holds a first-class honours degree in Marketing and is an Accredited CIPR PR Practitioner. 
+                        </PersonIntroBottom>
+                    </PersonIntro>
+                </PersonContainer>
+                <PersonContainer>
+                    <PersonImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: 0,
+                        }}
+                            fluid={props.data.MJImg.childImageSharp.fluid}
+                    />
+                    <PersonInfoWrapper>
+                        <PersonName>Matthew Jeffrey</PersonName>
+                        <PersonTitle>Associate</PersonTitle>
+                    </PersonInfoWrapper>
+                    <PersonIntro>
+                        <PersonIntroTop>
+                            <Bold>Matthew Jeffrey</Bold><br />Associate
+                        </PersonIntroTop>
+                        <PersonIntroBottom>
+                        Upon graduating from QUB, Matthew joined Lanyon in 2015 and has a particular focus on PR &amp; media engagement, design and events management.
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
@@ -424,7 +432,7 @@ const AboutPage = (props) => (
                             <Bold>Rachel Price</Bold><br />Client Team Support
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                        Upon graduating from the University of Reading Rachel secured an internship with Lanyon, where she is gaining experience in all aspects of PR and communications. 
+                            §Upon graduating from the University of Reading Rachel secured an internship with Lanyon, where she is gaining experience in all aspects of PR and communications. 
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
@@ -508,6 +516,14 @@ export const query = graphql`
             aboutHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500, maxHeight: 1100 ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            KDImg: file(relativePath: { eq: "people/KD.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

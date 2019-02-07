@@ -195,6 +195,13 @@ const ServiceTitle = styled.h3 `
     font-weight: 100;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 2.5rem;
+`
+
+const ServiceList = styled.ul `
+    font-size: 2rem;
+    color: #222;
+    font-weight: 100;
 `
 
 const Slide = styled.div `
@@ -336,51 +343,88 @@ const IndexPage = (props) => (
                 fluid={props.data.homeHeroImg.childImageSharp.fluid} />
             <HeaderContainer>
                 <HeadingTextContainer>
-                    <HeadingOne>Short snappy headline here.</HeadingOne>
-                    <HeadingTwo>Supporting strapline in here to add more weight to headline.</HeadingTwo>
+                    <HeadingOne>Strategic communication</HeadingOne>
+                    <HeadingTwo>Helping organisations in here to add more weight to headline word word word word</HeadingTwo>
                 </HeadingTextContainer>
             </HeaderContainer>
         </HeaderWrapper>
         <Section id="services">
             <Container>
                 <SectionTitle>Our Services</SectionTitle>
-                <SectionIntro>One paragraph in here to introduce ourselves, give a little bit more information about who we are and tell visitors what we do. This paragraph should briefly describe the key pillars of the business which will be below in icons. This should be no longer than 280 characters.</SectionIntro>
                 <ServiceWrapper>
                     <ServiceContainer>
                         <IconContainer>
                             <ServiceIcon fluid={props.data.MarketIntelligenceIcon.childImageSharp.fluid} />
                             </IconContainer>
                         <ServiceTitle>Market Intelligence</ServiceTitle>
+                        <ServiceList>
+                            <li>Stakeholder Engagement and Relationship Management</li>
+                            <li>Business development support</li>
+                            <li>Market insight</li>
+                            <li>Media and competitor monitoring</li>
+                        </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
                         <IconContainer>
                             <ServiceIcon fluid={props.data.CorporatePositioningIcon.childImageSharp.fluid} />
                         </IconContainer>
                         <ServiceTitle>Corporate Positioning</ServiceTitle>
+                        <ServiceList>
+                            <li>PR and media relations</li>
+                            <li>Corporate messaging development</li>
+                            <li>Market positioning for investment</li>
+                            <li>Destination and place making communications</li>
+                            <li>Media and presentation skills training</li>
+                        </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
                         <IconContainer>
                             <ServiceIcon fluid={props.data.EngagementIcon.childImageSharp.fluid} />
                         </IconContainer>
                         <ServiceTitle>Culture and Engagement</ServiceTitle>
+                        <ServiceList>
+                            <li>Internal communications strategy and delivery</li>
+                            <li>Employee engagement initiatives (surveys, focus groups etc.)</li>
+                            <li>Internal workshop facilitation</li>
+                            <li>Change management communications</li>
+                        </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
                         <IconContainer>
                             <ServiceIcon fluid={props.data.DigitalIcon.childImageSharp.fluid} />
                         </IconContainer>
                         <ServiceTitle>Digital and Content</ServiceTitle>
+                        <ServiceList>
+                            <li>Digital media strategy and management</li>
+                            <li>Video production</li>
+                            <li>Graphic design</li>
+                            <li>Web development</li>
+                        </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
                         <IconContainer>
                             <ServiceIcon fluid={props.data.CrisisIcon.childImageSharp.fluid} />
                         </IconContainer>
                         <ServiceTitle>Crisis and Issue Management</ServiceTitle>
+                        <ServiceList>
+                            <li>Proactive crisis communications planning</li>
+                            <li>Reactive crisis communications management</li>
+                            <li>Reputation management</li>
+                            <li>24/7 press office</li>
+                        </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
                         <IconContainer>
                             <ServiceIcon fluid={props.data.EventIcon.childImageSharp.fluid} />
                         </IconContainer>
                             <ServiceTitle>Conferences and Events</ServiceTitle>
+                            <ServiceList>
+                                <li>Event strategy and end-to-end delivery</li>
+                                <li>Local and international conference management</li>
+                                <li>Content strategy and curation</li>
+                                <li>Speaker management</li>
+                                <li>Sponsorship management</li>
+                            </ServiceList>
                     </ServiceContainer>
                 </ServiceWrapper>
             </Container>

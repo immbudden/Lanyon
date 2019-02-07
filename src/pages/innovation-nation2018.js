@@ -353,7 +353,7 @@ const CaseStudyIN = (props) => (
             <Container>
                 <CaseStudyIntroWrapper>
                     <CaseStudyIntroContainer>
-                        <SectionTitleLeft>Innovation Nation 2018</SectionTitleLeft> {/* get from index */}
+                        <SectionTitleLeft>Innovation Nation</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>Event &amp; programme management <br />Sponsorship management<br />PR &amp; Communications</InfoText>

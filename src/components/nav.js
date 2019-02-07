@@ -104,7 +104,7 @@ const Nav = ({ data }) => (
                         <NavLink to="#services">
                             Our Services
                         </NavLink>
-                        <NavLink to="#caseStudies">
+                        <NavLink to="/case-studies/">
                             Case Studies
                         </NavLink>
                         <NavLink to="/news/">

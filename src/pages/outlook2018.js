@@ -361,7 +361,7 @@ const CaseStudyOutlook = (props) => (
             <Container>
                 <CaseStudyIntroWrapper>
                     <CaseStudyIntroContainer>
-                        <SectionTitleLeft>NI Market Outlook 2018</SectionTitleLeft> {/* get from index */}
+                        <SectionTitleLeft>NI Market Outlook</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>

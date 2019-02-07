@@ -213,7 +213,7 @@ const renderItem = (node, props) => {
                 <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
                 <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
                 <NewsStoryMeta>
-                    <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{node.data.author.document[0].data.author_name.text}</Author>
+                    <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.html}</Category> &nbsp; &nbsp; <Author>{node.data.author.document[0].data.author_name.text}</Author>
                 </NewsStoryMeta>
             </NewsStoryTextContainer>
         </NewsStoryContainer>

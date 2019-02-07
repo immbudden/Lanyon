@@ -361,7 +361,7 @@ const CaseStudyMIPIM = (props) => (
             <Container>
                 <CaseStudyIntroWrapper>
                     <CaseStudyIntroContainer>
-                        <SectionTitleLeft>Belfast MIPIM 2018 </SectionTitleLeft> {/* get from index */}
+                        <SectionTitleLeft>Belfast MIPIM</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>

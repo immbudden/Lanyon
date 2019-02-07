@@ -402,7 +402,7 @@ const ContactPage = (props) => (
             <CenterThreeContainer>
                 <SectionTitleTop>Get in touch</SectionTitleTop>
                 <SectionParagraph>
-                    At Lanyon we know how to spread the word about the great work your company is doing to a wider audience. Drop us a line or give us a call to hear how we can help you.
+                    At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our partners today.
                 </SectionParagraph>
             </CenterThreeContainer>
             </Container>
@@ -436,7 +436,7 @@ const ContactPage = (props) => (
                 <LeftTwoContainer>
                     <SectionTitleLeft>How can we help you?</SectionTitleLeft>
                     <SectionParagraph>
-                        One short paragraph in here which would briefly ask if the user is looking for support for a similar project, if so - we’d love to talk about it and see if there was a way to collaborate.  This paragraph should be no longer than three lines in total.
+                        If you would prefer to get in touch via email, please fill in the contact form and one of our partners will contact you directly. 
                     </SectionParagraph>
                 </LeftTwoContainer>
                 <LeftTwoContainer>
