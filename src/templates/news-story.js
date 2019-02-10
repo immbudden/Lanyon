@@ -236,7 +236,7 @@ const NewsStory = (props) => {
                         </NewsStoryMetaContainer>
                         <NewsStoryTextContainer>
                                 <NewsStoryText dangerouslySetInnerHTML={{ __html: main_content }} />
-                                {body.PrismicNewsStoryBodyFeaturedImage && (
+                                {featured_image && (
                                     <FeaturedImageWrapper>
                                         <FeaturedImageContainer>
                                             <FeaturedImage fluid={featured_image} />
