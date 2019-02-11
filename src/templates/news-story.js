@@ -11,7 +11,14 @@ import media from "styled-media-query";
 
 // To consolodate 
 
-const HeroImg = styled(Img) `
+// const HeroImg = styled(Img) `
+//     width: 100%;
+//     height: 100%;
+//     z-index: -1;
+//     position: fixed;
+// `
+
+const HeroImg = styled("img") `
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -162,7 +169,12 @@ const FeaturedImageContainer = styled.div `
     align-items: center;
 `
 
-const FeaturedImage = styled(Img) `
+// const FeaturedImage = styled(Img) `
+//     width: 100%;
+//     height: 100%;
+// `
+
+const FeaturedImage = styled("img") `
     width: 100%;
     height: 100%;
 `
@@ -191,9 +203,13 @@ const NewsStory = (props) => {
     console.log(body)
 
     const QuoteData = body.PrismicNewsStoryBodyQuote
-    
-    const headline_image = props.data.prismicNewsStory.data.headline_image.localFile.childImageSharp.fluid
-    const featured_image = body.PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid
+    // Image Plugins
+    // const headline_image = props.data.prismicNewsStory.data.headline_image.localFile.childImageSharp.fluid
+    // const featured_image = body.PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid
+    const headline_image = props.data.prismicNewsStory.data.headline_image.url
+    const featured_image = body.PrismicNewsStoryBodyFeaturedImage.featured_image.url
+
+
     const title = props.data.prismicNewsStory.data.title.text
     const main_content = props.data.prismicNewsStory.data.main_content.html
     // const published = props.data.prismicNewsStory.first_publication_date
@@ -222,7 +238,8 @@ const NewsStory = (props) => {
         <FontFace />
         <Nav />
         <HeroWrapper>
-            <HeroImg fluid={headline_image}/>
+            {/* <HeroImg fluid={headline_image}/> */}
+            <HeroImg src={headline_image}/>
         </HeroWrapper>
         <Section>
             <Container>
@@ -236,10 +253,11 @@ const NewsStory = (props) => {
                         </NewsStoryMetaContainer>
                         <NewsStoryTextContainer>
                                 <NewsStoryText dangerouslySetInnerHTML={{ __html: main_content }} />
-                                {featured_image && (
+                                {body.PrismicNewsStoryBodyFeaturedImage.featured_image.localFile && (
                                     <FeaturedImageWrapper>
                                         <FeaturedImageContainer>
-                                            <FeaturedImage fluid={featured_image} />
+                                            {/* <FeaturedImage fluid={featured_image} /> */}
+                                            <FeaturedImage src={featured_image} />
                                         </FeaturedImageContainer>
                                         <FeaturedImageCaption>{body.PrismicNewsStoryBodyFeaturedImage.image_caption}</FeaturedImageCaption>
                                     </FeaturedImageWrapper>
@@ -285,6 +303,7 @@ export const query = graphql`
             data {
 
                 headline_image {
+                    url
                     localFile {
                       childImageSharp {
                         fluid(maxWidth: 2500, maxHeight: 1200, quality: 60, cropFocus: ENTROPY) {
@@ -344,13 +363,14 @@ export const query = graphql`
                     ... on PrismicNewsStoryBodyFeaturedImage {
                         primary {
                             featured_image {
-                              localFile {
-                                childImageSharp {
-                                  fluid(maxWidth: 1000, quality: 60, cropFocus: ENTROPY) {
-                                    src
-                                  }
+                                url
+                                localFile {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1000, quality: 60, cropFocus: ENTROPY) {
+                                            src
+                                        }
+                                    }
                                 }
-                              }
                             }
                             image_caption
                         }
