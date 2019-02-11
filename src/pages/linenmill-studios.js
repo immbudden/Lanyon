@@ -66,6 +66,7 @@ const CaseStudyTitle = styled.h2 `
     font-weight: 100;
     margin: 0 auto;
     text-align: center;
+    text-shadow: 2px 2px 8px rgba(34,34,34,0.5);
 
     ${media.lessThan("large")`
         font-size: 7.5rem;
@@ -270,6 +271,11 @@ const SectionImg = styled(Img) `
     height: 50vh;
 `
 
+const Url = styled(Link) `
+    text-decoration: none;
+    width: 100%;
+`
+
 const CaseStudyLinenMill = (props) => (
 
     <div>
@@ -417,62 +423,71 @@ const CaseStudyLinenMill = (props) => (
             </Container>
         </Section>
         <Section>
-            <Carousel>
+            <Carousel edgeEasing="easeQuadInOut" edgeEasing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true}>
                 <Slide>
-                    <SlideImg 
-                    style={{
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                        width: "100%",
-                        zIndex: -1,
-                    }}
-                    fluid={props.data.SSCover.childImageSharp.fluid} />
-                    <Container>
-                            <CaseStudyTitle>STATSports</CaseStudyTitle>
-                    </Container>
+                    <Url to="/statsports/">
+                        <SlideImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: -1,
+                        }}
+                        fluid={props.data.SSCover.childImageSharp.fluid} />
+                        <Container>
+                                <CaseStudyTitle>STATSports</CaseStudyTitle>
+                        </Container>
+                    </Url>
                 </Slide>
                 <Slide>
-                    <SlideImg 
-                    style={{
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                        width: "100%",
-                        zIndex: -1,
-                    }}
-                    fluid={props.data.INCover.childImageSharp.fluid} />
-                    <Container>
-                            <CaseStudyTitle>Innovation Nation 2018</CaseStudyTitle>
-                    </Container>
+                    <Url to="/mipim2018/">
+                        <SlideImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: -1,
+                        }}
+                        fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                        <Container>
+                                <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
+                        </Container>
+                    </Url>
                 </Slide>
                 <Slide>
-                    <SlideImg 
-                    style={{
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                        width: "100%",
-                        zIndex: -1,
-                    }}
-                    fluid={props.data.MIPIMCover.childImageSharp.fluid} />
-                    <Container>
-                            <CaseStudyTitle>MIPIM Belfast 2018</CaseStudyTitle>
-                    </Container>
+                    <Url to="/innovation-nation2018/">
+                        <SlideImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: -1,
+                        }}
+                        fluid={props.data.INCover.childImageSharp.fluid} />
+                        <Container>
+                                <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
+                        </Container>
+                    </Url>
                 </Slide>
+                
                 <Slide>
-                    <SlideImg 
-                    style={{
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                        width: "100%",
-                        zIndex: -1,
-                    }}
-                    fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                    <Container>
-                            <CaseStudyTitle>NI Market Outlook 2018</CaseStudyTitle>
-                    </Container>
+                    <Url to="/outlook2018/">
+                        <SlideImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: -1,
+                        }}
+                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                        <Container>
+                                <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
+                        </Container>
+                    </Url>
                 </Slide>
             </Carousel>
         </Section>

@@ -167,6 +167,11 @@ const CaseStudyMainBrief = styled.h4 `
     
 `
 
+const Url = styled(Link) `
+    text-decoration: none;
+    width: 100%;
+`
+
 const CaseStudies = (props) => (
 
     <div>
@@ -185,51 +190,67 @@ const CaseStudies = (props) => (
         <Section>
             <NoTopContainer>
                <ColumnWrapper>
+
                     <ThreeColumnContainer>
-                        <ThreeColumnImgContainer>
-                            <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
-                        </ThreeColumnImgContainer>
-                        <ThreeColumnTextContainer>
-                            <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
-                            <CaseStudyMainBrief>Position Belfast for investment on a global stage</CaseStudyMainBrief>
-                        </ThreeColumnTextContainer>
+                        <Url to="/mipim2018/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
+                                <CaseStudyMainBrief>Position Belfast for investment on a global stage</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
                     </ThreeColumnContainer>
+
                     <ThreeColumnContainer>
-                        <ThreeColumnImgContainer>
-                            <CaseStudyImg fluid={props.data.INCover.childImageSharp.fluid} />
-                        </ThreeColumnImgContainer>
-                        <ThreeColumnTextContainer>
-                            <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
-                            <CaseStudyMainBrief>End-to-end Event Management</CaseStudyMainBrief>
-                        </ThreeColumnTextContainer>
+                        <Url to="/innovation-nation2018/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.INCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
+                                <CaseStudyMainBrief>End-to-end Event Management</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
                     </ThreeColumnContainer>
+
                     <ThreeColumnContainer>
-                        <ThreeColumnImgContainer>
-                            <CaseStudyImg fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                        </ThreeColumnImgContainer>
-                        <ThreeColumnTextContainer>
-                            <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
-                            <CaseStudyMainBrief>Event Design, Management &amp; Delivery</CaseStudyMainBrief>
-                        </ThreeColumnTextContainer>
+                        <Url to="/outlook2018/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
+                                <CaseStudyMainBrief>Event Design, Management &amp; Delivery</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
                     </ThreeColumnContainer>
+
                     <ThreeColumnContainer>
-                        <ThreeColumnImgContainer>
-                            <CaseStudyImg fluid={props.data.LMCover.childImageSharp.fluid} />
-                        </ThreeColumnImgContainer>
-                        <ThreeColumnTextContainer>
-                            <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
-                            <CaseStudyMainBrief>Brief point</CaseStudyMainBrief>
-                        </ThreeColumnTextContainer>
+                        <Url to="/linenmill-studios/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.LMCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
+                                <CaseStudyMainBrief>Brief point</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
                     </ThreeColumnContainer>
+
                     <ThreeColumnContainer>
-                        <ThreeColumnImgContainer>
-                            <CaseStudyImg fluid={props.data.SSCover.childImageSharp.fluid} />
-                        </ThreeColumnImgContainer>
-                        <ThreeColumnTextContainer>
-                            <CaseStudyTitle>STATSports</CaseStudyTitle>
-                            <CaseStudyMainBrief>Brief point</CaseStudyMainBrief>
-                        </ThreeColumnTextContainer>
+                        <Url to="/statsports/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.SSCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>STATSports</CaseStudyTitle>
+                                <CaseStudyMainBrief>Brief point</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
                     </ThreeColumnContainer>
+
                     <ThreeColumnContainer>
                         
                     </ThreeColumnContainer>
