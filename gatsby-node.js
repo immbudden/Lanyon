@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
           if (result.errors) {
             reject(result.errors)
           }
-          console.log(result)
+          // console.log(result)
           // Create pages for each markdown file.
           result.data.allPrismicNewsStory.edges.forEach(({ node }) => {
             const path = node.uid

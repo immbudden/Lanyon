@@ -8,6 +8,8 @@ import HeroWrapper from '../components/heroWrapper'
 import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
+import get from "lodash.get"
+import Truncate from 'react-truncate';
 
 // To consolodate 
 
@@ -48,7 +50,7 @@ const HeadlineNewsStoryImgContainer = styled.div `
     overflow: hidden;
 `
 
-const NewsStoryFeaturedImg = styled('img') `
+const NewsStoryFeaturedImg = styled(Img) `
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -132,9 +134,9 @@ const NewsStoryImgContainer = styled.a `
 const NewsStoryTextContainer = styled.div ` 
     display: flex;
     flex: 1 1 100%;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    flex-flow: row wrap;
+    
     background: #FFF;
     margin-top: 5rem;
 `
@@ -173,9 +175,8 @@ const NewsStoriesWrapper = styled.div `
 const NewsStoryContainer = styled.div `
     display: flex;
     flex: 1 1 23.125%;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    flex-flow: row wrap;
     margin-right: 2.5%;
     margin-bottom: 7.5rem;
 
@@ -192,8 +193,16 @@ const ViewMore = styled(Link) `
     text-transform: uppercase;
 `
 
+const TruncateBlank = styled(Truncate) `
+    flex: 1 1 100%;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 100;
+    margin-bottom: 5rem;
+`
+
 const renderItem = (node, props) => {
-    console.log(node)
+    // console.log(node)
 
     const body = node.data.body.reduce((object, item) => ({
         ...object,
@@ -202,16 +211,20 @@ const renderItem = (node, props) => {
 
     console.log({body})
 
+    const featured_image = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
     return (
         <NewsStoryContainer key={node.uid}>
-            {body.PrismicNewsStoryBodyFeaturedImage && (
+            {featured_image && (
                 <NewsStoryImgContainer href={`/news/${node.uid}`}>
-                    <NewsStoryFeaturedImg src={body.PrismicNewsStoryBodyFeaturedImage.featured_image.url} />
+                    <NewsStoryFeaturedImg fluid={featured_image} />
                 </NewsStoryImgContainer>
             )}
             <NewsStoryTextContainer>
                 <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
-                <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
+                <TruncateBlank lines={3} ellipsis={<span>...</span>}>
+                    <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
+                </TruncateBlank>
                 <NewsStoryMeta>
                     <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.html}</Category> &nbsp; &nbsp; <Author>{node.data.author.document[0].data.author_name.text}</Author>
                 </NewsStoryMeta>
@@ -322,11 +335,19 @@ export const query = graphql`
                   body {
                     __typename
                     ... on PrismicNewsStoryBodyFeaturedImage {
-                      primary {
-                        featured_image {
-                          url
+                        primary {
+                            featured_image {
+                                url
+                                localFile {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1000, quality: 60, cropFocus: ENTROPY) {
+                                            src
+                                            aspectRatio
+                                        }
+                                    }
+                                }
+                            }
                         }
-                      }
                     }
                   }
 
