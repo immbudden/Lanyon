@@ -537,11 +537,11 @@ const IndexPage = (props) => (
                                     width: "100%",
                                     zIndex: -1,
                                 }}
-                                    fluid={props.data.newsPlaceholder.childImageSharp.fluid}
+                                    fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid}
                             />
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>19 JAN 2018 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
-                                <LatestNewsStoryHeadline>News headline 1 will go right in here to grab attention</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta>4 February 2019 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>Three New Zealand Super Rugby teams sign up to use STATSport’s GPS tracking technology</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory>
@@ -553,11 +553,11 @@ const IndexPage = (props) => (
                                     width: "100%",
                                     zIndex: -1,
                                 }}
-                                    fluid={props.data.newsPlaceholder.childImageSharp.fluid}
+                                    fluid={props.data.NewsStoryPlaceholderImg2.childImageSharp.fluid}
                             />
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>19 JAN 2018 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
-                                <LatestNewsStoryHeadline>News headline 2 will go right in here to grab attention</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta>14 January 2019 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>Digital DNA Awards: Bloomberg exec Tony McManus named on international judging panel</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory>
@@ -569,11 +569,11 @@ const IndexPage = (props) => (
                                     width: "100%",
                                     zIndex: -1,
                                 }}
-                                    fluid={props.data.newsPlaceholder.childImageSharp.fluid}
+                                    fluid={props.data.NewsStoryPlaceholderImg3.childImageSharp.fluid}
                             />
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>19 JAN 2018 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
-                                <LatestNewsStoryHeadline>News headline 3 will go right in here to grab attention</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta>10 December 2018  &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>Kings Hall Health and Wellbeing Park to boost economy by £47m a year and support 640 jobs</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory>
@@ -585,11 +585,11 @@ const IndexPage = (props) => (
                                     width: "100%",
                                     zIndex: -1,
                                 }}
-                                    fluid={props.data.newsPlaceholder.childImageSharp.fluid}
+                                    fluid={props.data.NewsStoryPlaceholderImg4.childImageSharp.fluid}
                             />
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>19 JAN 2018 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
-                                <LatestNewsStoryHeadline>News headline 4 will go right in here to grab attention</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta>3 December 2018 &nbsp; | &nbsp; Matthew Jeffrey</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>Grade-A office development in Belfast city centre leading the way in technology</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <Button>More Stories</Button>
@@ -740,9 +740,30 @@ export const query = graphql`
                 }
             }
 
-            newsPlaceholder: file(relativePath: { eq: "placeholders/NewsPlaceholder.jpg" }) {
+            NewsStoryPlaceholderImg: file(relativePath: { eq: "placeholders/StatSportsNews.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 750) {
+                    fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            NewsStoryPlaceholderImg2: file(relativePath: { eq: "placeholders/DigitalDNANews.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            NewsStoryPlaceholderImg3: file(relativePath: { eq: "placeholders/KingsNews.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            NewsStoryPlaceholderImg4: file(relativePath: { eq: "placeholders/GradeANews.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

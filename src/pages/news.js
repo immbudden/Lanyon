@@ -174,7 +174,7 @@ const NewsStoriesWrapper = styled.div `
 
 const NewsStoryContainer = styled.div `
     display: flex;
-    flex: 1 1 23.125%;
+    flex: 0 0 23.125%;
     flex-direction: column;
     justify-content: flex-start;
     margin-right: 2.5%;
@@ -191,6 +191,10 @@ const ViewMore = styled(Link) `
     font-weight: 400;
     text-underline-position: under;
     text-transform: uppercase;
+`
+
+const NewsLink = styled(Link) `
+    text-decoration: none;
 `
 
 const TruncateBlank = styled(Truncate) `
@@ -245,15 +249,18 @@ const NewsPage = (props) => {
 
         <Section>
             <HeadlineNewsStoryWrapper>
+                
                 <HeadlineNewsStoryImgContainer>
+                    {/* <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} /> */}
                     <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} />
                 </HeadlineNewsStoryImgContainer>
+                
                 <HeadlineNewsStoryTextWrapper>
                     <HeadlineNewsStoryTextContainer>
-                        <HeadlineNewsStoryTitle>The big headline goes in here and should be striking</HeadlineNewsStoryTitle>
-                        <HeadlineNewsStoryShortDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</HeadlineNewsStoryShortDescription>
+                        <HeadlineNewsStoryTitle>Three New Zealand Super Rugby teams sign up to use STATSport’s GPS tracking technology</HeadlineNewsStoryTitle>
+                        <HeadlineNewsStoryShortDescription>Three New Zealand Super Rugby teams have signed up to use STATSports’ World Rugby-approved sports monitoring technology.</HeadlineNewsStoryShortDescription>
                             <HeadlineNewsStoryMeta>
-                                <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
+                                <Date>4 February 2019</Date>&nbsp; &nbsp; <Author>David Elliott</Author>
                             </HeadlineNewsStoryMeta>
                     </HeadlineNewsStoryTextContainer>
                 </HeadlineNewsStoryTextWrapper>
@@ -268,10 +275,10 @@ const NewsPage = (props) => {
                             <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg2.childImageSharp.fluid} />
                         </NewsStoryImgContainer>
                         <NewsStoryTextContainer>
-                            <NewsStoryTitle>The second headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
+                            <NewsStoryTitle>Digital DNA Awards: Bloomberg exec Tony McManus named on international judging panel</NewsStoryTitle>
+                            <NewsStoryDescription>A leading executive in the global financial technology industry has been named as a judge in the Digital DNA Awards 2019, powered by MCS Group</NewsStoryDescription>
                                 <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
+                                <Date>14 January 2019</Date> &nbsp; &nbsp; <Author>David Elliott</Author>
                                 </NewsStoryMeta>
                         </NewsStoryTextContainer>
                     </SecondaryHeadlineStoryContainer>
@@ -281,10 +288,10 @@ const NewsPage = (props) => {
                             <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg3.childImageSharp.fluid} />
                         </NewsStoryImgContainer>
                         <NewsStoryTextContainer>
-                            <NewsStoryTitle>The third headline goes in here and should be striking</NewsStoryTitle>
-                            <NewsStoryDescription>Short intro to the story in here, this introduction should hook the viewer in and be no longer than 140 characters</NewsStoryDescription>
+                            <NewsStoryTitle>Kings Hall Health and Wellbeing Park to boost economy by £47m a year and support 640 jobs</NewsStoryTitle>
+                            <NewsStoryDescription>The Kings Hall Health and Wellbeing Park will boost the Northern Ireland economy by £47m annually and support 640 full time equivalent jobs</NewsStoryDescription>
                                 <NewsStoryMeta>
-                                    <Date>DD Month YYYY</Date> &nbsp; &nbsp; <Category>Category</Category> &nbsp; &nbsp; <Author>Author Name</Author>
+                                    <Date>10 December 2018</Date> &nbsp; &nbsp; <Author>David Elliott</Author>
                                 </NewsStoryMeta>
                         </NewsStoryTextContainer>
                     </SecondaryHeadlineStoryContainer>
@@ -385,23 +392,23 @@ export const query = graphql`
             }
         }
 
-        NewsStoryPlaceholderImg: file(relativePath: { eq: "placeholders/NewsPlaceholder.jpg" }) {
+        NewsStoryPlaceholderImg: file(relativePath: { eq: "placeholders/StatSportsNews.jpg" }) {
             childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
+                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
-        NewsStoryPlaceholderImg2: file(relativePath: { eq: "placeholders/NewsPlaceholder2.jpg" }) {
+        NewsStoryPlaceholderImg2: file(relativePath: { eq: "placeholders/DigitalDNANews.jpg" }) {
             childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
+                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
-        NewsStoryPlaceholderImg3: file(relativePath: { eq: "placeholders/NewsPlaceholder3.jpg" }) {
+        NewsStoryPlaceholderImg3: file(relativePath: { eq: "placeholders/KingsNews.jpg" }) {
             childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
+                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
                     ...GatsbyImageSharpFluid
                 }
             }
