@@ -48,6 +48,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
+
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-136265004-1',
+        cookieDomain: 'lanyongroup.com'
+      }
+    },
     
     {
       resolve: 'gatsby-source-prismic',

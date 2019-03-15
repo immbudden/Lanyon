@@ -315,7 +315,7 @@ const NewsPage = (props) => {
                         })}
                 </NewsStoriesWrapper>
 
-                <ViewMore>View More</ViewMore>
+                {/* <ViewMore>View More</ViewMore> */}
             </NoTopContainer>
         </Section>
 

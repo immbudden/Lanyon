@@ -592,7 +592,7 @@ const IndexPage = (props) => (
                                 <LatestNewsStoryHeadline>Grade-A office development in Belfast city centre leading the way in technology</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
-                        <Button>More Stories</Button>
+                        <Button href="/news/">More Stories</Button>
                     </LatestNewsContainer>
                 </LatestNewsWrapper>
             </Container>

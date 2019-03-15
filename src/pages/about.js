@@ -327,7 +327,7 @@ const AboutPage = (props) => (
                     </PersonInfoWrapper>
                     <PersonIntro>
                         <PersonIntroTop>
-                            <Bold>David Elliot</Bold><br />Senior Client Director
+                            <Bold>David Elliott</Bold><br />Senior Client Director
                         </PersonIntroTop>
                         <PersonIntroBottom>
                             As a former business and financial journalist with over 17-years’ experience, David brings his content development, writing and media experience to bear for clients ranging from professional services, technology, financial services, education, energy, real estate and agri-food.
