@@ -268,38 +268,6 @@ const NewsPage = (props) => {
         </Section>
 
         <Section>
-            <Container>
-                <SecondaryHeadlineStoriesWrapper>
-                    <SecondaryHeadlineStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg2.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>Digital DNA Awards: Bloomberg exec Tony McManus named on international judging panel</NewsStoryTitle>
-                            <NewsStoryDescription>A leading executive in the global financial technology industry has been named as a judge in the Digital DNA Awards 2019, powered by MCS Group</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                <Date>14 January 2019</Date> &nbsp; &nbsp; <Author>David Elliott</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </SecondaryHeadlineStoryContainer>
-                    
-                    <SecondaryHeadlineStoryContainer>
-                        <NewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg3.childImageSharp.fluid} />
-                        </NewsStoryImgContainer>
-                        <NewsStoryTextContainer>
-                            <NewsStoryTitle>Kings Hall Health and Wellbeing Park to boost economy by £47m a year and support 640 jobs</NewsStoryTitle>
-                            <NewsStoryDescription>The Kings Hall Health and Wellbeing Park will boost the Northern Ireland economy by £47m annually and support 640 full time equivalent jobs</NewsStoryDescription>
-                                <NewsStoryMeta>
-                                    <Date>10 December 2018</Date> &nbsp; &nbsp; <Author>David Elliott</Author>
-                                </NewsStoryMeta>
-                        </NewsStoryTextContainer>
-                    </SecondaryHeadlineStoryContainer>
-                </SecondaryHeadlineStoriesWrapper>
-            </Container>
-        </Section>
-
-        <Section>
             {/* <NewsNavWrapper>
                 <Container>
                     <NewsNavLink>All</NewsNavLink>
@@ -308,7 +276,7 @@ const NewsPage = (props) => {
                     <NewsNavLink>Thought Leadership</NewsNavLink>
                 </Container>
             </NewsNavWrapper> */}
-            <NoTopContainer>
+            <Container>
                 <NewsStoriesWrapper>
                         {newsList.edges.map(({ node }) => {
                             return renderItem(node, props)
@@ -316,7 +284,7 @@ const NewsPage = (props) => {
                 </NewsStoriesWrapper>
 
                 {/* <ViewMore>View More</ViewMore> */}
-            </NoTopContainer>
+            </Container>
         </Section>
 
         

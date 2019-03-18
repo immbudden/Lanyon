@@ -118,6 +118,7 @@ module.exports = {
         // This defaults to always return true.
         shouldNormalizeImage: ({ node, key, value }) => {
           // Return true to normalize the image or false to skip.
+          return true
         },
       },
     },
