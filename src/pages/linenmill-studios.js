@@ -10,6 +10,7 @@ import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import Carousel from 'nuka-carousel';
 import media from "styled-media-query";
+import CaseStudyCarousel from '../components/caseStudyCarousel';
 
 // To consolodate
 
@@ -422,74 +423,8 @@ const CaseStudyLinenMill = (props) => (
                 </CenterThreeContainer>
             </Container>
         </Section>
-        <Section>
-            <Carousel edgeEasing="easeQuadInOut" edgeEasing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true}>
-                <Slide>
-                    <Url to="/statsports/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.SSCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>STATSports</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-                <Slide>
-                    <Url to="/mipim2018/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.MIPIMCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-                <Slide>
-                    <Url to="/innovation-nation2018/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.INCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-                
-                <Slide>
-                    <Url to="/outlook2018/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-            </Carousel>
+        <Section id="caseStudies">
+            <CaseStudyCarousel />
         </Section>
         <NavMobile />
     </div>

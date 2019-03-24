@@ -432,11 +432,33 @@ const AboutPage = (props) => (
                             <Bold>Rachel Price</Bold><br />Client Team Support
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                            §Upon graduating from the University of Reading Rachel secured an internship with Lanyon, where she is gaining experience in all aspects of PR and communications. 
+                            Upon graduating from the University of Reading Rachel secured an internship with Lanyon, where she is gaining experience in all aspects of PR and communications. 
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
                 <PersonContainer>
+                    <PersonImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: 0,
+                        }}
+                            fluid={props.data.MBImg.childImageSharp.fluid}
+                    />
+                    <PersonInfoWrapper>
+                        <PersonName>Michael Budden</PersonName>
+                        <PersonTitle>Creative Director</PersonTitle>
+                    </PersonInfoWrapper>
+                    <PersonIntro>
+                        <PersonIntroTop>
+                            <Bold>Michael Budden</Bold><br />Creative Director
+                        </PersonIntroTop>
+                        <PersonIntroBottom>
+                            MB bio to go into here and will be roughly 200 characters long in total. 
+                        </PersonIntroBottom>
+                    </PersonIntro>
                 </PersonContainer>
 
             </PeopleContainer>
@@ -521,7 +543,7 @@ export const query = graphql`
                 }
             }
 
-            KDImg: file(relativePath: { eq: "people/KD.jpg" }) {
+            KDImg: file(relativePath: { eq: "people/KD-Warm.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -529,7 +551,7 @@ export const query = graphql`
                 }
             }
 
-            JIImg: file(relativePath: { eq: "people/JI.jpg" }) {
+            JIImg: file(relativePath: { eq: "people/JI-Warm.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -537,7 +559,7 @@ export const query = graphql`
                 }
             }
 
-            DEImg: file(relativePath: { eq: "people/DE.jpg" }) {
+            DEImg: file(relativePath: { eq: "people/DE-Warm.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -570,6 +592,14 @@ export const query = graphql`
             }
 
             RPImg: file(relativePath: { eq: "people/RP.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MBImg: file(relativePath: { eq: "people/MB-Warm.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid

@@ -192,37 +192,13 @@ const CaseStudies = (props) => (
                <ColumnWrapper>
 
                     <ThreeColumnContainer>
-                        <Url to="/mipim2018/">
+                        <Url to="/statsports/">
                             <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                                <CaseStudyImg fluid={props.data.SSCover.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
-                                <CaseStudyMainBrief>Position Belfast for investment on a global stage</CaseStudyMainBrief>
-                            </ThreeColumnTextContainer>
-                        </Url>
-                    </ThreeColumnContainer>
-
-                    <ThreeColumnContainer>
-                        <Url to="/innovation-nation2018/">
-                            <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.INCover.childImageSharp.fluid} />
-                            </ThreeColumnImgContainer>
-                            <ThreeColumnTextContainer>
-                                <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
-                                <CaseStudyMainBrief>End-to-end Event Management</CaseStudyMainBrief>
-                            </ThreeColumnTextContainer>
-                        </Url>
-                    </ThreeColumnContainer>
-
-                    <ThreeColumnContainer>
-                        <Url to="/outlook2018/">
-                            <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                            </ThreeColumnImgContainer>
-                            <ThreeColumnTextContainer>
-                                <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
-                                <CaseStudyMainBrief>Event Design, Management &amp; Delivery</CaseStudyMainBrief>
+                                <CaseStudyTitle>STATSports</CaseStudyTitle>
+                                <CaseStudyMainBrief>Brief point</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -240,13 +216,37 @@ const CaseStudies = (props) => (
                     </ThreeColumnContainer>
 
                     <ThreeColumnContainer>
-                        <Url to="/statsports/">
+                        <Url to="/mipim2018/">
                             <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.SSCover.childImageSharp.fluid} />
+                                <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>STATSports</CaseStudyTitle>
-                                <CaseStudyMainBrief>Brief point</CaseStudyMainBrief>
+                                <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
+                                <CaseStudyMainBrief>Position Belfast for investment on a global stage</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
+                    </ThreeColumnContainer>
+
+                    <ThreeColumnContainer>
+                        <Url to="/outlook2018/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
+                                <CaseStudyMainBrief>Event Design, Management &amp; Delivery</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
+                    </ThreeColumnContainer>
+
+                    <ThreeColumnContainer>
+                        <Url to="/innovation-nation2018/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.INCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
+                                <CaseStudyMainBrief>End-to-end Event Management</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>

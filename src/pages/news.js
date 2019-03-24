@@ -9,7 +9,7 @@ import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import get from "lodash.get"
-import Truncate from 'react-truncate';
+import TruncateMarkup from 'react-truncate-markup';
 
 // To consolodate 
 
@@ -34,16 +34,21 @@ const NoTopContainer = styled.div `
     flex-direction: column;
 `
 
-const HeadlineNewsStoryWrapper = styled.div `
+const FeaturedNewsStoryWrapper = styled(Link) `
     display: flex;
     flex: 1 1 100%;
     flex-direction: column;
     justify-content: flex-start;
     flex-flow: row wrap;
     padding-top: 7.5rem;
+    text-decoration: none;
+
+    &:visited {
+        color: #222;
+    }
 `
 
-const HeadlineNewsStoryImgContainer = styled.div `
+const FeaturedNewsStoryImgContainer = styled.div `
     flex: 1 1 57%;
     height: 50vh;
     position: relative;
@@ -56,7 +61,7 @@ const NewsStoryFeaturedImg = styled(Img) `
     object-fit: cover;
 `
 
-const HeadlineNewsStoryTextWrapper = styled.div `
+const FeaturedNewsStoryTextWrapper = styled.div `
     display: flex;
     flex: 1 1 43%; // Different from case studies (100%)
     flex-direction: column;
@@ -65,11 +70,13 @@ const HeadlineNewsStoryTextWrapper = styled.div `
     background: #FFF; // Different
 `
 
-const HeadlineNewsStoryTextContainer = styled.div ` 
+const FeaturedNewsStoryTextContainer = styled.div ` 
     padding: 0 5rem;
 `
 
-const HeadlineNewsStoryTitle = styled.h2 `
+//
+
+const FeaturedNewsStoryTitle = styled.h2 `
     flex: 0 0 100%;
     font-size: 5rem;
     color: #222;
@@ -77,7 +84,7 @@ const HeadlineNewsStoryTitle = styled.h2 `
     margin-bottom: 5rem;
 `
 
-const HeadlineNewsStoryShortDescription = styled.p `
+const FeaturedNewsStoryShortDescription = styled.p `
     flex: 0 0 100%;
     font-size: 2rem;
     color: #222;
@@ -85,7 +92,7 @@ const HeadlineNewsStoryShortDescription = styled.p `
     margin-bottom: 2.5rem;
 `
 
-const HeadlineNewsStoryMeta = styled.div `
+const FeaturedNewsStoryMeta = styled.div `
     flex: 0 0 100%;
     font-size: 1.5rem;
 `
@@ -161,8 +168,9 @@ const NewsStoryDescription = styled.p `
 const NewsStoryMeta = styled.div `
     flex: 0 0 100%;
     font-size: 1.5rem;
+    color: #222;
 `
-// NewsStoryMeta could be consolidated with HeadlineNewsStoryMeta
+// NewsStoryMeta could be consolidated with FeaturedNewsStoryMeta
 
 const NewsStoriesWrapper = styled.div `
     display: flex;
@@ -172,13 +180,14 @@ const NewsStoriesWrapper = styled.div `
     flex-flow: row wrap;
 `
 
-const NewsStoryContainer = styled.div `
+const NewsStoryContainer = styled(Link) `
     display: flex;
     flex: 0 0 23.125%;
     flex-direction: column;
     justify-content: flex-start;
     margin-right: 2.5%;
     margin-bottom: 7.5rem;
+    text-decoration: none;
 
     &:nth-child(4n) {
         margin-right: 0;
@@ -197,15 +206,7 @@ const NewsLink = styled(Link) `
     text-decoration: none;
 `
 
-const TruncateBlank = styled(Truncate) `
-    flex: 1 1 100%;
-    font-size: 2rem;
-    color: #222;
-    font-weight: 100;
-    margin-bottom: 5rem;
-`
-
-const renderItem = (node, props) => {
+const renderStories = (node, props) => {
     // console.log(node)
 
     const body = node.data.body.reduce((object, item) => ({
@@ -213,26 +214,31 @@ const renderItem = (node, props) => {
         [item.__typename]: item.primary
     }), {});
 
-    console.log({body})
+    // console.log({body})
 
-    const featured_image = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+    const featured_image = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null);
+    const authorName = node.data.document;
+
+    console.log(node)
 
     return (
-        <NewsStoryContainer key={node.uid}>
+        <NewsStoryContainer key={node.uid} to={`/news/${node.uid}`}>
+        
             {featured_image && (
-                <NewsStoryImgContainer href={`/news/${node.uid}`}>
+                <NewsStoryImgContainer>
                     <NewsStoryFeaturedImg fluid={featured_image} />
                 </NewsStoryImgContainer>
             )}
             <NewsStoryTextContainer>
                 <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
-                <TruncateBlank lines={3} ellipsis={<span>...</span>}>
+                <TruncateMarkup lines={3}>
                     <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
-                </TruncateBlank>
+                </TruncateMarkup>
                 <NewsStoryMeta>
-                    <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.html}</Category> &nbsp; &nbsp; <Author>{node.data.author.document[0].data.author_name.text}</Author>
+                    <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.html}</Category> &nbsp; &nbsp; 
                 </NewsStoryMeta>
             </NewsStoryTextContainer>
+        
         </NewsStoryContainer>
     )
 }
@@ -241,6 +247,19 @@ const renderItem = (node, props) => {
 const NewsPage = (props) => { 
 
     const newsList = props.data.allPrismicNewsStory;
+    const featuredList = props.data.allPrismicNewsStoryFeatured;
+    const featuredStory = featuredList.edges[0];
+
+    const body = featuredStory.node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+
+    const featuredStoryUrl = featuredStory.node.uid;
+    const featuredStoryImg = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
+    
+    console.log(featuredStory.node.data.short_description)
 
     return (
         <div>
@@ -248,23 +267,29 @@ const NewsPage = (props) => {
         <Nav />
 
         <Section>
-            <HeadlineNewsStoryWrapper>
+            <FeaturedNewsStoryWrapper to={`/news/${featuredStoryUrl}`}>
                 
-                <HeadlineNewsStoryImgContainer>
-                    {/* <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} /> */}
+                {featuredStoryImg && (
+                    <FeaturedNewsStoryImgContainer>
+                        <NewsStoryFeaturedImg fluid={featuredStoryImg} />
+                    </FeaturedNewsStoryImgContainer>
+                )}
+                {/* <FeaturedNewsStoryImgContainer>
                     <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} />
-                </HeadlineNewsStoryImgContainer>
+                </FeaturedNewsStoryImgContainer> */}
                 
-                <HeadlineNewsStoryTextWrapper>
-                    <HeadlineNewsStoryTextContainer>
-                        <HeadlineNewsStoryTitle>Three New Zealand Super Rugby teams sign up to use STATSport’s GPS tracking technology</HeadlineNewsStoryTitle>
-                        <HeadlineNewsStoryShortDescription>Three New Zealand Super Rugby teams have signed up to use STATSports’ World Rugby-approved sports monitoring technology.</HeadlineNewsStoryShortDescription>
-                            <HeadlineNewsStoryMeta>
+                <FeaturedNewsStoryTextWrapper>
+                    <FeaturedNewsStoryTextContainer>
+                        <FeaturedNewsStoryTitle>{featuredStory.node.data.title.text}</FeaturedNewsStoryTitle>
+                            <TruncateMarkup lines={3}>
+                                <NewsStoryDescription>{featuredStory.node.data.short_description}</NewsStoryDescription>
+                            </TruncateMarkup>
+                            <FeaturedNewsStoryMeta>
                                 <Date>4 February 2019</Date>&nbsp; &nbsp; <Author>David Elliott</Author>
-                            </HeadlineNewsStoryMeta>
-                    </HeadlineNewsStoryTextContainer>
-                </HeadlineNewsStoryTextWrapper>
-            </HeadlineNewsStoryWrapper>
+                            </FeaturedNewsStoryMeta>
+                    </FeaturedNewsStoryTextContainer>
+                </FeaturedNewsStoryTextWrapper>
+            </FeaturedNewsStoryWrapper>
         </Section>
 
         <Section>
@@ -279,7 +304,7 @@ const NewsPage = (props) => {
             <Container>
                 <NewsStoriesWrapper>
                         {newsList.edges.map(({ node }) => {
-                            return renderItem(node, props)
+                            return renderStories(node, props)
                         })}
                 </NewsStoriesWrapper>
 
@@ -299,7 +324,68 @@ export default NewsPage
 export const query = graphql`
     query {
 
-        allPrismicNewsStory (sort: {order: DESC, fields: [data___published_date]}) {
+        allPrismicNewsStory: allPrismicNewsStory (sort: {order: DESC, fields: [data___published_date]}) {
+            edges {
+              node {
+                uid
+                id
+                tags
+                data {
+                  
+                  body {
+                    __typename
+                    ... on PrismicNewsStoryBodyFeaturedImage {
+                        primary {
+                            featured_image {
+                                url
+                                localFile {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1000, quality: 60, cropFocus: ENTROPY) {
+                                            src
+                                            aspectRatio
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                  }
+
+                  short_description
+                  
+                  title {
+                    text
+                  }
+                  
+                  published_date (formatString:"D MMMM YYYY")
+                  
+                  author {
+                    document {
+                      data {
+                        author_name {
+                          text
+                        }
+                      }
+                    }
+                  }
+                  
+                  category {
+                    document {
+                      data {
+                        category {
+                          text
+                        }
+                      }
+                    }
+                  }
+                  
+                }
+                
+              }
+            }
+        }
+
+        allPrismicNewsStoryFeatured: allPrismicNewsStory (sort: {order: DESC, fields: [data___published_date]}, filter: {data: {featured_story: {eq: "Yes"}}}) {
             edges {
               node {
                 uid

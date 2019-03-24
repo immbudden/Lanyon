@@ -8,8 +8,14 @@ import HeaderWrapper from '../components/headerWrapper'
 import HeaderContainer from '../components/headerContainer'
 import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
-import Carousel from 'nuka-carousel';
 import media from "styled-media-query";
+import Carousel from 'nuka-carousel';
+import CaseStudyCarousel from '../components/caseStudyCarousel';
+import TruncateMarkup from 'react-truncate-markup';
+import get from "lodash.get"
+import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
+import ReactPlayer from 'react-player'
 // import Layout from "../components/layout"
 
 const HeaderImg = styled(Img) `
@@ -204,37 +210,6 @@ const ServiceList = styled.ul `
     font-weight: 100;
 `
 
-const Slide = styled.div `
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    -webkit-box-align: center;
-    align-items: center;
-`
-const SlideImg = styled(Img) `
-    min-height: 100vh;
-    
-`
-
-const CaseStudyTitle = styled.h2 `
-    font-size: 10rem;
-    color: #FFF;
-    font-family: Didot;
-    font-weight: 100;
-    margin: 0 auto;
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(34,34,34,0.5);
-
-    ${media.lessThan("large")`
-        font-size: 7.5rem;
-    `}
-
-    ${media.lessThan("medium")`
-        font-size: 5rem;
-    `}
-`
-
 const LatestNewsWrapper = styled.div `
     display: flex;
     justify-content: flex-end;
@@ -286,13 +261,14 @@ const LatestNewsTextWrapper = styled.div `
 const LatestNewsStoryMeta = styled.div `
     flex: 0 0 100%;
     font-size: 1.5rem;
-    text-transform: uppercase;
-    color: #969696;
+    // text-transform: uppercase;
+    // color: #969696;
 `
 
 const LatestNewsStoryHeadline = styled.h4 `
     flex: 0 0 100%;
-    font-size: 3rem;
+    font-size: 2.6rem;
+    line-height: 1.15;
     color: #004655;
     font-weight: 100;
     margin-bottom: 0;
@@ -305,6 +281,19 @@ const Button = styled.button `
     padding: 10px 15px 5px; // Typefix
     border: none;
     text-transform: uppercase;
+    cursor: pointer;
+`
+
+const ButtonMargin = styled.button `
+    background: #199BAA;
+    color: #FFF;
+    font-size: 2rem;
+    padding: 10px 15px 5px; // Typefix
+    border: none;
+    text-transform: uppercase;
+    margin-top: 2.5rem;
+
+    cursor: pointer;
 `
 
 const ClientLogoWrapper = styled.div `
@@ -327,41 +316,275 @@ const ClientLogo = styled(Img) `
     flex: 1 1 100%;
 `
 
+const Slide = styled.div `
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+`
+const SlideImg = styled(Img) `
+    min-height: 100vh;
+    
+`
+
+const FeaturedNewsStoryWrapper = styled(Link) `
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    padding-top: 7.5rem;
+    text-decoration: none;
+
+    &:visited {
+        color: #222;
+    }
+`
+
+const FeaturedNewsStoryImgContainer = styled.div `
+    flex: 1 1 57%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+`
+
+const FeaturedNewsStoryTextWrapper = styled.div `
+    display: flex;
+    flex: 1 1 43%; // Different from case studies (100%)
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: #FFF; // Different
+`
+
+const FeaturedNewsStoryTextContainer = styled.div ` 
+    padding: 0 5rem;
+`
+
+//
+
+const FeaturedNewsStoryTitle = styled.h2 `
+    flex: 0 0 100%;
+    font-size: 5rem;
+    color: #222;
+    font-weight: 400;
+    margin-bottom: 5rem;
+`
+
+const FeaturedNewsStoryShortDescription = styled.p `
+    flex: 0 0 100%;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 100;
+    margin-bottom: 2.5rem;
+`
+
+const FeaturedNewsStoryMeta = styled.div `
+    flex: 0 0 100%;
+    font-size: 1.5rem;
+`
+
+const Date = styled.span `
+    font-weight: 500;
+    color: #222;
+`
+
+const Category = styled.span `
+    font-weight: 500;
+    color: #199BAA;
+`
+
+const Author = styled.span `
+    font-weight: 100;
+    color: #222;
+`
+
+const NewsStoryFeaturedImg = styled(Img) `
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`
+
+const NewsStoryDescription = styled.p `
+    flex: 1 1 100%;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 100;
+    margin-bottom: 5rem;
+`
+
+const StyledCarousel = styled(Carousel) `
+    -webkit-box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
+    -moz-box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
+    box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
+`
+
+const CarouselNav = styled.button `
+    background: #FFF;
+    opacity: 0.1;
+    border: none;
+    padding: 5.25rem 1.5rem 5rem;
+    transition: all 0.5s linear;
+
+    &:hover {
+        opacity: 0.75;
+    }
+`
+
+const Video = styled.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    // margin-bottom: 5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    
+    ${media.lessThan("medium")`
+        font-size: 1.8rem; 
+        width: 300%;
+    `}
+`
+
+const Player = styled(ReactPlayer)`
+
+`
+
 const Url = styled(Link) `
     text-decoration: none;
-    width: 100%;
 `
 
 
-const IndexPage = (props) => (
+const IndexPage = (props) => {
+
+    const newsList = props.data.allPrismicNewsStory;
+    const newsStoryOne = newsList.edges[0];
+    const newsStoryTwo = newsList.edges[1];
+    const newsStoryThree = newsList.edges[2];
+    const newsStoryFour = newsList.edges[3];
+
+    const newsBodyOne = newsStoryOne.node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+    const newsStoryUrlOne = newsStoryOne.node.uid;
+    const newsStoryImgOne = get(newsBodyOne, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
+
+    const newsBodyTwo = newsStoryTwo.node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+    const newsStoryUrlTwo = newsStoryTwo.node.uid;
+    const newsStoryImgTwo = get(newsBodyTwo, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
+    const newsBodyThree = newsStoryThree.node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+    const newsStoryUrlThree = newsStoryThree.node.uid;
+    const newsStoryImgThree = get(newsBodyThree, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
+    const newsBodyFour = newsStoryFour.node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+    const newsStoryUrlFour = newsStoryFour.node.uid;
+    const newsStoryImgFour = get(newsBodyFour, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
+
+    const featuredList = props.data.allPrismicNewsStoryFeatured;
+    const featuredStory = featuredList.edges[0];
+
+    const body = featuredStory.node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+
+    const featuredStoryUrl = featuredStory.node.uid;
+    const featuredImg = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+    
+
+    return (
 
     <div>
         <FontFace />
         <Nav />
-        <HeaderWrapper>
-            <HeaderImg style={{
-                position: "absolute",
-                left: 0,
-                top: 0,
-                width: "100%",
-                zIndex: -1,
-            }}
-                fluid={props.data.homeHeroImg.childImageSharp.fluid} />
-            <HeaderContainer>
-                <HeadingTextContainer>
-                    <HeadingOne>Strategic communication</HeadingOne>
-                    <HeadingTwo>Helping organisations in here to add more weight to headline word word word word</HeadingTwo>
-                </HeadingTextContainer>
-            </HeaderContainer>
-        </HeaderWrapper>
+        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={false} autoplayInterval={3500} transitionMode={'scroll'} pauseOnHover={false}
+            
+            renderCenterLeftControls={({ previousSlide }) => (
+                <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
+              )}
+              renderCenterRightControls={({ nextSlide }) => (
+                <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
+              )}
+        >
+            <Slide>
+                <Video> 
+                    <Player 
+                        url='https://youtu.be/AePugMqpO_Y?vq=hd720'
+                        width='100%'
+                        height='130vh'
+                        controls={false}
+                        playing={true}
+                        loop={true}
+                        volume={1}
+                        muted={true}
+                    />
+                </Video>
+                {/* <SlideImg style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    width: "100%",
+                    zIndex: -1,
+                }}
+                    fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
+                <HeaderContainer>
+                    <HeadingTextContainer>
+                        <HeadingOne>Strategic communication</HeadingOne>
+                        <HeadingTwo>Helping organisations in here to add more weight to headline word word word word</HeadingTwo>
+                    </HeadingTextContainer>
+                </HeaderContainer>
+            </Slide>
+            <Slide>
+                <FeaturedNewsStoryWrapper to={`/news/${featuredStoryUrl}`}>
+                
+                    {featuredImg && (
+                        <FeaturedNewsStoryImgContainer>
+                            <NewsStoryFeaturedImg fluid={featuredImg} />
+                        </FeaturedNewsStoryImgContainer>
+                    )}
+                    {/* <FeaturedNewsStoryImgContainer>
+                        <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} />
+                    </FeaturedNewsStoryImgContainer> */}
+                    
+                    <FeaturedNewsStoryTextWrapper>
+                        <FeaturedNewsStoryTextContainer>
+                            <FeaturedNewsStoryTitle>{featuredStory.node.data.title.text}</FeaturedNewsStoryTitle>
+                                <TruncateMarkup lines={3}>
+                                    <NewsStoryDescription>{featuredStory.node.data.short_description}</NewsStoryDescription>
+                                </TruncateMarkup>
+                                <FeaturedNewsStoryMeta>
+                                    <Date>{featuredStory.node.data.published_date}</Date>&nbsp; &nbsp; <Author>{featuredStory.node.data.author.document[0].data.author_name.text}</Author>
+                                </FeaturedNewsStoryMeta>
+                                <ButtonMargin to={`/news/${featuredStoryUrl}`}>Read More</ButtonMargin>
+                        </FeaturedNewsStoryTextContainer>
+                    </FeaturedNewsStoryTextWrapper>
+                </FeaturedNewsStoryWrapper>
+            </Slide>
+            </StyledCarousel>
         <Section id="services">
             <Container>
                 <SectionTitle>Our Services</SectionTitle>
                 <ServiceWrapper>
                     <ServiceContainer>
-                        <IconContainer>
-                            <ServiceIcon fluid={props.data.MarketIntelligenceIcon.childImageSharp.fluid} />
-                            </IconContainer>
                         <ServiceTitle>Market Intelligence</ServiceTitle>
                         <ServiceList>
                             <li>Stakeholder Engagement and Relationship Management</li>
@@ -371,9 +594,6 @@ const IndexPage = (props) => (
                         </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <IconContainer>
-                            <ServiceIcon fluid={props.data.CorporatePositioningIcon.childImageSharp.fluid} />
-                        </IconContainer>
                         <ServiceTitle>Corporate Positioning</ServiceTitle>
                         <ServiceList>
                             <li>PR and media relations</li>
@@ -384,9 +604,6 @@ const IndexPage = (props) => (
                         </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <IconContainer>
-                            <ServiceIcon fluid={props.data.EngagementIcon.childImageSharp.fluid} />
-                        </IconContainer>
                         <ServiceTitle>Culture and Engagement</ServiceTitle>
                         <ServiceList>
                             <li>Internal communications strategy and delivery</li>
@@ -396,9 +613,6 @@ const IndexPage = (props) => (
                         </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <IconContainer>
-                            <ServiceIcon fluid={props.data.DigitalIcon.childImageSharp.fluid} />
-                        </IconContainer>
                         <ServiceTitle>Digital and Content</ServiceTitle>
                         <ServiceList>
                             <li>Digital media strategy and management</li>
@@ -408,9 +622,6 @@ const IndexPage = (props) => (
                         </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <IconContainer>
-                            <ServiceIcon fluid={props.data.CrisisIcon.childImageSharp.fluid} />
-                        </IconContainer>
                         <ServiceTitle>Crisis and Issue Management</ServiceTitle>
                         <ServiceList>
                             <li>Proactive crisis communications planning</li>
@@ -420,9 +631,6 @@ const IndexPage = (props) => (
                         </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <IconContainer>
-                            <ServiceIcon fluid={props.data.EventIcon.childImageSharp.fluid} />
-                        </IconContainer>
                             <ServiceTitle>Conferences and Events</ServiceTitle>
                             <ServiceList>
                                 <li>Event strategy and end-to-end delivery</li>
@@ -436,93 +644,11 @@ const IndexPage = (props) => (
             </Container>
         </Section>
         <Section id="caseStudies">
-            <Carousel edgeEasing="easeQuadInOut" edgeEasing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true}>
-                <Slide>
-                    <Url to="/mipim2018/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.MIPIMCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-                <Slide>
-                    <Url to="/innovation-nation2018/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.INCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-                
-                <Slide>
-                    <Url to="/outlook2018/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-                <Slide>
-                    <Url to="/linenmill-studios/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.LMCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-                <Slide>
-                    <Url to="/statsports/">
-                        <SlideImg 
-                        style={{
-                            position: "absolute",
-                            left: 0,
-                            top: 0,
-                            width: "100%",
-                            zIndex: -1,
-                        }}
-                        fluid={props.data.SSCover.childImageSharp.fluid} />
-                        <Container>
-                                <CaseStudyTitle>STATSports</CaseStudyTitle>
-                        </Container>
-                    </Url>
-                </Slide>
-            </Carousel>
+            <CaseStudyCarousel />
         </Section>
         <Section>
             <Container>
-                <SectionTitleLeft>News &amp; Events</SectionTitleLeft>
+                <SectionTitleLeft>News &amp; Views</SectionTitleLeft>
                 <SectionIntroLeft>
                     Small sentence in here to describe what type of content we post in our news section. No longer than two lines.
                 </SectionIntroLeft>
@@ -537,11 +663,11 @@ const IndexPage = (props) => (
                                     width: "100%",
                                     zIndex: -1,
                                 }}
-                                    fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid}
+                                    fluid={newsStoryImgOne}
                             />
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>4 February 2019 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
-                                <LatestNewsStoryHeadline>Three New Zealand Super Rugby teams sign up to use STATSport’s GPS tracking technology</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta>{newsStoryOne.node.data.published_date} &nbsp; | &nbsp; {newsStoryOne.node.data.author.document[0].data.author_name.text}</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>{newsStoryOne.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory>
@@ -553,11 +679,11 @@ const IndexPage = (props) => (
                                     width: "100%",
                                     zIndex: -1,
                                 }}
-                                    fluid={props.data.NewsStoryPlaceholderImg2.childImageSharp.fluid}
+                                    fluid={newsStoryImgTwo}
                             />
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>14 January 2019 &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
-                                <LatestNewsStoryHeadline>Digital DNA Awards: Bloomberg exec Tony McManus named on international judging panel</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta>{newsStoryTwo.node.data.published_date} &nbsp; | &nbsp; {newsStoryTwo.node.data.author.document[0].data.author_name.text}</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>{newsStoryTwo.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory>
@@ -569,11 +695,11 @@ const IndexPage = (props) => (
                                     width: "100%",
                                     zIndex: -1,
                                 }}
-                                    fluid={props.data.NewsStoryPlaceholderImg3.childImageSharp.fluid}
+                                    fluid={newsStoryImgThree}
                             />
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>10 December 2018  &nbsp; | &nbsp; David Elliot</LatestNewsStoryMeta>
-                                <LatestNewsStoryHeadline>Kings Hall Health and Wellbeing Park to boost economy by £47m a year and support 640 jobs</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta>{newsStoryThree.node.data.published_date}  &nbsp; | &nbsp; {newsStoryThree.node.data.author.document[0].data.author_name.text}</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>{newsStoryThree.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory>
@@ -585,14 +711,16 @@ const IndexPage = (props) => (
                                     width: "100%",
                                     zIndex: -1,
                                 }}
-                                    fluid={props.data.NewsStoryPlaceholderImg4.childImageSharp.fluid}
+                                    fluid={newsStoryImgFour}
                             />
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>3 December 2018 &nbsp; | &nbsp; Matthew Jeffrey</LatestNewsStoryMeta>
-                                <LatestNewsStoryHeadline>Grade-A office development in Belfast city centre leading the way in technology</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta>{newsStoryFour.node.data.published_date} &nbsp; | &nbsp; {newsStoryFour.node.data.author.document[0].data.author_name.text}</LatestNewsStoryMeta>
+                                <LatestNewsStoryHeadline>{newsStoryFour.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
-                        <Button href="/news/">More Stories</Button>
+                        <Url to="./news">
+                            <Button>More Stories</Button>
+                        </Url>
                     </LatestNewsContainer>
                 </LatestNewsWrapper>
             </Container>
@@ -627,14 +755,138 @@ const IndexPage = (props) => (
         </SectionDark>
         <NavMobile />
     </div>
+    )
 
-)
+}
 
 export default IndexPage
 
 
 export const query = graphql`
     query {
+
+        allPrismicNewsStory: allPrismicNewsStory (sort: {order: DESC, fields: [data___published_date]}) {
+            edges {
+              node {
+                uid
+                id
+                tags
+                data {
+                  
+                  body {
+                    __typename
+                    ... on PrismicNewsStoryBodyFeaturedImage {
+                        primary {
+                            featured_image {
+                                url
+                                localFile {
+                                    childImageSharp {
+                                        fluid(maxWidth: 1000, quality: 60, cropFocus: ENTROPY) {
+                                            src
+                                            aspectRatio
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                  }
+
+                  short_description
+                  
+                  title {
+                    text
+                  }
+                  
+                  published_date (formatString:"D MMMM YYYY")
+                  
+                  author {
+                    document {
+                      data {
+                        author_name {
+                          text
+                        }
+                      }
+                    }
+                  }
+                  
+                  category {
+                    document {
+                      data {
+                        category {
+                          text
+                        }
+                      }
+                    }
+                  }
+                  
+                }
+                
+              }
+            }
+        }
+
+        allPrismicNewsStoryFeatured: allPrismicNewsStory (sort: {order: DESC, fields: [data___published_date]}, filter: {data: {featured_story: {eq: "Yes"}}}) {
+            edges {
+                node {
+                    uid
+                    id
+                    tags
+                    data {
+
+                        body {
+                            __typename
+                            ... on PrismicNewsStoryBodyFeaturedImage {
+                                primary {
+                                    featured_image {
+                                        url
+                                        localFile {
+                                            childImageSharp {
+                                                fluid(maxWidth: 1500, quality: 60, cropFocus: ENTROPY) {
+                                                    src
+                                                    aspectRatio
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        short_description
+                        
+                        title {
+                            text
+                        }
+                        
+                        published_date (formatString:"D MMMM YYYY")
+                        
+                        author {
+                            document {
+                                data {
+                                    author_name {
+                                        text
+                                    }
+                                }
+                            }
+                        }
+                        
+                        category {
+                            document {
+                                data {
+                                    category {
+                                        text
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                
+                }
+            }
+        }
+
             homeHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {

@@ -4,11 +4,11 @@ import { Global, css } from "@emotion/core"
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import FontFace from '../utils/font-face'
-import HeroWrapper from '../components/heroWrapper'
 import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import get from "lodash.get"
+import ReactPlayer from 'react-player'
 
 // To consolodate 
 
@@ -19,9 +19,22 @@ import get from "lodash.get"
 //     position: fixed;
 // `
 
+const HeadingWrapper = styled.div `
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    padding-top: 7.5rem;
+
+    ${media.greaterThan("medium")`
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+    `}
+`
+
 const HeroImg = styled(Img) `
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     z-index: -1;
     position: fixed;
 `
@@ -33,7 +46,8 @@ const Section = styled.div `
 
 const Container = styled.div `
     margin: 0 auto;
-    padding: 10rem 0;
+    // padding: 10rem 0; original size
+    padding: 7.5rem 0;
     max-width: 90%;
     display: flex;
     flex-direction: column;
@@ -46,7 +60,7 @@ const SectionTitleLeft = styled.h1 `
     flex: 1 1 100%; // Different from index.js
     font-family: Didot;
     font-weight: 100;
-    margin-bottom: 5rem; // Different from index.js - to consolodate
+    // margin-bottom: 5rem; // Different from index.js - to consolodate
     text-align: left;
 
     ${media.lessThan("medium")`
@@ -69,12 +83,14 @@ const NewsStoryContainer = styled.div `
     flex-direction: row;
     align-items: flex-start;
     background #FFF;
-    padding: 5rem;
+    // margin-top: -20rem;
+    // padding: 5rem;
+    
     padding-bottom: 0;
     flex-flow: row wrap;
-    max-width: 59%;
-    margin-top: -20rem;
-    margin-right: 2.5%;
+    max-width: 55%;
+    
+    margin-right: 7.5%;
 `
 
 const NewsStoryMetaContainer = styled.div `
@@ -118,7 +134,7 @@ const NewsStoryText= styled.div `
 `
 const QuoteContainer = styled.div `
     flex: 1 1 41%;
-    margin-top: 2.5rem;
+    // margin-top: 2.5rem;
 `
 
 const Quote = styled.div `
@@ -190,6 +206,33 @@ const FeaturedImageCaption = styled.div `
     color: #FFF;
 `
 
+const HeadlineImgContainer = styled.div `
+    display: flex;
+    flex: 1 1 59%;
+    min-height: 100%;
+`
+
+const HeadlineContainer = styled.div `
+    padding: 7.5rem;
+    flex: 1 1 41%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+`
+
+const Video = styled.div `
+    height: 44vh;
+    width: 100%;
+    // margin-bottom: 5rem;
+    
+`
+
+const Player = styled(ReactPlayer)`
+
+
+`
+
 
 
 
@@ -207,6 +250,7 @@ const NewsStory = (props) => {
     // Image Plugins
     const headline_image = props.data.prismicNewsStory.data.headline_image.localFile.childImageSharp.fluid
     const featured_image = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+    const main_video = props.data.prismicNewsStory.data.main_video.embed_url
     
     // const featured_image = body.PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp && body.PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid
     // const headline_image = props.data.prismicNewsStory.data.headline_image.url
@@ -241,21 +285,58 @@ const NewsStory = (props) => {
         <div>
         <FontFace />
         <Nav />
-        <HeroWrapper>
+        <HeadingWrapper>
             {/* <HeroImg fluid={headline_image}/> */}
-            <HeroImg fluid={headline_image}/>
-        </HeroWrapper>
+            <HeadlineImgContainer>
+                {headline_image && main_video ? (
+
+                    // If headline_image and main_video exist - only render main_video
+                    <Video> 
+                        <Player 
+                            url={main_video}
+                            width='100%'
+                            height='100%'
+                            controls='0'
+                        />
+                    </Video>
+                    ) : (
+                        // If not then render the headline_image
+                    <HeroImg fluid={headline_image}/>
+                )}
+
+                {/* {main_video && (
+                    <Video> 
+                        <Player url={main_video} width='100%' height='100%' controls='true'/>
+                    </Video>
+                )}
+                {headline_image && (
+                    <HeroImg fluid={headline_image}/>
+                )} */}
+                {/* <HeroImg fluid={headline_image}/> */}
+            </HeadlineImgContainer>
+            <HeadlineContainer>
+                <SectionTitleLeft>{title}</SectionTitleLeft>
+                {/* <NewsStoryMetaContainer>
+                    <NewsStoryMeta>
+                        <Date>{published_date}</Date> &nbsp; &nbsp; <Category>{category}</Category> &nbsp; &nbsp; <Author>{author}</Author>
+                    </NewsStoryMeta>
+                </NewsStoryMetaContainer> */}
+            </HeadlineContainer>
+        </HeadingWrapper>
         <Section>
             <Container>
                 <NewsStoryWrapper>
                     <NewsStoryContainer>
-                        <SectionTitleLeft>{title}</SectionTitleLeft> {/* get from index */}
+                        {/* <SectionTitleLeft>{title}</SectionTitleLeft> */}
                         <NewsStoryMetaContainer>
                             <NewsStoryMeta>
                                 <Date>{published_date}</Date> &nbsp; &nbsp; <Category>{category}</Category> &nbsp; &nbsp; <Author>{author}</Author>
                             </NewsStoryMeta>
                         </NewsStoryMetaContainer>
                         <NewsStoryTextContainer>
+                                {/* <Video> 
+                                    <Player url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width='100%' height='100%' controls='true'/>
+                                </Video> */}
                                 <NewsStoryText dangerouslySetInnerHTML={{ __html: main_content }} />
                                 {featured_image && (
                                     <FeaturedImageWrapper>
@@ -317,6 +398,10 @@ export const query = graphql`
                       }
                     }
                   }
+
+                main_video {
+                    embed_url
+                }
 
                 title {
                     html

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Img from 'gatsby-image'
 import media from "styled-media-query";
+import FontFace from '../utils/font-face'
 
 const NavWrapper = styled.div `
     background: #004655;
@@ -56,12 +57,14 @@ const LogoLink = styled(Link) `
 const NavLink = styled(Link) `
     color: #FFF;
     font-size: 2.4rem;
-    font-weight: 400;
+    font-weight: 100;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 2.4rem;
-    padding-top: 0.8rem;
+    padding: 0.8rem 0.4rem 0;
     margin-right: 8.5rem;
+    letter-spacing: 0.12rem;
+    opacity: 0.6;
 
     &:last-child {
         margin-right: 0;
@@ -75,18 +78,30 @@ const NavLink = styled(Link) `
         font-size: 1.6rem;
         margin-right: 2rem;
     `}
-`
+
+    transition: all 0.5s linear;
+
+    &:hover {
+        opacity: 1;
+    }
+` 
+
+const ActiveLink =  {
+    opacity: '1',
+    transition: 'all 0.5s linear'
+}
 
 const Logo = styled( Img ) `
     ${media.lessThan("medium")`
         margin: 0 auto;
-`}
+    `}
 `
 
 
 const Nav = ({ data }) => (
 
     <div>
+        <FontFace />
         <NavWrapper>
                 <NavContainer>
                     <LogoContainer>
@@ -101,19 +116,19 @@ const Nav = ({ data }) => (
                         </Link>
                     </LogoContainer>
                     <NavLinkContainer>
-                        <NavLink to="#services">
+                        <NavLink to="#services" activeStyle={ActiveLink}>
                             Our Services
                         </NavLink>
-                        <NavLink to="/case-studies/">
+                        <NavLink to="/case-studies/" activeStyle={ActiveLink}>
                             Case Studies
                         </NavLink>
-                        <NavLink to="/news/">
+                        <NavLink to="/news/" activeStyle={ActiveLink}>
                             News
                         </NavLink>
-                        <NavLink to="/about/">
+                        <NavLink to="/about/" activeStyle={ActiveLink}>
                             About
                         </NavLink>
-                        <NavLink to="/contact/">
+                        <NavLink to="/contact/" activeStyle={ActiveLink}>
                             Get in Touch
                         </NavLink>
                     </NavLinkContainer>
