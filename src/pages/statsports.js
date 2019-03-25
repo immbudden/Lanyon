@@ -11,6 +11,8 @@ import NavMobile from '../components/navMobile'
 import Carousel from 'nuka-carousel';
 import media from "styled-media-query";
 import CaseStudyCarousel from '../components/caseStudyCarousel';
+import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 
 // To consolodate
 
@@ -277,6 +279,18 @@ const Url = styled(Link) `
     width: 100%;
 `
 
+const CarouselNav = styled.button `
+    background: #FFF;
+    opacity: 0.1;
+    border: none;
+    padding: 5.25rem 1.5rem 5rem;
+    transition: all 0.5s linear;
+
+    &:hover {
+        opacity: 0.75;
+    }
+`
+
 const CaseStudyStatSports = (props) => (
 
     <div>
@@ -378,7 +392,16 @@ const CaseStudyStatSports = (props) => (
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
-                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={0.5} edgeEasing="easeQuadInOut" edgeEasing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true}>
+                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={0.5} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={false} wrapAround={true} dragging={true}
+
+                    renderCenterLeftControls={({ previousSlide }) => (
+                        <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
+                    )}
+                    renderCenterRightControls={({ nextSlide }) => (
+                        <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
+                    )}
+                
+                >
                     <GallerySlide>
                             <GallerySlideImg 
                             fluid={props.data.SSCar1Img.childImageSharp.fluid} />

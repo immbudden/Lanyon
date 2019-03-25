@@ -221,7 +221,7 @@ const CaseStudies = (props) => (
                                 <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
+                                <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
                                 <CaseStudyMainBrief>Position Belfast for investment on a global stage</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>

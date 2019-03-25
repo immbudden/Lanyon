@@ -42,6 +42,7 @@ const HeadingTwo = styled.h2 `
     font-family: GillSansMTPro;
     font-weight: 100;
     display: flex;
+    line-height: 1.5;
 
     ${media.lessThan("medium")`
         font-size: 2rem; 
@@ -224,7 +225,7 @@ const LatestNewsContainer = styled.div `
 
 `
 
-const LatestNewsStory = styled.div `
+const LatestNewsStory = styled(Link) `
     display: flex;
     flex: 0 0 48%;
     flex-flow: row wrap;
@@ -236,6 +237,7 @@ const LatestNewsStory = styled.div `
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-end;
+    text-decoration: none;
 
     &:nth-child(even) {
         margin-top: -7.5rem;
@@ -262,6 +264,7 @@ const LatestNewsStoryMeta = styled.div `
     flex: 0 0 100%;
     font-size: 1.5rem;
     // text-transform: uppercase;
+    color: #222;
     // color: #969696;
 `
 
@@ -548,8 +551,8 @@ const IndexPage = (props) => {
                     fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
                 <HeaderContainer>
                     <HeadingTextContainer>
-                        <HeadingOne>Strategic communication</HeadingOne>
-                        <HeadingTwo>Helping organisations in here to add more weight to headline word word word word</HeadingTwo>
+                        <HeadingOne>Lanyon</HeadingOne>
+                        <HeadingTwo>Helping businesses achieve their potential through strategic communications, <br />reputation management and stakeholder engagement</HeadingTwo>
                     </HeadingTextContainer>
                 </HeaderContainer>
             </Slide>
@@ -654,7 +657,7 @@ const IndexPage = (props) => {
                 </SectionIntroLeft>
                 <LatestNewsWrapper>
                     <LatestNewsContainer>
-                        <LatestNewsStory>
+                        <LatestNewsStory to={`/news/${newsStoryUrlOne}`}>
                             <LatestNewsStoryImg 
                                 style={{
                                     position: "absolute",
@@ -670,7 +673,7 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryHeadline>{newsStoryOne.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
-                        <LatestNewsStory>
+                        <LatestNewsStory to={`/news/${newsStoryUrlTwo}`}>
                             <LatestNewsStoryImg 
                                 style={{
                                     position: "absolute",
@@ -686,7 +689,7 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryHeadline>{newsStoryTwo.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
-                        <LatestNewsStory>
+                        <LatestNewsStory to={`/news/${newsStoryUrlThree}`}>
                             <LatestNewsStoryImg 
                                 style={{
                                     position: "absolute",
@@ -702,7 +705,7 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryHeadline>{newsStoryThree.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
-                        <LatestNewsStory>
+                        <LatestNewsStory to={`/news/${newsStoryUrlFour}`}>
                             <LatestNewsStoryImg 
                                 style={{
                                     position: "absolute",

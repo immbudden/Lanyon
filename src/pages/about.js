@@ -543,9 +543,9 @@ export const query = graphql`
                 }
             }
 
-            KDImg: file(relativePath: { eq: "people/KD-Warm.jpg" }) {
+            KDImg: file(relativePath: { eq: "people/KD-Warm2.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650, cropFocus: CENTER ) {
+                    fluid(maxWidth: 650, cropFocus: ENTROPY ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

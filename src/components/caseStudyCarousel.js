@@ -169,7 +169,7 @@ export default () => (
                         }}
                         fluid={data.MIPIMCover.childImageSharp.fluid} />
                         <Container>
-                                <CaseStudyTitle>MIPIM Belfast</CaseStudyTitle>
+                                <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
