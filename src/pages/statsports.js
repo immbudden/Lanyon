@@ -182,6 +182,7 @@ const ContactButton = styled.button `
     border: none;
     text-transform: uppercase;
     margin-top: 2.5rem;
+    cursor: pointer;
 `
 
 const SectionColoured = styled.div `
@@ -276,7 +277,6 @@ const SectionImg = styled(Img) `
 
 const Url = styled(Link) `
     text-decoration: none;
-    width: 100%;
 `
 
 const CarouselNav = styled.button `
@@ -392,7 +392,7 @@ const CaseStudyStatSports = (props) => (
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
-                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={0.5} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={false} wrapAround={true} dragging={true}
+                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
 
                     renderCenterLeftControls={({ previousSlide }) => (
                         <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
@@ -412,7 +412,6 @@ const CaseStudyStatSports = (props) => (
                     </GallerySlide>
                     <GallerySlide>
                             <GallerySlideImg 
-                            frameOverflow
                             fluid={props.data.SSCar3Img.childImageSharp.fluid} />
                     </GallerySlide>
                     <GallerySlide>
@@ -447,11 +446,13 @@ const CaseStudyStatSports = (props) => (
         <Section>
             <Container>
                 <CenterThreeContainer>
-                    <SectionSubtitleLeft>Interested in working with us?</SectionSubtitleLeft>
+                    <SectionSubtitleLeft>Interested in how we can support your project?</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                        At Lanyon we know how to spread the word about the great work your company is doing to a wider audience. Drop us a line or give us a call to hear how we can help you.
+                        At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our Partners today.
                     </CaseStudyDescription>
-                    <ContactButton>Get in touch</ContactButton>
+                    <Url to="/contact">
+                        <ContactButton>Get in touch</ContactButton>
+                    </Url>
                 </CenterThreeContainer>
             </Container>
         </Section>

@@ -153,25 +153,57 @@ const SectionIntroLeft = styled.p `
 
 const ServiceWrapper = styled.div `
     display: flex;
-    flex: 12 1 0%;
-    justify-content: space-around;
-    margin-right: 5rem;
-    flex-wrap: wrap;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    flex-flow: row wrap;
 `
 
 const ServiceContainer = styled.div `
-    width: 30%;
+    flex: 1 1 30%;
     margin-bottom: 10rem;
+    margin-right: 5%;
 
     &:nth-child(n+4) {
         margin-bottom: 0;
     }
 
+    &:nth-child(3n+3) {
+        margin-right: 0;
+    }
+
+    ${media.lessThan("large")`
+        flex: 1 1 47.5%;
+
+        &:nth-child(n+4) {
+            margin-bottom: 0;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 5%;
+        }
+    
+        &:nth-child(2n+2) {
+            margin-right: 0;
+        }
+    `}
+
     ${media.lessThan("medium")`
+
+        flex: 0 1 65%;
+        margin: 0 auto;
+
         margin-bottom: 5rem;
         
         &:nth-child(n+4) {
             margin-bottom: 5rem;
+        }
+
+        &:nth-child(3n) {
+            margin-right: auto;
+        }
+
+        &:nth-child(2n+2) {
+            margin-right: auto;
         }
 
         &:last-child {
@@ -653,7 +685,7 @@ const IndexPage = (props) => {
             <Container>
                 <SectionTitleLeft>News &amp; Views</SectionTitleLeft>
                 <SectionIntroLeft>
-                    Small sentence in here to describe what type of content we post in our news section. No longer than two lines.
+                    The latest news and views from our clients and the Lanyon team.
                 </SectionIntroLeft>
                 <LatestNewsWrapper>
                     <LatestNewsContainer>

@@ -385,7 +385,7 @@ const MyMapComponent = compose(
         {props.isMarkerShown && 
 
             <Marker 
-                position={{ lat: 54.5869451, lng: -5.9367179 }} 
+                position={{ lat: 54.5869451, lng: -5.9347179 }} 
                 icon={markerLanyon}
             />
         }

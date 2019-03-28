@@ -8,7 +8,7 @@ import FontFace from '../utils/font-face'
 
 const NavWrapper = styled.div `
     background: #004655;
-    height: 7.5rem;
+    height: 8.5rem;
     overflow: hidden;
     display: flex;
     flex-direction: row;

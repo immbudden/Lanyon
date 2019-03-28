@@ -164,6 +164,7 @@ const CaseStudyMainBrief = styled.h4 `
     font-size: 2rem;
     color: #222;
     font-weight: 100;
+    line-height: 1.5;
     
 `
 
@@ -198,7 +199,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>STATSports</CaseStudyTitle>
-                                <CaseStudyMainBrief>Brief point</CaseStudyMainBrief>
+                                <CaseStudyMainBrief>Driving sales of STATSports performance monitoring technology</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -210,7 +211,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
-                                <CaseStudyMainBrief>Brief point</CaseStudyMainBrief>
+                                <CaseStudyMainBrief>Highlight HBO’s Game of Thrones tour at Linen Mill Studios</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -222,7 +223,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
-                                <CaseStudyMainBrief>Position Belfast for investment on a global stage</CaseStudyMainBrief>
+                                <CaseStudyMainBrief>Positioning Belfast for investment on a global stage</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -230,11 +231,11 @@ const CaseStudies = (props) => (
                     <ThreeColumnContainer>
                         <Url to="/outlook2018/">
                             <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                                <CaseStudyImg fluid={props.data.NIMOCrowd.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
-                                <CaseStudyMainBrief>Event Design, Management &amp; Delivery</CaseStudyMainBrief>
+                                <CaseStudyMainBrief>Showcase the real estate market in Northern Ireland</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -242,11 +243,11 @@ const CaseStudies = (props) => (
                     <ThreeColumnContainer>
                         <Url to="/innovation-nation2018/">
                             <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.INCover.childImageSharp.fluid} />
+                                <CaseStudyImg fluid={props.data.INCrowd.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
-                                <CaseStudyMainBrief>End-to-end Event Management</CaseStudyMainBrief>
+                                <CaseStudyMainBrief>To position Newry, Mourne &amp; Down as a burgeoning innovation hub</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -278,7 +279,7 @@ export default CaseStudies
 export const query = graphql`
     query {
 
-            INCover: file(relativePath: { eq: "case-studies/InnovationNation18/IN-cover.jpg" }) {
+            INCrowd: file(relativePath: { eq: "case-studies/InnovationNation18/INCrowd.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
@@ -294,7 +295,7 @@ export const query = graphql`
                 }
             }
 
-            NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook18/NIMO-cover.jpg" }) {
+            NIMOCrowd: file(relativePath: { eq: "case-studies/NIMarketOutlook18/NIMOCrowd.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid

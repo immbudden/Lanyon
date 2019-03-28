@@ -117,7 +117,7 @@ export default () => (
       `}
 
         render={data => (
-            <Carousel easing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true} easing="easeCubicIn" speed={600} transitionMode={'scroll'}
+            <Carousel easing="easeQuadInOut" renderBottomCenterControls={null} wrapAround={true} easing="easeCubicIn" speed={600} transitionMode={'scroll'}
                 renderCenterLeftControls={({ previousSlide }) => (
                     <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
                 )}

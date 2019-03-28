@@ -11,6 +11,8 @@ import NavMobile from '../components/navMobile'
 import Carousel from 'nuka-carousel';
 import media from "styled-media-query";
 import CaseStudyCarousel from '../components/caseStudyCarousel';
+import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 
 // To consolodate
 
@@ -180,6 +182,7 @@ const ContactButton = styled.button `
     border: none;
     text-transform: uppercase;
     margin-top: 2.5rem;
+    cursor: pointer;
 `
 
 const SectionColoured = styled.div `
@@ -346,7 +349,18 @@ const SectionImg = styled(Img) `
 
 const Url = styled(Link) `
     text-decoration: none;
-    width: 100%;
+`
+
+const CarouselNav = styled.button `
+    background: #FFF;
+    opacity: 0.1;
+    border: none;
+    padding: 5.25rem 1.5rem 5rem;
+    transition: all 0.5s linear;
+
+    &:hover {
+        opacity: 0.75;
+    }
 `
 
 const CaseStudyOutlook = (props) => (
@@ -372,11 +386,9 @@ const CaseStudyOutlook = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Event Design, Management &amp; Delivery
-                                <br />
-                                PR &amp; Communications
-                                <br />
-                                Research &amp; Market intelligence
+                                Showcase the real estate market in Northern Ireland
+                                <br /><br />
+                                Reinforce CBRE’s reputation in Northern Ireland
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>CBRE</InfoText>
@@ -447,7 +459,14 @@ const CaseStudyOutlook = (props) => (
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
-                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={0.5} edgeEasing="easeQuadInOut" edgeEasing="easeQuadInOut" renderBottomCenterControls={false} wrapAround={true}>
+                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+                    renderCenterLeftControls={({ previousSlide }) => (
+                        <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
+                    )}
+                    renderCenterRightControls={({ nextSlide }) => (
+                        <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
+                    )}
+                >
                     <GallerySlide>
                             <GallerySlideImg 
                             fluid={props.data.NIMOCar1Img.childImageSharp.fluid} />
@@ -491,11 +510,13 @@ const CaseStudyOutlook = (props) => (
         <Section>
             <Container>
                 <CenterThreeContainer>
-                    <SectionSubtitleLeft>Interested in working with us?</SectionSubtitleLeft>
+                    <SectionSubtitleLeft>Interested in how we can support your project?</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                    At Lanyon we know how to spread the word about the great work your company is doing to a wider audience. Drop us a line or give us a call to hear how we can help you.
+                        At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our Partners today.
                     </CaseStudyDescription>
-                    <ContactButton>Get in touch</ContactButton>
+                    <Url to="/contact">
+                        <ContactButton>Get in touch</ContactButton>
+                    </Url>
                 </CenterThreeContainer>
             </Container>
         </Section>
