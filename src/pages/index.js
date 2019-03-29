@@ -336,14 +336,20 @@ const ClientLogoWrapper = styled.div `
     position: relative;
     justify-content: space-between;
     align-items: center;
+    flex-flow: row wrap;
 `
 
 const ClientLogoContainer = styled.div `
-    width: 12rem;
-    margin-right: 4%;
+    flex: 0 0 7%;
+    margin-right: 8.5%;
+    margin-bottom: 7.5rem;
 
-    &:last-child {
+    &:nth-child(7n+7) {
         margin-right: 0;
+    }
+
+    &:nth-child(n+15) {
+        margin-bottom: 0;
     }
 `
 
@@ -551,7 +557,7 @@ const IndexPage = (props) => {
     <div>
         <FontFace />
         <Nav />
-        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={false} autoplayInterval={3500} transitionMode={'scroll'} pauseOnHover={false}
+        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={true} autoplayInterval={3500} transitionMode={'scroll'} pauseOnHover={false}
             
             renderCenterLeftControls={({ previousSlide }) => (
                 <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
@@ -622,7 +628,7 @@ const IndexPage = (props) => {
                     <ServiceContainer>
                         <ServiceTitle>Market Intelligence</ServiceTitle>
                         <ServiceList>
-                            <li>Stakeholder Engagement and Relationship Management</li>
+                            <li>Stakeholder engagement and relationship management</li>
                             <li>Business development support</li>
                             <li>Market insight</li>
                             <li>Media and competitor monitoring</li>
@@ -765,25 +771,69 @@ const IndexPage = (props) => {
                 <SectionTitleLight>Our Clients</SectionTitleLight>
                 <ClientLogoWrapper>
                     <ClientLogoContainer>
-                        <ClientLogo fluid={props.data.KPMG.childImageSharp.fluid}/>
+                        <ClientLogo fluid={props.data.ALG.childImageSharp.fluid}/>
                     </ClientLogoContainer>
                     <ClientLogoContainer>
-                        <ClientLogo fluid={props.data.NIE.childImageSharp.fluid}/>
+                        <ClientLogo fluid={props.data.ABC.childImageSharp.fluid}/>
                     </ClientLogoContainer>
                     <ClientLogoContainer>
-                        <ClientLogo fluid={props.data.NIW.childImageSharp.fluid}/>
+                        <ClientLogo fluid={props.data.ARUP.childImageSharp.fluid}/>
                     </ClientLogoContainer>
                     <ClientLogoContainer>
-                        <ClientLogo fluid={props.data.QUB.childImageSharp.fluid}/>
-                    </ClientLogoContainer>
-                    <ClientLogoContainer>
-                        <ClientLogo fluid={props.data.Farrans.childImageSharp.fluid}/>
+                        <ClientLogo fluid={props.data.BCC.childImageSharp.fluid}/>
                     </ClientLogoContainer>
                     <ClientLogoContainer>
                         <ClientLogo fluid={props.data.CBRE.childImageSharp.fluid}/>
                     </ClientLogoContainer>
                     <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.Dalata.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
                         <ClientLogo fluid={props.data.DA.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.DigitalDNA.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.Farrans.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.KPMG.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.LinenMill.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.MEABC.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.NMD.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.NIE.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.NIW.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.Norbrook.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.NRC.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.QUB.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.STATSports.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.TODD.childImageSharp.fluid}/>
+                    </ClientLogoContainer>
+                    <ClientLogoContainer>
+                        <ClientLogo fluid={props.data.FourC.childImageSharp.fluid}/>
                     </ClientLogoContainer>
                 </ClientLogoWrapper>
             </Container>
@@ -1105,6 +1155,118 @@ export const query = graphql`
             }
 
             DA: file(relativePath: { eq: "ClientLogos/DA.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            ALG: file(relativePath: { eq: "ClientLogos/ALG.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            ABC: file(relativePath: { eq: "ClientLogos/ABC.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            ARUP: file(relativePath: { eq: "ClientLogos/ARUP.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            BCC: file(relativePath: { eq: "ClientLogos/BCC.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            Dalata: file(relativePath: { eq: "ClientLogos/Dalata.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            DigitalDNA: file(relativePath: { eq: "ClientLogos/DigitalDNA.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            LinenMill: file(relativePath: { eq: "ClientLogos/LinenMill.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MEABC: file(relativePath: { eq: "ClientLogos/MEABC.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            NMD: file(relativePath: { eq: "ClientLogos/NMD.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            NRC: file(relativePath: { eq: "ClientLogos/NRC.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            STATSports: file(relativePath: { eq: "ClientLogos/STATSports.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            TODD: file(relativePath: { eq: "ClientLogos/TODD.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            FourC: file(relativePath: { eq: "ClientLogos/4C.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            Norbrook: file(relativePath: { eq: "ClientLogos/Norbrook.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 300) {
                         ...GatsbyImageSharpFluid

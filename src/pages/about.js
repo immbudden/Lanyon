@@ -535,9 +535,9 @@ export default AboutPage
 
 export const query = graphql`
     query {
-            aboutHeroImg: file(relativePath: { eq: "PartnerTint.jpg" }) {
+            aboutHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, cropFocus: ENTROPY ) {
+                    fluid(maxWidth: 2500, maxHeight: 1100 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

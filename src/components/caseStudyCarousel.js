@@ -44,6 +44,23 @@ const CaseStudyTitle = styled.h2 `
     `}
 `
 
+const CaseStudyNumber = styled.h5 `
+    font-size: 3rem;
+    color: #FFF;
+    font-family: GillSansMTPro;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(34,34,34,0.5);
+
+    ${media.lessThan("large")`
+        font-size: 2rem;
+    `}
+
+    ${media.lessThan("medium")`
+        font-size: 1.5rem;
+    `}
+`
+
 const Container = styled.div `
     margin: 0 auto;
     padding: 10rem 0;
@@ -137,6 +154,7 @@ export default () => (
                         }}
                         fluid={data.SSCover.childImageSharp.fluid} />
                         <Container>
+                                <CaseStudyNumber>CASE STUDY 1</CaseStudyNumber>
                                 <CaseStudyTitle>STATSports</CaseStudyTitle>
                         </Container>
                     </Url>
@@ -153,7 +171,8 @@ export default () => (
                         }}
                         fluid={data.LMCover.childImageSharp.fluid} />
                         <Container>
-                                <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
+                            <CaseStudyNumber>CASE STUDY 2</CaseStudyNumber>
+                            <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
@@ -169,7 +188,8 @@ export default () => (
                         }}
                         fluid={data.MIPIMCover.childImageSharp.fluid} />
                         <Container>
-                                <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
+                            <CaseStudyNumber>CASE STUDY 3</CaseStudyNumber>
+                            <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
@@ -185,7 +205,8 @@ export default () => (
                         }}
                         fluid={data.NIMarketOutlookCover.childImageSharp.fluid} />
                         <Container>
-                                <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
+                            <CaseStudyNumber>CASE STUDY 4</CaseStudyNumber>
+                            <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
@@ -201,7 +222,8 @@ export default () => (
                         }}
                         fluid={data.INCover.childImageSharp.fluid} />
                         <Container>
-                                <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
+                            <CaseStudyNumber>CASE STUDY 5</CaseStudyNumber>
+                            <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
