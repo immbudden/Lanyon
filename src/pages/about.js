@@ -43,7 +43,7 @@ const SectionTitle = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 4rem; 
         text-align: center;
-        width: 80%;
+        width: 90%;
     `}
 `
 
@@ -59,7 +59,7 @@ const SectionTitleLeft = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 4rem; 
         text-align: center;
-        width: 80%;
+        width: 100%;
     `}
 `
 
@@ -86,23 +86,51 @@ const ServiceWrapper = styled.div `
 `
 
 const ServiceContainer = styled.div `
-    flex: 1 1 31.66%; // Different from index
-    margin-bottom: 7.5rem; // Different from index
-    margin-right: 2.5%;
+    flex: 1 1 30%;
+    margin-bottom: 10rem;
+    margin-right: 5%;
 
-    &:nth-child(3n) {
-        margin-right: 0;
-    } // Different from index
-
-    &:nth-child(n+3) {
+    &:nth-child(n+4) {
         margin-bottom: 0;
-    } // Different from index
+    }
+
+    &:nth-child(3n+3) {
+        margin-right: 0;
+    }
+
+    ${media.lessThan("large")`
+        flex: 1 1 47.5%;
+
+        &:nth-child(n+4) {
+            margin-bottom: 0;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 5%;
+        }
+
+        &:nth-child(2n+2) {
+            margin-right: 0;
+        }
+    `}
 
     ${media.lessThan("medium")`
+
+        flex: 0 1 90%;
+        margin: 0 auto;
+
         margin-bottom: 5rem;
         
         &:nth-child(n+4) {
             margin-bottom: 5rem;
+        }
+
+        &:nth-child(3n) {
+            margin-right: auto;
+        }
+
+        &:nth-child(2n+2) {
+            margin-right: auto;
         }
 
         &:last-child {
@@ -119,6 +147,11 @@ const ServiceTitle = styled.h3 `
     margin: 0 auto;
     text-align: left;
     margin-bottom: 2.5rem;
+
+    ${media.lessThan("medium")`
+        font-size: 3rem;
+        text-align: center;
+    `}
 `
 
 // Close consolidate
@@ -215,6 +248,10 @@ const ServiceList = styled.ul `
     font-size: 2rem;
     color: #222;
     font-weight: 100;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+    `}
 `
 
 const AboutPage = (props) => (

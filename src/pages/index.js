@@ -33,6 +33,7 @@ const HeadingOne = styled.h1 `
         font-size: 5rem;
         margin-top: 15rem;
         text-align: center;
+        justify-content: center;
     `}
 `
 
@@ -70,6 +71,10 @@ const Container = styled.div `
     z-index: 2;
     display: flex;
     flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 7.5rem 0;
+    `}
 `
 
 const SectionTitle = styled.h2 `
@@ -118,7 +123,9 @@ const SectionTitleLeft = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 4rem; 
         text-align: center;
-        width: 80%;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 5rem;
     `}
 `
 
@@ -148,6 +155,7 @@ const SectionIntroLeft = styled.p `
     ${media.lessThan("medium")`
         font-size: 1.8rem; 
         width: 100%;
+        text-align: center;
     `}
 `
 
@@ -189,7 +197,7 @@ const ServiceContainer = styled.div `
 
     ${media.lessThan("medium")`
 
-        flex: 0 1 65%;
+        flex: 0 1 90%;
         margin: 0 auto;
 
         margin-bottom: 5rem;
@@ -235,12 +243,21 @@ const ServiceTitle = styled.h3 `
     margin: 0 auto;
     text-align: left;
     margin-bottom: 2.5rem;
+
+    ${media.lessThan("medium")`
+        font-size: 3rem;
+        text-align: center;
+    `}
 `
 
 const ServiceList = styled.ul `
     font-size: 2rem;
     color: #222;
     font-weight: 100;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+    `}
 `
 
 const LatestNewsWrapper = styled.div `
@@ -254,6 +271,11 @@ const LatestNewsContainer = styled.div `
     width: 80%;
     position: relative;
     justify-content: flex-end;
+
+    ${media.lessThan("medium")`
+        width: 100%;
+        justify-content: center;
+    `}
 
 `
 
@@ -275,6 +297,16 @@ const LatestNewsStory = styled(Link) `
         margin-top: -7.5rem;
         margin-right: 0;
     }
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 5rem;
+
+        &:nth-child(even) {
+            margin-top: 0rem;
+        }
+    `}
 `
 
 
@@ -288,8 +320,14 @@ const LatestNewsTextWrapper = styled.div `
     background: #FFF;
     padding: 2.5rem;
     width: 80%;
-    height: 16rem;
+    min-height: 16rem;
     align-items: flex-end;
+
+    ${media.lessThan("medium")`
+        border: 1px solid #EEEEEE;
+        border-top: none;
+        width: 100%;
+    `}
 `
 
 const LatestNewsStoryMeta = styled.div `
@@ -302,8 +340,8 @@ const LatestNewsStoryMeta = styled.div `
 
 const LatestNewsStoryHeadline = styled.h4 `
     flex: 0 0 100%;
-    font-size: 2.6rem;
-    line-height: 1.15;
+    font-size: 2.5rem;
+    line-height: 1.3;
     color: #004655;
     font-weight: 100;
     margin-bottom: 0;
@@ -351,6 +389,28 @@ const ClientLogoContainer = styled.div `
     &:nth-child(n+15) {
         margin-bottom: 0;
     }
+
+    ${media.lessThan("medium")`
+        flex: 0 0 20%;
+        margin-bottom: 5rem;
+
+        &:nth-child(7n+7) {
+            margin-right: 8.5%;
+        }
+
+        &:nth-child(3n+3) {
+            margin-right: 0;
+        }
+
+        &:nth-child(n+15) {
+            margin-bottom: 5rem;
+        }
+
+        &:nth-child(n+18) {
+            margin-bottom: 0;
+        }
+        
+    `}
 `
 
 const ClientLogo = styled(Img) `
@@ -364,6 +424,10 @@ const Slide = styled.div `
     flex-direction: row;
     -webkit-box-align: center;
     align-items: center;
+
+    ${media.lessThan("medium")`
+        height: 85vh;
+    `}
 `
 const SlideImg = styled(Img) `
     min-height: 100vh;
@@ -389,6 +453,10 @@ const FeaturedNewsStoryImgContainer = styled.div `
     height: 100vh;
     position: relative;
     overflow: hidden;
+
+    ${media.lessThan("medium")`
+        height: 35vh;
+    `}
 `
 
 const FeaturedNewsStoryTextWrapper = styled.div `
@@ -398,10 +466,23 @@ const FeaturedNewsStoryTextWrapper = styled.div `
     justify-content: center;
     align-items: flex-start;
     background: #FFF; // Different
+    position: relative;
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%; // Different from case studies (100%)
+        height: 40vh;
+    `}
+    
 `
 
 const FeaturedNewsStoryTextContainer = styled.div ` 
     padding: 0 5rem;
+
+    ${media.lessThan("medium")`
+        display: flex;
+        flex-direction: column; 
+        padding: 2.5rem;
+    `}
 `
 
 //
@@ -412,6 +493,13 @@ const FeaturedNewsStoryTitle = styled.h2 `
     color: #222;
     font-weight: 400;
     margin-bottom: 5rem;
+    line-height: 1.3;
+
+    ${media.lessThan("medium")`
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+        flex: auto;
+    `}
 `
 
 const FeaturedNewsStoryShortDescription = styled.p `
@@ -454,6 +542,11 @@ const NewsStoryDescription = styled.p `
     color: #222;
     font-weight: 100;
     margin-bottom: 5rem;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    `}
 `
 
 const StyledCarousel = styled(Carousel) `
@@ -557,7 +650,7 @@ const IndexPage = (props) => {
     <div>
         <FontFace />
         <Nav />
-        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={true} autoplayInterval={3500} transitionMode={'scroll'} pauseOnHover={false}
+        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={false} autoplayInterval={3500} transitionMode={'scroll'} pauseOnHover={false}
             
             renderCenterLeftControls={({ previousSlide }) => (
                 <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
@@ -590,7 +683,7 @@ const IndexPage = (props) => {
                 <HeaderContainer>
                     <HeadingTextContainer>
                         <HeadingOne>Lanyon</HeadingOne>
-                        <HeadingTwo>Helping businesses achieve their potential through strategic communications, <br />reputation management and stakeholder engagement</HeadingTwo>
+                        <HeadingTwo>Helping businesses achieve their potential through strategic communications, reputation management and stakeholder engagement</HeadingTwo>
                     </HeadingTextContainer>
                 </HeaderContainer>
             </Slide>

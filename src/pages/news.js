@@ -53,6 +53,10 @@ const FeaturedNewsStoryImgContainer = styled.div `
     height: 50vh;
     position: relative;
     overflow: hidden;
+
+    ${media.lessThan("medium")`
+        height: 35vh;
+    `}
 `
 
 const NewsStoryFeaturedImg = styled(Img) `
@@ -68,10 +72,22 @@ const FeaturedNewsStoryTextWrapper = styled.div `
     justify-content: center;
     align-items: flex-start;
     background: #FFF; // Different
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%; // Different from case studies (100%)
+        height: 40vh;
+    `}
 `
 
 const FeaturedNewsStoryTextContainer = styled.div ` 
     padding: 0 5rem;
+
+    ${media.lessThan("medium")`
+        display: flex;
+        flex-direction: column; 
+        padding: 2.5rem;
+    `}
+
 `
 
 //
@@ -82,6 +98,12 @@ const FeaturedNewsStoryTitle = styled.h2 `
     color: #222;
     font-weight: 400;
     margin-bottom: 5rem;
+
+    ${media.lessThan("medium")`
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+        flex: auto;
+    `}
 `
 
 const FeaturedNewsStoryShortDescription = styled.p `
@@ -93,7 +115,7 @@ const FeaturedNewsStoryShortDescription = styled.p `
 `
 
 const FeaturedNewsStoryMeta = styled.div `
-    flex: 0 0 100%;
+    flex: 1 1 100%;
     font-size: 1.5rem;
 `
 
@@ -138,15 +160,29 @@ const NewsStoryImgContainer = styled.a `
     overflow: hidden;
 `
 
-const NewsStoryTextContainer = styled.div ` 
+const NewsStoryTextWrapper = styled.div ` 
     display: flex;
     flex: 1 1 100%;
     flex-direction: column;
     justify-content: flex-start;
-    
     background: #FFF;
     margin-top: 5rem;
+
+    ${media.lessThan("medium")`
+        border: 1px solid #EEEEEE;
+        border-top: none;
+        width: 100%;
+        margin-top: 0;
+    `}
 `
+
+const NewsStoryTextContainer = styled.div ` 
+
+    ${media.lessThan("medium")`
+        padding: 2.5rem;
+    `}
+`
+
 // Note that this NewsStoryTextContainer is different from that in news-story
 
 const NewsStoryTitle = styled.h2 `
@@ -155,6 +191,11 @@ const NewsStoryTitle = styled.h2 `
     color: #222;
     font-weight: 400;
     margin-bottom: 2.5rem;
+    line-height: 1.3;
+
+    ${media.lessThan("medium")`
+        font-size: 2.5rem;
+    `}
 `
 
 const NewsStoryDescription = styled.p `
@@ -163,10 +204,15 @@ const NewsStoryDescription = styled.p `
     color: #222;
     font-weight: 100;
     margin-bottom: 5rem;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    `}
 `
 
 const NewsStoryMeta = styled.div `
-    flex: 0 0 100%;
+    flex: 1 1 100%;
     font-size: 1.5rem;
     color: #222;
 `
@@ -192,6 +238,12 @@ const NewsStoryContainer = styled(Link) `
     &:nth-child(4n) {
         margin-right: 0;
     }
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 5rem;
+    `}
 `
 
 const ViewMore = styled(Link) `
@@ -229,15 +281,17 @@ const renderStories = (node, props) => {
                     <NewsStoryFeaturedImg fluid={featured_image} />
                 </NewsStoryImgContainer>
             )}
-            <NewsStoryTextContainer>
-                <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
-                <TruncateMarkup lines={3}>
-                    <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
-                </TruncateMarkup>
-                <NewsStoryMeta>
-                    <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.html}</Category> &nbsp; &nbsp; 
-                </NewsStoryMeta>
-            </NewsStoryTextContainer>
+            <NewsStoryTextWrapper>
+                <NewsStoryTextContainer>
+                    <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
+                    <TruncateMarkup lines={3}>
+                        <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
+                    </TruncateMarkup>
+                    <NewsStoryMeta>
+                        <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.html}</Category> &nbsp; &nbsp; 
+                    </NewsStoryMeta>
+                </NewsStoryTextContainer>
+            </NewsStoryTextWrapper>
         
         </NewsStoryContainer>
     )

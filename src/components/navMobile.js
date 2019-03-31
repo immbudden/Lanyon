@@ -50,6 +50,8 @@ const NavLink = styled(Link) `
     line-height: 2.4rem;
     padding-top: 0.8rem;
     margin-right: 8.5rem;
+    letter-spacing: 0.08rem;
+    opacity: 0.6;
 
     &:last-child {
         margin-right: 0;
@@ -65,20 +67,25 @@ const NavLink = styled(Link) `
     `}
 `
 
+const ActiveLink =  {
+    opacity: '1',
+    transition: 'all 0.5s linear'
+}   
+
 const NavMobile = ({ data }) => (
         <NavWrapperMobile>
             <NavContainer>
                 <NavLinkContainer>
-                    <NavLink to="/another-page/">
-                        Portfolio
+                    <NavLink to="/case-studies/" activeStyle={ActiveLink}>
+                        Case Studies
                     </NavLink>
-                    <NavLink to="/another-page/">
+                    <NavLink to="/news/" activeStyle={ActiveLink}>
                         News
                     </NavLink>
-                    <NavLink to="/another-page/">
+                    <NavLink to="/about/" activeStyle={ActiveLink}>
                         About
                     </NavLink>
-                    <NavLink to="/another-page/">
+                    <NavLink to="/contact/" activeStyle={ActiveLink}>
                         Contact
                     </NavLink>
                 </NavLinkContainer>

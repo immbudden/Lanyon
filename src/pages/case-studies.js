@@ -20,6 +20,10 @@ const Container = styled.div `
     position: relative;
     display: flex;
     flex-direction: column;
+    
+    ${media.lessThan("medium")`
+        padding: 7.5rem 0;
+    `}
 `
 
 const NoTopContainer = styled.div `
@@ -28,6 +32,10 @@ const NoTopContainer = styled.div `
     max-width: 90%;
     display: flex;
     flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 0 0 7.5rem;
+    `}
 `
 
 const SectionTitleTop = styled.h2 `
@@ -42,7 +50,8 @@ const SectionTitleTop = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 4rem; 
         text-align: center;
-        width: 80%;
+        width: 90%;
+        margin: 5rem auto;
     `}
 `
 
@@ -55,6 +64,10 @@ const Paragraph = styled.p `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+
+    ${media.lessThan("medium")`
+        text-align: center;
+    `}
 `
 
 const ParagraphLight = styled.p `
@@ -64,6 +77,10 @@ const ParagraphLight = styled.p `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+
+    ${media.lessThan("medium")`
+        text-align: center;
+    `}
 `
 
 const ContactButtonLight = styled.button `
@@ -74,6 +91,10 @@ const ContactButtonLight = styled.button `
     border: none;
     text-transform: uppercase;
     margin-top: 2.5rem;
+
+    ${media.lessThan("medium")`
+        margin: 3.5rem auto;
+    `}
 `
 
 const SectionColoured = styled.div `
@@ -87,6 +108,10 @@ const CenterThreeContainer = styled.div `
     flex-flow: row wrap;
     margin: 0 auto;
     width: 59%;
+
+    ${media.lessThan("medium")`
+        width: 90%;
+    `}
 `
 
 const SectionColouredSubtitleLeft = styled.h3 `
@@ -102,7 +127,7 @@ const SectionColouredSubtitleLeft = styled.h3 `
     ${media.lessThan("medium")`
         font-size: 3rem; 
         text-align: center;
-        width: 80%;
+        width: 90%;
     `}
 `
 
@@ -126,6 +151,19 @@ const ThreeColumnContainer = styled.div `
     &:nth-child(3n) {
         margin-right: 0;
     }
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+        margin-right: 0;
+
+        &:nth-child(5n) {
+            margin-bottom: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    `}
 `
 
 const ThreeColumnImgContainer = styled.div `
@@ -146,7 +184,13 @@ const ThreeColumnTextContainer = styled.div `
     justify-content: flex-start;
     flex-flow: row wrap;
     background: #FFF;
-    margin-top: 5rem;
+    padding-top: 5rem;
+
+    ${media.lessThan("medium")`
+        border: 1px solid #EEEEEE;
+        border-top: none;
+        padding: 2.5rem;
+    `}
 `
 
 const CaseStudyTitle = styled.h3 `
@@ -165,6 +209,12 @@ const CaseStudyMainBrief = styled.h4 `
     color: #222;
     font-weight: 100;
     line-height: 1.5;
+    margin-bottom: 0;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+    `}
+    
     
 `
 
@@ -261,9 +311,9 @@ const CaseStudies = (props) => (
         <SectionColoured>
             <Container>
                 <CenterThreeContainer>
-                    <SectionColouredSubtitleLeft>Interested in working with us?</SectionColouredSubtitleLeft>
+                    <SectionColouredSubtitleLeft>Interested in how we can support your project?</SectionColouredSubtitleLeft>
                     <ParagraphLight>
-                        One short paragraph in here which would briefly ask if the user is looking for support for a similar project, if so - we’d love to talk about it and see if there was a way to collaborate.  This paragraph should be no longer than three lines in total.
+                    At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our Partners today.
                     </ParagraphLight>
                     <ContactButtonLight>Get in touch</ContactButtonLight>
                 </CenterThreeContainer>
