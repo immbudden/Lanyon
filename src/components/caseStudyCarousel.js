@@ -130,6 +130,14 @@ export default () => (
                 }
             }
 
+            RBCover: file(relativePath: { eq: "case-studies/RoryBest/RB-cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
         }
       `}
 
@@ -224,6 +232,23 @@ export default () => (
                         <Container>
                             <CaseStudyNumber>CASE STUDY 5</CaseStudyNumber>
                             <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
+                        </Container>
+                    </Url>
+                </Slide>
+                <Slide>
+                    <Url to="/rorybest/">
+                        <SlideImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: -1,
+                        }}
+                        fluid={data.RBCover.childImageSharp.fluid} />
+                        <Container>
+                            <CaseStudyNumber>CASE STUDY 5</CaseStudyNumber>
+                            <CaseStudyTitle>Freedom of the city</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
