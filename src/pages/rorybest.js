@@ -104,11 +104,15 @@ const GallerySlide = styled.div `
     flex-direction: row;
     -webkit-box-align: center;
     align-items: center;
-    
+
+    ${media.lessThan("medium")`
+        height: 25vh;
+    `}
 `
 const GallerySlideImg = styled(Img) `
     height: 100%;
     width: 100%;
+    
 `
 
 const StyledCarousel = styled(Carousel) `
@@ -289,6 +293,7 @@ const StatText = styled.p `
     `}
 `
 
+
 const SectionSubtitleLeft = styled.h3 `
     font-size: 4rem; 
     color: #222; 
@@ -327,7 +332,7 @@ const CarouselNav = styled.button `
     }
 `
 
-const CaseStudyLinenMill = (props) => (
+const CaseStudyStatSports = (props) => (
 
     <div>
         <FontFace />
@@ -340,36 +345,34 @@ const CaseStudyLinenMill = (props) => (
                 width: "100%",
                 zIndex: -1,
             }}
-                fluid={props.data.LMCover.childImageSharp.fluid} />
+                fluid={props.data.RBCover.childImageSharp.fluid} />
         </HeaderWrapper>
         <Section>
             <Container>
                 <CaseStudyIntroWrapper>
                     <CaseStudyIntroContainer>
-                        <SectionTitleLeft>Linen Mill Studios / Game of Thrones</SectionTitleLeft> {/* get from index */}
+                        <SectionTitleLeft>Rory Best - Freedom of the city</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Highlight HBO’s Game of Thrones tour at Linen Mill Studios
+                                Maximise media coverage of Rory Best’s Freedom of the Borough
                                 <br /><br />
-                                Maximise media coverage of the announcement
+                                Secure BBC documentary
                                 <br /><br />
-                                Co-ordinate communication with HBO and other stakeholders
+                                Co-ordinate and compile content from council, IRFU, Rory Best and former and current players
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
-                            <InfoText>Linen Mill Studios</InfoText>
+                            <InfoText>Armagh City, Banbridge and Craigavon Borough Council</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>
-                                We were tasked with highlighting HBO’s decision to locate the formal studio tour for Game of Thrones at Linen Mill Studios in Banbridge, County Down, Northern Ireland, to a global audience. 
+                                Armagh City, Banbridge and Craigavon Borough Council tasked us with maximising and managing coverage of the council’s conferment of the Freedom of the Borough on Ireland and Ulster Rugby Captain Rory Best.
                                 <br /><br />
-                                The move comes after Game of Thrones filming ended and our involvement focused on maximising news coverage around the decision that the Banbridge studios will take centre stage as part of a legacy investment which will also see other filming sites opened up to the public.
+                                We were asked to raise awareness in the runup to, during and after an event to confer the honour in Armagh Palace. That included securing a half hour documentary with a major television network.
                                 <br /><br />
-                                We were tasked with relaying the news in a positive fashion, not just to the media but to all stakeholders involved in the project including councils, local residents, tourism organisations and government.
+                                Lanyon were also tasked with publicising a mini rugby event being held in Rory Best’s honour at City of Armagh Rugby Club in an effort to help drive footfall to it and to an exhibition of memorabilia/
                                 <br /><br />
-                                In addition, we had to ensure co-ordination with HBO to make sure our announcements were released in tandem and in line with its strict brand guidelines. 
-                                <br /><br />
-                                Those guidelines meant that media filming and other content had to be strictly monitored by Lanyon at the site.
+                                In addition, we were charged with providing video testimonials from former players for a video presentation to be shown at the event and interviews to be taken during it.
                                 <br /><br />
                                 Interested in working on something similar? <Bold>Let’s chat about it.</Bold>
                             </CaseStudyDescription>
@@ -385,20 +388,20 @@ const CaseStudyLinenMill = (props) => (
             <Container>
                 <StatWrapper>
                 <StatContainer>
-                    <StatHeadline>34</StatHeadline>
-                    <StatText>pieces of coverage</StatText>
+                    <StatHeadline>XX</StatHeadline>
+                    <StatText>Stat in here</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>800m</StatHeadline>
-                    <StatText>online readership</StatText>
+                    <StatHeadline>XX</StatHeadline>
+                    <StatText>Stat in here</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>818,000</StatHeadline>
-                    <StatText>estimated coverage views</StatText>
+                    <StatHeadline>XX</StatHeadline>
+                    <StatText>Stat in here</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>16,200 </StatHeadline>
-                    <StatText>social shares</StatText>
+                    <StatHeadline>XX</StatHeadline>
+                    <StatText>Stat in here</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>
@@ -408,95 +411,108 @@ const CaseStudyLinenMill = (props) => (
             <CenterThreeContainer>
                 <SectionSubtitleLeft>Strategy &amp; Tactics</SectionSubtitleLeft>
                 <CaseStudyDescription>
-                    Working in conjunction with the various stakeholders, Lanyon handled all media communications around the company’s plans to base a multi-million-pound studio tour at the site which had been used as a film location by Game of Thrones for the last eight years. 
+                    To raise awareness of the event we arranged an eye-catching photograph of Rory Best with the Lord Mayor and a herd of sheep on Armagh mall to highlight the tradition that those conferred with the Freedom of the Borough honour can graze their sheep on the borough’s land.
                     <br /><br />
-                    As well as drafting statements and key messaging, we reached out to an extensive media contact list to spread news of the development across the globe.
+                    We arranged a further shoot with Rory Best along with a member of each of the mini rugby teams who would be taking part in the competition and communicated with rugby journalists throughout the island of Ireland and beyond.
+                    <br /><br />
+                    In addition, Lanyon filmed, produced and compiled a video testimonial which included past and former players including Syd Millar, Willie-John McBride and Tommy Bowe, as well as a booklet with written testimonial from senior council members and Ireland rugby coach Joe Schmidt.
                 </CaseStudyDescription>
             </CenterThreeContainer>
             </Container>
         </Section>
         <Section>
-            <SectionImg fluid={props.data.LMNightKingImg.childImageSharp.fluid} />
+            <SectionImg fluid={props.data.RBRugbyTeamImg.childImageSharp.fluid} />
         </Section>
         <Section>
             <Container>
                 <CenterThreeContainer>
                     <SectionSubtitleLeft>Outcomes</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                        Lanyon organised and attended interviews on location with major media organisations including BBC, RTE and ITV, securing a wealth of positive broadcast coverage, drafting messaging documents for interviewees and working closely to prepare them for the camera. 
+                        We achieved coverage across all media in Northern Ireland and the Republic including The Times, BBC, UTV Irish Times, Belfast Telegraph, Irish News and a host of local papers, facilitating interviews in the run up to, during and after the event.
                         <br /><br />
-                        Print, online and social media coverage stretched across the globe including HuffPostUS, Time Magaine, The Telegraph, The Sun, Daily Mail, Lonely Planet, Conde Naste Traveller, Philippine Star, Business Insider and a host of others.
+                        Lanyon secured a documentary with the BBC which included footage of the Freedom of the Borough event as well as of the memorabilia exhibition in Armagh Palace.
+                        <br /><br />
+                        And there was capacity attendance by the public at the mini rugby event which proved a huge success for the council.
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
-                <StyledCarousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true} dragging={true}
+{/*             
+                <StyledCarousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+
                     renderCenterLeftControls={({ previousSlide }) => (
                         <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
                     )}
                     renderCenterRightControls={({ nextSlide }) => (
                         <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
                     )}
+                
                 >
                     <GallerySlide>
                             <GallerySlideImg 
-                            fluid={props.data.LMCar1Img.childImageSharp.fluid} />
+                            fluid={props.data.SSCar1Img.childImageSharp.fluid} />
                     </GallerySlide>
                     <GallerySlide>
                             <GallerySlideImg 
-                            fluid={props.data.LMCar2Img.childImageSharp.fluid} />
+                            fluid={props.data.SSCar2Img.childImageSharp.fluid} />
                     </GallerySlide>
                     <GallerySlide>
                             <GallerySlideImg 
-                            frameOverflow
-                            fluid={props.data.LMCar3Img.childImageSharp.fluid} />
+                            fluid={props.data.SSCar3Img.childImageSharp.fluid} />
                     </GallerySlide>
                     <GallerySlide>
                             <GallerySlideImg 
-                            fluid={props.data.LMCar4Img.childImageSharp.fluid} />
+                            fluid={props.data.SSCar4Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar5Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar6Img.childImageSharp.fluid} />
                     </GallerySlide>
                 </StyledCarousel>
 
-                <MobileCarousel slidesToShow={1.5} cellSpacing={25} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true} dragging={true}
+                <MobileCarousel slidesToShow={1.5} cellSpacing={25} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+
                     renderCenterLeftControls={({ previousSlide }) => (
                         <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
                     )}
                     renderCenterRightControls={({ nextSlide }) => (
                         <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
                     )}
+                
                 >
                     <GallerySlide>
                             <GallerySlideImg 
-                            fluid={props.data.LMCar1Img.childImageSharp.fluid} />
+                            fluid={props.data.SSCar1Img.childImageSharp.fluid} />
                     </GallerySlide>
                     <GallerySlide>
                             <GallerySlideImg 
-                            fluid={props.data.LMCar2Img.childImageSharp.fluid} />
+                            fluid={props.data.SSCar2Img.childImageSharp.fluid} />
                     </GallerySlide>
                     <GallerySlide>
                             <GallerySlideImg 
-                            frameOverflow
-                            fluid={props.data.LMCar3Img.childImageSharp.fluid} />
+                            fluid={props.data.SSCar3Img.childImageSharp.fluid} />
                     </GallerySlide>
                     <GallerySlide>
                             <GallerySlideImg 
-                            fluid={props.data.LMCar4Img.childImageSharp.fluid} />
+                            fluid={props.data.SSCar4Img.childImageSharp.fluid} />
                     </GallerySlide>
-                </MobileCarousel>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar5Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar6Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                </MobileCarousel> */}
+
         </Section>
 
         <Section>
-            <Container>
-            <CenterThreeContainer>
-                <SectionSubtitleLeft>The Future</SectionSubtitleLeft>
-                <CaseStudyDescription>
-                    Lanyon continue to work with Linen Mill Studios and will be at the heart of the development of HBO’s Game of Thrones studio tour as it is progresses over the next few months.
-                </CaseStudyDescription>
-            </CenterThreeContainer>
-            </Container>
-        </Section>
-
-        <Section>
-            <SectionImg fluid={props.data.LMStarks.childImageSharp.fluid} />
+            <SectionImg fluid={props.data.SSConRugbyImg.childImageSharp.fluid} />
         </Section>
         <Section>
             <Container>
@@ -512,61 +528,29 @@ const CaseStudyLinenMill = (props) => (
             </Container>
         </Section>
         <Section id="caseStudies">
-            <CaseStudyCarousel />
+            <CaseStudyCarousel/>
         </Section>
         <NavMobile />
     </div>
 
 )
 
-export default CaseStudyLinenMill
+export default CaseStudyStatSports
 
 export const query = graphql`
     query {
 
-            LMNightKingImg: file(relativePath: { eq: "case-studies/LinenMill/NightKing.jpg" }) {
+            RBRugbyTeamImg: file(relativePath: { eq: "case-studies/RoryBest/RugbyTeam.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1000, cropFocus: NORTH ) {
+                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
 
-            LMStarks: file(relativePath: { eq: "case-studies/LinenMill/LMStarks.jpg" }) {
+            SSConRugbyImg: file(relativePath: { eq: "case-studies/StatSports/ConRugby.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: NORTH ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            INCover: file(relativePath: { eq: "case-studies/InnovationNation18/IN-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            MIPIMCover: file(relativePath: { eq: "case-studies/MIPIM18/MIPIM-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook18/NIMO-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            LMCover: file(relativePath: { eq: "case-studies/LinenMill/LM-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: NORTH ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -580,7 +564,23 @@ export const query = graphql`
                 }
             }
 
-            LMCar1Img: file(relativePath: { eq: "case-studies/LinenMill/LMCar1.jpg" }) {
+            RBCover: file(relativePath: { eq: "case-studies/RoryBest/RB-cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500, cropFocus: SOUTH) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            SSCar1Img: file(relativePath: { eq: "case-studies/StatSports/SSCar1.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 850, maxHeight: 525, cropFocus: NORTH ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            SSCar2Img: file(relativePath: { eq: "case-studies/StatSports/SSCar2.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -588,7 +588,7 @@ export const query = graphql`
                 }
             }
 
-            LMCar2Img: file(relativePath: { eq: "case-studies/LinenMill/LMCar2.jpg" }) {
+            SSCar3Img: file(relativePath: { eq: "case-studies/StatSports/SSCar3.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -596,7 +596,7 @@ export const query = graphql`
                 }
             }
 
-            LMCar3Img: file(relativePath: { eq: "case-studies/LinenMill/LMCar3.jpg" }) {
+            SSCar4Img: file(relativePath: { eq: "case-studies/StatSports/SSCar4.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -604,7 +604,15 @@ export const query = graphql`
                 }
             }
 
-            LMCar4Img: file(relativePath: { eq: "case-studies/LinenMill/LMCar4.jpg" }) {
+            SSCar5Img: file(relativePath: { eq: "case-studies/StatSports/SSCar5.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            SSCar6Img: file(relativePath: { eq: "case-studies/StatSports/SSCar6.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid

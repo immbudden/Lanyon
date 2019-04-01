@@ -31,6 +31,10 @@ const Container = styled.div `
     position: relative;
     display: flex;
     flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 5rem 0;
+    `}
 `
 
 const NoTopContainer = styled.div `
@@ -54,7 +58,7 @@ const SectionTitleLeft = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 4rem; 
         text-align: center;
-        width: 80%;
+        width: 90%;
     `}
 `
 
@@ -100,11 +104,31 @@ const GallerySlide = styled.div `
     flex-direction: row;
     -webkit-box-align: center;
     align-items: center;
+
+    ${media.lessThan("medium")`
+        height: 25vh;
+    `}
 `
 const GallerySlideImg = styled(Img) `
     height: 100%;
-    min-width: 850px;
+    width: 100%;
     
+`
+
+const StyledCarousel = styled(Carousel) `
+    display: block!important;
+
+    ${media.lessThan("medium")`
+        display: none!important;
+    `}
+`
+
+const MobileCarousel = styled(Carousel) `
+    display: none!important;
+
+    ${media.lessThan("medium")`
+        display: block!important;
+    `}
 `
 
 // To consolodate end
@@ -127,6 +151,11 @@ const CaseStudyIntroContainer = styled.div `
     padding: 5rem 5rem 0;
     flex-flow: row wrap;
     max-width: 72%;
+
+    ${media.lessThan("medium")`
+        max-width: 100%;
+        padding: 2.5rem 2.5rem 0;
+    `}
 `
 
 const CaseStudyInfoContainer = styled.div `
@@ -196,6 +225,10 @@ const CenterThreeContainer = styled.div `
     flex-flow: row wrap;
     margin: 0 auto;
     width: 59%;
+
+    ${media.lessThan("medium")`
+        width: 100%;
+    `}
 `
 
 const VideoContainer = styled.div `
@@ -227,6 +260,11 @@ const StatContainer = styled.div ` // Same as about page services
 
     ${media.lessThan("medium")`
         margin-bottom: 5rem;
+        margin-right: 5%;
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
         
         &:nth-child(n+4) {
             margin-bottom: 5rem;
@@ -249,13 +287,16 @@ const StatText = styled.p `
     font-weight: 400;
     margin: 0 auto;
     text-align: center;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+    `}
 `
 
 
 const SectionSubtitleLeft = styled.h3 `
     font-size: 4rem; 
     color: #222; 
-    display: flex;
     flex: 1 1 100%;
     font-family: Didot;
     font-weight: 100;
@@ -265,7 +306,7 @@ const SectionSubtitleLeft = styled.h3 `
     ${media.lessThan("medium")`
         font-size: 3rem; 
         text-align: center;
-        width: 80%;
+        margin-bottom: 2.5rem; 
     `}
 `
 
@@ -335,7 +376,9 @@ const CaseStudyStatSports = (props) => (
                                 <br /><br />
                                 Interested in working on something similar? <Bold>Let’s chat about it.</Bold>
                             </CaseStudyDescription>
-                            <ContactButton>Get in touch</ContactButton>
+                            <Url to="/contact">
+                                <ContactButton>Get in touch</ContactButton>
+                            </Url>
                         </CaseStudyDescriptionContainer>
                     </CaseStudyIntroContainer>
                 </CaseStudyIntroWrapper>
@@ -392,7 +435,7 @@ const CaseStudyStatSports = (props) => (
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
-                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+                <StyledCarousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
 
                     renderCenterLeftControls={({ previousSlide }) => (
                         <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
@@ -426,7 +469,43 @@ const CaseStudyStatSports = (props) => (
                             <GallerySlideImg 
                             fluid={props.data.SSCar6Img.childImageSharp.fluid} />
                     </GallerySlide>
-                </Carousel>
+                </StyledCarousel>
+
+                <MobileCarousel slidesToShow={1.5} cellSpacing={25} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+
+                    renderCenterLeftControls={({ previousSlide }) => (
+                        <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
+                    )}
+                    renderCenterRightControls={({ nextSlide }) => (
+                        <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
+                    )}
+                
+                >
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar1Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar2Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar3Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar4Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar5Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.SSCar6Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                </MobileCarousel>
         </Section>
 
         <Section>

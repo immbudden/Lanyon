@@ -303,7 +303,15 @@ const CaseStudies = (props) => (
                     </ThreeColumnContainer>
 
                     <ThreeColumnContainer>
-                        
+                        <Url to="/rorybest/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.RBCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>Rory Best - Freedom of the city</CaseStudyTitle>
+                                <CaseStudyMainBrief>Maximise media coverage of Rory Best’s Freedom of the Borough</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
                     </ThreeColumnContainer>
                </ColumnWrapper>
             </NoTopContainer>
@@ -362,6 +370,14 @@ export const query = graphql`
             }
 
             SSCover: file(relativePath: { eq: "case-studies/StatSports/SS-cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            RBCover: file(relativePath: { eq: "case-studies/RoryBest/RB-cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
