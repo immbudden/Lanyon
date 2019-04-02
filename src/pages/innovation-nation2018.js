@@ -13,6 +13,7 @@ import media from "styled-media-query";
 import CaseStudyCarousel from '../components/caseStudyCarousel';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
+import ReactPlayer from 'react-player';
 
 // To consolodate
 
@@ -391,6 +392,20 @@ const CarouselNav = styled.button `
     }
 `
 
+const Video = styled.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 5rem;
+`
+
+const Player = styled(ReactPlayer)`
+
+`
+
 const CaseStudyIN = (props) => (
 
     <div>
@@ -474,6 +489,14 @@ const CaseStudyIN = (props) => (
                     <br /><br />
                     We had full responsibility for all staging and AV requirements, as well as all hospitality aspects of the event and successfully executed a number of complex logistical arrangements. We also managed all event photography and videography requirements throughout the conference. 
                 </CaseStudyDescription>
+                <Video> 
+                    <Player 
+                        url='https://youtu.be/wordEX7KXmE?vq=hd720'
+                        width='100%'
+                        height='36vh'
+                        controls={true}
+                    />
+                </Video>
             </CenterThreeContainer>
                 <PeopleContainer>
                     <PersonContainer>

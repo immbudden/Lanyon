@@ -13,6 +13,7 @@ import media from "styled-media-query";
 import CaseStudyCarousel from '../components/caseStudyCarousel';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
+import ReactPlayer from 'react-player';
 
 // To consolodate
 
@@ -332,6 +333,20 @@ const CarouselNav = styled.button `
     }
 `
 
+const Video = styled.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 5rem;
+`
+
+const Player = styled(ReactPlayer)`
+
+`
+
 const CaseStudyStatSports = (props) => (
 
     <div>
@@ -388,20 +403,20 @@ const CaseStudyStatSports = (props) => (
             <Container>
                 <StatWrapper>
                 <StatContainer>
-                    <StatHeadline>XX</StatHeadline>
-                    <StatText>Stat in here</StatText>
+                    <StatHeadline>42</StatHeadline>
+                    <StatText>pieces of coverage</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XX</StatHeadline>
-                    <StatText>Stat in here</StatText>
+                    <StatHeadline>678</StatHeadline>
+                    <StatText>online readership</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XX</StatHeadline>
-                    <StatText>Stat in here</StatText>
+                    <StatHeadline>1.1m</StatHeadline>
+                    <StatText>estimated coverage views</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>XX</StatHeadline>
-                    <StatText>Stat in here</StatText>
+                    <StatHeadline>970</StatHeadline>
+                    <StatText>social shares</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>
@@ -417,11 +432,19 @@ const CaseStudyStatSports = (props) => (
                     <br /><br />
                     In addition, Lanyon filmed, produced and compiled a video testimonial which included past and former players including Syd Millar, Willie-John McBride and Tommy Bowe, as well as a booklet with written testimonial from senior council members and Ireland rugby coach Joe Schmidt.
                 </CaseStudyDescription>
+                    <Video> 
+                        <Player 
+                            url='https://youtu.be/Gc9eDR3ZsOY?vq=hd720'
+                            width='100%'
+                            height='36vh'
+                            controls={true}
+                        />
+                    </Video>
             </CenterThreeContainer>
             </Container>
         </Section>
         <Section>
-            <SectionImg fluid={props.data.RBRugbyTeamImg.childImageSharp.fluid} />
+            <SectionImg fluid={props.data.MemorabiliaImg.childImageSharp.fluid} />
         </Section>
         <Section>
             <Container>
@@ -512,7 +535,7 @@ const CaseStudyStatSports = (props) => (
         </Section>
 
         <Section>
-            <SectionImg fluid={props.data.SSConRugbyImg.childImageSharp.fluid} />
+            <SectionImg fluid={props.data.RorySheepImg.childImageSharp.fluid} />
         </Section>
         <Section>
             <Container>
@@ -540,7 +563,7 @@ export default CaseStudyStatSports
 export const query = graphql`
     query {
 
-            RBRugbyTeamImg: file(relativePath: { eq: "case-studies/RoryBest/RugbyTeam.jpg" }) {
+            MemorabiliaImg: file(relativePath: { eq: "case-studies/RoryBest/Memorabilia.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -548,17 +571,9 @@ export const query = graphql`
                 }
             }
 
-            SSConRugbyImg: file(relativePath: { eq: "case-studies/StatSports/ConRugby.jpg" }) {
+            RorySheepImg: file(relativePath: { eq: "case-studies/RoryBest/RorySheep.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: NORTH ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            SSCover: file(relativePath: { eq: "case-studies/StatSports/SS-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -572,52 +587,6 @@ export const query = graphql`
                 }
             }
 
-            SSCar1Img: file(relativePath: { eq: "case-studies/StatSports/SSCar1.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, maxHeight: 525, cropFocus: NORTH ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            SSCar2Img: file(relativePath: { eq: "case-studies/StatSports/SSCar2.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            SSCar3Img: file(relativePath: { eq: "case-studies/StatSports/SSCar3.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            SSCar4Img: file(relativePath: { eq: "case-studies/StatSports/SSCar4.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            SSCar5Img: file(relativePath: { eq: "case-studies/StatSports/SSCar5.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            SSCar6Img: file(relativePath: { eq: "case-studies/StatSports/SSCar6.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
+            
         }
     `

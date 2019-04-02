@@ -91,6 +91,7 @@ const ContactButtonLight = styled.button `
     border: none;
     text-transform: uppercase;
     margin-top: 2.5rem;
+    cursor: pointer;
 
     ${media.lessThan("medium")`
         margin: 3.5rem auto;
@@ -220,7 +221,6 @@ const CaseStudyMainBrief = styled.h4 `
 
 const Url = styled(Link) `
     text-decoration: none;
-    width: 100%;
 `
 
 const CaseStudies = (props) => (
@@ -279,7 +279,7 @@ const CaseStudies = (props) => (
                     </ThreeColumnContainer>
 
                     <ThreeColumnContainer>
-                        <Url to="/outlook2018/">
+                        <Url to="/outlook/">
                             <ThreeColumnImgContainer>
                                 <CaseStudyImg fluid={props.data.NIMOCrowd.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
@@ -323,7 +323,9 @@ const CaseStudies = (props) => (
                     <ParagraphLight>
                     At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our Partners today.
                     </ParagraphLight>
-                    <ContactButtonLight>Get in touch</ContactButtonLight>
+                    <Url to="/contact">
+                        <ContactButtonLight>Get in touch</ContactButtonLight>
+                    </Url>
                 </CenterThreeContainer>
             </Container>
         </SectionColoured>
@@ -353,7 +355,7 @@ export const query = graphql`
                 }
             }
 
-            NIMOCrowd: file(relativePath: { eq: "case-studies/NIMarketOutlook18/NIMOCrowd.jpg" }) {
+            NIMOCrowd: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOCrowd.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid

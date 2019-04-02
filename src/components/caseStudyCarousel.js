@@ -106,7 +106,7 @@ export default () => (
                 }
             }
 
-            NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook18/NIMO-cover.jpg" }) {
+            NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMO-cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
@@ -202,7 +202,7 @@ export default () => (
                     </Url>
                 </Slide>
                 <Slide>
-                    <Url to="/outlook2018/">
+                    <Url to="/outlook/">
                         <SlideImg 
                         style={{
                             position: "absolute",
