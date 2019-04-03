@@ -267,12 +267,12 @@ const CaseStudies = (props) => (
                     </ThreeColumnContainer>
 
                     <ThreeColumnContainer>
-                        <Url to="/mipim2018/">
+                        <Url to="/mipim2019/">
                             <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                                <CaseStudyImg fluid={props.data.MIPIM19Cover.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
+                                <CaseStudyTitle>Belfast at MIPIM 2019</CaseStudyTitle>
                                 <CaseStudyMainBrief>Positioning Belfast for investment on a global stage</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
@@ -286,6 +286,18 @@ const CaseStudies = (props) => (
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
                                 <CaseStudyMainBrief>Showcase the real estate market in Northern Ireland</CaseStudyMainBrief>
+                            </ThreeColumnTextContainer>
+                        </Url>
+                    </ThreeColumnContainer>
+
+                    <ThreeColumnContainer>
+                        <Url to="/mipim2018/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
+                                <CaseStudyMainBrief>Positioning Belfast for investment on a global stage</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -313,6 +325,15 @@ const CaseStudies = (props) => (
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
+
+                    <ThreeColumnContainer>
+                      
+                    </ThreeColumnContainer>
+
+                    <ThreeColumnContainer>
+                        
+                    </ThreeColumnContainer>
+
                </ColumnWrapper>
             </NoTopContainer>
         </Section>
@@ -380,6 +401,14 @@ export const query = graphql`
             }
 
             RBCover: file(relativePath: { eq: "case-studies/RoryBest/RB-cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MIPIM19Cover: file(relativePath: { eq: "case-studies/MIPIM19/MIPIM19Cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid

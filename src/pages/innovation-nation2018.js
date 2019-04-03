@@ -493,7 +493,7 @@ const CaseStudyIN = (props) => (
                     <Player 
                         url='https://youtu.be/wordEX7KXmE?vq=hd720'
                         width='100%'
-                        height='36vh'
+                        height='50vh'
                         controls={true}
                     />
                 </Video>

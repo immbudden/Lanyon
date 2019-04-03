@@ -436,7 +436,7 @@ const CaseStudyStatSports = (props) => (
                         <Player 
                             url='https://youtu.be/Gc9eDR3ZsOY?vq=hd720'
                             width='100%'
-                            height='36vh'
+                            height='50vh'
                             controls={true}
                         />
                     </Video>

@@ -13,6 +13,7 @@ import media from "styled-media-query";
 import CaseStudyCarousel from '../components/caseStudyCarousel';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
+import ReactPlayer from 'react-player';
 
 // To consolodate
 
@@ -363,6 +364,20 @@ const CarouselNav = styled.button `
     }
 `
 
+const Video = styled.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 5rem;
+`
+
+const Player = styled(ReactPlayer)`
+
+`
+
 const CaseStudyMIPIM = (props) => (
 
     <div>
@@ -382,7 +397,7 @@ const CaseStudyMIPIM = (props) => (
             <Container>
                 <CaseStudyIntroWrapper>
                     <CaseStudyIntroContainer>
-                        <SectionTitleLeft>Belfast MIPIM</SectionTitleLeft> {/* get from index */}
+                        <SectionTitleLeft>Belfast at MIPIM 2018</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
@@ -440,6 +455,14 @@ const CaseStudyMIPIM = (props) => (
                     <br /><br />
                     We delivered 25 events, including three pre-MIPIM events and a post-MIPIM wrap-up event in Belfast, as well as 20 events in Cannes. This included securing and managing the logistics surrounding having a DeLorean car on-stand – a key prop to help attract people to Belfast’s stand.  
                 </CaseStudyDescription>
+                <Video> 
+                    <Player 
+                        url='https://youtu.be/337iCy0JnLA?vq=hd720'
+                        width='100%'
+                        height='50vh'
+                        controls={true}
+                    />
+                </Video>
             </CenterThreeContainer>
                 <PeopleContainer>
                     <PersonContainer>
@@ -646,39 +669,7 @@ export const query = graphql`
                 }
             }
 
-            INCover: file(relativePath: { eq: "case-studies/InnovationNation18/IN-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
             MIPIMCover: file(relativePath: { eq: "case-studies/MIPIM18/MIPIM-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook18/NIMO-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            LMCover: file(relativePath: { eq: "case-studies/LinenMill/LM-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            SSCover: file(relativePath: { eq: "case-studies/StatSports/SS-cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid

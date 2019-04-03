@@ -32,10 +32,6 @@ const Container = styled.div `
     position: relative;
     display: flex;
     flex-direction: column;
-
-    ${media.lessThan("medium")`
-        padding: 5rem 0;
-    `}
 `
 
 const NoTopContainer = styled.div `
@@ -59,7 +55,7 @@ const SectionTitleLeft = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 4rem; 
         text-align: center;
-        width: 90%;
+        width: 80%;
     `}
 `
 
@@ -108,23 +104,8 @@ const GallerySlide = styled.div `
 `
 const GallerySlideImg = styled(Img) `
     height: 100%;
-    width: 100%;
-`
-
-const StyledCarousel = styled(Carousel) `
-    display: block!important;
-
-    ${media.lessThan("medium")`
-        display: none!important;
-    `}
-`
-
-const MobileCarousel = styled(Carousel) `
-    display: none!important;
-
-    ${media.lessThan("medium")`
-        display: block!important;
-    `}
+    min-width: 850px;
+    
 `
 
 // To consolodate end
@@ -147,11 +128,6 @@ const CaseStudyIntroContainer = styled.div `
     padding: 5rem 5rem 0;
     flex-flow: row wrap;
     max-width: 72%;
-
-    ${media.lessThan("medium")`
-        max-width: 100%;
-        padding: 2.5rem 2.5rem 0;
-    `}
 `
 
 const CaseStudyInfoContainer = styled.div `
@@ -200,7 +176,7 @@ const CaseStudyDescription = styled.p `
 `
 
 const ContactButton = styled.button `
-    background: #004655;
+    background: #FFD400;
     color: #FFF;
     font-size: 2rem;
     padding: 10px 15px 5px; // Typefix
@@ -211,7 +187,7 @@ const ContactButton = styled.button `
 `
 
 const SectionColoured = styled.div `
-    background: #004655;
+    background: #FFD400;
 `
 
 const CenterThreeContainer = styled.div `
@@ -221,10 +197,6 @@ const CenterThreeContainer = styled.div `
     flex-flow: row wrap;
     margin: 0 auto;
     width: 59%;
-
-    ${media.lessThan("medium")`
-        width: 100%;
-    `}
 `
 
 const VideoContainer = styled.div `
@@ -256,11 +228,6 @@ const StatContainer = styled.div ` // Same as about page services
 
     ${media.lessThan("medium")`
         margin-bottom: 5rem;
-        margin-right: 5%;
-
-        &:nth-child(2n) {
-            margin-right: 0;
-        }
         
         &:nth-child(n+4) {
             margin-bottom: 5rem;
@@ -283,10 +250,6 @@ const StatText = styled.p `
     font-weight: 400;
     margin: 0 auto;
     text-align: center;
-
-    ${media.lessThan("medium")`
-        font-size: 1.8rem;
-    `}
 `
 
 const PeopleContainer = styled.div `
@@ -365,6 +328,7 @@ const AscendLogoImg = styled(Img) `
 const SectionSubtitleLeft = styled.h3 `
     font-size: 4rem; 
     color: #222; 
+    display: flex;
     flex: 1 1 100%;
     font-family: Didot;
     font-weight: 100;
@@ -374,7 +338,7 @@ const SectionSubtitleLeft = styled.h3 `
     ${media.lessThan("medium")`
         font-size: 3rem; 
         text-align: center;
-        margin-bottom: 2.5rem; 
+        width: 80%;
     `}
 `
 
@@ -414,7 +378,7 @@ const Player = styled(ReactPlayer)`
 
 `
 
-const CaseStudyOutlook = (props) => (
+const CaseStudyMIPIM = (props) => (
 
     <div>
         <FontFace />
@@ -427,38 +391,34 @@ const CaseStudyOutlook = (props) => (
                 width: "100%",
                 zIndex: -1,
             }}
-                fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                fluid={props.data.MIPIM19Cover.childImageSharp.fluid} />
         </HeaderWrapper>
         <Section>
             <Container>
                 <CaseStudyIntroWrapper>
                     <CaseStudyIntroContainer>
-                        <SectionTitleLeft>NI Market Outlook</SectionTitleLeft> {/* get from index */}
+                        <SectionTitleLeft>Belfast at MIPIM 2019</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Showcase the real estate market in Northern Ireland
+                                Position Belfast for investment on a global stage
                                 <br /><br />
-                                Reinforce CBRE’s reputation in Northern Ireland
+                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
-                            <InfoText>CBRE</InfoText>
+                            <InfoText>Belfast City Council</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>
-                                Lanyon provides on-going full-service marketing communications support to CBRE in Northern Ireland, which includes strategic advice, reputation management consultancy, PR &amp; media liaison and stakeholder engagement, as well as event design, management and delivery. 
+                                Following successful trips in March 2016, 2017 and 2018, Belfast returned to MIPIM, the world’s largest international property investment conference, in March 2019.
                                 <br /><br />
-                                This includes the delivery of CBRE’s annual NI Real Estate Market Outlook (NI Outlook) event. When Lanyon began working with CBRE, their research and expertise went largely unnoticed in the local market as it was not being used in a way to differentiate CBRE from their competitors. We spent time and significant effort on interpreting their data and research, establishing the key interest points for various audiences and presenting it a number of different platforms. A good example of this is NI Outlook, which before we began working with CBRE, attracted only 70 – 80 people annually. 
+                                Lanyon was, once again, appointed through a competitive tender process to manage the entire project from start to finish.
                                 <br /><br />
-                                NI Outlook is now a much sought-after business event for major players and stakeholders in the real estate world in Northern Ireland. NI Outlook now attracts around 500 people each year, at an event held in the ICC Belfast (Waterfront Hall). At the event in 2018 alone, Lanyon secured over 50 units of media coverage and 16.8k Twitter impressions on behalf of CBRE.
-                                <br /><br />
-                                We continue to work with CBRE, building on the many successes we have delivered with them over our four-year working relationship. This reflects our ability to develop long-term working relationships with clients based on the successful delivery of key strategic projects.
+                                We were responsible for developing and delivering the full Belfast MIPIM 2019 programme, including: Programme Management, Sponsorship, Design &amp; Creative Management, Investor Targeting, Event management, PR &amp; Communications Management.
                                 <br /><br />
                                 Interested in working on something similar? <Bold>Let’s chat about it.</Bold>
                             </CaseStudyDescription>
-                            <Url to="/contact">
-                                <ContactButton>Get in touch</ContactButton>
-                            </Url>
+                            <ContactButton>Get in touch</ContactButton>
                         </CaseStudyDescriptionContainer>
                     </CaseStudyIntroContainer>
                 </CaseStudyIntroWrapper>
@@ -468,20 +428,20 @@ const CaseStudyOutlook = (props) => (
             <Container>
                 <StatWrapper>
                 <StatContainer>
-                    <StatHeadline>16,800</StatHeadline>
+                    <StatHeadline>8.8m</StatHeadline>
                     <StatText>Twitter impressions</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>500</StatHeadline>
-                    <StatText>high-profile attendees</StatText>
+                    <StatHeadline>100</StatHeadline>
+                    <StatText>strong delegation</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>55</StatHeadline>
-                    <StatText>pieces of coverage</StatText>
+                    <StatHeadline>30</StatHeadline>
+                    <StatText>events pre, during and post-MIPIM</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>10</StatHeadline>
-                    <StatText>minute documentary produced</StatText>
+                    <StatHeadline>40</StatHeadline>
+                    <StatText>speakers during MIPIM</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>
@@ -489,139 +449,174 @@ const CaseStudyOutlook = (props) => (
         <Section>
             <Container>
             <CenterThreeContainer>
-                <SectionSubtitleLeft>Event design, management &amp; delivery</SectionSubtitleLeft>
+                <SectionSubtitleLeft>End-to-end Event &amp; Programme Management </SectionSubtitleLeft>
                 <CaseStudyDescription>
-                    In order to deliver a busy and engaging programme on behalf of CBRE, we identify and engage with a number of relevant speakers, for example, freelance innovation and cyber security expert Olly Rees; Will Church, the Senior Director in charge of managing the Northern Ireland Investment Fund; and Deloitte NI’s Senior Partner Jackie Henry.
+                    Lanyon secured 40 speakers – from local stakeholders to internationally acclaimed placemaking experts – to deliver content at MIPIM and worked with all of them to facilitate their requirements in terms of travel, accommodation, logistics and presentations/content.
                     <br /><br />
-                    We also assume the end-to-end management of areas including design and branding, AV and tech requirements, catering, registration and co-ordination of presentations and speakers’ content. 
+                    We delivered 30 events during the campaign, including two pre-MIPIM events and a post-MIPIM wrap-up event in Belfast, as well as over 20 events in Cannes. This included collaborating with Daniel Libeskind, one of the world’s most respected architects. Daniel is renowned for the Jewish Museum in Berlin, the extension of the Denver Art Museum, the Grand Canal Theatre in Dublin and a host of other landmark buildings, as well as being the masterplan architect for the reconstruction of the World Trade Centre site. He shared his views on the future for Belfast as a place to live, work and play, shining a light on the importance of cultural attractions in forming a rounded, vibrant, welcoming city.    
+                    <br /><br />
+                    We also worked alongside the six partner councils which form part of the Belfast Region City Deal to hear about their collective plans as part of the deal and the impact they expect it to have in their respective areas.
                 </CaseStudyDescription>
                 <Video> 
                     <Player 
-                        url='https://youtu.be/v-BVAmwdqwA?vq=hd720'
-                        width='100%'
-                        height='36vh'
-                        controls={true}
-                    />
-                </Video>
-            </CenterThreeContainer>
-            </Container>
-        </Section>
-        <Section>
-            <SectionImg fluid={props.data.NIMOPanelImg.childImageSharp.fluid} />
-        </Section>
-        <Section>
-            <Container>
-                <CenterThreeContainer>
-                    <SectionSubtitleLeft>PR &amp; Communications</SectionSubtitleLeft>
-                    <CaseStudyDescription>
-                        The event brought with it a significant amount of media interest and attendance, so we assumed all media liaison before, during and after the event, which included providing all written materials and facilitating media interviews.
-                        <br /><br />
-                        In 2018 alone, Lanyon secured over 50 units of media coverage across print, online, broadcast and specialist trade media publications in the UK &amp; Ireland.
-                    </CaseStudyDescription>
-                </CenterThreeContainer>
-            </Container>
-                <StyledCarousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
-                    renderCenterLeftControls={({ previousSlide }) => (
-                        <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
-                    )}
-                    renderCenterRightControls={({ nextSlide }) => (
-                        <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
-                    )}
-                >
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            fluid={props.data.NIMOCar1Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            fluid={props.data.NIMOCar2Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            frameOverflow
-                            fluid={props.data.NIMOCar3Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            fluid={props.data.NIMOCar4Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            fluid={props.data.NIMOCar5Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                </StyledCarousel>
-
-                <MobileCarousel slidesToShow={1.5} cellSpacing={25} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
-                    renderCenterLeftControls={({ previousSlide }) => (
-                        <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
-                    )}
-                    renderCenterRightControls={({ nextSlide }) => (
-                        <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
-                    )}
-                >
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            fluid={props.data.NIMOCar1Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            fluid={props.data.NIMOCar2Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            frameOverflow
-                            fluid={props.data.NIMOCar3Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            fluid={props.data.NIMOCar4Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                    <GallerySlide>
-                            <GallerySlideImg 
-                            fluid={props.data.NIMOCar5Img.childImageSharp.fluid} />
-                    </GallerySlide>
-                </MobileCarousel>
-        </Section>
-
-        <Section>
-            <Container>
-            <CenterThreeContainer>
-                <SectionSubtitleLeft>Research &amp; Market Intelligence</SectionSubtitleLeft>
-                <CaseStudyDescription>
-                    Lanyon supported CBRE in the market intelligence and research required to establish a detailed database of key stakeholders and influencers for NI Outlook. This involved working closely with CBRE London as well as carrying out wider market research to augment the internal CBRE network as well.
-                    <br /><br />
-                    We also spent considerable time and significant effort interpreting CBRE’s central data and research, translating the key interest points for various audiences and presenting it to a number of different platforms.
-                </CaseStudyDescription>
-            </CenterThreeContainer>
-            </Container>
-        </Section>
-
-        <Section>
-            <SectionImg fluid={props.data.NIMOSpeakerImg.childImageSharp.fluid} />
-        </Section>
-
-        <Section>
-            <Container>
-            <CenterThreeContainer>
-                <SectionSubtitleLeft>Documentary Production</SectionSubtitleLeft>
-                <CaseStudyDescription>
-                    Lanyon developed a 10-minute documentary showcasing Belfast, which premiered at NI Outlook in 2018. The documentary was narrated and lead by ITN’s John Irvine, who gave his take on the positive transformation of Belfast – the city in which he grew up – twenty years after leaving the city. It also featured some of Northern Ireland’s business leaders from across the commercial property and tourism sectors. 
-                </CaseStudyDescription>
-                <Video> 
-                    <Player 
-                        url='https://youtu.be/-O2eNHmCNrU?vq=hd720'
+                        url='https://youtu.be/n64r0BGX8O4?vq=hd720'
                         width='100%'
                         height='50vh'
                         controls={true}
                     />
                 </Video>
             </CenterThreeContainer>
+                <PeopleContainer>
+                    <PersonContainer>
+                        <PersonImg 
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "100%",
+                                zIndex: 0,
+                            }}
+                                fluid={props.data.DLImg.childImageSharp.fluid}
+                        />
+                        <PersonInfoWrapper>
+                            <PersonName>Daniel Libeskind</PersonName>
+                            <PersonTitle>Founder &amp; Principal, Studio Libeskind</PersonTitle>
+                        </PersonInfoWrapper>
+                    </PersonContainer>
+                    <PersonContainer>
+                        <PersonImg 
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "100%",
+                                zIndex: 0,
+                            }}
+                                fluid={props.data.TBImg.childImageSharp.fluid}
+                        />
+                        <PersonInfoWrapper>
+                            <PersonName>Tom Bloxham MBE</PersonName>
+                            <PersonTitle>Founder &amp; Chair, Urban Splash</PersonTitle>
+                        </PersonInfoWrapper>
+                    </PersonContainer>
+                    <PersonContainer>
+                        <PersonImg 
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "100%",
+                                zIndex: 0,
+                            }}
+                                fluid={props.data.CRImg.childImageSharp.fluid}
+                        />
+                        <PersonInfoWrapper>
+                            <PersonName>Chris Roberts</PersonName>
+                            <PersonTitle>Chief Development Officer, Bruntwood</PersonTitle>
+                        </PersonInfoWrapper>
+                    </PersonContainer>
+                    <PersonContainer>
+                        <PersonImg 
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                width: "100%",
+                                zIndex: 0,
+                            }}
+                                fluid={props.data.BRCDImg.childImageSharp.fluid}
+                        />
+                        <PersonInfoWrapper>
+                            <PersonName>Council Members</PersonName>
+                            <PersonTitle>Belfast Region City Deal Partners</PersonTitle>
+                        </PersonInfoWrapper>
+                    </PersonContainer>
+                </PeopleContainer>
             </Container>
         </Section>
         <Section>
-            <SectionImg fluid={props.data.NIMOCrowdImg.childImageSharp.fluid} />
+            <NoTopContainer>
+            <CenterThreeContainer>
+                <SectionSubtitleLeft>Stakeholder Management</SectionSubtitleLeft>
+                <CaseStudyDescription>
+                    Lanyon secured the support of 35 private and public sector partners, as well as helping facilitate their needs whilst at MIPIM. We also worked alongside the Council to set up meetings with investors, developers and occupiers.
+                </CaseStudyDescription>
+            </CenterThreeContainer>
+            </NoTopContainer>
+        </Section>
+        <Section>
+            <SectionImg fluid={props.data.StandImg.childImageSharp.fluid} />
+        </Section>
+        <Section>
+            <Container>
+                <CenterThreeContainer>
+                    <SectionSubtitleLeft>Design &amp; Creative Management</SectionSubtitleLeft>
+                    <CaseStudyDescription>
+                        Lanyon implemented the city’s ‘starburst’ look and feel across the project, as well as managing the design of the 100m2 Belfast stand and all other associated branded collateral, including a 90-page investment guide. We also worked alongside Tourism NI to develop a bespoke platform which would allow each of the Belfast Region City Deal partners to showcase their investment proposition in an interactive manner. 
+                    </CaseStudyDescription>
+                </CenterThreeContainer>
+            </Container>
+                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+                    renderCenterLeftControls={({ previousSlide }) => (
+                        <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
+                    )}
+                    renderCenterRightControls={({ nextSlide }) => (
+                        <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
+                    )}
+                >
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car1Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car2Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            frameOverflow
+                            fluid={props.data.MIPIM19Car3Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car4Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                </Carousel>
         </Section>
 
+        <Section>
+            <Container>
+            <CenterThreeContainer>
+                <SectionSubtitleLeft>PR &amp; Communications Management</SectionSubtitleLeft>
+                <CaseStudyDescription>
+                    Lanyon developed a large output of message-rich communication materials for media and non-media purposes. 
+                    <br /><br />
+                    Media coverage was achieved across local and international print, broadcast and online outlets, including business and specialist trade media. A large volume of social media content was developed by Lanyon, underpinned by high-quality photography and video content.
+                </CaseStudyDescription>
+            </CenterThreeContainer>
+            </Container>
+        </Section>
+
+        {/* <Section>
+            <Container>
+                <CenterThreeContainer>
+                    <INLogoContainer>
+                        <INLogoImg fluid={props.data.INLogoImg.childImageSharp.fluid} />
+                    </INLogoContainer>
+                    <AscendLogoContainer>
+                        <AscendLogoImg fluid={props.data.AscendLogoImg.childImageSharp.fluid} />
+                    </AscendLogoContainer>
+                    <SectionSubtitleLeft>Branding</SectionSubtitleLeft>
+                    <CaseStudyDescription>
+                        Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.
+                        <br /><br />
+                        Two short paragraphs in here which would describe this section and tell visitors what we were responsible for, brief rationale behind the process as well as anything else that they may find interesting. This should be used to emphasise our strengths.</CaseStudyDescription>
+                </CenterThreeContainer>
+            </Container>
+        </Section> */}
+        <Section>
+            <SectionImg fluid={props.data.BCCMainImg.childImageSharp.fluid} />
+        </Section>
         <Section>
             <Container>
                 <CenterThreeContainer>
@@ -643,28 +638,28 @@ const CaseStudyOutlook = (props) => (
 
 )
 
-export default CaseStudyOutlook
+export default CaseStudyMIPIM
 
 export const query = graphql`
     query {
 
-            NIMOSpeakerImg: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOSpeaker.jpg" }) {
+            BCCMainImg: file(relativePath: { eq: "case-studies/MIPIM19/BCCMain.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: ENTROPY ) {
+                    fluid(maxWidth: 2500, maxHeight: 1000, cropFocus: NORTH ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
 
-            NIMOCrowdImg: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOCrowd.jpg" }) {
+            StandImg: file(relativePath: { eq: "case-studies/MIPIM19/Stand.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: NORTH ) {
+                    fluid(maxWidth: 2500, maxHeight: 1000, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
 
-            NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMO-cover.jpg" }) {
+            MIPIM19Cover: file(relativePath: { eq: "case-studies/MIPIM19/MIPIM19Cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
@@ -672,15 +667,7 @@ export const query = graphql`
                 }
             }
 
-            NIMOPanelImg: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOPanel.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            NIMOCar1Img: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOSpeaker2.jpg" }) {
+            DLImg: file(relativePath: { eq: "case-studies/MIPIM19/DanielLibeskind.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -688,7 +675,7 @@ export const query = graphql`
                 }
             }
 
-            NIMOCar2Img: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOCar2.jpg" }) {
+            TBImg: file(relativePath: { eq: "case-studies/MIPIM19/TomBloxham.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -696,7 +683,7 @@ export const query = graphql`
                 }
             }
 
-            NIMOCar3Img: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOCar3.jpg" }) {
+            CRImg: file(relativePath: { eq: "case-studies/MIPIM19/ChrisRoberts.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -704,7 +691,7 @@ export const query = graphql`
                 }
             }
 
-            NIMOCar4Img: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOCar4.jpg" }) {
+            BRCDImg: file(relativePath: { eq: "case-studies/MIPIM19/BRCD.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 850, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -712,9 +699,33 @@ export const query = graphql`
                 }
             }
 
-            NIMOCar5Img: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOCar5.jpg" }) {
+            MIPIM19Car1Img: file(relativePath: { eq: "case-studies/MIPIM19/Car1.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 950, quality: 85, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MIPIM19Car2Img: file(relativePath: { eq: "case-studies/MIPIM19/Car2.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 950, quality: 85, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MIPIM19Car3Img: file(relativePath: { eq: "case-studies/MIPIM19/Car3.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 950, quality: 85, cropFocus: CENTER ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MIPIM19Car4Img: file(relativePath: { eq: "case-studies/MIPIM19/Car4.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 950, quality: 85, cropFocus: NORTH ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

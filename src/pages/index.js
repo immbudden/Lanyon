@@ -650,7 +650,7 @@ const IndexPage = (props) => {
     <div>
         <FontFace />
         <Nav />
-        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={false} autoplayInterval={3500} transitionMode={'scroll'} pauseOnHover={false}
+        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={true} autoplayInterval={3500} transitionMode={'scroll'} pauseOnHover={false}
             
             renderCenterLeftControls={({ previousSlide }) => (
                 <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>

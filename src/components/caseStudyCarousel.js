@@ -138,6 +138,14 @@ export default () => (
                 }
             }
 
+            MIPIM19Cover: file(relativePath: { eq: "case-studies/MIPIM19/MIPIM19Cover.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
         }
       `}
 
@@ -185,7 +193,7 @@ export default () => (
                     </Url>
                 </Slide>
                 <Slide>
-                    <Url to="/mipim2018/">
+                    <Url to="/mipim2019/">
                         <SlideImg 
                         style={{
                             position: "absolute",
@@ -194,10 +202,10 @@ export default () => (
                             width: "100%",
                             zIndex: -1,
                         }}
-                        fluid={data.MIPIMCover.childImageSharp.fluid} />
+                        fluid={data.MIPIM19Cover.childImageSharp.fluid} />
                         <Container>
                             <CaseStudyNumber>CASE STUDY 3</CaseStudyNumber>
-                            <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
+                            <CaseStudyTitle>Belfast at MIPIM 2019</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
@@ -219,6 +227,23 @@ export default () => (
                     </Url>
                 </Slide>
                 <Slide>
+                    <Url to="/mipim2018/">
+                        <SlideImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: -1,
+                        }}
+                        fluid={data.MIPIMCover.childImageSharp.fluid} />
+                        <Container>
+                            <CaseStudyNumber>CASE STUDY 5</CaseStudyNumber>
+                            <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
+                        </Container>
+                    </Url>
+                </Slide>
+                <Slide>
                     <Url to="/innovation-nation2018/">
                         <SlideImg 
                         style={{
@@ -230,7 +255,7 @@ export default () => (
                         }}
                         fluid={data.INCover.childImageSharp.fluid} />
                         <Container>
-                            <CaseStudyNumber>CASE STUDY 5</CaseStudyNumber>
+                            <CaseStudyNumber>CASE STUDY 6</CaseStudyNumber>
                             <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
                         </Container>
                     </Url>
@@ -247,7 +272,7 @@ export default () => (
                         }}
                         fluid={data.RBCover.childImageSharp.fluid} />
                         <Container>
-                            <CaseStudyNumber>CASE STUDY 5</CaseStudyNumber>
+                            <CaseStudyNumber>CASE STUDY 7</CaseStudyNumber>
                             <CaseStudyTitle>Freedom of the city</CaseStudyTitle>
                         </Container>
                     </Url>
