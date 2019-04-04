@@ -32,6 +32,10 @@ const Container = styled.div `
     position: relative;
     display: flex;
     flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 5rem 0;
+    `}
 `
 
 const NoTopContainer = styled.div `
@@ -128,11 +132,20 @@ const CaseStudyIntroContainer = styled.div `
     padding: 5rem 5rem 0;
     flex-flow: row wrap;
     max-width: 72%;
+
+    ${media.lessThan("medium")`
+        max-width: 100%;
+        padding: 2.5rem 2.5rem 0;
+    `}
 `
 
 const CaseStudyInfoContainer = styled.div `
     flex: 1 1 18%;
     margin-right: 2.5%;
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+    `}
 `
 
 const InfoTitle = styled.h6 `
@@ -164,6 +177,10 @@ const CaseStudyDescriptionContainer = styled.div `
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
+    ${media.lessThan("medium")`
+        align-items: center;
+    `}
 `
 
 const CaseStudyDescription = styled.p `
@@ -184,6 +201,10 @@ const ContactButton = styled.button `
     text-transform: uppercase;
     margin-top: 2.5rem;
     cursor: pointer;
+
+    ${media.lessThan("medium")`
+        margin-top: 5rem;
+    `}
 `
 
 const SectionColoured = styled.div `
@@ -193,10 +214,15 @@ const SectionColoured = styled.div `
 const CenterThreeContainer = styled.div `
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: flex-start;
     flex-flow: row wrap;
     margin: 0 auto;
     width: 59%;
+
+    ${media.lessThan("medium")`
+        width: 100%;
+        justify-content: center;
+    `}
 `
 
 const VideoContainer = styled.div `
@@ -227,10 +253,20 @@ const StatContainer = styled.div ` // Same as about page services
     } // Different from index
 
     ${media.lessThan("medium")`
+        flex: 12 1 45%;
         margin-bottom: 5rem;
+        margin-right: 5%;
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
         
         &:nth-child(n+4) {
-            margin-bottom: 5rem;
+            margin-bottom: 0rem;
+        }
+
+        &:nth-child(2n+1) {
+            margin-bottom: 0rem;
         }
     `}
 `
@@ -258,6 +294,10 @@ const PeopleContainer = styled.div `
     position: relative;
     justify-content: flex-end;
     margin-top: 7.5rem;
+
+    ${media.lessThan("medium")`
+        margin-top: 5rem;
+    `}
 `
 
 const PersonContainer = styled.div ` // From as about
@@ -270,6 +310,16 @@ const PersonContainer = styled.div ` // From as about
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-start;
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 5rem;
+
+        &:last-child {
+            margin-bottom: 2.5rem;
+        }
+    `}
 `
 
 
@@ -338,7 +388,8 @@ const SectionSubtitleLeft = styled.h3 `
     ${media.lessThan("medium")`
         font-size: 3rem; 
         text-align: center;
-        width: 80%;
+        width: 100%;
+        justify-content: center;
     `}
 `
 
@@ -376,6 +427,22 @@ const Video = styled.div `
 
 const Player = styled(ReactPlayer)`
 
+`
+
+const StyledCarousel = styled(Carousel) `
+    display: block!important;
+
+    ${media.lessThan("medium")`
+        display: none!important;
+    `}
+`
+
+const MobileCarousel = styled(Carousel) `
+    display: none!important;
+
+    ${media.lessThan("medium")`
+        display: block!important;
+    `}
 `
 
 const CaseStudyMIPIM = (props) => (
@@ -556,13 +623,16 @@ const CaseStudyMIPIM = (props) => (
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
-                <Carousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+
+            <StyledCarousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+
                     renderCenterLeftControls={({ previousSlide }) => (
                         <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
                     )}
                     renderCenterRightControls={({ nextSlide }) => (
                         <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
                     )}
+                
                 >
                     <GallerySlide>
                             <GallerySlideImg 
@@ -581,7 +651,37 @@ const CaseStudyMIPIM = (props) => (
                             <GallerySlideImg 
                             fluid={props.data.MIPIM19Car4Img.childImageSharp.fluid} />
                     </GallerySlide>
-                </Carousel>
+                </StyledCarousel>
+
+                <MobileCarousel slidesToShow={1.5} cellSpacing={25} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
+
+                    renderCenterLeftControls={({ previousSlide }) => (
+                        <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
+                    )}
+                    renderCenterRightControls={({ nextSlide }) => (
+                        <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
+                    )}
+                
+                >
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car1Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car2Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            frameOverflow
+                            fluid={props.data.MIPIM19Car3Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car4Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                </MobileCarousel>
+
         </Section>
 
         <Section>
@@ -661,7 +761,7 @@ export const query = graphql`
 
             MIPIM19Cover: file(relativePath: { eq: "case-studies/MIPIM19/MIPIM19Cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -669,7 +769,7 @@ export const query = graphql`
 
             DLImg: file(relativePath: { eq: "case-studies/MIPIM19/DanielLibeskind.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -677,7 +777,7 @@ export const query = graphql`
 
             TBImg: file(relativePath: { eq: "case-studies/MIPIM19/TomBloxham.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -685,7 +785,7 @@ export const query = graphql`
 
             CRImg: file(relativePath: { eq: "case-studies/MIPIM19/ChrisRoberts.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -693,7 +793,7 @@ export const query = graphql`
 
             BRCDImg: file(relativePath: { eq: "case-studies/MIPIM19/BRCD.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

@@ -92,7 +92,7 @@ export default () => (
 
             INCover: file(relativePath: { eq: "case-studies/InnovationNation18/IN-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -100,7 +100,7 @@ export default () => (
 
             MIPIMCover: file(relativePath: { eq: "case-studies/MIPIM18/MIPIM-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -108,7 +108,7 @@ export default () => (
 
             NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMO-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -116,7 +116,7 @@ export default () => (
 
             LMCover: file(relativePath: { eq: "case-studies/LinenMill/LM-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -124,7 +124,7 @@ export default () => (
 
             SSCover: file(relativePath: { eq: "case-studies/StatSports/SS-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -132,7 +132,7 @@ export default () => (
 
             RBCover: file(relativePath: { eq: "case-studies/RoryBest/RB-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -140,7 +140,7 @@ export default () => (
 
             MIPIM19Cover: file(relativePath: { eq: "case-studies/MIPIM19/MIPIM19Cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

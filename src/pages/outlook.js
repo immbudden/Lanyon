@@ -157,6 +157,10 @@ const CaseStudyIntroContainer = styled.div `
 const CaseStudyInfoContainer = styled.div `
     flex: 1 1 18%;
     margin-right: 2.5%;
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+    `}
 `
 
 const InfoTitle = styled.h6 `
@@ -188,6 +192,10 @@ const CaseStudyDescriptionContainer = styled.div `
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
+    ${media.lessThan("medium")`
+        align-items: center;
+    `}
 `
 
 const CaseStudyDescription = styled.p `
@@ -208,6 +216,10 @@ const ContactButton = styled.button `
     text-transform: uppercase;
     margin-top: 2.5rem;
     cursor: pointer;
+
+    ${media.lessThan("medium")`
+        margin-top: 5rem;
+    `}
 `
 
 const SectionColoured = styled.div `
@@ -217,13 +229,14 @@ const SectionColoured = styled.div `
 const CenterThreeContainer = styled.div `
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: flex-start;
     flex-flow: row wrap;
     margin: 0 auto;
     width: 59%;
 
     ${media.lessThan("medium")`
         width: 100%;
+        justify-content: center;
     `}
 `
 
@@ -255,6 +268,7 @@ const StatContainer = styled.div ` // Same as about page services
     } // Different from index
 
     ${media.lessThan("medium")`
+        flex: 12 1 45%;
         margin-bottom: 5rem;
         margin-right: 5%;
 
@@ -263,7 +277,11 @@ const StatContainer = styled.div ` // Same as about page services
         }
         
         &:nth-child(n+4) {
-            margin-bottom: 5rem;
+            margin-bottom: 0rem;
+        }
+
+        &:nth-child(2n+1) {
+            margin-bottom: 0rem;
         }
     `}
 `
@@ -295,6 +313,10 @@ const PeopleContainer = styled.div `
     position: relative;
     justify-content: flex-end;
     margin-top: 7.5rem;
+
+    ${media.lessThan("medium")`
+        margin-top: 5rem;
+    `}
 `
 
 const PersonContainer = styled.div ` // From as about
@@ -307,6 +329,16 @@ const PersonContainer = styled.div ` // From as about
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-start;
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 5rem;
+
+        &:last-child {
+            margin-bottom: 2.5rem;
+        }
+    `}
 `
 
 
@@ -374,7 +406,8 @@ const SectionSubtitleLeft = styled.h3 `
     ${media.lessThan("medium")`
         font-size: 3rem; 
         text-align: center;
-        margin-bottom: 2.5rem; 
+        width: 100%;
+        justify-content: center;
     `}
 `
 
@@ -666,7 +699,7 @@ export const query = graphql`
 
             NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMO-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
