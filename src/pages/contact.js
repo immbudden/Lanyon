@@ -25,10 +25,11 @@ const Container = styled.div `
     position: relative;
     z-index: 2;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     ${media.lessThan("medium")`
         padding: 5rem 0 10rem;
+        flex-direction: column;
     `}
 `
 
