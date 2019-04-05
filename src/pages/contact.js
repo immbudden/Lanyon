@@ -23,8 +23,13 @@ const Container = styled.div `
     padding: 10rem 0;
     max-width: 90%;
     position: relative;
+    z-index: 2;
     display: flex;
-    flex-direction: row-wrap;
+    flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 5rem 0 10rem;
+    `}
 `
 
 const NoTopContainer = styled.div `
@@ -47,7 +52,8 @@ const SectionTitleTop = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 4rem; 
         text-align: center;
-        width: 80%;
+        width: 100%;
+        margin-bottom: 5rem;
     `}
 `
 
@@ -62,7 +68,8 @@ const SectionTitleLeft = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 4rem; 
         text-align: center;
-        width: 80%;
+        width: 100%;
+        margin-bottom: 5rem;
     `}
 `
 
@@ -73,8 +80,7 @@ const SectionParagraph = styled.p `
     font-weight: 100;
     color: #222;
     line-height: 1.75;
-    
-    margin-bottom: 0;
+    margin-bottom: 5rem;
 `
 
 const SectionParagraphLight = styled.p `
@@ -97,6 +103,11 @@ const CenterThreeContainer = styled.div `
     flex-flow: row wrap;
     margin: 0 auto;
     width: 59%;
+
+    ${media.lessThan("medium")`
+        width: 100%;
+        justify-content: center;
+    `}
 `
 
 const LeftTwoContainer = styled.div `
@@ -284,6 +295,10 @@ const exampleMapStyles = [
 
 const MapWrapper = styled.div `
     height: 50vh;
+
+    ${media.lessThan("medium")`
+        height: 90vh;
+    `}
 `
 
 const MapContainer = styled.div `
@@ -291,6 +306,18 @@ const MapContainer = styled.div `
     height: 50vh;
     width: 100%;
     z-index: 0;
+
+    ${media.lessThan("medium")`
+        height: 90vh;
+    `}
+`
+
+const Map = styled.div `
+    height: 50vh;
+
+    ${media.lessThan("medium")`
+        height: 80vh;
+    `}
 `
 
 const ContactDetailsContainer = styled.div `
@@ -301,13 +328,17 @@ const ContactDetailsContainer = styled.div `
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+
+    ${media.lessThan("medium")`
+        justify-content: center;
+    `}
 `
 
 const ContactDetails = styled.div `
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    flex: 0 0 60rem;
+    flex: 0 1 50%;
     padding: 5rem;
     z-index: 5;
     background: #FFF;
@@ -320,8 +351,16 @@ const ContactContainer = styled.div `
     flex-flow: row wrap;
     justify-content: flex-end;
 
-    &:nth-child(2) {
+    &:first-child {
+        margin-bottom: 2.5rem;
+    }
+
+    &:nth-child(3) {
         margin-right: 0;
+
+        ${media.lessThan("medium")`
+            margin-top: 2.5rem;
+        `}
     }
 `
 
@@ -332,6 +371,44 @@ const AddressText = styled.p `
     color: #222;
     line-height: 3rem;
     margin-bottom: 0;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+    `}
+`
+
+const AddressNav = styled.div `
+    flex: 1 1 100%;
+`
+
+const AddressNavLink = styled.a `
+    flex: 1 1 100%;
+    font-size: 3.5rem;
+    font-weight: 100;
+    margin-bottom: 0;
+    color: #CCC;
+    font-family: Didot;
+    cursor: pointer;
+
+    &:hover {
+        color: #199BAA;
+    }
+
+    &:active {
+        color: pink;
+    }
+
+    &.activeNav {
+        color: #199BAA;
+    }
+
+    &:first-child {
+        margin-right: 1.5rem;
+    }
+
+    ${media.lessThan("medium")`
+        font-size: 2.5rem;
+    `}
 `
 
 const Button = styled.button `
@@ -344,6 +421,10 @@ const Button = styled.button `
     text-transform: uppercase;
     width: 22.5rem;
     margin-bottom: 1rem;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+    `}
 `
 
 const ButtonInvert = styled.button `
@@ -355,6 +436,10 @@ const ButtonInvert = styled.button `
     border: 2.5px solid #199BAA;
     text-transform: uppercase;
     width: 22.5rem;
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+    `}
 `
 
 const ButtonLink = styled.a `
@@ -367,17 +452,29 @@ const MyMapComponent = compose(
     withProps({
       googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBYL3QlXrvdys93ouvBz1V5RqzFTpz0WUk",
       loadingElement: <div style={{ height: `100%` }} />,
-      containerElement: <div style={{ height: `50vh` }} />,
+      containerElement: <Map />,
       mapElement: <div style={{ height: `100%` }} />,
     }),
     withScriptjs,
     withGoogleMap
   )((props) =>
     <GoogleMap
-      defaultZoom={17}
-      defaultCenter={{ lat: 54.5869451, lng: -5.93 }}
-      defaultOptions={{ styles: exampleMapStyles }}
-    >
+        defaultZoom={17}
+        defaultCenter={{ lat: 54.5869451, lng: -5.93 }}
+        defaultOptions={{ 
+            styles: exampleMapStyles,
+            streetViewControl: false,
+            scaleControl: false,
+            mapTypeControl: false,
+            panControl: false,
+            zoomControl: false,
+            rotateControl: false,
+            fullscreenControl: false
+        
+        }}
+      
+      
+        disableDefaultUI >
     {/* <Marker 
         position={{ lat: 54.5869451, lng: -5.93 }} 
         // defaultIcon={'../images/mapPin.png'}
@@ -402,7 +499,7 @@ const ContactPage = (props) => (
             <CenterThreeContainer>
                 <SectionTitleTop>Get in touch</SectionTitleTop>
                 <SectionParagraph>
-                    At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our partners today.
+                    At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our Partners today.
                 </SectionParagraph>
             </CenterThreeContainer>
             </Container>
@@ -415,10 +512,16 @@ const ContactPage = (props) => (
                     <ContactDetailsContainer>
                         <ContactDetails>
                             <ContactContainer>
+                                <AddressNav>
+                                    <AddressNavLink className="activeNav">Belfast</AddressNavLink>
+                                    <AddressNavLink>Dublin</AddressNavLink>
+                                </AddressNav>
+                            </ContactContainer>
+                            <ContactContainer>
                                 <AddressText>Lanyon<br />8 Upper Crescent<br />Belfast<br />BT7 1NT</AddressText>
                             </ContactContainer>
                             <ContactContainer>
-                            
+
                                 <Button>
                                     <ButtonLink href="tel:028 9018 3242">028 9018 3242</ButtonLink>
                                 </Button>

@@ -619,7 +619,7 @@ const CaseStudyMIPIM = (props) => (
                 <CenterThreeContainer>
                     <SectionSubtitleLeft>Design &amp; Creative Management</SectionSubtitleLeft>
                     <CaseStudyDescription>
-                        Lanyon implemented the city’s ‘starburst’ look and feel across the project, as well as managing the design of the 100m2 Belfast stand and all other associated branded collateral, including a 90-page investment guide. We also worked alongside Tourism NI to develop a bespoke platform which would allow each of the Belfast Region City Deal partners to showcase their investment proposition in an interactive manner. 
+                        Lanyon implemented the city’s ‘starburst’ look and feel across the project, as well as managing the design of the 100m<sup>2</sup> Belfast stand and all other associated branded collateral, including a 90-page investment guide. We also worked alongside Tourism NI to develop a bespoke platform which would allow each of the Belfast Region City Deal partners to showcase their investment proposition in an interactive manner. 
                     </CaseStudyDescription>
                 </CenterThreeContainer>
             </Container>
@@ -651,6 +651,14 @@ const CaseStudyMIPIM = (props) => (
                             <GallerySlideImg 
                             fluid={props.data.MIPIM19Car4Img.childImageSharp.fluid} />
                     </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car5Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car6Img.childImageSharp.fluid} />
+                    </GallerySlide>
                 </StyledCarousel>
 
                 <MobileCarousel slidesToShow={1.5} cellSpacing={25} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true}
@@ -679,6 +687,14 @@ const CaseStudyMIPIM = (props) => (
                     <GallerySlide>
                             <GallerySlideImg 
                             fluid={props.data.MIPIM19Car4Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car5Img.childImageSharp.fluid} />
+                    </GallerySlide>
+                    <GallerySlide>
+                            <GallerySlideImg 
+                            fluid={props.data.MIPIM19Car6Img.childImageSharp.fluid} />
                     </GallerySlide>
                 </MobileCarousel>
 
@@ -824,6 +840,22 @@ export const query = graphql`
             }
 
             MIPIM19Car4Img: file(relativePath: { eq: "case-studies/MIPIM19/Car4.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 950, quality: 85, cropFocus: NORTH ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MIPIM19Car5Img: file(relativePath: { eq: "case-studies/MIPIM19/Car5.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 950, quality: 85, cropFocus: ENTROPY ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            MIPIM19Car6Img: file(relativePath: { eq: "case-studies/MIPIM19/Car6.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 950, quality: 85, cropFocus: NORTH ) {
                         ...GatsbyImageSharpFluid

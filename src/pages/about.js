@@ -28,6 +28,10 @@ const Container = styled.div `
     z-index: 2;
     display: flex;
     flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 5rem 0 10rem;
+    `}
 `
 
 const SectionTitle = styled.h2 `
@@ -44,6 +48,7 @@ const SectionTitle = styled.h2 `
         font-size: 4rem; 
         text-align: center;
         width: 90%;
+        margin-bottom: 5rem;
     `}
 `
 
@@ -60,6 +65,7 @@ const SectionTitleLeft = styled.h2 `
         font-size: 4rem; 
         text-align: center;
         width: 100%;
+        margin-bottom: 5rem;
     `}
 `
 
@@ -166,13 +172,21 @@ const PeopleContainer = styled.div `
 
 const PersonContainer = styled.div `
     display: flex;
-    flex: 1 0 25%;
+    flex: 1 1 25%;
     height: 40rem;
     position: relative;
     overflow: hidden;
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-start;
+
+    ${media.lessThan("large")`
+        flex: 1 1 50%;
+    `}
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+    `}
 `
 
 
