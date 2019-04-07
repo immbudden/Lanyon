@@ -121,6 +121,7 @@ const FeaturedNewsStoryMeta = styled.div `
 
 const Date = styled.span `
     font-weight: 500;
+    color: #222;
 `
 
 const Category = styled.span `
@@ -130,6 +131,7 @@ const Category = styled.span `
 
 const Author = styled.span `
     font-weight: 100;
+    color: #222;
 `
 
 const SecondaryHeadlineStoriesWrapper = styled.div `
@@ -269,7 +271,8 @@ const renderStories = (node, props) => {
     // console.log({body})
 
     const featured_image = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null);
-    const authorName = node.data.document;
+    const authorName = node.data.author.document[0].data.author_name.text;
+    const category = node.data.category.document[0].data.category.text;
 
     console.log(node)
 
@@ -288,7 +291,7 @@ const renderStories = (node, props) => {
                         <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
                     </TruncateMarkup>
                     <NewsStoryMeta>
-                        <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{node.data.category.document[0].data.category.html}</Category> &nbsp; &nbsp; 
+                        <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{category}</Category> &nbsp; &nbsp; <Author>{authorName}</Author>
                     </NewsStoryMeta>
                 </NewsStoryTextContainer>
             </NewsStoryTextWrapper>
@@ -339,7 +342,7 @@ const NewsPage = (props) => {
                                 <NewsStoryDescription>{featuredStory.node.data.short_description}</NewsStoryDescription>
                             </TruncateMarkup>
                             <FeaturedNewsStoryMeta>
-                                <Date>4 February 2019</Date>&nbsp; &nbsp; <Author>David Elliott</Author>
+                                <Date>{featuredStory.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStory.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{featuredStory.node.data.author.document[0].data.author_name.text}</Author>
                             </FeaturedNewsStoryMeta>
                     </FeaturedNewsStoryTextContainer>
                 </FeaturedNewsStoryTextWrapper>

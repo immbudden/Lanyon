@@ -302,6 +302,8 @@ const LatestNewsStory = styled(Link) `
         flex: 1 1 100%;
         margin-right: 0;
         margin-bottom: 5rem;
+        height: auto;
+        flex-direction: row;
 
         &:nth-child(even) {
             margin-top: 0rem;
@@ -309,9 +311,27 @@ const LatestNewsStory = styled(Link) `
     `}
 `
 
+const LatestNewsStoryImgContainer = styled.div `
+    flex: 1 1 100%;
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+        position: relative;
+        overflow: hidden;
+        height: auto;
+        z-index: 1;
+    `}
+`
+
 
 const LatestNewsStoryImg = styled(Img) `
+    width: 100%;
     height: 100%;
+    object-fit: cover;
 `
 
 const LatestNewsTextWrapper = styled.div `
@@ -322,6 +342,7 @@ const LatestNewsTextWrapper = styled.div `
     width: 80%;
     min-height: 16rem;
     align-items: flex-end;
+    z-index: 10;
 
     ${media.lessThan("medium")`
         border: 1px solid #EEEEEE;
@@ -706,7 +727,7 @@ const IndexPage = (props) => {
                                     <NewsStoryDescription>{featuredStory.node.data.short_description}</NewsStoryDescription>
                                 </TruncateMarkup>
                                 <FeaturedNewsStoryMeta>
-                                    <Date>{featuredStory.node.data.published_date}</Date>&nbsp; &nbsp; <Author>{featuredStory.node.data.author.document[0].data.author_name.text}</Author>
+                                    <Date>{featuredStory.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStory.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{featuredStory.node.data.author.document[0].data.author_name.text}</Author>
                                 </FeaturedNewsStoryMeta>
                                 <ButtonMargin to={`/news/${featuredStoryUrl}`}>Read More</ButtonMargin>
                         </FeaturedNewsStoryTextContainer>
@@ -789,66 +810,38 @@ const IndexPage = (props) => {
                 <LatestNewsWrapper>
                     <LatestNewsContainer>
                         <LatestNewsStory to={`/news/${newsStoryUrlOne}`}>
-                            <LatestNewsStoryImg 
-                                style={{
-                                    position: "absolute",
-                                    left: 0,
-                                    top: 0,
-                                    width: "100%",
-                                    zIndex: -1,
-                                }}
-                                    fluid={newsStoryImgOne}
-                            />
+                            <LatestNewsStoryImgContainer>
+                                <LatestNewsStoryImg fluid={newsStoryImgOne} />
+                            </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>{newsStoryOne.node.data.published_date} &nbsp; | &nbsp; {newsStoryOne.node.data.author.document[0].data.author_name.text}</LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryOne.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryOne.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{newsStoryOne.node.data.author.document[0].data.author_name.text}</Author></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryOne.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlTwo}`}>
-                            <LatestNewsStoryImg 
-                                style={{
-                                    position: "absolute",
-                                    left: 0,
-                                    top: 0,
-                                    width: "100%",
-                                    zIndex: -1,
-                                }}
-                                    fluid={newsStoryImgTwo}
-                            />
+                            <LatestNewsStoryImgContainer>
+                                <LatestNewsStoryImg fluid={newsStoryImgTwo} />
+                            </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>{newsStoryTwo.node.data.published_date} &nbsp; | &nbsp; {newsStoryTwo.node.data.author.document[0].data.author_name.text}</LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryTwo.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{newsStoryTwo.node.data.author.document[0].data.author_name.text}</Author></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryTwo.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlThree}`}>
-                            <LatestNewsStoryImg 
-                                style={{
-                                    position: "absolute",
-                                    left: 0,
-                                    top: 0,
-                                    width: "100%",
-                                    zIndex: -1,
-                                }}
-                                    fluid={newsStoryImgThree}
-                            />
+                            <LatestNewsStoryImgContainer>
+                                <LatestNewsStoryImg fluid={newsStoryImgThree} />
+                            </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>{newsStoryThree.node.data.published_date}  &nbsp; | &nbsp; {newsStoryThree.node.data.author.document[0].data.author_name.text}</LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryThree.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{newsStoryThree.node.data.author.document[0].data.author_name.text}</Author></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryThree.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlFour}`}>
-                            <LatestNewsStoryImg 
-                                style={{
-                                    position: "absolute",
-                                    left: 0,
-                                    top: 0,
-                                    width: "100%",
-                                    zIndex: -1,
-                                }}
-                                    fluid={newsStoryImgFour}
-                            />
+                        <LatestNewsStoryImgContainer>
+                            <LatestNewsStoryImg fluid={newsStoryImgFour} />
+                        </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta>{newsStoryFour.node.data.published_date} &nbsp; | &nbsp; {newsStoryFour.node.data.author.document[0].data.author_name.text}</LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryFour.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryFour.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{newsStoryFour.node.data.author.document[0].data.author_name.text}</Author></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryFour.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
@@ -959,7 +952,7 @@ export const query = graphql`
                                 url
                                 localFile {
                                     childImageSharp {
-                                        fluid(maxWidth: 1000, quality: 60, cropFocus: ENTROPY) {
+                                        fluid(maxWidth: 1000, quality: 65, cropFocus: ENTROPY) {
                                             src
                                             aspectRatio
                                         }
@@ -1020,7 +1013,7 @@ export const query = graphql`
                                         url
                                         localFile {
                                             childImageSharp {
-                                                fluid(maxWidth: 1500, quality: 60, cropFocus: ENTROPY) {
+                                                fluid(maxWidth: 1500, quality: 65, cropFocus: ENTROPY) {
                                                     src
                                                     aspectRatio
                                                 }

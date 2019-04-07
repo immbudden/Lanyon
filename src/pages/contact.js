@@ -339,7 +339,7 @@ const ContactDetails = styled.div `
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    flex: 0 1 50%;
+    flex: 0 1 38%;
     padding: 5rem;
     z-index: 5;
     background: #FFF;
