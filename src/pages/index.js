@@ -727,7 +727,7 @@ const IndexPage = (props) => {
                                     <NewsStoryDescription>{featuredStory.node.data.short_description}</NewsStoryDescription>
                                 </TruncateMarkup>
                                 <FeaturedNewsStoryMeta>
-                                    <Date>{featuredStory.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStory.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{featuredStory.node.data.author.document[0].data.author_name.text}</Author>
+                                    <Date>{featuredStory.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStory.node.data.category.document[0].data.category.text}</Category>
                                 </FeaturedNewsStoryMeta>
                                 <ButtonMargin to={`/news/${featuredStoryUrl}`}>Read More</ButtonMargin>
                         </FeaturedNewsStoryTextContainer>
@@ -814,7 +814,7 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryImg fluid={newsStoryImgOne} />
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta><Date>{newsStoryOne.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryOne.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{newsStoryOne.node.data.author.document[0].data.author_name.text}</Author></LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryOne.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryOne.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryOne.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
@@ -823,7 +823,7 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryImg fluid={newsStoryImgTwo} />
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta><Date>{newsStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryTwo.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{newsStoryTwo.node.data.author.document[0].data.author_name.text}</Author></LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryTwo.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryTwo.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
@@ -832,7 +832,7 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryImg fluid={newsStoryImgThree} />
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta><Date>{newsStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryThree.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{newsStoryThree.node.data.author.document[0].data.author_name.text}</Author></LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryThree.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryThree.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
@@ -841,7 +841,7 @@ const IndexPage = (props) => {
                             <LatestNewsStoryImg fluid={newsStoryImgFour} />
                         </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta><Date>{newsStoryFour.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryFour.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{newsStoryFour.node.data.author.document[0].data.author_name.text}</Author></LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryFour.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryFour.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryFour.node.data.title.text}</LatestNewsStoryHeadline>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>

@@ -378,7 +378,7 @@ const CaseStudyStatSports = (props) => (
                                 <br /><br />
                                 To drive awareness of both its elite and consumer products
                                 <br /><br />
-                                To increase awareness of the company amongst potential investors
+                                Highlight STATSports compelling investor propositions.
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>STATSports</InfoText>

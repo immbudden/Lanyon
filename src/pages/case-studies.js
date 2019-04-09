@@ -249,7 +249,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>STATSports</CaseStudyTitle>
-                                <CaseStudyMainBrief>Driving sales of STATSports performance monitoring technology</CaseStudyMainBrief>
+                                <CaseStudyMainBrief>Implement communications strategy to increase awareness of STATSports performance monitoring technology.</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -261,7 +261,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
-                                <CaseStudyMainBrief>Highlight HBO’s Game of Thrones tour at Linen Mill Studios</CaseStudyMainBrief>
+                                <CaseStudyMainBrief>Highlight HBO’s Game of Thrones Legacy Tour at Linen Mill Studios, Banbridge</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -281,7 +281,7 @@ const CaseStudies = (props) => (
                     <ThreeColumnContainer>
                         <Url to="/outlook/">
                             <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.NIMOCrowd.childImageSharp.fluid} />
+                                <CaseStudyImg fluid={props.data.NIMOPanel.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
@@ -320,7 +320,7 @@ const CaseStudies = (props) => (
                                 <CaseStudyImg fluid={props.data.RBCover.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>Rory Best - Freedom of the city</CaseStudyTitle>
+                                <CaseStudyTitle>Rory Best - Freedom of the Borough</CaseStudyTitle>
                                 <CaseStudyMainBrief>Maximise media coverage of Rory Best’s Freedom of the Borough</CaseStudyMainBrief>
                             </ThreeColumnTextContainer>
                         </Url>
@@ -376,7 +376,7 @@ export const query = graphql`
                 }
             }
 
-            NIMOCrowd: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOCrowd.jpg" }) {
+            NIMOPanel: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOPanel.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid

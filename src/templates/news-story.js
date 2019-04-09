@@ -23,20 +23,39 @@ const HeadingWrapper = styled.div `
     height: 50vh;
     overflow: hidden;
     display: flex;
-    padding-top: 7.5rem;
+    padding-top: 8.5rem;
+    flex-flow: row wrap;
+
+    ${media.lessThan("large")`
+        height: 60vh;
+    `}
 
     ${media.greaterThan("medium")`
         flex-direction: row;
         -webkit-box-align: center;
         align-items: center;
     `}
+
+    ${media.lessThan("medium")`
+        height: auto;
+    `}
+`
+
+const NewsStoryHeadingWrapper = styled.div `
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    padding-top: 8.5rem;
+    text-decoration: none;
 `
 
 const HeroImg = styled(Img) `
     width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    position: fixed;
+    height: 100%;
+    // z-index: -1;
+    // position: fixed;
 `
 
 const Section = styled.div `
@@ -51,22 +70,39 @@ const Container = styled.div `
     max-width: 90%;
     display: flex;
     flex-direction: column;
+
+    ${media.lessThan("large")`
+        padding: 5rem 0;
+    `}
+
+    ${media.lessThan("medium")`
+        padding: 2.5rem 0;
+    `}
 `
 
 const SectionTitleLeft = styled.h1 `
-    font-size: 5.5rem; 
+    font-size: 5rem; 
     color: #222; // Different from index.js - to consolodate 
     display: flex; // Different from index.js 
     flex: 1 1 100%; // Different from index.js
     font-family: Didot;
     font-weight: 100;
     // margin-bottom: 5rem; // Different from index.js - to consolodate
+    margin-bottom: 0;
     text-align: left;
+    line-height: 1.25;
 
-    ${media.lessThan("medium")`
-        font-size: 4rem; 
-        text-align: center;
-        width: 80%;
+    ${media.lessThan("huge")`
+        font-size: 4.5rem;
+    `}
+
+    ${media.lessThan("large")`
+        font-size: 3.5rem;
+    `}
+
+    ${media.lessThan("medium")` 
+        font-size: 2.5rem;
+        width: 100%;
     `}
 `
 
@@ -75,10 +111,15 @@ const SectionTitleLeft = styled.h1 `
 const NewsStoryWrapper = styled.div `
     display: flex; 
     align-items: flex-start;
+
+    ${media.lessThan("medium")` 
+        flex-flow: row wrap;
+    `}
 `
 
 const NewsStoryContainer = styled.div `
     display: flex; 
+    flex: 1 1 55%;
     justify-content: flex-start;
     flex-direction: row;
     align-items: flex-start;
@@ -88,9 +129,14 @@ const NewsStoryContainer = styled.div `
     
     padding-bottom: 0;
     flex-flow: row wrap;
-    max-width: 55%;
+    // max-width: 55%;
     
     margin-right: 7.5%;
+
+    ${media.lessThan("medium")` 
+        margin-right: 0;
+        flex: 1 1 100%;
+    `}
 `
 
 const NewsStoryMetaContainer = styled.div `
@@ -121,6 +167,7 @@ const NewsStoryTextContainer = styled.div `
 const NewsStoryText= styled.div `
     font-weight: 100;
     font-size: 1.8rem;
+    text-align: justify;
       
 
     & p {
@@ -135,6 +182,11 @@ const NewsStoryText= styled.div `
 const QuoteContainer = styled.div `
     flex: 1 1 41%;
     // margin-top: 2.5rem;
+
+    ${media.lessThan("medium")` 
+        flex: 1 1 100%;
+        margin: 5rem 0;
+    `}
 `
 
 const Quote = styled.div `
@@ -147,6 +199,12 @@ const QuoteOpen = styled.p `
     color: #199BAA;
     margin-bottom: 0;
     text-align: center;
+    line-height: 1;
+
+    ${media.lessThan("large")`
+        font-size: 6rem;
+    `}
+
 `
 
 const QuoteClose = styled.p `
@@ -156,6 +214,15 @@ const QuoteClose = styled.p `
     margin-bottom: 0;
     margin-top: 5rem;
     text-align: center;
+    line-height: 1;
+
+    ${media.lessThan("large")`
+        font-size: 6rem;
+    `}
+
+    ${media.lessThan("large")`
+        line-height: 3.5rem;
+`}
 `
 
 const QuoteText = styled.h6 `
@@ -163,12 +230,20 @@ const QuoteText = styled.h6 `
     font-size: 2.5rem;
     text-align: center;
     line-height: 1.2;
+
+    ${media.lessThan("large")`
+        font-size: 2rem;
+    `}
 `
 
 const QuoteBy = styled.p `
     flex: 1 1 100%;
     font-size: 1.5rem;
     text-align: center;
+
+    ${media.lessThan("large")`
+        font-size: 1.2rem;
+    `}
 `
 
 const FeaturedImageWrapper = styled.div `
@@ -184,6 +259,12 @@ const FeaturedImageContainer = styled.div `
     flex-direction: row;
     -webkit-box-align: center;
     align-items: center;
+
+    ${media.lessThan("medium")`
+        margin-top: 2.5rem;
+    `}
+
+    
 `
 
 // const FeaturedImage = styled(Img) `
@@ -202,14 +283,21 @@ const FeaturedImageCaption = styled.div `
     background: #199BAA;
     padding: 1.5rem;
     font-size: 1.5rem;
-    line-height: 1.5rem;
+    line-height: 1.3;
     color: #FFF;
 `
 
 const HeadlineImgContainer = styled.div `
-    display: flex;
+    // display: flex;
     flex: 1 1 59%;
     min-height: 100%;
+    overflow: hidden;
+
+    ${media.lessThan("medium")`
+        flex: 1 1 100%;
+        min-height: auto;
+        height: 30vh;
+    `}
 `
 
 const HeadlineContainer = styled.div `
@@ -219,10 +307,16 @@ const HeadlineContainer = styled.div `
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    ${media.lessThan("medium")`
+        padding: 2.5rem 0 0; 
+        max-width: 90%;
+        margin: 0 auto;
+    `}
 `
 
 const Video = styled.div `
-    height: 44vh;
+    height: 100%;
     width: 100%;
     // margin-bottom: 5rem;
     
@@ -285,7 +379,7 @@ const NewsStory = (props) => {
         <div>
         <FontFace />
         <Nav />
-        <HeadingWrapper>
+        <NewsStoryHeadingWrapper>
             {/* <HeroImg fluid={headline_image}/> */}
             <HeadlineImgContainer>
                 {headline_image && main_video ? (
@@ -322,7 +416,7 @@ const NewsStory = (props) => {
                     </NewsStoryMeta>
                 </NewsStoryMetaContainer> */}
             </HeadlineContainer>
-        </HeadingWrapper>
+        </NewsStoryHeadingWrapper>
         <Section>
             <Container>
                 <NewsStoryWrapper>
@@ -330,7 +424,7 @@ const NewsStory = (props) => {
                         {/* <SectionTitleLeft>{title}</SectionTitleLeft> */}
                         <NewsStoryMetaContainer>
                             <NewsStoryMeta>
-                                <Date>{published_date}</Date> &nbsp; &nbsp; <Category>{category}</Category> &nbsp; &nbsp; <Author>{author}</Author>
+                                <Date>{published_date}</Date> &nbsp; &nbsp; <Category>{category}</Category>
                             </NewsStoryMeta>
                         </NewsStoryMetaContainer>
                         <NewsStoryTextContainer>

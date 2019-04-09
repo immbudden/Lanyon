@@ -13,6 +13,7 @@ import media from "styled-media-query";
 import CaseStudyCarousel from '../components/caseStudyCarousel';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
+import ReactPlayer from 'react-player';
 
 // To consolodate
 
@@ -347,6 +348,20 @@ const CarouselNav = styled.button `
     }
 `
 
+const Video = styled.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 5rem;
+`
+
+const Player = styled(ReactPlayer)`
+
+`
+
 const CaseStudyLinenMill = (props) => (
 
     <div>
@@ -370,11 +385,11 @@ const CaseStudyLinenMill = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Highlight HBO’s Game of Thrones tour at Linen Mill Studios
+                                Highlight HBO’s Game of Thrones Legacy Tour at Linen Mill Studios, Banbridge
                                 <br /><br />
                                 Maximise media coverage of the announcement
                                 <br /><br />
-                                Co-ordinate communication with HBO and other stakeholders
+                                Co-ordinate communication with key stakeholders
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Linen Mill Studios</InfoText>
@@ -432,6 +447,14 @@ const CaseStudyLinenMill = (props) => (
                     <br /><br />
                     As well as drafting statements and key messaging, we reached out to an extensive media contact list to spread news of the development across the globe.
                 </CaseStudyDescription>
+                <Video> 
+                    <Player 
+                        url='https://youtu.be/q_kym1TitW0?vq=hd720'
+                        width='100%'
+                        height='50vh'
+                        controls={true}
+                    />
+                </Video>
             </CenterThreeContainer>
             </Container>
         </Section>
@@ -447,6 +470,14 @@ const CaseStudyLinenMill = (props) => (
                         <br /><br />
                         Print, online and social media coverage stretched across the globe including HuffPostUS, Time Magaine, The Telegraph, The Sun, Daily Mail, Lonely Planet, Conde Naste Traveller, Philippine Star, Business Insider and a host of others.
                     </CaseStudyDescription>
+                    <Video> 
+                    <Player 
+                        url='https://youtu.be/0F4APajPN3M?vq=hd720'
+                        width='100%'
+                        height='50vh'
+                        controls={true}
+                    />
+                </Video>
                 </CenterThreeContainer>
             </Container>
                 <StyledCarousel slidesToShow={2.5} cellSpacing={50} slidesToScroll={1} easing="easeCubicIn" edgeEasing="easeCubicIn" renderBottomCenterControls={null} wrapAround={true} dragging={true}

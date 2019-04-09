@@ -33,7 +33,7 @@ const CaseStudyTitle = styled.h2 `
     font-weight: 100;
     margin: 0 auto;
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(34,34,34,0.5);
+    text-shadow: 2px 2px 8px rgba(34,34,34,0.75);
 
     ${media.lessThan("large")`
         font-size: 7.5rem;
@@ -50,7 +50,7 @@ const CaseStudyNumber = styled.h5 `
     font-family: GillSansMTPro;
     font-weight: 400;
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(34,34,34,0.5);
+    text-shadow: 2px 2px 8px rgba(34,34,34,0.75);
 
     ${media.lessThan("large")`
         font-size: 2rem;
@@ -73,13 +73,13 @@ const Container = styled.div `
 
 const CarouselNav = styled.button `
     background: #FFF;
-    opacity: 0.1;
+    opacity: 0.25;
     border: none;
     padding: 5.25rem 1.5rem 5rem;
     transition: all 0.5s linear;
 
     &:hover {
-        opacity: 0.75;
+        opacity: 0.8;
     }
 
 `
@@ -106,7 +106,7 @@ export default () => (
                 }
             }
 
-            NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMO-cover.jpg" }) {
+            NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOPanel.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500, cropFocus: ENTROPY, quality: 85 ) {
                         ...GatsbyImageSharpFluid
@@ -273,7 +273,7 @@ export default () => (
                         fluid={data.RBCover.childImageSharp.fluid} />
                         <Container>
                             <CaseStudyNumber>CASE STUDY 7</CaseStudyNumber>
-                            <CaseStudyTitle>Freedom of the city</CaseStudyTitle>
+                            <CaseStudyTitle>Freedom of the Borough</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>

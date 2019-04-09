@@ -468,9 +468,11 @@ const CaseStudyMIPIM = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Position Belfast for investment on a global stage
+                                Position Belfast as an investment ready city to an international audience at the world’s largest real estate conference.
                                 <br /><br />
-                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest
+                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest.
+                                <br /><br />
+                                Develop a strong public/private partnership across the city.
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Belfast City Council</InfoText>

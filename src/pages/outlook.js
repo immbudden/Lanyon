@@ -460,7 +460,7 @@ const CaseStudyOutlook = (props) => (
                 width: "100%",
                 zIndex: -1,
             }}
-                fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
+                fluid={props.data.NIMOPanelImg.childImageSharp.fluid} />
         </HeaderWrapper>
         <Section>
             <Container>
@@ -532,7 +532,7 @@ const CaseStudyOutlook = (props) => (
                     <Player 
                         url='https://youtu.be/v-BVAmwdqwA?vq=hd720'
                         width='100%'
-                        height='36vh'
+                        height='50vh'
                         controls={true}
                     />
                 </Video>
@@ -540,7 +540,7 @@ const CaseStudyOutlook = (props) => (
             </Container>
         </Section>
         <Section>
-            <SectionImg fluid={props.data.NIMOPanelImg.childImageSharp.fluid} />
+            <SectionImg fluid={props.data.NIMarketOutlookCover.childImageSharp.fluid} />
         </Section>
         <Section>
             <Container>
@@ -699,7 +699,7 @@ export const query = graphql`
 
             NIMarketOutlookCover: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMO-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, quality: 85 ) {
+                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: NORTH, quality: 75) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -707,7 +707,7 @@ export const query = graphql`
 
             NIMOPanelImg: file(relativePath: { eq: "case-studies/NIMarketOutlook/NIMOPanel.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, cropFocus: CENTER ) {
+                    fluid(maxWidth: 2500, cropFocus: CENTER, quality: 75 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

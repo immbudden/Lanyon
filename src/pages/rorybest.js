@@ -385,7 +385,7 @@ const CaseStudyStatSports = (props) => (
             <Container>
                 <CaseStudyIntroWrapper>
                     <CaseStudyIntroContainer>
-                        <SectionTitleLeft>Rory Best - Freedom of the city</SectionTitleLeft> {/* get from index */}
+                        <SectionTitleLeft>Rory Best - Freedom of the Borough</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
@@ -404,7 +404,7 @@ const CaseStudyStatSports = (props) => (
                                 <br /><br />
                                 We were asked to raise awareness in the runup to, during and after an event to confer the honour in Armagh Palace. That included securing a half hour documentary with a major television network.
                                 <br /><br />
-                                Lanyon were also tasked with publicising a mini rugby event being held in Rory Best’s honour at City of Armagh Rugby Club in an effort to help drive footfall to it and to an exhibition of memorabilia/
+                                Lanyon were also tasked with publicising a mini rugby event being held in Rory Best’s honour at City of Armagh Rugby Club in an effort to help drive footfall to it and to an exhibition of memorabilia.
                                 <br /><br />
                                 In addition, we were charged with providing video testimonials from former players for a video presentation to be shown at the event and interviews to be taken during it.
                                 <br /><br />

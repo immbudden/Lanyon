@@ -20,10 +20,14 @@ const Section = styled.div `
 
 const Container = styled.div `
     margin: 0 auto;
-    padding: 10rem 0;
+    padding: 7.5rem 0;
     max-width: 90%;
     display: flex;
     flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 2.5rem 0;
+    `}
 `
 
 const NoTopContainer = styled.div `
@@ -40,7 +44,7 @@ const FeaturedNewsStoryWrapper = styled(Link) `
     flex-direction: column;
     justify-content: flex-start;
     flex-flow: row wrap;
-    padding-top: 7.5rem;
+    padding-top: 8.5rem;
     text-decoration: none;
 
     &:visited {
@@ -50,9 +54,16 @@ const FeaturedNewsStoryWrapper = styled(Link) `
 
 const FeaturedNewsStoryImgContainer = styled.div `
     flex: 1 1 57%;
-    height: 50vh;
+    // height: 50vh;
+    // min-height: 100%;
+    min-height: 50vh;
     position: relative;
+
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
 
     ${media.lessThan("medium")`
         height: 35vh;
@@ -60,8 +71,8 @@ const FeaturedNewsStoryImgContainer = styled.div `
 `
 
 const NewsStoryFeaturedImg = styled(Img) `
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
 `
 
@@ -75,7 +86,7 @@ const FeaturedNewsStoryTextWrapper = styled.div `
 
     ${media.lessThan("medium")`
         flex: 1 1 100%; // Different from case studies (100%)
-        height: 40vh;
+        min-height: 25vh;
     `}
 `
 
@@ -155,16 +166,21 @@ const SecondaryHeadlineStoryContainer = styled.div `
     }
 `
 
-const NewsStoryImgContainer = styled.a `
-    flex: 1 1 100%;
+const NewsStoryImgContainer = styled.div `
+    // flex: 1 1 100%;
     height: 30vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    
 `
 
 const NewsStoryTextWrapper = styled.div ` 
     display: flex;
-    flex: 1 1 100%;
+    // flex: 1 1 100%;
     flex-direction: column;
     justify-content: flex-start;
     background: #FFF;
@@ -291,7 +307,7 @@ const renderStories = (node, props) => {
                         <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
                     </TruncateMarkup>
                     <NewsStoryMeta>
-                        <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{category}</Category> &nbsp; &nbsp; <Author>{authorName}</Author>
+                        <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{category}</Category>
                     </NewsStoryMeta>
                 </NewsStoryTextContainer>
             </NewsStoryTextWrapper>
@@ -342,7 +358,7 @@ const NewsPage = (props) => {
                                 <NewsStoryDescription>{featuredStory.node.data.short_description}</NewsStoryDescription>
                             </TruncateMarkup>
                             <FeaturedNewsStoryMeta>
-                                <Date>{featuredStory.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStory.node.data.category.document[0].data.category.text}</Category> &nbsp; &nbsp; <Author>{featuredStory.node.data.author.document[0].data.author_name.text}</Author>
+                                <Date>{featuredStory.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStory.node.data.category.document[0].data.category.text}</Category>
                             </FeaturedNewsStoryMeta>
                     </FeaturedNewsStoryTextContainer>
                 </FeaturedNewsStoryTextWrapper>

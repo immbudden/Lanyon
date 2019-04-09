@@ -117,7 +117,7 @@ const Nav = ({ data }) => (
                     </LogoContainer>
                     <NavLinkContainer>
                         <NavLink to="#services" activeStyle={ActiveLink}>
-                            Our Services
+                            Services
                         </NavLink>
                         <NavLink to="/case-studies/" activeStyle={ActiveLink}>
                             Case Studies

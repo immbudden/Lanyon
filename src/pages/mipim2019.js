@@ -468,9 +468,11 @@ const CaseStudyMIPIM = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Position Belfast for investment on a global stage
+                                Position Belfast as an investment ready city to an international audience at the world’s largest real estate conference.
                                 <br /><br />
-                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest
+                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest.
+                                <br /><br />
+                                Develop a strong public/private partnership across the city.
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Belfast City Council</InfoText>
@@ -606,7 +608,7 @@ const CaseStudyMIPIM = (props) => (
             <CenterThreeContainer>
                 <SectionSubtitleLeft>Stakeholder Management</SectionSubtitleLeft>
                 <CaseStudyDescription>
-                    Lanyon secured the support of 35 private and public sector partners, as well as helping facilitate their needs whilst at MIPIM. We also worked alongside the Council to set up meetings with investors, developers and occupiers.
+                    Lanyon secured the support of 35 private and public sector partners, as well as helping facilitate their needs whilst at MIPIM. We also collaborated with Belfast City Council to identify investors, developers and occupiers and set up meetings with them.
                 </CaseStudyDescription>
             </CenterThreeContainer>
             </NoTopContainer>
