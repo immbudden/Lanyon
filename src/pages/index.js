@@ -578,14 +578,15 @@ const StyledCarousel = styled(Carousel) `
 
 const CarouselNav = styled.button `
     background: #FFF;
-    opacity: 0.1;
+    opacity: 0.25;
     border: none;
     padding: 5.25rem 1.5rem 5rem;
     transition: all 0.5s linear;
 
     &:hover {
-        opacity: 0.75;
+        opacity: 0.8;
     }
+
 `
 
 const Video = styled.div `
