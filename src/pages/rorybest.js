@@ -584,7 +584,7 @@ export const query = graphql`
 
             MemorabiliaImg: file(relativePath: { eq: "case-studies/RoryBest/Memorabilia.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: CENTER ) {
+                    fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: NORTH ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

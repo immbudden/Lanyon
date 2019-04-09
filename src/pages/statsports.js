@@ -601,7 +601,7 @@ export const query = graphql`
 
             SSCar2Img: file(relativePath: { eq: "case-studies/StatSports/SSCar2.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: ENTROPY ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
