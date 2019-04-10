@@ -423,7 +423,7 @@ const Url = styled(Link) `
 
 const CarouselNav = styled.button `
     background: #FFF;
-    opacity: 0.25;
+    opacity: 0.35;
     border: none;
     padding: 5.25rem 1.5rem 5rem;
     transition: all 0.5s linear;
@@ -514,8 +514,8 @@ const CaseStudyOutlook = (props) => (
                     <StatText>pieces of coverage</StatText>
                 </StatContainer>
                 <StatContainer>
-                    <StatHeadline>10</StatHeadline>
-                    <StatText>minute documentary produced</StatText>
+                    <StatHeadline>1</StatHeadline>
+                    <StatText>ten minute documentary produced</StatText>
                 </StatContainer>
                 </StatWrapper>
             </Container>

@@ -341,7 +341,7 @@ const Url = styled(Link) `
 
 const CarouselNav = styled.button `
     background: #FFF;
-    opacity: 0.25;
+    opacity: 0.35;
     border: none;
     padding: 5.25rem 1.5rem 5rem;
     transition: all 0.5s linear;
@@ -379,7 +379,7 @@ const CaseStudyStatSports = (props) => (
                                 <br /><br />
                                 To drive awareness of both its elite and consumer products
                                 <br /><br />
-                                Highlight STATSports compelling investor propositions.
+                                Highlight STATSports' compelling investment proposition
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>STATSports</InfoText>

@@ -578,7 +578,7 @@ const StyledCarousel = styled(Carousel) `
 
 const CarouselNav = styled.button `
     background: #FFF;
-    opacity: 0.25;
+    opacity: 0.35;
     border: none;
     padding: 5.25rem 1.5rem 5rem;
     transition: all 0.5s linear;
@@ -672,7 +672,7 @@ const IndexPage = (props) => {
     <div>
         <FontFace />
         <Nav />
-        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={true} autoplayInterval={3500} transitionMode={'scroll'} pauseOnHover={false}
+        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={true} autoplayInterval={9000} transitionMode={'scroll'} pauseOnHover={false}
             
             renderCenterLeftControls={({ previousSlide }) => (
                 <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
@@ -684,7 +684,7 @@ const IndexPage = (props) => {
             <Slide>
                 <Video> 
                     <Player 
-                        url='https://youtu.be/AePugMqpO_Y?vq=hd720'
+                        url='https://youtu.be/jovEB8A4odo?vq=hd720'
                         width='100%'
                         height='130vh'
                         controls={false}

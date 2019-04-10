@@ -64,16 +64,18 @@ const CaseStudyNumber = styled.h5 `
 const Container = styled.div `
     margin: 0 auto;
     padding: 10rem 0;
-    max-width: 90%;
+    
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
+
+    background: linear-gradient(to top, transparent, 20%, rgba(22,22,22,0.5), 80%, transparent);
 `
 
 const CarouselNav = styled.button `
     background: #FFF;
-    opacity: 0.25;
+    opacity: 0.35;
     border: none;
     padding: 5.25rem 1.5rem 5rem;
     transition: all 0.5s linear;

@@ -221,6 +221,7 @@ const CaseStudyMainBrief = styled.h4 `
 
 const Url = styled(Link) `
     text-decoration: none;
+    flex: 1 1 100%;
 `
 
 const CaseStudies = (props) => (
@@ -249,7 +250,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>STATSports</CaseStudyTitle>
-                                <CaseStudyMainBrief>Implement communications strategy to increase awareness of STATSports performance monitoring technology.</CaseStudyMainBrief>
+                                
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -261,7 +262,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Linen Mill Studios</CaseStudyTitle>
-                                <CaseStudyMainBrief>Highlight HBO’s Game of Thrones Legacy Tour at Linen Mill Studios, Banbridge</CaseStudyMainBrief>
+                                
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -273,7 +274,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Belfast at MIPIM 2019</CaseStudyTitle>
-                                <CaseStudyMainBrief>Positioning Belfast for investment on a global stage</CaseStudyMainBrief>
+                                
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -284,8 +285,8 @@ const CaseStudies = (props) => (
                                 <CaseStudyImg fluid={props.data.NIMOPanel.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
-                                <CaseStudyMainBrief>Showcase the real estate market in Northern Ireland</CaseStudyMainBrief>
+                                <CaseStudyTitle>NI Real Estate Market Outlook</CaseStudyTitle>
+                                
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -297,7 +298,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
-                                <CaseStudyMainBrief>Positioning Belfast for investment on a global stage</CaseStudyMainBrief>
+                                
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -309,7 +310,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Innovation Nation</CaseStudyTitle>
-                                <CaseStudyMainBrief>To position Newry, Mourne &amp; Down as a burgeoning innovation hub</CaseStudyMainBrief>
+                                
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
@@ -321,7 +322,7 @@ const CaseStudies = (props) => (
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
                                 <CaseStudyTitle>Rory Best - Freedom of the Borough</CaseStudyTitle>
-                                <CaseStudyMainBrief>Maximise media coverage of Rory Best’s Freedom of the Borough</CaseStudyMainBrief>
+                                
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
