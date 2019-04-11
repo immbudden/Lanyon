@@ -454,6 +454,7 @@ const CaseStudyOutlook = (props) => (
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <HeaderWrapper>
             <HeaderImg style={{
                 position: "absolute",
@@ -472,9 +473,9 @@ const CaseStudyOutlook = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Showcase the real estate market in Northern Ireland
+                                To showcase the real estate market in Northern Ireland and benchmark it against the rest of the UK to an audience of local influential business leaders
                                 <br /><br />
-                                Reinforce CBRE’s reputation in Northern Ireland
+                                To reinforce CBRE’s reputation in Northern Ireland as the market leader and ‘go to’ commercial property consultancy for both local and global research expertise
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>CBRE</InfoText>
@@ -673,7 +674,6 @@ const CaseStudyOutlook = (props) => (
         <Section id="caseStudies">
             <CaseStudyCarousel />
         </Section>
-        <NavMobile />
     </div>
 
 )

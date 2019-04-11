@@ -274,6 +274,7 @@ const AboutPage = (props) => (
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <HeroWrapper>
             <HeroImg style={{
                 position: "absolute",
@@ -578,7 +579,6 @@ const AboutPage = (props) => (
                 </ServiceWrapper>
             </Container>
         </Section>
-        <NavMobile />
     </div>
 
 )

@@ -37,6 +37,7 @@
     "nuka-carousel": "^4.5.3",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
+    "react-burger-menu": "^2.6.8",
     "react-dom": "^16.5.1",
     "react-flexbox-grid": "^2.1.2",
     "react-google-maps": "^9.4.5",

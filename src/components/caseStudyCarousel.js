@@ -40,7 +40,7 @@ const CaseStudyTitle = styled.h2 `
     `}
 
     ${media.lessThan("medium")`
-        font-size: 5rem;
+        font-size: 3.5rem;
     `}
 `
 
@@ -83,6 +83,10 @@ const CarouselNav = styled.button `
     &:hover {
         opacity: 0.8;
     }
+
+    ${media.lessThan("medium")`
+        padding: 3.25rem 0.8rem 3rem;
+    `}
 
 `
 

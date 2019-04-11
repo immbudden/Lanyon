@@ -23,36 +23,46 @@ const HeaderImg = styled(Img) `
 `
 
 const HeadingOne = styled.h1 `
-    font-size: 7.5rem;
+    font-size: 5.5rem;
     color: #FFF;
     font-weight: 100;
     display: flex;
     margin-bottom: 5rem;
 
+    ${media.lessThan("huge")`
+        font-size: 4.5rem;
+    `}
+
     ${media.lessThan("medium")`
-        font-size: 5rem;
-        margin-top: 15rem;
+        font-size: 2.8rem;
+        margin-bottom: 2.5rem;
         text-align: center;
         justify-content: center;
     `}
 `
 
 const HeadingTwo = styled.h2 `
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #FFF;
-    font-family: GillSansMTPro;
     font-weight: 100;
+    font-family: GillSansMTPro;
     display: flex;
     line-height: 1.5;
 
     ${media.lessThan("medium")`
-        font-size: 2rem; 
+        font-size: 1.8rem; 
         text-align: center;
     `}
 `
 
 const HeadingTextContainer = styled.div `
+    flex: 0 1 62%;
     justify-content: flex-end;
+
+    ${media.lessThan("large")`
+        flex: 0 1 80%;
+        margin: 0 auto;
+    `}
 `
 
 const Section = styled.div `
@@ -581,6 +591,10 @@ const CarouselNav = styled.button `
         opacity: 0.8;
     }
 
+    ${media.lessThan("medium")`
+        padding: 3.25rem 0.8rem 3rem;
+    `}
+
 `
 
 const Video = styled.div `
@@ -666,6 +680,7 @@ const IndexPage = (props) => {
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={true} autoplayInterval={9000} transitionMode={'scroll'} pauseOnHover={false}
             
             renderCenterLeftControls={({ previousSlide }) => (
@@ -696,12 +711,18 @@ const IndexPage = (props) => {
                     zIndex: -1,
                 }}
                     fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
-                <HeaderContainer>
+                    <HeaderContainer>
+                        <HeadingTextContainer>
+                            <HeadingOne>Helping businesses achieve their potential</HeadingOne>
+                            <HeadingTwo>Through strategic communications, reputation management and stakeholder engagement</HeadingTwo>
+                        </HeadingTextContainer>
+                    </HeaderContainer>
+                {/* <HeaderContainer>
                     <HeadingTextContainer>
                         <HeadingOne>Lanyon</HeadingOne>
                         <HeadingTwo>Helping businesses achieve their potential through strategic communications, reputation management and stakeholder engagement</HeadingTwo>
                     </HeadingTextContainer>
-                </HeaderContainer>
+                </HeaderContainer> */}
             </Slide>
             <Slide>
                 <FeaturedNewsStoryWrapper to={`/news/${featuredStoryUrl}`}>
@@ -920,7 +941,6 @@ const IndexPage = (props) => {
                 </ClientLogoWrapper>
             </Container>
         </SectionDark>
-        <NavMobile />
     </div>
     )
 

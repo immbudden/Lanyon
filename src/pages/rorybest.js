@@ -373,6 +373,7 @@ const CaseStudyStatSports = (props) => (
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <HeaderWrapper>
             <HeaderImg style={{
                 position: "absolute",
@@ -574,7 +575,6 @@ const CaseStudyStatSports = (props) => (
         <Section id="caseStudies">
             <CaseStudyCarousel/>
         </Section>
-        <NavMobile />
     </div>
 
 )

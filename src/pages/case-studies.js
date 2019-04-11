@@ -229,6 +229,7 @@ const CaseStudies = (props) => (
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <Section>
             <Container>
             <CenterThreeContainer>
@@ -351,7 +352,6 @@ const CaseStudies = (props) => (
                 </CenterThreeContainer>
             </Container>
         </SectionColoured>
-        <NavMobile />
     </div>
 
 )

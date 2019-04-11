@@ -452,6 +452,7 @@ const CaseStudyMIPIM = (props) => (
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <HeaderWrapper>
             <HeaderImg style={{
                 position: "absolute",
@@ -758,7 +759,6 @@ const CaseStudyMIPIM = (props) => (
         <Section id="caseStudies">
             <CaseStudyCarousel />
         </Section>
-        <NavMobile />
     </div>
 
 )

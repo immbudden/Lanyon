@@ -338,6 +338,7 @@ const NewsPage = (props) => {
         <div>
         <FontFace />
         <Nav />
+        <NavMobile />
 
         <Section>
             <FeaturedNewsStoryWrapper to={`/news/${featuredStoryUrl}`}>
@@ -384,9 +385,6 @@ const NewsPage = (props) => {
                 {/* <ViewMore>View More</ViewMore> */}
             </Container>
         </Section>
-
-        
-        <NavMobile />
     </div>
     )
 

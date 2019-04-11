@@ -495,6 +495,7 @@ const ContactPage = (props) => (
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <Section>
             <Container>
             <CenterThreeContainer>
@@ -673,7 +674,6 @@ const ContactPage = (props) => (
                 </LeftTwoContainer>
             </Container>
         </Section>
-        <NavMobile />
     </div>
 
 )

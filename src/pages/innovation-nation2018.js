@@ -445,6 +445,7 @@ const CaseStudyIN = (props) => (
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <HeaderWrapper>
             <HeaderImg style={{
                 position: "absolute",
@@ -463,9 +464,9 @@ const CaseStudyIN = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                To position Newry, Mourne &amp; Down as a burgeoning innovation hub
+                                To position Newry, Mourne &amp; Down locally and globally as a burgeoning innovation hub, a thriving tech eco-system and a prime investment location for technology and innovation companies
                                 <br /><br />
-                                Showcase the technology and innovation sectors in the district
+                                To showcase the burgeoning technology and innovation sectors in the Newry, Mourne and Down district, and uncover the global powerhouses operating from within this city and wider council area
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Newry, Mourne and Down Council</InfoText>
@@ -740,7 +741,6 @@ const CaseStudyIN = (props) => (
         <Section id="caseStudies">
             <CaseStudyCarousel />
         </Section>
-        <NavMobile />
     </div>
 
 )

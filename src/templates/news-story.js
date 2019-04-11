@@ -380,6 +380,7 @@ const NewsStory = (props) => {
         <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <NewsStoryHeadingWrapper>
             {/* <HeroImg fluid={headline_image}/> */}
             <HeadlineImgContainer>
@@ -457,7 +458,6 @@ const NewsStory = (props) => {
                 </NewsStoryWrapper>
             </Container>
         </Section>
-        <NavMobile />
     </div>
     )
 

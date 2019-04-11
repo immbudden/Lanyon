@@ -102,6 +102,7 @@ const NewsStory = (props) => (
     <div>
         <FontFace />
         <Nav />
+        <NavMobile />
         <HeaderWrapper>
             <HeaderImg style={{
                 position: "absolute",
@@ -137,7 +138,6 @@ const NewsStory = (props) => (
                     </NewsStoryContainer>
                 </NewsStoryWrapper>
         </Section>
-        <NavMobile />
     </div>
 
 )
