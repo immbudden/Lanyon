@@ -145,7 +145,7 @@ const SectionIntro = styled.p `
 `
 
 const SectionIntroLeft = styled.p `
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: ##373737;
     font-family: GillSansMTPro;
     font-weight: 100;
@@ -268,7 +268,7 @@ const LatestNewsWrapper = styled.div `
 const LatestNewsContainer = styled.div `
     display: flex;
     flex-flow: row wrap;
-    width: 80%;
+    width: 60%;
     position: relative;
     justify-content: flex-end;
 
@@ -283,18 +283,17 @@ const LatestNewsStory = styled(Link) `
     display: flex;
     flex: 0 0 48%;
     flex-flow: row wrap;
-    height: 47.5rem;
+    height: auto;
     margin-right: 4%;
     margin-bottom: 7.5rem;
     position: relative;
     overflow: hidden;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
     text-decoration: none;
 
     &:nth-child(even) {
-        margin-top: -7.5rem;
         margin-right: 0;
     }
 
@@ -313,18 +312,10 @@ const LatestNewsStory = styled(Link) `
 
 const LatestNewsStoryImgContainer = styled.div `
     flex: 1 1 100%;
-    min-width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-
-    ${media.lessThan("medium")`
-        flex: 1 1 100%;
-        position: relative;
-        overflow: hidden;
-        height: auto;
-        z-index: 1;
-    `}
+    position: relative;
+    overflow: hidden;
+    height: 40rem;
+    z-index: 1;
 `
 
 
@@ -338,16 +329,18 @@ const LatestNewsTextWrapper = styled.div `
     display: flex;
     flex-flow: row wrap;
     background: #FFF;
-    padding: 2.5rem;
-    width: 80%;
-    min-height: 16rem;
+    width: 100%;
     align-items: flex-end;
     z-index: 10;
+    margin-top: 2.5rem;
 
     ${media.lessThan("medium")`
         border: 1px solid #EEEEEE;
         border-top: none;
         width: 100%;
+        margin-top: 0;
+        padding: 2.5rem 1.5rem 1.5rem;
+
     `}
 `
 
@@ -357,6 +350,7 @@ const LatestNewsStoryMeta = styled.div `
     // text-transform: uppercase;
     color: #222;
     // color: #969696;
+    margin-top: 2.5rem;
 `
 
 const LatestNewsStoryHeadline = styled.h4 `
@@ -815,8 +809,8 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryImg fluid={newsStoryImgOne} />
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta><Date>{newsStoryOne.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryOne.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryOne.node.data.title.text}</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta><Date>{newsStoryOne.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryOne.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlTwo}`}>
@@ -824,8 +818,8 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryImg fluid={newsStoryImgTwo} />
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta><Date>{newsStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryTwo.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryTwo.node.data.title.text}</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta><Date>{newsStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryTwo.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlThree}`}>
@@ -833,8 +827,8 @@ const IndexPage = (props) => {
                                 <LatestNewsStoryImg fluid={newsStoryImgThree} />
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta><Date>{newsStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryThree.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryThree.node.data.title.text}</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta><Date>{newsStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryThree.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlFour}`}>
@@ -842,10 +836,11 @@ const IndexPage = (props) => {
                             <LatestNewsStoryImg fluid={newsStoryImgFour} />
                         </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
-                                <LatestNewsStoryMeta><Date>{newsStoryFour.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryFour.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                                 <LatestNewsStoryHeadline>{newsStoryFour.node.data.title.text}</LatestNewsStoryHeadline>
+                                <LatestNewsStoryMeta><Date>{newsStoryFour.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryFour.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
+        
                         <Url to="./news">
                             <Button>More Stories</Button>
                         </Url>

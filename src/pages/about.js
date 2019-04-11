@@ -70,12 +70,13 @@ const SectionTitleLeft = styled.h2 `
 `
 
 const SectionIntro = styled.p `
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: ##373737;
     font-family: GillSansMTPro;
     font-weight: 100;
     width: 60%;
     margin: 0 auto;
+    text-align: justify;
 
     ${media.lessThan("medium")`
         font-size: 1.8rem; 

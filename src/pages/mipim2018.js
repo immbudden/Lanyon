@@ -140,7 +140,7 @@ const CaseStudyIntroContainer = styled.div `
 `
 
 const CaseStudyInfoContainer = styled.div `
-    flex: 1 1 18%;
+    flex: 1 1 25.5%;
     margin-right: 2.5%;
 
     ${media.lessThan("medium")`
@@ -190,6 +190,7 @@ const CaseStudyDescription = styled.p `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+    text-align: justify;
 `
 
 const ContactButton = styled.button `
@@ -469,11 +470,11 @@ const CaseStudyMIPIM = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Position Belfast as an investment ready city to an international audience at the world’s largest real estate conference.
+                                Position Belfast as an investment ready city to an international audience at the world’s largest real estate conference
                                 <br /><br />
-                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest.
+                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest
                                 <br /><br />
-                                Develop a strong public/private partnership across the city.
+                                Develop a strong public/private partnership across the city
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Belfast City Council</InfoText>

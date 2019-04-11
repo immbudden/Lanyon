@@ -155,7 +155,7 @@ const CaseStudyIntroContainer = styled.div `
 `
 
 const CaseStudyInfoContainer = styled.div `
-    flex: 1 1 18%;
+    flex: 1 1 25.5%;
     margin-right: 2.5%;
 
     ${media.lessThan("medium")`
@@ -205,6 +205,7 @@ const CaseStudyDescription = styled.p `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+    text-align: justify;
 `
 
 const ContactButton = styled.button `
@@ -467,7 +468,7 @@ const CaseStudyOutlook = (props) => (
             <Container>
                 <CaseStudyIntroWrapper>
                     <CaseStudyIntroContainer>
-                        <SectionTitleLeft>NI Market Outlook</SectionTitleLeft> {/* get from index */}
+                        <SectionTitleLeft>CBRE NI Real Estate Market Outlook</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>

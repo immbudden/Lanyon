@@ -140,7 +140,7 @@ const CaseStudyIntroContainer = styled.div `
 `
 
 const CaseStudyInfoContainer = styled.div `
-    flex: 1 1 18%;
+    flex: 1 1 25.5%;
     margin-right: 2.5%;
 
     ${media.lessThan("medium")`
@@ -190,6 +190,7 @@ const CaseStudyDescription = styled.p `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+    text-align: justify;
 `
 
 const ContactButton = styled.button `
@@ -469,11 +470,11 @@ const CaseStudyMIPIM = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Position Belfast as an investment ready city to an international audience at the world’s largest real estate conference.
+                                Position Belfast as an investment ready city to an international audience at the world’s largest real estate conference
                                 <br /><br />
-                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest.
+                                Showcase the city as an outstanding location in which to live, work, learn, visit and invest
                                 <br /><br />
-                                Develop a strong public/private partnership across the city.
+                                Develop a strong public/private partnership across the city
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>Belfast City Council</InfoText>
@@ -523,9 +524,9 @@ const CaseStudyMIPIM = (props) => (
                 <CaseStudyDescription>
                     Lanyon secured 40 speakers – from local stakeholders to internationally acclaimed placemaking experts – to deliver content at MIPIM and worked with all of them to facilitate their requirements in terms of travel, accommodation, logistics and presentations/content.
                     <br /><br />
-                    We delivered 30 events during the campaign, including two pre-MIPIM events and a post-MIPIM wrap-up event in Belfast, as well as over 20 events in Cannes. This included collaborating with Daniel Libeskind, one of the world’s most respected architects. Daniel is renowned for the Jewish Museum in Berlin, the extension of the Denver Art Museum, the Grand Canal Theatre in Dublin and a host of other landmark buildings, as well as being the masterplan architect for the reconstruction of the World Trade Centre site. He shared his views on the future for Belfast as a place to live, work and play, shining a light on the importance of cultural attractions in forming a rounded, vibrant, welcoming city.    
+                    We delivered 30 events during the campaign, including two pre-MIPIM events and a post-MIPIM wrap-up event in Belfast, as well as over 20 events in Cannes. This included collaborating with Daniel Libeskind, one of the world’s most respected architects. Daniel is renowned for the Jewish Museum in Berlin, the extension of the Denver Art Museum, the Grand Canal Theatre in Dublin and a host of other landmark buildings, as well as being the masterplan architect for the reconstruction of the World Trade Centre site. He shared his views on the future for Belfast as a place to live, work and play, shining a light on the importance of cultural attractions in forming a rounded, vibrant, welcoming city  
                     <br /><br />
-                    We also worked alongside the six partner councils which form part of the Belfast Region City Deal to hear about their collective plans as part of the deal and the impact they expect it to have in their respective areas.
+                    We also worked alongside the six partner councils which form part of the Belfast Region City Deal to hear about their collective plans as part of the deal and the impact they expect it to have in their respective areas
                 </CaseStudyDescription>
                 <Video> 
                     <Player 

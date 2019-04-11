@@ -156,7 +156,7 @@ const CaseStudyIntroContainer = styled.div `
 `
 
 const CaseStudyInfoContainer = styled.div `
-    flex: 1 1 18%;
+    flex: 1 1 25.5%;
     margin-right: 2.5%;
 
     ${media.lessThan("medium")`
@@ -206,6 +206,7 @@ const CaseStudyDescription = styled.p `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+    text-align: justify;
 `
 
 const ContactButton = styled.button `

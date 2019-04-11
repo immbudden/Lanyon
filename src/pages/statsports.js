@@ -13,6 +13,7 @@ import media from "styled-media-query";
 import CaseStudyCarousel from '../components/caseStudyCarousel';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
+import ReactPlayer from 'react-player';
 
 // To consolodate
 
@@ -159,7 +160,7 @@ const CaseStudyIntroContainer = styled.div `
 `
 
 const CaseStudyInfoContainer = styled.div `
-    flex: 1 1 18%;
+    flex: 1 1 25.5%;
     margin-right: 2.5%;
 
     ${media.lessThan("medium")`
@@ -209,6 +210,7 @@ const CaseStudyDescription = styled.p `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+    text-align: justify;
 `
 
 const ContactButton = styled.button `
@@ -352,6 +354,20 @@ const CarouselNav = styled.button `
 
 `
 
+const Video = styled.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 5rem;
+`
+
+const Player = styled(ReactPlayer)`
+
+`
+
 const CaseStudyStatSports = (props) => (
 
     <div>
@@ -375,11 +391,11 @@ const CaseStudyStatSports = (props) => (
                         <CaseStudyInfoContainer>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                To drive sales of STATSports performance monitoring technology
+                                Implement communications strategy to increase awareness of STATSports performance monitoring technology
                                 <br /><br />
                                 To drive awareness of both its elite and consumer products
                                 <br /><br />
-                                Highlight STATSports' compelling investment proposition
+                                Highlight STATSports’ compelling investment proposition
                             </InfoText>
                             <InfoTitle>Client</InfoTitle>
                             <InfoText>STATSports</InfoText>
@@ -436,6 +452,14 @@ const CaseStudyStatSports = (props) => (
                     <br /><br />
                     We also worked in conjunction with Invest NI to highlight the company’s expansion and plans to create 237 new jobs over the next three years, hosting the Secretary of State Karen Bradley for an official press announcement.
                 </CaseStudyDescription>
+                <Video> 
+                    <Player 
+                        url='https://youtu.be/nO78HOjDHKE?vq=hd720'
+                        width='100%'
+                        height='50vh'
+                        controls={true}
+                    />
+                </Video>
             </CenterThreeContainer>
             </Container>
         </Section>
@@ -535,6 +559,14 @@ const CaseStudyStatSports = (props) => (
                 <CaseStudyDescription>
                     Lanyon continues to work with STATSports to raise awareness of the features and benefits of the product across the world as the company’s stellar growth moves on apace. On the horizon are further contract announcements with elite teams and news of the growth of the consumer product across the world.
                 </CaseStudyDescription>
+                <Video> 
+                    <Player 
+                        url='https://youtu.be/-OePPYQ5OXc?vq=hd720'
+                        width='100%'
+                        height='50vh'
+                        controls={true}
+                    />
+                </Video>
             </CenterThreeContainer>
             </Container>
         </Section>

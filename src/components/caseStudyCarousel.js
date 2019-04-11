@@ -224,12 +224,12 @@ export default () => (
                         fluid={data.NIMarketOutlookCover.childImageSharp.fluid} />
                         <Container>
                             <CaseStudyNumber>CASE STUDY 4</CaseStudyNumber>
-                            <CaseStudyTitle>NI Market Outlook</CaseStudyTitle>
+                            <CaseStudyTitle>CBRE NI Real Estate Market Outlook</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
                 <Slide>
-                    <Url to="/mipim2018/">
+                    <Url to="/rorybest/">
                         <SlideImg 
                         style={{
                             position: "absolute",
@@ -238,10 +238,10 @@ export default () => (
                             width: "100%",
                             zIndex: -1,
                         }}
-                        fluid={data.MIPIMCover.childImageSharp.fluid} />
+                        fluid={data.RBCover.childImageSharp.fluid} />
                         <Container>
                             <CaseStudyNumber>CASE STUDY 5</CaseStudyNumber>
-                            <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
+                            <CaseStudyTitle>Freedom of the Borough</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>
@@ -263,7 +263,7 @@ export default () => (
                     </Url>
                 </Slide>
                 <Slide>
-                    <Url to="/rorybest/">
+                    <Url to="/mipim2018/">
                         <SlideImg 
                         style={{
                             position: "absolute",
@@ -272,10 +272,10 @@ export default () => (
                             width: "100%",
                             zIndex: -1,
                         }}
-                        fluid={data.RBCover.childImageSharp.fluid} />
+                        fluid={data.MIPIMCover.childImageSharp.fluid} />
                         <Container>
                             <CaseStudyNumber>CASE STUDY 7</CaseStudyNumber>
-                            <CaseStudyTitle>Freedom of the Borough</CaseStudyTitle>
+                            <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>

@@ -303,9 +303,9 @@ const renderStories = (node, props) => {
             <NewsStoryTextWrapper>
                 <NewsStoryTextContainer>
                     <NewsStoryTitle>{node.data.title.text}</NewsStoryTitle>
-                    <TruncateMarkup lines={3}>
+                    {/* <TruncateMarkup lines={3}>
                         <NewsStoryDescription>{node.data.short_description}</NewsStoryDescription>
-                    </TruncateMarkup>
+                    </TruncateMarkup> */}
                     <NewsStoryMeta>
                         <Date>{node.data.published_date}</Date> &nbsp; &nbsp; <Category>{category}</Category>
                     </NewsStoryMeta>
@@ -354,9 +354,9 @@ const NewsPage = (props) => {
                 <FeaturedNewsStoryTextWrapper>
                     <FeaturedNewsStoryTextContainer>
                         <FeaturedNewsStoryTitle>{featuredStory.node.data.title.text}</FeaturedNewsStoryTitle>
-                            <TruncateMarkup lines={3}>
+                            {/* <TruncateMarkup lines={3}>
                                 <NewsStoryDescription>{featuredStory.node.data.short_description}</NewsStoryDescription>
-                            </TruncateMarkup>
+                            </TruncateMarkup> */}
                             <FeaturedNewsStoryMeta>
                                 <Date>{featuredStory.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStory.node.data.category.document[0].data.category.text}</Category>
                             </FeaturedNewsStoryMeta>

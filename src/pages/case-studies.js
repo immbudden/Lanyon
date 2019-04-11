@@ -285,19 +285,19 @@ const CaseStudies = (props) => (
                                 <CaseStudyImg fluid={props.data.NIMOPanel.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>NI Real Estate Market Outlook</CaseStudyTitle>
+                                <CaseStudyTitle>CBRE NI Real Estate Market Outlook</CaseStudyTitle>
                                 
                             </ThreeColumnTextContainer>
                         </Url>
                     </ThreeColumnContainer>
 
                     <ThreeColumnContainer>
-                        <Url to="/mipim2018/">
+                        <Url to="/rorybest/">
                             <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
+                                <CaseStudyImg fluid={props.data.RBCover.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
+                                <CaseStudyTitle>Rory Best - Freedom of the Borough</CaseStudyTitle>
                                 
                             </ThreeColumnTextContainer>
                         </Url>
@@ -316,12 +316,12 @@ const CaseStudies = (props) => (
                     </ThreeColumnContainer>
 
                     <ThreeColumnContainer>
-                        <Url to="/rorybest/">
+                        <Url to="/mipim2018/">
                             <ThreeColumnImgContainer>
-                                <CaseStudyImg fluid={props.data.RBCover.childImageSharp.fluid} />
+                                <CaseStudyImg fluid={props.data.MIPIMCover.childImageSharp.fluid} />
                             </ThreeColumnImgContainer>
                             <ThreeColumnTextContainer>
-                                <CaseStudyTitle>Rory Best - Freedom of the Borough</CaseStudyTitle>
+                                <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
                                 
                             </ThreeColumnTextContainer>
                         </Url>
