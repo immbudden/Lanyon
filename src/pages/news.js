@@ -518,56 +518,5 @@ export const query = graphql`
               }
             }
         }
-
-        NewsStoryPlaceholderImg: file(relativePath: { eq: "placeholders/StatSportsNews.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        NewsStoryPlaceholderImg2: file(relativePath: { eq: "placeholders/DigitalDNANews.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        NewsStoryPlaceholderImg3: file(relativePath: { eq: "placeholders/KingsNews.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY ) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        NewsStoryPlaceholderImg4: file(relativePath: { eq: "placeholders/NewsPlaceholder4.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        NewsStoryPlaceholderImg5: file(relativePath: { eq: "placeholders/NewsPlaceholder5.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        NewsStoryPlaceholderImg6: file(relativePath: { eq: "placeholders/NewsPlaceholder6.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-
-        NewsStoryPlaceholderImg7: file(relativePath: { eq: "placeholders/NewsPlaceholder7.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: CENTER ) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
     }
 `

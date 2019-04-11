@@ -290,7 +290,7 @@ const FeaturedImageCaption = styled.div `
 const HeadlineImgContainer = styled.div `
     // display: flex;
     flex: 1 1 59%;
-    min-height: 100%;
+    height: 50vh;
     overflow: hidden;
 
     ${media.lessThan("medium")`
@@ -307,6 +307,7 @@ const HeadlineContainer = styled.div `
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 50vh;
 
     ${media.lessThan("medium")`
         padding: 2.5rem 0 0; 
@@ -485,7 +486,7 @@ export const query = graphql`
                     url
                     localFile {
                       childImageSharp {
-                        fluid(maxWidth: 2500, maxHeight: 1200, quality: 60, cropFocus: ENTROPY) {
+                        fluid(maxWidth: 1200, quality: 60, cropFocus: ENTROPY) {
                           src
                           aspectRatio
                         }
