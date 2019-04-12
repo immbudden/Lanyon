@@ -111,7 +111,7 @@ const HoldingIndexPage = (props) => {
                     <HeaderContainer>
                         <HeadingTextContainer>
                         <Logo fluid={props.data.logo.childImageSharp.fluid} />
-                            <HeadingOne>New website coming soon... </HeadingOne>
+                            <HeadingOne>New website launching soon... </HeadingOne>
                         </HeadingTextContainer>
                     </HeaderContainer>
                 {/* <HeaderContainer>
