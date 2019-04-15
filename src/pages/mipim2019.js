@@ -469,6 +469,8 @@ const CaseStudyMIPIM = (props) => (
                     <CaseStudyIntroContainer>
                         <SectionTitleLeft>Belfast at MIPIM 2019</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
+                            <InfoTitle>Client</InfoTitle>
+                            <InfoText>Belfast City Council</InfoText>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
                                 Position Belfast as an investment ready city to an international audience at the world’s largest real estate conference
@@ -477,8 +479,6 @@ const CaseStudyMIPIM = (props) => (
                                 <br /><br />
                                 Develop a strong public/private partnership across the city
                             </InfoText>
-                            <InfoTitle>Client</InfoTitle>
-                            <InfoText>Belfast City Council</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>

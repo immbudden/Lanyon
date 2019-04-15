@@ -509,7 +509,7 @@ const AboutPage = (props) => (
                             <Bold>Michael Budden</Bold><br />Creative Director
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                            MB bio to go into here and will be roughly 200 characters long in total. 
+                            With over 10 years experience as a multi-disciplinary designer; Michael has worked in senior management positions with a diverse range of companies from large corporates to start-ups. He has vast experience in the tech-sector and founded technology firm Locate a Locum. 
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>

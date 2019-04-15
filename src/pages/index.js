@@ -618,6 +618,12 @@ const Video = styled.div `
 
 const Player = styled(ReactPlayer)`
 
+.video-stream html5-main-video {
+    width: 100vw;
+    min-height: 100vh;
+
+}
+
 `
 
 const Url = styled(Link) `
@@ -681,7 +687,7 @@ const IndexPage = (props) => {
         <FontFace />
         <Nav />
         <NavMobile />
-        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={true} autoplayInterval={9000} transitionMode={'scroll'} pauseOnHover={false}
+        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={false} autoplayInterval={9000} transitionMode={'scroll'} pauseOnHover={false}
             
             renderCenterLeftControls={({ previousSlide }) => (
                 <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>

@@ -386,6 +386,8 @@ const CaseStudyLinenMill = (props) => (
                     <CaseStudyIntroContainer>
                         <SectionTitleLeft>Linen Mill Studios / Game of Thrones</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
+                            <InfoTitle>Client</InfoTitle>
+                            <InfoText>Linen Mill Studios</InfoText>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
                                 Highlight HBO’s Game of Thrones Legacy Tour at Linen Mill Studios, Banbridge
@@ -394,8 +396,6 @@ const CaseStudyLinenMill = (props) => (
                                 <br /><br />
                                 Co-ordinate communication with key stakeholders
                             </InfoText>
-                            <InfoTitle>Client</InfoTitle>
-                            <InfoText>Linen Mill Studios</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>

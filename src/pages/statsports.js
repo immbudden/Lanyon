@@ -390,16 +390,16 @@ const CaseStudyStatSports = (props) => (
                     <CaseStudyIntroContainer>
                         <SectionTitleLeft>STATSports</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
+                            <InfoTitle>Client</InfoTitle>
+                            <InfoText>STATSports</InfoText>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
-                                Implement communications strategy to increase awareness of STATSports performance monitoring technology
+                                Implement communications strategy to increase awareness of STATSports' performance monitoring technology
                                 <br /><br />
                                 To drive awareness of both its elite and consumer products
                                 <br /><br />
                                 Highlight STATSports’ compelling investment proposition
                             </InfoText>
-                            <InfoTitle>Client</InfoTitle>
-                            <InfoText>STATSports</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>

@@ -390,6 +390,8 @@ const CaseStudyStatSports = (props) => (
                     <CaseStudyIntroContainer>
                         <SectionTitleLeft>Rory Best - Freedom of the Borough</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
+                            <InfoTitle>Client</InfoTitle>
+                            <InfoText>Armagh City, Banbridge and Craigavon Borough Council</InfoText>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
                                 Maximise media coverage of Rory Best’s Freedom of the Borough
@@ -398,8 +400,6 @@ const CaseStudyStatSports = (props) => (
                                 <br /><br />
                                 Co-ordinate and compile content from council, IRFU, Rory Best and former and current players
                             </InfoText>
-                            <InfoTitle>Client</InfoTitle>
-                            <InfoText>Armagh City, Banbridge and Craigavon Borough Council</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>
@@ -602,7 +602,7 @@ export const query = graphql`
 
             RBCover: file(relativePath: { eq: "case-studies/RoryBest/RB-cover.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, cropFocus: SOUTH, quality: 85 ) {
+                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: SOUTH, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

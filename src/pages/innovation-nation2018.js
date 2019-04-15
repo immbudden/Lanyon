@@ -462,14 +462,14 @@ const CaseStudyIN = (props) => (
                     <CaseStudyIntroContainer>
                         <SectionTitleLeft>Innovation Nation</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
+                            <InfoTitle>Client</InfoTitle>
+                            <InfoText>Newry, Mourne and Down Council</InfoText>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
                                 To position Newry, Mourne &amp; Down locally and globally as a burgeoning innovation hub, a thriving tech eco-system and a prime investment location for technology and innovation companies
                                 <br /><br />
                                 To showcase the burgeoning technology and innovation sectors in the Newry, Mourne and Down district, and uncover the global powerhouses operating from within this city and wider council area
                             </InfoText>
-                            <InfoTitle>Client</InfoTitle>
-                            <InfoText>Newry, Mourne and Down Council</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>

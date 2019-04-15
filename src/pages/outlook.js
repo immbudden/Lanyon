@@ -471,14 +471,14 @@ const CaseStudyOutlook = (props) => (
                     <CaseStudyIntroContainer>
                         <SectionTitleLeft>CBRE NI Real Estate Market Outlook</SectionTitleLeft> {/* get from index */}
                         <CaseStudyInfoContainer>
+                            <InfoTitle>Client</InfoTitle>
+                            <InfoText>CBRE</InfoText>
                             <InfoTitle>Brief</InfoTitle>
                             <InfoText>
                                 To showcase the real estate market in Northern Ireland and benchmark it against the rest of the UK to an audience of local influential business leaders
                                 <br /><br />
                                 To reinforce CBRE’s reputation in Northern Ireland as the market leader and ‘go to’ commercial property consultancy for both local and global research expertise
                             </InfoText>
-                            <InfoTitle>Client</InfoTitle>
-                            <InfoText>CBRE</InfoText>
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>
