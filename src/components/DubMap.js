@@ -193,7 +193,7 @@ const DubMap = compose(
   )((props) =>
     <GoogleMap
         defaultZoom={17}
-        defaultCenter={{ lat: 54.5869451, lng: -5.93 }}
+        defaultCenter={{ lat: 53.338804, lng: -6.24 }}
         defaultOptions={{ 
             styles: exampleMapStyles,
             streetViewControl: false,
@@ -208,14 +208,11 @@ const DubMap = compose(
       
       
         disableDefaultUI >
-    {/* <Marker 
-        position={{ lat: 54.5869451, lng: -5.93 }} 
-        // defaultIcon={'../images/mapPin.png'}
-      /> */}
+
         {props.isMarkerShown && 
 
             <Marker 
-                position={{ lat: 54.5869451, lng: -5.9347179 }} 
+                position={{ lat: 53.338804, lng: -6.2467361 }} 
                 icon={markerLanyon}
             />
         }

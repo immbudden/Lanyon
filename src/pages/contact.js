@@ -8,6 +8,7 @@ import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import HQMap from "../components/HQMap";
+import DubMap from "../components/DubMap";
 import ContactForm from '../components/ContactForm'
 // import { Formik, Field, Form, ErrorMessage } from 'formik';
 
@@ -273,7 +274,7 @@ const ButtonLink = styled.a `
 
 const ContactPage = (data) => {
 
-    const [activeTab, setActiveTab] = useState('GiantsCauseway')
+    const [activeTab, setActiveTab] = useState('HQMap')
 
     function navigateToTab(e, tabName) {
         e.preventDefault()
@@ -299,14 +300,20 @@ const ContactPage = (data) => {
         <Section>
             <MapWrapper>
                 <MapContainer>
-                    <HQMap isMarkerShown />
+                    {activeTab === 'HQMap' && (
+                        <HQMap isMarkerShown />
+                    )}
+                    {activeTab === 'DubMap' && (
+                        <DubMap isMarkerShown />
+                    )}
                 </MapContainer>
                     <ContactDetailsContainer>
+                    {activeTab === 'HQMap' && (
                         <ContactDetails>
                             <ContactContainer>
                                 <AddressNav>
-                                    <AddressNavLink className="activeNav">Belfast</AddressNavLink>
-                                    <AddressNavLink>Dublin</AddressNavLink>
+                                    <AddressNavLink className="activeNav" onClick={e => navigateToTab(e, 'HQMap')}>Belfast</AddressNavLink>
+                                    <AddressNavLink onClick={e => navigateToTab(e, 'DubMap')}>Dublin</AddressNavLink>
                                 </AddressNav>
                             </ContactContainer>
                             <ContactContainer>
@@ -319,10 +326,34 @@ const ContactPage = (data) => {
                                 </Button>
 
                                 <ButtonInvert>
-                                    <ButtonLink href="https://www.google.com/maps/dir//Lanyon+Communications,+8+Upper+Cres,+Belfast+BT7+1NT,+UK/@54.5869451,-5.9367179,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x486109bc20580a23:0xd897711e3ade287c!2m2!1d-5.9345292!2d54.5869451">View directions</ButtonLink>
+                                    <ButtonLink href="https://www.google.com/maps/dir/Current+Location/Lanyon+Communications,+8+Upper+Cres,+Belfast+BT7+1NT,+UK/@54.5869451,-5.9367179,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x486109bc20580a23:0xd897711e3ade287c!2m2!1d-5.9345292!2d54.5869451">View directions</ButtonLink>
                                 </ButtonInvert>
                             </ContactContainer>
                         </ContactDetails>
+                    )}
+                    {activeTab === 'DubMap' && (
+                        <ContactDetails>
+                            <ContactContainer>
+                                <AddressNav>
+                                    <AddressNavLink onClick={e => navigateToTab(e, 'HQMap')}>Belfast</AddressNavLink>
+                                    <AddressNavLink className="activeNav" onClick={e => navigateToTab(e, 'DubMap')}>Dublin</AddressNavLink>
+                                </AddressNav>
+                            </ContactContainer>
+                            <ContactContainer>
+                                <AddressText>Lanyon<br />17 Mount Street Lower<br />Dublin 2<br />D02 H242</AddressText>
+                            </ContactContainer>
+                            <ContactContainer>
+
+                                <Button>
+                                    <ButtonLink href="tel:028 9018 3242">028 9018 3242</ButtonLink>
+                                </Button>
+
+                                <ButtonInvert>
+                                    <ButtonLink href="https://www.google.com/maps/dir/Current+Location/17+Mount+Street+Lower,+Dublin+2,+D02+H242,+Ireland/@53.338804,-6.2467361,17z/data=!3m1!4b1!4m5!3m4!1s0x48670e9430ed04cb:0x345cc7e42cd63298!8m2!3d53.338804!4d-6.2445474">View directions</ButtonLink>
+                                </ButtonInvert>
+                            </ContactContainer>
+                        </ContactDetails>
+                    )}
                     </ContactDetailsContainer>
             </MapWrapper>
         </Section>
@@ -335,130 +366,7 @@ const ContactPage = (data) => {
                     </SectionParagraph>
                 </LeftTwoContainer>
                 <LeftTwoContainer>
-                    {/* <Formik
-                        // Sets up our default values
-                        initialValues={{ name: "", email: "", tel: "", message: "",}}
-
-                        // Validates our data
-                        validate={values => {
-                            const errors = {};
-
-                            if (!values.name) errors.name = "You must enter your name";
-
-                            if (!values.email) errors.email = "Required";
-
-                            if (
-                            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-                            ) {
-                            errors.email = "You must supply a valid email address";
-                            }
-
-                            if (
-                            !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/m.test(values.tel)
-                            ) {
-                            errors.tel = "You must supply a valid telephone number";
-                            }
-
-                            if (!values.message) errors.message = "You must enter a message";
-
-                            return errors;
-                        }}
-
-                        // Handles our submission
-                        // onSubmit={(values, { setSubmitting }) => {
-                        //     // This is where you could wire up axios or superagent
-                        //     console.log("Submitted Values:", values);
-                        //     // Simulates the delay of a real request
-                        //     setTimeout(() => setSubmitting(false), 3 * 1000);
-                        // }}
-                        >
-                        {props => (
-                            <ContactForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                            <FormLabel htmlFor="name">Name</FormLabel>
-                            <div>
-                                <FormInput
-                                name="name"
-                                type="name"
-                                placeholder="Enter your full name"
-                                value={props.values.name}
-                                onChange={props.handleChange}
-                                onBlur={props.handleBlur}
-                                style={{
-                                    borderColor:
-                                    props.errors.name && props.touched.name && "red"
-                                }}
-                                />
-                                {props.errors.name && props.touched.name && (
-                                <div style={{ color: "red" }}>{props.errors.name}</div>
-                                )}
-                            </div>
-                            <FormInput
-                                name="bot-field"
-                                type="hidden"
-                            />
-                            <FormLabel htmlFor="email">Email</FormLabel>
-                            <div>
-                                <FormInput
-                                name="email"
-                                type="email"
-                                placeholder="Enter your email address"
-                                value={props.values.email}
-                                onChange={props.handleChange}
-                                onBlur={props.handleBlur}
-                                style={{
-                                    borderColor:
-                                    props.errors.email && props.touched.email && "red"
-                                }}
-                                />
-                                {props.errors.email && props.touched.email && (
-                                <div style={{ color: "red" }}>{props.errors.email}</div>
-                                )}
-                            </div>
-                            <FormLabel htmlFor="tel">Telephone Number</FormLabel>
-                            <div>
-                                <FormInput
-                                name="tel"
-                                type="tel"
-                                placeholder="Enter your telephone number"
-                                value={props.values.tel}
-                                onChange={props.handleChange}
-                                onBlur={props.handleBlur}
-                                style={{
-                                    borderColor:
-                                    props.errors.tel && props.touched.tel && "red"
-                                }}
-                                />
-                                {props.errors.tel && props.touched.tel && (
-                                <div style={{ color: "red" }}>{props.errors.tel}</div>
-                                )}
-                            </div>
-                            <FormLabel htmlFor="message">Message</FormLabel>
-                            <div>
-                                <FormTextArea
-                                name="message"
-                                placeholder="Enter your telephone number"
-                                value={props.values.message}
-                                onChange={props.handleChange}
-                                onBlur={props.handleBlur}
-                                style={{
-                                    borderColor:
-                                    props.errors.message && props.touched.message && "red"
-                                }}
-                                />
-                                {props.errors.message && props.touched.message && (
-                                <div style={{ color: "red" }}>{props.errors.message}</div>
-                                )}
-                            </div>
-                            <LightTealButton
-                                type="submit"
-                                value="Submit"
-                                disabled={props.isSubmitting}
-                            >
-                            Send
-                            </LightTealButton>
-                            </ContactForm>
-                         )}
-                    </Formik> */}
+                
                     <ContactForm />
                 
                 </LeftTwoContainer>
