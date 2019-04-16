@@ -605,24 +605,24 @@ const Video = styled.div `
     height: 100%;
     width: 100%;
     // margin-bottom: 5rem;
-    position: absolute;
-    left: 0;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: -1;
-    
-    ${media.lessThan("medium")`
-        font-size: 1.8rem; 
-        width: 300%;
-    `}
+    pointer-events: none;
+    overflow: hidden;
 `
 
 const Player = styled(ReactPlayer)`
 
-.video-stream html5-main-video {
     width: 100vw;
+    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
     min-height: 100vh;
-
-}
+    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 `
 
@@ -679,6 +679,24 @@ const IndexPage = (props) => {
 
     const featuredStoryUrl = featuredStory.node.uid;
     const featuredImg = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
+    const featuredStoryTwo = featuredList.edges[1];
+    const featuredBodyTwo = featuredStoryTwo.node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+    const featuredStoryTwoUrl = featuredStoryTwo.node.uid;
+    const featuredStoryTwoImg = get(featuredBodyTwo, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
+    const featuredStoryThree = featuredList.edges[2];
+    const featuredBodyThree = featuredStoryThree.node.data.body.reduce((object, item) => ({
+        ...object,
+        [item.__typename]: item.primary
+    }), {});
+    const featuredStoryThreeUrl = featuredStoryThree.node.uid;
+    const featuredStoryThreeImg = get(featuredBodyThree, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
+
+
     
 
     return (
@@ -700,8 +718,6 @@ const IndexPage = (props) => {
                 <Video> 
                     <Player 
                         url='https://youtu.be/jovEB8A4odo?vq=hd720'
-                        width='100%'
-                        height='130vh'
                         controls={false}
                         playing={true}
                         loop={true}
@@ -730,6 +746,7 @@ const IndexPage = (props) => {
                     </HeadingTextContainer>
                 </HeaderContainer> */}
             </Slide>
+
             <Slide>
                 <FeaturedNewsStoryWrapper to={`/news/${featuredStoryUrl}`}>
                 
@@ -756,6 +773,61 @@ const IndexPage = (props) => {
                     </FeaturedNewsStoryTextWrapper>
                 </FeaturedNewsStoryWrapper>
             </Slide>
+
+            <Slide>
+                <FeaturedNewsStoryWrapper to={`/news/${featuredStoryTwoUrl}`}>
+                
+                    {featuredStoryTwoImg && (
+                        <FeaturedNewsStoryImgContainer>
+                            <NewsStoryFeaturedImg fluid={featuredStoryTwoImg} />
+                        </FeaturedNewsStoryImgContainer>
+                    )}
+                    {/* <FeaturedNewsStoryImgContainer>
+                        <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} />
+                    </FeaturedNewsStoryImgContainer> */}
+                    
+                    <FeaturedNewsStoryTextWrapper>
+                        <FeaturedNewsStoryTextContainer>
+                            <FeaturedNewsStoryTitle>{featuredStoryTwo.node.data.title.text}</FeaturedNewsStoryTitle>
+                                <TruncateMarkup lines={3}>
+                                    <NewsStoryDescription>{featuredStoryTwo.node.data.short_description}</NewsStoryDescription>
+                                </TruncateMarkup>
+                                <FeaturedNewsStoryMeta>
+                                    <Date>{featuredStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStoryTwo.node.data.category.document[0].data.category.text}</Category>
+                                </FeaturedNewsStoryMeta>
+                                <ButtonMargin to={`/news/${featuredStoryTwoUrl}`}>Read More</ButtonMargin>
+                        </FeaturedNewsStoryTextContainer>
+                    </FeaturedNewsStoryTextWrapper>
+                </FeaturedNewsStoryWrapper>
+            </Slide>
+
+            <Slide>
+                <FeaturedNewsStoryWrapper to={`/news/${featuredStoryThreeUrl}`}>
+                
+                    {featuredStoryThreeImg && (
+                        <FeaturedNewsStoryImgContainer>
+                            <NewsStoryFeaturedImg fluid={featuredStoryThreeImg} />
+                        </FeaturedNewsStoryImgContainer>
+                    )}
+                    {/* <FeaturedNewsStoryImgContainer>
+                        <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} />
+                    </FeaturedNewsStoryImgContainer> */}
+                    
+                    <FeaturedNewsStoryTextWrapper>
+                        <FeaturedNewsStoryTextContainer>
+                            <FeaturedNewsStoryTitle>{featuredStoryThree.node.data.title.text}</FeaturedNewsStoryTitle>
+                                <TruncateMarkup lines={3}>
+                                    <NewsStoryDescription>{featuredStoryThree.node.data.short_description}</NewsStoryDescription>
+                                </TruncateMarkup>
+                                <FeaturedNewsStoryMeta>
+                                    <Date>{featuredStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStoryThree.node.data.category.document[0].data.category.text}</Category>
+                                </FeaturedNewsStoryMeta>
+                                <ButtonMargin to={`/news/${featuredStoryThreeUrl}`}>Read More</ButtonMargin>
+                        </FeaturedNewsStoryTextContainer>
+                    </FeaturedNewsStoryTextWrapper>
+                </FeaturedNewsStoryWrapper>
+            </Slide>
+
             </StyledCarousel>
         <Section id="services">
             <Container>
