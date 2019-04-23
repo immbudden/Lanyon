@@ -9,6 +9,7 @@ import HeaderContainer from '../components/headerContainer'
 import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
+import CanvasBackground from '../components/CanvasBackground'
 
 const HeaderImg = styled(Img) `
     min-height: 100vh;
@@ -29,7 +30,7 @@ const HeadingOne = styled.h1 `
     `}
 
     ${media.lessThan("medium")`
-        font-size: 3.5rem;
+        font-size: 2.65rem;
     `}
 `
 
@@ -67,8 +68,8 @@ const Slide = styled.div `
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    -webkit-box-align: flex-start;
-    align-items: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
 `
 
 const SlideImg = styled(Img) `
@@ -93,25 +94,26 @@ const Logo = styled( Img ) `
 
 
 const HoldingIndexPage = (props) => {
-    
 
     return (
 
     <div>
         <FontFace />
+        <CanvasBackground />
             <Slide>
-                <SlideImg style={{
+                {/* <SlideImg style={{
                     position: "absolute",
                     left: 0,
                     top: 0,
                     width: "100%",
                     zIndex: -1,
                 }}
-                    fluid={props.data.homeHeroImg.childImageSharp.fluid} />
+                    fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
                     <HeaderContainer>
                         <HeadingTextContainer>
                         <Logo fluid={props.data.logo.childImageSharp.fluid} />
-                            <HeadingOne>New website launching soon... </HeadingOne>
+                            <HeadingOne>New website launching soon...</HeadingOne>
+                            {/* <HeadingTwo>For now, click around and explore our new colours</HeadingTwo> */}
                         </HeadingTextContainer>
                     </HeaderContainer>
                 {/* <HeaderContainer>
