@@ -85,7 +85,7 @@ const Url = styled(Link) `
 
 const Logo = styled( Img ) `
     margin: 0 auto;
-    width: 30rem;
+    width: 40rem;
 
     ${media.lessThan("large")`
         width: 25rem;
