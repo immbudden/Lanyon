@@ -605,11 +605,11 @@ const Video = styled.div `
     height: 100%;
     width: 100%;
     // margin-bottom: 5rem;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
-    pointer-events: none;
+    z-index: 10;
+    // pointer-events: none;
     overflow: hidden;
 `
 
@@ -717,8 +717,8 @@ const IndexPage = (props) => {
             <Slide>
                 <Video> 
                     <Player 
-                        url='https://youtu.be/jovEB8A4odo?vq=hd720'
-                        controls={false}
+                        url='https://youtu.be/fIosEhi6CqQ?vq=hd720'
+                        controls={true}
                         playing={true}
                         loop={true}
                         volume={1}
@@ -733,12 +733,12 @@ const IndexPage = (props) => {
                     zIndex: -1,
                 }}
                     fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
-                    <HeaderContainer>
+                    {/* <HeaderContainer>
                         <HeadingTextContainer>
                             <HeadingOne>Helping businesses achieve their potential</HeadingOne>
                             <HeadingTwo>Through strategic communications, reputation management and stakeholder engagement</HeadingTwo>
                         </HeadingTextContainer>
-                    </HeaderContainer>
+                    </HeaderContainer> */}
                 {/* <HeaderContainer>
                     <HeadingTextContainer>
                         <HeadingOne>Lanyon</HeadingOne>
