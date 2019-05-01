@@ -94,8 +94,27 @@ const ServiceWrapper = styled.div `
 
 const ServiceContainer = styled.div `
     flex: 1 1 30%;
-    margin-bottom: 10rem;
-    margin-right: 5%;
+    margin-bottom: 2.5%;
+    margin-right: 2.5%;
+    height: 40rem;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: #004655;
+
+    &:nth-child(1), :nth-child(5) {
+        background: #004655;
+    }
+
+    &:nth-child(2), :nth-child(6) {
+        background: #697887;
+    }
+
+    &:nth-child(3), :nth-child(4) {
+        background: #199BAA;
+    }
 
     &:nth-child(n+4) {
         margin-bottom: 0;
@@ -113,9 +132,9 @@ const ServiceContainer = styled.div `
         }
 
         &:nth-child(3n) {
-            margin-right: 5%;
+            margin-right: 2.5%;
         }
-
+    
         &:nth-child(2n+2) {
             margin-right: 0;
         }
@@ -146,19 +165,90 @@ const ServiceContainer = styled.div `
     `}
 `
 
+const IconContainer = styled.div `
+    height: 12rem;
+    display: flex;
+    flex 1 1 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+`
+
+const ServiceIcon = styled(Img) `
+    // margin: 0 auto;
+    text-align: center;
+    margin-bottom: 25px;
+    width: 8rem;
+`
+
 const ServiceTitle = styled.h3 `
     font-size: 3.5rem;
-    color: #004655;
+    color: #FFF;
     font-family: Didot;
     font-weight: 100;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
     margin-bottom: 2.5rem;
+    display: flex;
+    flex: 1 1 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2.5rem;
+    transition: opacity 0.5s;
+
+    &:hover {
+        opacity: 0;
+    }
 
     ${media.lessThan("medium")`
         font-size: 3rem;
         text-align: center;
     `}
+`
+
+const ServiceList = styled.ul `
+    font-size: 2rem;
+    color: #FFF;
+    background: rgba(0, 70, 85, 0.95);
+    font-weight: 100;
+    display: flex;
+    flex: 1 1 100%;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    opacity: 0;
+    transition: opacity 0.5s;
+    list-style: disc inside none;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 2.5rem;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:hover ServiceTitle {
+        opacity: 0;
+    }
+
+    ${media.lessThan("medium")`
+        font-size: 1.8rem;
+    `}
+
+    & li {
+        list-style-position: outside;
+        margin-left: 2.5rem;
+        vertical-align: top;
+    }
 `
 
 // Close consolidate
@@ -259,15 +349,7 @@ const PersonIntroBottom = styled.span `
     
 `
 
-const ServiceList = styled.ul `
-    font-size: 2rem;
-    color: #222;
-    font-weight: 100;
 
-    ${media.lessThan("medium")`
-        font-size: 1.8rem;
-    `}
-`
 
 const AboutPage = (props) => (
 
@@ -518,7 +600,7 @@ const AboutPage = (props) => (
         </Section>
         <Section>
             <Container>
-                <SectionTitleLeft>Our Services</SectionTitleLeft>
+                <SectionTitle>Our Services</SectionTitle>
                 <ServiceWrapper>
                     <ServiceContainer>
                         <ServiceTitle>Market Intelligence</ServiceTitle>
