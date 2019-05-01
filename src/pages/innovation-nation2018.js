@@ -473,7 +473,7 @@ const CaseStudyIN = (props) => (
                         </CaseStudyInfoContainer>
                         <CaseStudyDescriptionContainer>
                             <CaseStudyDescription>
-                                Following a competitive tender process, Lanyon Communications was successful in its bid to develop and deliver an inaugural technology and investment conference for the Newry, Mourne and Down District Council area across two-days. 
+                                Following a competitive tender process, Lanyon was successful in its bid to develop and deliver an inaugural technology and investment conference for the Newry, Mourne and Down District Council area across two-days. 
                                 <br /><br />
                                 Supported by Newry, Mourne and Down District Council and some of Northern Ireland’s most successful indigenous companies, including First Derivatives plc, Norbrook Laboratories and STATSports, Innovation Nation 2018 shone a light on the burgeoning tech and innovation scene in Newry and beyond. 
                                 <br /><br />
@@ -824,7 +824,7 @@ export const query = graphql`
 
             BCImg: file(relativePath: { eq: "case-studies/InnovationNation18/BC.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -832,7 +832,7 @@ export const query = graphql`
 
             HLImg: file(relativePath: { eq: "case-studies/InnovationNation18/HL.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -840,7 +840,7 @@ export const query = graphql`
 
             LNImg: file(relativePath: { eq: "case-studies/InnovationNation18/LN.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -848,7 +848,7 @@ export const query = graphql`
 
             CCImg: file(relativePath: { eq: "case-studies/InnovationNation18/CC.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
+                    fluid(maxWidth: 850, cropFocus: CENTER, quality: 85 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

@@ -790,7 +790,7 @@ const IndexPage = (props) => {
             <Slide>
                 <Video> 
                     <Player 
-                        url='https://youtu.be/fIosEhi6CqQ?vq=hd1080'
+                        url='https://youtu.be/syo4PRkBYeQ?vq=hd1080'
                         controls={true}
                         playing={false}
                         loop={true}
