@@ -832,7 +832,8 @@ const IndexPage = (props) => {
                         onStart={e => setActiveTab(e, 'HideTypedText')}
                         config={{
                             youtube: {
-                              playerVars: { rel: 0 }
+                              playerVars: { rel: 0 },
+                              embedOptions: { suggestedQuality: 'hd1080' }
                             },
                           }}
                         // volume={1}
