@@ -123,7 +123,7 @@ const Nav = ({ data }) => (
                             Case Studies
                         </NavLink>
                         <NavLink to="/news/" activeStyle={ActiveLink}>
-                            News
+                            News &amp; Insights
                         </NavLink>
                         <NavLink to="/about/" activeStyle={ActiveLink}>
                             About

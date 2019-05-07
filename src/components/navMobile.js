@@ -143,7 +143,7 @@ export default props => {
         <StyledMenu>
             <Menu>
                 <NavLink className="menu-item" to="/case-studies/" activeStyle={ActiveLink}>Case Studies</NavLink>
-                <NavLink className="menu-item" to="/news/" activeStyle={ActiveLink}>News</NavLink>
+                <NavLink className="menu-item" to="/news/" activeStyle={ActiveLink}>News &amp; Insights</NavLink>
                 <NavLink className="menu-item" to="/about/" activeStyle={ActiveLink}>About</NavLink>
                 <NavLink className="menu-item" to="/contact/" activeStyle={ActiveLink}>Get in touch</NavLink>
             </Menu>

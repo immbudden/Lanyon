@@ -325,7 +325,9 @@ const ServiceList = styled.ul `
     & li {
         list-style-position: outside;
         margin-left: 2.5rem;
+        margin-right: 2.5rem;
         vertical-align: top;
+        width: 100%;
     }
 `
 
@@ -825,7 +827,8 @@ const IndexPage = (props) => {
             <SlideOne >
                 <Video> 
                     <Player 
-                        url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2'
+                        url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
+                        height='1080'
                         controls={true}
                         playing={false}
                         loop={true}
@@ -834,8 +837,7 @@ const IndexPage = (props) => {
                             youtube: {
                               playerVars: { rel: 0 },
                               embedOptions: {
-                                    setPlaybackQuality: 'hd1080',
-                                    suggestedQuality: 'hd1080'
+                                    setPlaybackQuality: 'highres'
                                 }
                             },
                           }}
