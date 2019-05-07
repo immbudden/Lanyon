@@ -381,7 +381,7 @@ const AboutPage = (props) => (
                     <br /><br />
                     Both partners have worked with leading retail banks, international law firms, investment funds and commercial property clients, as well as blue-chip companies drawn from a diverse range of sectors.
                     <br /><br />
-                    Their deep knowledge and understanding of the business environment ensure that Lanyon truly adds value to every organisation with whom we work. 
+                    Our deep knowledge and understanding of the business environment ensure that Lanyon truly adds value to every organisation with whom we work. 
                 </SectionIntro>
             </Container>
         </Section>
@@ -409,7 +409,7 @@ const AboutPage = (props) => (
                         <PersonIntroBottom>
                             A founding partner of Lanyon, Katie Doran is one of the most experienced communications specialists in Northern Ireland. She has over twenty years’ experience advising many of Northern Ireland’s leading firms across a multitude of sectors. These include law and accounting firms, financial institutions, utilities, charities, technology companies and real estate investors. 
                             <br /><br />
-                            She regularly acts as a strategic advisor to CEOs and C-Suite across a range of internal and external communication themes, including strategy, culture, leadership communications, stakeholder engagement and issues management.
+                            She regularly acts as a strategic advisor to CEOs and senior leaders across a range of internal and external communication themes, including strategy, culture, leadership communications, stakeholder engagement and issues management.
                             <br /><br />
                             Katie has acted as a lead advisor on a number of high profile serious situation issues, and is regarded as a “go to” person for issues management in Northern Ireland.  She is also widely renowned for her knowledge of the real estate investment sector and placemaking and has unparalleled expertise and experience in working closely with institutional investors and developers across office, residential, mixed use and regeneration developments in the UK and Ireland.
                             <br /><br />

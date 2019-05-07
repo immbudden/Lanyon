@@ -833,7 +833,10 @@ const IndexPage = (props) => {
                         config={{
                             youtube: {
                               playerVars: { rel: 0 },
-                              embedOptions: { suggestedQuality: 'hd1080' }
+                              embedOptions: {
+                                    setPlaybackQuality: 'hd1080',
+                                    suggestedQuality: 'hd1080'
+                                }
                             },
                           }}
                         // volume={1}
@@ -847,7 +850,7 @@ const IndexPage = (props) => {
                         <HeadingOne>
                             <TypedStyled
                                 strings={["Strategic Communications", "Reputation Management", "Stakeholder Engagement", "Watch the showreel"]} 
-                                typeSpeed={60} 
+                                typeSpeed={40} 
                                 
                             />
                         </HeadingOne>
@@ -1033,7 +1036,7 @@ const IndexPage = (props) => {
         </Section>
         <Section>
             <Container>
-                <SectionTitleLeft>News &amp; Views</SectionTitleLeft>
+                <SectionTitleLeft>News &amp; Insights</SectionTitleLeft>
                 <SectionIntroLeft>
                     The latest news and views from our clients and the Lanyon team.
                 </SectionIntroLeft>
