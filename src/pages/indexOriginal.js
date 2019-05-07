@@ -16,6 +16,7 @@ import get from "lodash.get"
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import ReactPlayer from 'react-player'
+import Typed from 'react-typed'
 // import Layout from "../components/layout"
 
 const HeaderImg = styled(Img) `
@@ -24,30 +25,33 @@ const HeaderImg = styled(Img) `
 
 const HeadingOne = styled.h1 `
     font-size: 5.5rem;
-    color: #FFF;
+    color: #004655;
     font-weight: 100;
     display: flex;
-    margin-bottom: 5rem;
+    margin-top: 35vh;
+    // margin-bottom: 5rem;
 
     ${media.lessThan("huge")`
         font-size: 4.5rem;
     `}
 
     ${media.lessThan("medium")`
-        font-size: 2.8rem;
+        font-size: 3.5rem;
         margin-bottom: 2.5rem;
         text-align: center;
         justify-content: center;
+        margin-top: 15vh;
     `}
 `
 
 const HeadingTwo = styled.h2 `
     font-size: 3rem;
-    color: #FFF;
+    color: #004655;
     font-weight: 100;
     font-family: GillSansMTPro;
     display: flex;
     line-height: 1.5;
+    text-align: center;
 
     ${media.lessThan("medium")`
         font-size: 1.8rem; 
@@ -56,8 +60,11 @@ const HeadingTwo = styled.h2 `
 `
 
 const HeadingTextContainer = styled.div `
-    flex: 0 1 62%;
-    justify-content: flex-end;
+    // flex: 0 1 62%;
+    flex: 0 1 75%;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
 
     ${media.lessThan("large")`
         flex: 0 1 80%;
@@ -447,6 +454,16 @@ const Button = styled.button `
     cursor: pointer;
 `
 
+const ButtonXL = styled.button `
+    background: #199BAA;
+    color: #FFF;
+    font-size: 2.5rem;
+    padding: 15px 20px 10px; // Typefix
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+`
+
 const ButtonMargin = styled.button `
     background: #199BAA;
     color: #FFF;
@@ -518,6 +535,11 @@ const Slide = styled.div `
     ${media.lessThan("medium")`
         height: 70vh;
     `}
+`
+
+const SlideOne = styled(Slide) `
+    align-items: flex-start;
+    // align-items: center;
 `
 const SlideImg = styled(Img) `
     min-height: 100vh;
@@ -677,9 +699,10 @@ const Video = styled.div `
     // position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 1;
     // pointer-events: none;
     overflow: hidden;
+    position: absolute;
 `
 
 const Player = styled(ReactPlayer)`
@@ -701,6 +724,10 @@ const Player = styled(ReactPlayer)`
 
 const Url = styled(Link) `
     text-decoration: none;
+`
+
+const TypedStyled = styled(Typed) `
+    margin: 0 auto;
 `
 
 
@@ -787,7 +814,7 @@ const IndexPage = (props) => {
                 <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
               )}
         >
-            <Slide>
+            <SlideOne>
                 <Video> 
                     <Player 
                         url='https://youtu.be/KoKvpo3wzj8?vq=hd1080'
@@ -798,6 +825,18 @@ const IndexPage = (props) => {
                         // muted={true}
                     />
                 </Video>
+                <HeaderContainer>
+                    <HeadingTextContainer>
+                        <HeadingOne>
+                            <TypedStyled 
+                                strings={["Strategic Communications", "Reputation Management", "Stakeholder Engagement", "Watch the showreel"]} 
+                                typeSpeed={60} 
+                                
+                            />
+                        </HeadingOne>
+                        {/* <ButtonXL>View showreel</ButtonXL> */}
+                    </HeadingTextContainer>
+                </HeaderContainer>
                 {/* <SlideImg style={{
                     position: "absolute",
                     left: 0,
@@ -818,7 +857,7 @@ const IndexPage = (props) => {
                         <HeadingTwo>Helping businesses achieve their potential through strategic communications, reputation management and stakeholder engagement</HeadingTwo>
                     </HeadingTextContainer>
                 </HeaderContainer> */}
-            </Slide>
+            </SlideOne>
 
             <Slide>
                 <FeaturedNewsStoryWrapper to={`/news/${featuredStoryUrl}`}>
