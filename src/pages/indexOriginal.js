@@ -827,20 +827,33 @@ const IndexPage = (props) => {
             <SlideOne >
                 <Video> 
                     <Player 
-                        url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
-                        height='1080'
-                        controls={true}
+                        url='https://vimeo.com/334652386'
+                        controls={false}
                         playing={false}
-                        loop={true}
+                        loop={false}
                         onStart={e => setActiveTab(e, 'HideTypedText')}
                         config={{
-                            youtube: {
-                              playerVars: { rel: 0 },
-                              embedOptions: {
-                                    setPlaybackQuality: 'highres'
-                                }
+                            vimeo: {
+                                playerOptions: { 
+                                    title: 'false',
+                                    background: 'true'
+                                },
                             },
                           }}
+                        // url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
+                        // controls={true}
+                        // playing={false}
+                        // loop={true}
+                        // onStart={e => setActiveTab(e, 'HideTypedText')}
+                        // config={{
+                        //     youtube: {
+                        //       playerVars: { rel: 0 },
+                        //       height: '1080',
+                        //       embedOptions: {
+                        //             setPlaybackQuality: 'highres',
+                        //         }
+                        //     },
+                        //   }}
                         // volume={1}
                         // muted={true}  
                     />
