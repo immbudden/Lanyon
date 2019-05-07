@@ -28,8 +28,7 @@ const HeadingOne = styled.h1 `
     color: #004655;
     font-weight: 100;
     display: flex;
-    margin-top: 35vh;
-    // margin-bottom: 5rem;
+    margin-bottom: 5rem;
 
     ${media.lessThan("huge")`
         font-size: 4.5rem;
@@ -73,6 +72,20 @@ const Container = styled.div `
     max-width: 90%;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 7.5rem 0;
+    `}
+`
+
+const ContainerVideo = styled(Container) `
+    margin: 0 auto;
+    padding-top: 0;
+    max-width: 90%;
+    position: relative;
+    z-index: 20;
     display: flex;
     flex-direction: column;
 
@@ -514,12 +527,13 @@ const ClientLogo = styled(Img) `
 `
 
 const Slide = styled.div `
-    height: 100vh;
+    height: 56.25vw;
     overflow: hidden;
     display: flex;
     flex-direction: row;
     -webkit-box-align: center;
-    align-items: center;
+    align-items: flex-start;
+    justify-items: flex-start;
 
     ${media.lessThan("medium")`
         height: 70vh;
@@ -527,8 +541,8 @@ const Slide = styled.div `
 `
 
 const SlideOne = styled(Slide) `
-    align-items: flex-start;
-    // align-items: center;
+    // align-items: flex-start;
+    align-items: center;
 `
 const SlideImg = styled(Img) `
     min-height: 100vh;
@@ -541,7 +555,6 @@ const FeaturedNewsStoryWrapper = styled(Link) `
     flex-direction: column;
     justify-content: flex-start;
     flex-flow: row wrap;
-    padding-top: 7.5rem;
     text-decoration: none;
 
     &:visited {
@@ -551,7 +564,7 @@ const FeaturedNewsStoryWrapper = styled(Link) `
 
 const FeaturedNewsStoryImgContainer = styled.div `
     flex: 1 1 57%;
-    height: 100vh;
+    height: 56.25vw;
     position: relative;
     overflow: hidden;
 
@@ -654,6 +667,7 @@ const StyledCarousel = styled(Carousel) `
     -webkit-box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
     -moz-box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
     box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
+    padding-top: 8.5rem;
 
     ${media.lessThan("medium")`
         padding-top: 8.5rem;
@@ -715,7 +729,8 @@ const Player = styled(ReactPlayer)`
 
     width: 100vw;
     height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-    min-height: 100vh;
+    // min-height: 100vh;
+    min-height: 56.25vw;
     min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
     position: absolute;
     top: 50%;
@@ -728,7 +743,31 @@ const Player = styled(ReactPlayer)`
 
 `
 
+const VideoHome = styled.div `
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    margin-top: -38.59vw;
+    justify-content: center;
+    align-items: center;
+    width: 59vw;
+    height: 33.1875vw;
+    z-index: 20;
+`
+
+const PlayerHome = styled(ReactPlayer)`
+
+    min-width: 100%;
+    min-height: 100%;
+
+    ${media.lessThan("medium")`
+        
+    `}
+
+`
+
 const TypedStyled = styled(Typed) `
+    color: #FFF;
     margin: 0 auto;
 
     .hidden {
@@ -825,34 +864,42 @@ const IndexPage = (props) => {
               )}
         >
             <SlideOne >
+                    {/* <SlideImg style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    width: "100%",
+                    zIndex: -1,
+                }}
+                    fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
                 <Video> 
                     <Player 
-                        // url='https://vimeo.com/334652386'
-                        // controls={false}
-                        // playing={false}
-                        // loop={false}
-                        // onStart={e => setActiveTab(e, 'HideTypedText')}
-                        // config={{
-                        //     vimeo: {
-                        //         playerOptions: { 
-                        //             title: 'false',
-                        //         },
-                        //     },
-                        //   }}
-                        url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
-                        controls={true}
+                        url='https://vimeo.com/334652386'
+                        controls={false}
                         playing={false}
-                        loop={true}
+                        loop={false}
                         onStart={e => setActiveTab(e, 'HideTypedText')}
                         config={{
-                            youtube: {
-                              playerVars: { rel: 0 },
-                              height: '1080',
-                              embedOptions: {
-                                    setPlaybackQuality: 'highres',
-                                }
+                            vimeo: {
+                                playerOptions: { 
+                                    title: 'false',
+                                },
                             },
                           }}
+                        // url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
+                        // controls={true}
+                        // playing={false}
+                        // loop={true}
+                        // onStart={e => setActiveTab(e, 'HideTypedText')}
+                        // config={{
+                        //     youtube: {
+                        //       playerVars: { rel: 0 },
+                        //       height: '1080',
+                        //       embedOptions: {
+                        //             setPlaybackQuality: 'highres',
+                        //         }
+                        //     },
+                        //   }}
                         // volume={1}
                         // muted={true}  
                     />
@@ -864,11 +911,10 @@ const IndexPage = (props) => {
                         <HeadingOne>
                             <TypedStyled
                                 strings={["Strategic Communications", "Reputation Management", "Stakeholder Engagement", "Watch the showreel"]} 
-                                typeSpeed={40} 
-                                
+                                typeSpeed={40}
                             />
                         </HeadingOne>
-                        {/* <ButtonXL>View showreel</ButtonXL> */}
+                        {/* <ButtonXL onClick={e => setActiveTab(e, 'HideTypedText')}>Play showreel</ButtonXL> */}
                     </HeadingTextContainer>
                 </HeaderContainer>
                 )}
@@ -981,6 +1027,40 @@ const IndexPage = (props) => {
             </Slide>
 
             </StyledCarousel>
+            {/* <Section>
+                <ContainerVideo>
+                    <VideoHome> 
+                        <PlayerHome 
+                            // url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
+                            // controls={true}
+                            // playing={false}
+                            // loop={true}
+                            // // onStart={e => setActiveTab(e, 'HideTypedText')}
+                            // config={{
+                            //     youtube: {
+                            //     playerVars: { rel: 0 },
+                            //     embedOptions: {
+                            //             setPlaybackQuality: 'highres',
+                            //         }
+                            //     },
+                            // }}
+
+                            url='https://vimeo.com/334652386'
+                            controls={false}
+                            playing={false}
+                            loop={false}
+                            onStart={e => setActiveTab(e, 'HideTypedText')}
+                            config={{
+                                vimeo: {
+                                    playerOptions: { 
+                                        title: 'false',
+                                    },
+                                },
+                              }}
+                        />
+                    </VideoHome> 
+                </ContainerVideo>
+            </Section> */}
         <Section id="services">
             <Container>
                 <SectionTitle>Our Services</SectionTitle>
@@ -1307,7 +1387,7 @@ export const query = graphql`
 
             homeHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500) {
+                    fluid(maxWidth: 2500, cropFocus: SOUTH) {
                         ...GatsbyImageSharpFluid
                     }
                 }

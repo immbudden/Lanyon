@@ -322,7 +322,7 @@ const ContactPage = (data) => {
                             <ContactContainer>
 
                                 <Button>
-                                    <ButtonLink href="tel:+4428 9018 3242">+4428 9018 3242</ButtonLink>
+                                    <ButtonLink href="tel:+4428 9018 3242">+44 28 9018 3242</ButtonLink>
                                 </Button>
 
                                 <ButtonInvert>
@@ -345,7 +345,7 @@ const ContactPage = (data) => {
                             <ContactContainer>
 
                                 <Button>
-                                    <ButtonLink href="tel:+4428 9018 3242">+4428 9018 3242</ButtonLink>
+                                    <ButtonLink href="tel:+4428 9018 3242">+44 28 9018 3242</ButtonLink>
                                 </Button>
 
                                 <ButtonInvert>
