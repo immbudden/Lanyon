@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql, StaticQuery, Link } from 'gatsby'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import FontFace from '../utils/font-face'
 import HeaderWrapper from '../components/headerWrapper'
-import HeaderContainer from '../components/headerContainer'
 import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
@@ -15,6 +14,7 @@ import TruncateMarkup from 'react-truncate-markup';
 import get from "lodash.get"
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
+import HeaderContainer from '../components/headerContainer'
 import ReactPlayer from 'react-player'
 import Typed from 'react-typed'
 // import Layout from "../components/layout"
@@ -56,19 +56,6 @@ const HeadingTwo = styled.h2 `
     ${media.lessThan("medium")`
         font-size: 1.8rem; 
         text-align: center;
-    `}
-`
-
-const HeadingTextContainer = styled.div `
-    // flex: 0 1 62%;
-    flex: 0 1 75%;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-
-    ${media.lessThan("large")`
-        flex: 0 1 80%;
-        margin: 0 auto;
     `}
 `
 
@@ -688,6 +675,23 @@ const CarouselNav = styled.button `
 
 `
 
+const Url = styled(Link) `
+    text-decoration: none;
+`
+
+const HeadingTextContainer = styled.div `
+    // flex: 0 1 62%;
+    flex: 0 1 75%;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+
+    ${media.lessThan("large")`
+        flex: 0 1 80%;
+        margin: 0 auto;
+    `}
+`
+
 const Video = styled.div `
     display: flex;
     flex-direction: row;
@@ -722,12 +726,12 @@ const Player = styled(ReactPlayer)`
 
 `
 
-const Url = styled(Link) `
-    text-decoration: none;
-`
-
 const TypedStyled = styled(Typed) `
     margin: 0 auto;
+
+    .hidden {
+        display: none;
+    }
 `
 
 
@@ -795,9 +799,13 @@ const IndexPage = (props) => {
     }), {});
     const featuredStoryThreeUrl = featuredStoryThree.node.uid;
     const featuredStoryThreeImg = get(featuredBodyThree, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null)
-
-
     
+    const [activeTab, setActiveTab] = useState('TypedText')
+
+    function navigateToTab(e, tabName) {
+        e.preventDefault()
+        setActiveTab(tabName)
+    }
 
     return (
 
@@ -814,21 +822,29 @@ const IndexPage = (props) => {
                 <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
               )}
         >
-            <SlideOne>
+            <SlideOne >
                 <Video> 
                     <Player 
-                        url='https://youtu.be/KoKvpo3wzj8?vq=hd1080'
+                        url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2'
                         controls={true}
                         playing={false}
                         loop={true}
+                        onStart={e => setActiveTab(e, 'HideTypedText')}
+                        config={{
+                            youtube: {
+                              playerVars: { rel: 0 }
+                            },
+                          }}
                         // volume={1}
-                        // muted={true}
+                        // muted={true}  
                     />
                 </Video>
-                <HeaderContainer>
+
+                {activeTab === 'TypedText' && (
+                    <HeaderContainer>
                     <HeadingTextContainer>
                         <HeadingOne>
-                            <TypedStyled 
+                            <TypedStyled
                                 strings={["Strategic Communications", "Reputation Management", "Stakeholder Engagement", "Watch the showreel"]} 
                                 typeSpeed={60} 
                                 
@@ -837,6 +853,12 @@ const IndexPage = (props) => {
                         {/* <ButtonXL>View showreel</ButtonXL> */}
                     </HeadingTextContainer>
                 </HeaderContainer>
+                )}
+
+                {activeTab === 'HideTypedText' && (
+                    <div />
+                )}
+
                 {/* <SlideImg style={{
                     position: "absolute",
                     left: 0,
