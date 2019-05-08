@@ -10,6 +10,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import Carousel from 'nuka-carousel';
 import CaseStudyCarousel from '../components/caseStudyCarousel';
+import Showreel from '../components/showreel';
 import TruncateMarkup from 'react-truncate-markup';
 import get from "lodash.get"
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
@@ -457,16 +458,6 @@ const Button = styled.button `
     cursor: pointer;
 `
 
-const ButtonXL = styled.button `
-    background: #199BAA;
-    color: #FFF;
-    font-size: 2.5rem;
-    padding: 15px 20px 10px; // Typefix
-    border: none;
-    text-transform: uppercase;
-    cursor: pointer;
-`
-
 const ButtonMargin = styled.button `
     background: #199BAA;
     color: #FFF;
@@ -871,56 +862,8 @@ const IndexPage = (props) => {
                     zIndex: -1,
                 }}
                     fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
-                <Video> 
-                    <Player 
-                        url='https://vimeo.com/334652386'
-                        controls={false}
-                        playing={false}
-                        loop={false}
-                        onStart={e => setActiveTab(e, 'HideTypedText')}
-                        config={{
-                            vimeo: {
-                                playerOptions: { 
-                                    title: 'false',
-                                },
-                            },
-                          }}
-                        // url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
-                        // controls={true}
-                        // playing={false}
-                        // loop={true}
-                        // onStart={e => setActiveTab(e, 'HideTypedText')}
-                        // config={{
-                        //     youtube: {
-                        //       playerVars: { rel: 0 },
-                        //       height: '1080',
-                        //       embedOptions: {
-                        //             setPlaybackQuality: 'highres',
-                        //         }
-                        //     },
-                        //   }}
-                        // volume={1}
-                        // muted={true}  
-                    />
-                </Video>
-
-                {activeTab === 'TypedText' && (
-                    <HeaderContainer>
-                    <HeadingTextContainer>
-                        <HeadingOne>
-                            <TypedStyled
-                                strings={["Strategic Communications", "Reputation Management", "Stakeholder Engagement", "Watch the showreel"]} 
-                                typeSpeed={40}
-                            />
-                        </HeadingOne>
-                        {/* <ButtonXL onClick={e => setActiveTab(e, 'HideTypedText')}>Play showreel</ButtonXL> */}
-                    </HeadingTextContainer>
-                </HeaderContainer>
-                )}
-
-                {activeTab === 'HideTypedText' && (
-                    <div />
-                )}
+                <Showreel /> 
+                
 
                 {/* <SlideImg style={{
                     position: "absolute",
