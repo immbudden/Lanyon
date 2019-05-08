@@ -34,13 +34,13 @@ const HeadingOne = styled.h1 `
         font-size: 4.5rem;
     `}
 
-    ${media.lessThan("medium")`
-        font-size: 3.5rem;
-        margin-bottom: 2.5rem;
-        text-align: center;
-        justify-content: center;
-        margin-top: 15vh;
-    `}
+    // ${media.lessThan("medium")`
+    //     font-size: 3.5rem;
+    //     margin-bottom: 2.5rem;
+    //     text-align: center;
+    //     justify-content: center;
+    //     margin-top: 15vh;
+    // `}
 `
 
 const HeadingTwo = styled.h2 `
@@ -338,7 +338,7 @@ const ServiceList = styled.ul `
     & li {
         list-style-position: outside;
         margin-left: 2.5rem;
-        margin-right: 2.5rem;
+        padding-right: 2.5rem;
         vertical-align: top;
         width: 100%;
     }
@@ -373,7 +373,6 @@ const LatestNewsStory = styled(Link) `
     position: relative;
     overflow: hidden;
     justify-content: flex-start;
-    flex-direction: row;
     align-items: flex-start;
     text-decoration: none;
 
@@ -387,6 +386,8 @@ const LatestNewsStory = styled(Link) `
         margin-bottom: 5rem;
         height: auto;
         flex-direction: row;
+        align-items: flex-start;
+        justify-items: flex-start;
 
         &:nth-child(even) {
             margin-top: 0rem;
@@ -534,10 +535,6 @@ const Slide = styled.div `
     -webkit-box-align: center;
     align-items: flex-start;
     justify-items: flex-start;
-
-    ${media.lessThan("medium")`
-        height: 70vh;
-    `}
 `
 
 const SlideOne = styled(Slide) `
@@ -731,15 +728,16 @@ const Player = styled(ReactPlayer)`
     height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
     // min-height: 100vh;
     min-height: 56.25vw;
-    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    min-width: 100vw;
+    // min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    ${media.lessThan("medium")`
-        min-height: 70vh;
-    `}
+    // ${media.lessThan("medium")`
+    //     min-height: 70vh;
+    // `}
 
 `
 
@@ -854,7 +852,8 @@ const IndexPage = (props) => {
         <FontFace />
         <Nav />
         <NavMobile />
-        <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={false} autoplayInterval={9000} transitionMode={'scroll'} pauseOnHover={false}
+        <StyledCarousel withoutControls>
+        {/* <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={false} autoplayInterval={9000} transitionMode={'scroll'} pauseOnHover={false}
             
             renderCenterLeftControls={({ previousSlide }) => (
                 <CarouselNav onClick={previousSlide}><ArrowBackIos /></CarouselNav>
@@ -862,7 +861,7 @@ const IndexPage = (props) => {
               renderCenterRightControls={({ nextSlide }) => (
                 <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
               )}
-        >
+        > */}
             <SlideOne >
                     {/* <SlideImg style={{
                     position: "absolute",
@@ -944,87 +943,6 @@ const IndexPage = (props) => {
                     </HeadingTextContainer>
                 </HeaderContainer> */}
             </SlideOne>
-
-            <Slide>
-                <FeaturedNewsStoryWrapper to={`/news/${featuredStoryUrl}`}>
-                
-                    {featuredImg && (
-                        <FeaturedNewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={featuredImg} />
-                        </FeaturedNewsStoryImgContainer>
-                    )}
-                    {/* <FeaturedNewsStoryImgContainer>
-                        <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} />
-                    </FeaturedNewsStoryImgContainer> */}
-                    
-                    <FeaturedNewsStoryTextWrapper>
-                        <FeaturedNewsStoryTextContainer>
-                            <FeaturedNewsStoryTitle>{featuredStory.node.data.title.text}</FeaturedNewsStoryTitle>
-                                <TruncateMarkup lines={3}>
-                                    <NewsStoryDescription>{featuredStory.node.data.short_description}</NewsStoryDescription>
-                                </TruncateMarkup>
-                                <FeaturedNewsStoryMeta>
-                                    <Date>{featuredStory.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStory.node.data.category.document[0].data.category.text}</Category>
-                                </FeaturedNewsStoryMeta>
-                                <ButtonMargin to={`/news/${featuredStoryUrl}`}>Read More</ButtonMargin>
-                        </FeaturedNewsStoryTextContainer>
-                    </FeaturedNewsStoryTextWrapper>
-                </FeaturedNewsStoryWrapper>
-            </Slide>
-
-            <Slide>
-                <FeaturedNewsStoryWrapper to={`/news/${featuredStoryTwoUrl}`}>
-                
-                    {featuredStoryTwoImg && (
-                        <FeaturedNewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={featuredStoryTwoImg} />
-                        </FeaturedNewsStoryImgContainer>
-                    )}
-                    {/* <FeaturedNewsStoryImgContainer>
-                        <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} />
-                    </FeaturedNewsStoryImgContainer> */}
-                    
-                    <FeaturedNewsStoryTextWrapper>
-                        <FeaturedNewsStoryTextContainer>
-                            <FeaturedNewsStoryTitle>{featuredStoryTwo.node.data.title.text}</FeaturedNewsStoryTitle>
-                                <TruncateMarkup lines={3}>
-                                    <NewsStoryDescription>{featuredStoryTwo.node.data.short_description}</NewsStoryDescription>
-                                </TruncateMarkup>
-                                <FeaturedNewsStoryMeta>
-                                    <Date>{featuredStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStoryTwo.node.data.category.document[0].data.category.text}</Category>
-                                </FeaturedNewsStoryMeta>
-                                <ButtonMargin to={`/news/${featuredStoryTwoUrl}`}>Read More</ButtonMargin>
-                        </FeaturedNewsStoryTextContainer>
-                    </FeaturedNewsStoryTextWrapper>
-                </FeaturedNewsStoryWrapper>
-            </Slide>
-
-            <Slide>
-                <FeaturedNewsStoryWrapper to={`/news/${featuredStoryThreeUrl}`}>
-                
-                    {featuredStoryThreeImg && (
-                        <FeaturedNewsStoryImgContainer>
-                            <NewsStoryFeaturedImg fluid={featuredStoryThreeImg} />
-                        </FeaturedNewsStoryImgContainer>
-                    )}
-                    {/* <FeaturedNewsStoryImgContainer>
-                        <NewsStoryFeaturedImg fluid={props.data.NewsStoryPlaceholderImg.childImageSharp.fluid} />
-                    </FeaturedNewsStoryImgContainer> */}
-                    
-                    <FeaturedNewsStoryTextWrapper>
-                        <FeaturedNewsStoryTextContainer>
-                            <FeaturedNewsStoryTitle>{featuredStoryThree.node.data.title.text}</FeaturedNewsStoryTitle>
-                                <TruncateMarkup lines={3}>
-                                    <NewsStoryDescription>{featuredStoryThree.node.data.short_description}</NewsStoryDescription>
-                                </TruncateMarkup>
-                                <FeaturedNewsStoryMeta>
-                                    <Date>{featuredStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{featuredStoryThree.node.data.category.document[0].data.category.text}</Category>
-                                </FeaturedNewsStoryMeta>
-                                <ButtonMargin to={`/news/${featuredStoryThreeUrl}`}>Read More</ButtonMargin>
-                        </FeaturedNewsStoryTextContainer>
-                    </FeaturedNewsStoryTextWrapper>
-                </FeaturedNewsStoryWrapper>
-            </Slide>
 
             </StyledCarousel>
             {/* <Section>

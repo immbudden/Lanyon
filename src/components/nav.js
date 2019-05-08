@@ -71,11 +71,11 @@ const NavLink = styled(Link) `
     }
 
     ${media.lessThan("huge")`
-        font-size: 2rem;
+        font-size: 1.6rem;
     `}
 
     ${media.lessThan("large")`
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         margin-right: 2rem;
     `}
 
