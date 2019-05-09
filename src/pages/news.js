@@ -10,6 +10,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import get from "lodash.get"
 import TruncateMarkup from 'react-truncate-markup';
+import Helmet from 'react-helmet'
 
 // To consolodate 
 
@@ -339,6 +340,16 @@ const NewsPage = (props) => {
         <FontFace />
         <Nav />
         <NavMobile />
+
+        <Helmet
+            title='Lanyon - News and Insights'
+            meta={[
+                { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
+                { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
+            ]}
+        >
+          <html lang="en" />
+        </Helmet>
 
         <Section>
             <FeaturedNewsStoryWrapper to={`/news/${featuredStoryUrl}`}>

@@ -1,7 +1,7 @@
 module.exports = {
 
     siteMetadata: {
-        title: `Lanyon - Strapline to go here`,
+        title: `Lanyon - Exceeding Expectations`,
       },
 
   plugins: [

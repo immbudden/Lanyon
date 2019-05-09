@@ -9,6 +9,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import get from "lodash.get"
 import ReactPlayer from 'react-player'
+import Helmet from 'react-helmet'
 
 // To consolodate 
 
@@ -358,6 +359,7 @@ const NewsStory = (props) => {
     const published_date = props.data.prismicNewsStory.data.published_date
     const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
     const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
+    const tags = props.data.prismicNewsStory.data.tags
 
     // const quote = props.data.prismicNewsStory.data.body[0].primary.quote.text
     // const featured_image = props.data.prismicNewsStory.data.body[0].primary.featured_image.url
@@ -381,6 +383,15 @@ const NewsStory = (props) => {
         <FontFace />
         <Nav />
         <NavMobile />
+        <Helmet
+            title={title}
+            meta={[
+                { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
+                { name: 'keywords', content: {tags} },
+            ]}
+        >
+          <html lang="en" />
+        </Helmet>
         <NewsStoryHeadingWrapper>
             {/* <HeroImg fluid={headline_image}/> */}
             <HeadlineImgContainer>

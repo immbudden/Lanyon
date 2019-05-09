@@ -18,6 +18,7 @@ import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import HeaderContainer from '../components/headerContainer'
 import ReactPlayer from 'react-player'
 import Typed from 'react-typed'
+import Helmet from 'react-helmet'
 // import Layout from "../components/layout"
 
 const HeaderImg = styled(Img) `
@@ -367,14 +368,13 @@ const LatestNewsContainer = styled.div `
 const LatestNewsStory = styled(Link) `
     display: flex;
     flex: 0 0 48%;
-    flex-flow: row wrap;
-    height: auto;
+    // height: auto;
     margin-right: 4%;
     margin-bottom: 7.5rem;
-    position: relative;
-    overflow: hidden;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    margin-right: 2.5%;
+    margin-bottom: 7.5rem;
     text-decoration: none;
 
     &:nth-child(even) {
@@ -397,11 +397,15 @@ const LatestNewsStory = styled(Link) `
 `
 
 const LatestNewsStoryImgContainer = styled.div `
-    flex: 1 1 100%;
     position: relative;
     overflow: hidden;
     height: 40rem;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    
 `
 
 
@@ -843,6 +847,16 @@ const IndexPage = (props) => {
         <FontFace />
         <Nav />
         <NavMobile />
+        <Helmet
+            title={props.data.site.siteMetadata.title}
+            meta={[
+                { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
+                { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
+            ]}
+        >
+          <html lang="en" />
+        </Helmet>
+
         <StyledCarousel withoutControls>
         {/* <StyledCarousel easing="easeCubicIn" speed={600} renderBottomCenterControls={false} autoplay={false} autoplayInterval={9000} transitionMode={'scroll'} pauseOnHover={false}
             
@@ -993,7 +1007,7 @@ const IndexPage = (props) => {
             <Container>
                 <SectionTitleLeft>News &amp; Insights</SectionTitleLeft>
                 <SectionIntroLeft>
-                    The latest news and views from our clients and the Lanyon team.
+                    The latest news and insights from our clients and the Lanyon team.
                 </SectionIntroLeft>
                 <LatestNewsWrapper>
                     <LatestNewsContainer>
@@ -1243,6 +1257,12 @@ export const query = graphql`
                     }
                 
                 }
+            }
+        }
+
+        site {
+            siteMetadata {
+              title
             }
         }
 
