@@ -152,6 +152,14 @@ export default () => (
                 }
             }
 
+            NIEImg: file(relativePath: { eq: "case-studies/NIE/NIEmap.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: CENTER, quality: 80 ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
         }
       `}
 
@@ -280,6 +288,23 @@ export default () => (
                         <Container>
                             <CaseStudyNumber>CASE STUDY 7</CaseStudyNumber>
                             <CaseStudyTitle>Belfast at MIPIM 2018</CaseStudyTitle>
+                        </Container>
+                    </Url>
+                </Slide>
+                <Slide>
+                    <Url to="/nie/">
+                        <SlideImg 
+                        style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: -1,
+                        }}
+                        fluid={data.NIEImg.childImageSharp.fluid} />
+                        <Container>
+                            <CaseStudyNumber>CASE STUDY 8</CaseStudyNumber>
+                            <CaseStudyTitle>Northern Ireland Electricity Networks</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>

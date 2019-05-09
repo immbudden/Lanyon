@@ -382,7 +382,7 @@ const CaseStudyStatSports = (props) => (
                 width: "100%",
                 zIndex: -1,
             }}
-                fluid={props.data.RBCover.childImageSharp.fluid} />
+                fluid={props.data.MapImg.childImageSharp.fluid} />
         </HeaderWrapper>
         <Section>
             <Container>
@@ -449,14 +449,12 @@ const CaseStudyStatSports = (props) => (
                     <Bold>Development of content and collateral</Bold>
                     <br />
                     Working with our appointed designer, Lanyon developed a large portfolio of branded assets to support the various stages of the Programme campaign – including a Behaviours Framework booklet which set out the mission, vision and values of Connections and the behaviours that would help the business achieve the objectives of the Programme. 
-                    <br /><br />
-                    We also developed a series of informative posters, pull-up stands, booklets and branded promotional materials for employees. Since the Programme would see the centralisation of several teams into one office location in Belfast, Lanyon developed a ‘Guide to Channel Wharf’ publication to provide useful information on the building and the local area – included a bespoke illustrated map which set out local eateries and amenities. 
                 </CaseStudyDescription>
             </CenterThreeContainer>
             </Container>
         </Section>
         <Section>
-            <SectionImg fluid={props.data.MemorabiliaImg.childImageSharp.fluid} />
+            <SectionImg fluid={props.data.ConnectingImg.childImageSharp.fluid} />
         </Section>
         <Section>
             <Container>
@@ -475,7 +473,7 @@ const CaseStudyStatSports = (props) => (
             </Container>
         </Section>
         <Section>
-            <SectionImg fluid={props.data.MemorabiliaImg.childImageSharp.fluid} />
+            <SectionImg fluid={props.data.MapImg.childImageSharp.fluid} />
         </Section>
         <Section>
             <Container>
@@ -484,44 +482,12 @@ const CaseStudyStatSports = (props) => (
                     <CaseStudyDescription>
                     Lanyon delivered two major employee engagement conferences for 300 employees in the business, at which the organisation’s directors and senior managers could set out its future and equip employees with crucially important information and training. 
                     <br /><br />
-                    Lanyon undertook the end-to-end management of these events – including venue management (The Braid, Ballymena and The MAC, Belfast), catering, sound/AV and development of content/collateral. 
-                    <br /><br />
-                    We secured a range of high-profile motivational speakers for the events, including Mark Pollock, Chris Henry (Ulster &amp; Ireland Rugby) and Armagh-born NASA space expert Sinead O’Sullivan. We also engaged an expert competition lawyer to provide a simple guide to competition law, and brought across a number of representatives from Scottish Power (a similar organisation to NIE Networks that had been through the market opening experience a number of years previously). Tara Mills was booked to MC both days. Lanyon Communications provided scripts for Tara and detailed briefing notes for all speakers, as well as managing logistics (travel and accommodation) for all speakers.
+                    Lanyon undertook the end-to-end management of these events – including venue management (The Braid, Ballymena and The MAC, Belfast), catering, sound/AV and development of content/collateral. We also secured a range of high-profile motivational speakers for the events, including Mark Pollock, Chris Henry (Ulster &amp; Ireland Rugby) and Armagh-born NASA space expert Sinead O’Sullivan.
                     <br /><br />
                     <Bold>Employee engagement focus groups</Bold>
                     <br />
                     We worked with NIE Networks’ HR team to develop a programme of employee engagement focus groups, delivered by Lanyon across the organisation’s network of regional depots across Northern Ireland. 
                     </CaseStudyDescription>
-                </CenterThreeContainer>
-            </Container>
-        </Section>
-        <Section>
-            <SectionImg fluid={props.data.RorySheepImg.childImageSharp.fluid} />
-        </Section>
-        <Section>
-            <Container>
-                <CenterThreeContainer>
-                    <SectionSubtitleLeft>Psychometric profiling</SectionSubtitleLeft>
-                    <CaseStudyDescription>
-                    Since the Programme would bring about significant changes within the Connections business – including new systems and processes, as well as opportunities to develop into new roles – Connections invested in psychometric profiling to help employees understand their communication style/preferences and those of their colleagues.  Using the ‘Whole Brain Thinking’ technique, Lanyon delivered profiles to over 30 senior/middle managers and team leaders.  As well as conducting the assessment and analysis, Lanyon delivered feedback sessions to each individual to help them understand their profile and steps they could take to communicate effectively with their teams and colleagues. We also delivered a number of group feedback sessions to help management teams understand their strengths and areas for development in communication. 
-                    </CaseStudyDescription>
-                </CenterThreeContainer>
-            </Container>
-        </Section>
-
-        <Section>
-            <SectionImg fluid={props.data.RorySheepImg.childImageSharp.fluid} />
-        </Section>
-        <Section>
-            <Container>
-                <CenterThreeContainer>
-                    <SectionSubtitleLeft>Interested in how we can support your project?</SectionSubtitleLeft>
-                    <CaseStudyDescription>
-                        At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our Partners today.
-                    </CaseStudyDescription>
-                    <Url to="/contact">
-                        <ContactButton>Get in touch</ContactButton>
-                    </Url>
                 </CenterThreeContainer>
             </Container>
         </Section>
@@ -537,30 +503,20 @@ export default CaseStudyStatSports
 export const query = graphql`
     query {
 
-            MemorabiliaImg: file(relativePath: { eq: "case-studies/RoryBest/Memorabilia.jpg" }) {
+            ConnectingImg: file(relativePath: { eq: "case-studies/NIE/ConnectingPeople.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: NORTH ) {
+                    fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: CENTER, quality: 95 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
 
-            RorySheepImg: file(relativePath: { eq: "case-studies/RoryBest/RorySheep.jpg" }) {
+            MapImg: file(relativePath: { eq: "case-studies/NIE/NIEmap.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: NORTH ) {
+                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: CENTER, quality: 95 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-
-            RBCover: file(relativePath: { eq: "case-studies/RoryBest/RB-cover.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: SOUTH, quality: 85 ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-
-            
         }
     `

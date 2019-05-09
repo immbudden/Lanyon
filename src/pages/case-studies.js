@@ -329,7 +329,15 @@ const CaseStudies = (props) => (
                     </ThreeColumnContainer>
 
                     <ThreeColumnContainer>
-                      
+                        <Url to="/nie/">
+                            <ThreeColumnImgContainer>
+                                <CaseStudyImg fluid={props.data.NIEImg.childImageSharp.fluid} />
+                            </ThreeColumnImgContainer>
+                            <ThreeColumnTextContainer>
+                                <CaseStudyTitle>Northern Ireland Electricity Networks</CaseStudyTitle>
+                                
+                            </ThreeColumnTextContainer>
+                        </Url>
                     </ThreeColumnContainer>
 
                     <ThreeColumnContainer>
@@ -412,6 +420,14 @@ export const query = graphql`
             MIPIM19Cover: file(relativePath: { eq: "case-studies/MIPIM19/MIPIM19Cover.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            NIEImg: file(relativePath: { eq: "case-studies/NIE/NIEmap.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: CENTER, quality: 80 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }
