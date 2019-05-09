@@ -10,7 +10,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import Carousel from 'nuka-carousel';
 import CaseStudyCarousel from '../components/caseStudyCarousel'
-import Showreel from '../components/showreel'
+import ShowreelTop from '../components/showreelTop'
 import TruncateMarkup from 'react-truncate-markup';
 import get from "lodash.get"
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';

@@ -445,7 +445,7 @@ const NewsStory = (props) => {
                                 )}
                         </NewsStoryTextContainer>
                         </NewsStoryContainer>
-                        {body.PrismicNewsStoryBodyQuote && (
+                        {body.PrismicNewsStoryBodyQuote ? (
                             <QuoteContainer>
                                 <Quote>
                                     <QuoteOpen>&ldquo;</QuoteOpen>
@@ -454,6 +454,8 @@ const NewsStory = (props) => {
                                     <QuoteClose>&rdquo;</QuoteClose>
                                 </Quote>
                             </QuoteContainer>
+                        ) : (
+                            <QuoteContainer />
                         )}
                 </NewsStoryWrapper>
             </Container>
