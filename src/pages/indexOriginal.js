@@ -867,15 +867,21 @@ const IndexPage = (props) => {
                 <CarouselNav onClick={nextSlide}><ArrowForwardIos /></CarouselNav>
               )}
         > */}
-            <SlideOne >
-                    {/* <SlideImg style={{
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    width: "100%",
-                    zIndex: -1,
-                }}
-                    fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
+            <SlideOne onClick={e => setActiveTab(e, 'HideTypedText')}>
+                {/* {activeTab === 'TypedText' && (
+                    <SlideImg style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        zIndex: 10,
+                    }}
+                    fluid={props.data.homeHeroImg.childImageSharp.fluid} />
+                )}
+
+                {activeTab === 'HideTypedText' && (
+                    <div />
+                )} */}
                 <ShowreelTop /> 
                 
 

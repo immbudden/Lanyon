@@ -6,7 +6,7 @@ const HeaderContainer = styled.div `
     margin: 0 auto;
     max-width: 90%;
     position: relative;
-    z-index: 2;
+    z-index: 10;
     justify-content: flex-end;
 `
 

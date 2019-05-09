@@ -1,7 +1,9 @@
 import React, { useState, Component } from 'react' 
+import { graphql, StaticQuery, Link } from 'gatsby'
 import Typed from 'react-typed'
 import styled from 'styled-components'
 import media from "styled-media-query"
+import Img from 'gatsby-image'
 import HeaderContainer from '../components/headerContainer'
 import ReactPlayer from 'react-player'
 import { PlayArrow } from '@material-ui/icons';
@@ -90,6 +92,7 @@ const Player = styled(ReactPlayer)`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
 
     // ${media.lessThan("medium")`
     //     min-height: 70vh;
@@ -100,6 +103,11 @@ const Player = styled(ReactPlayer)`
 const Icon = styled(SvgIcon) `
     font-size: 10rem!important;
     color: #FFF;
+`
+
+const SlideImg = styled(Img) `
+    min-height: 100vh;
+    
 `
 
 
@@ -122,7 +130,15 @@ const ShowreelTop = (props) => {
 
     return (
         <div>
-            <Video> 
+            <Video>
+            {/* <SlideImg style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    width: "100%",
+                    zIndex: 5,
+                }}
+                    fluid={props.data.homeHeroImg.childImageSharp.fluid} />  */}
                 <Player 
                     url='https://vimeo.com/334652386'
                     controls={false}
@@ -178,3 +194,17 @@ const ShowreelTop = (props) => {
 }
 
 export default ShowreelTop
+
+export const query = graphql` 
+
+    query {
+        homeHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
+            childImageSharp {
+                fluid(maxWidth: 2500, cropFocus: SOUTH) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+
+`

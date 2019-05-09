@@ -387,7 +387,7 @@ const NewsStory = (props) => {
             title={title}
             meta={[
                 { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
-                { name: 'keywords', content: {tags} },
+                { name: 'keywords', content: ({tags}) },
             ]}
         >
           <html lang="en" />
