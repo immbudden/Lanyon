@@ -862,7 +862,7 @@ const IndexPage = (props) => {
                     zIndex: -1,
                 }}
                     fluid={props.data.homeHeroImg.childImageSharp.fluid} /> */}
-                <Showreel /> 
+                <ShowreelTop /> 
                 
 
                 {/* <SlideImg style={{
