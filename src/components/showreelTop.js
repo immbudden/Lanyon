@@ -79,9 +79,6 @@ const Video = styled.div `
     overflow: hidden;
     position: absolute;
 
-    .player h1 {
-        color: black!important;
-    }
 `
 
 const Player = styled(ReactPlayer)`
