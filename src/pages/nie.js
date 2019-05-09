@@ -382,7 +382,7 @@ const CaseStudyStatSports = (props) => (
                 width: "100%",
                 zIndex: -1,
             }}
-                fluid={props.data.MapImg.childImageSharp.fluid} />
+                fluid={props.data.PylonImg.childImageSharp.fluid} />
         </HeaderWrapper>
         <Section>
             <Container>
@@ -514,6 +514,14 @@ export const query = graphql`
             MapImg: file(relativePath: { eq: "case-studies/NIE/NIEmap.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: CENTER, quality: 95 ) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+
+            PylonImg: file(relativePath: { eq: "case-studies/NIE/pylon.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500, maxHeight: 1200, cropFocus: CENTER, quality: 65 ) {
                         ...GatsbyImageSharpFluid
                     }
                 }

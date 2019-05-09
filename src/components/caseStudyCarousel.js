@@ -152,7 +152,7 @@ export default () => (
                 }
             }
 
-            NIEImg: file(relativePath: { eq: "case-studies/NIE/NIEmap.jpg" }) {
+            NIEImg: file(relativePath: { eq: "case-studies/NIE/pylon.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 2500, maxHeight: 1400, cropFocus: CENTER, quality: 80 ) {
                         ...GatsbyImageSharpFluid
@@ -304,7 +304,7 @@ export default () => (
                         fluid={data.NIEImg.childImageSharp.fluid} />
                         <Container>
                             <CaseStudyNumber>CASE STUDY 8</CaseStudyNumber>
-                            <CaseStudyTitle>Northern Ireland Electricity Networks</CaseStudyTitle>
+                            <CaseStudyTitle>NIE Networks</CaseStudyTitle>
                         </Container>
                     </Url>
                 </Slide>

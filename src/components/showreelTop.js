@@ -1,5 +1,5 @@
 import React, { useState, Component } from 'react' 
-import { graphql, StaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import Typed from 'react-typed'
 import styled from 'styled-components'
 import media from "styled-media-query"
@@ -78,6 +78,10 @@ const Video = styled.div `
     // pointer-events: none;
     overflow: hidden;
     position: absolute;
+
+    .player h1 {
+        color: black!important;
+    }
 `
 
 const Player = styled(ReactPlayer)`
@@ -111,9 +115,8 @@ const SlideImg = styled(Img) `
 `
 
 
+export default () => {
 
-const ShowreelTop = (props) => {
-    
     const [activeTab, setActiveTab] = useState('TypedText')
 
     function navigateToTab(e, tabName) {
@@ -124,21 +127,32 @@ const ShowreelTop = (props) => {
     const [play, setPlay] = useState(false);
 
 
-    // const play = () => {
-    //     this.setState(prevState => !prevState.playing)
-    // }    
-
+    const data = useStaticQuery(graphql`
+        query ShowreelQuery {
+            homeHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2500, cropFocus: SOUTH) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
+  
     return (
-        <div>
+      <div>
             <Video>
-            {/* <SlideImg style={{
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    width: "100%",
-                    zIndex: 5,
-                }}
-                    fluid={props.data.homeHeroImg.childImageSharp.fluid} />  */}
+                {activeTab === 'TypedText' && (
+                    <SlideImg style={{
+                            position: "absolute",
+                            left: 0,
+                            top: 0,
+                            width: "100%",
+                            zIndex: 5,
+                        }}
+                        fluid={data.homeHeroImg.childImageSharp.fluid} 
+                    />
+                )}
                 <Player 
                     url='https://vimeo.com/334652386'
                     controls={false}
@@ -152,22 +166,6 @@ const ShowreelTop = (props) => {
                             },
                         },
                         }}
-                    // url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
-                    // controls={true}
-                    // playing={false}
-                    // loop={true}
-                    // onStart={e => setActiveTab(e, 'HideTypedText')}
-                    // config={{
-                    //     youtube: {
-                    //       playerVars: { rel: 0 },
-                    //       height: '1080',
-                    //       embedOptions: {
-                    //             setPlaybackQuality: 'highres',
-                    //         }
-                    //     },
-                    //   }}
-                    // volume={1}
-                    // muted={true}  
                 />
             </Video>
 
@@ -191,20 +189,102 @@ const ShowreelTop = (props) => {
             )}
         </div>
     )
-}
+  }
 
-export default ShowreelTop
 
-export const query = graphql` 
+// const ShowreelTop = (props) => {
+    
+//     const [activeTab, setActiveTab] = useState('TypedText')
 
-    query {
-        homeHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
-            childImageSharp {
-                fluid(maxWidth: 2500, cropFocus: SOUTH) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
+//     function navigateToTab(e, tabName) {
+//         e.preventDefault()
+//         setActiveTab(tabName)
+//     }
 
-`
+//     const [play, setPlay] = useState(false);
+
+
+//     // const play = () => {
+//     //     this.setState(prevState => !prevState.playing)
+//     // }    
+
+//     return (
+//         <div>
+//             <Video>
+//             {/* <SlideImg style={{
+//                     position: "absolute",
+//                     left: 0,
+//                     top: 0,
+//                     width: "100%",
+//                     zIndex: 5,
+//                 }}
+//                     fluid={props.data.homeHeroImg.childImageSharp.fluid} />  */}
+//                 <Player 
+//                     url='https://vimeo.com/334652386'
+//                     controls={false}
+//                     playing={play}
+//                     loop={false}
+//                     onStart={e => setActiveTab(e, 'HideTypedText')}
+//                     config={{
+//                         vimeo: {
+//                             playerOptions: { 
+//                                 title: 'false',
+//                             },
+//                         },
+//                         }}
+//                     // url='https://youtu.be/KoKvpo3wzj8?vq=hd1080?showinfo=0?ecver=2?html5=1'
+//                     // controls={true}
+//                     // playing={false}
+//                     // loop={true}
+//                     // onStart={e => setActiveTab(e, 'HideTypedText')}
+//                     // config={{
+//                     //     youtube: {
+//                     //       playerVars: { rel: 0 },
+//                     //       height: '1080',
+//                     //       embedOptions: {
+//                     //             setPlaybackQuality: 'highres',
+//                     //         }
+//                     //     },
+//                     //   }}
+//                     // volume={1}
+//                     // muted={true}  
+//                 />
+//             </Video>
+
+//             {activeTab === 'TypedText' && (
+//                 <HeaderContainer>
+//                     <HeadingTextContainer onClick={() => setPlay(true)}>
+//                         <HeadingOne>
+//                             <TypedStyled
+//                                 strings={["Strategic Communications", "Reputation Management", "Stakeholder Engagement", "Watch the showreel"]} 
+//                                 typeSpeed={40}
+//                             />
+//                         </HeadingOne>
+//                         <Icon><PlayArrow /></Icon>
+//                         {/* <ButtonXL>Play showreel</ButtonXL> */}
+//                     </HeadingTextContainer>
+//                 </HeaderContainer>
+//             )}
+
+//             {activeTab === 'HideTypedText' && (
+//                 <div />
+//             )}
+//         </div>
+//     )
+// }
+
+// export default ShowreelTop
+
+// export const query = graphql` 
+
+//     query {
+//         homeHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
+//             childImageSharp {
+//                 fluid(maxWidth: 2500, cropFocus: SOUTH) {
+//                     ...GatsbyImageSharpFluid
+//                 }
+//             }
+//         }
+//     }
+
+// `
