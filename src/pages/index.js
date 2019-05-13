@@ -855,6 +855,9 @@ const IndexPage = (props) => {
         setActiveTab(tabName)
     }
 
+    const siteTitle = 'Lanyon Group - Exceeding Expectations'
+    const rootUrl = 'https://lanyongroup.com/'
+
     return (
 
     <div>
@@ -866,9 +869,18 @@ const IndexPage = (props) => {
             meta={[
                 { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
                 { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
+                { name: 'og:title', content: 'page title' },
+                { name: 'og:description', content: 'page descrip' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+                { name: 'og:site_name', content: 'Lanyon' },
+                { name: 'twitter:image:alt', content: 'Image alt text' },
+                { name: 'fb:app_id', content: 'fb_app_id' },
+                { name: 'twitter:site', content: '@LanyonGroup' },
             ]}
         >
-          <html lang="en" />
+            <meta property="og:image" content={`${rootUrl}${props.data.homeHeroImg.childImageSharp.fluid.src}`}/>
+            <meta property="og:url" content={`lanyongroup.com`}/>
+            <html lang="en" />
         </Helmet>
 
         <StyledCarousel withoutControls>
@@ -1290,6 +1302,7 @@ export const query = graphql`
                 childImageSharp {
                     fluid(maxWidth: 2500, cropFocus: SOUTH) {
                         ...GatsbyImageSharpFluid
+                        src
                     }
                 }
             }
