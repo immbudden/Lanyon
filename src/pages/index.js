@@ -545,7 +545,6 @@ const Slide = styled.div `
 
 const SlideOne = styled(Slide) `
     height: 56.25vw;
-    min-height: 56.25vw;
     // align-items: flex-start;
     align-items: center;
 `
@@ -673,6 +672,7 @@ const StyledCarousel = styled(Carousel) `
     -moz-box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
     box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
     padding-top: 8.5rem;
+    min-height: 56.25vw;
 
     ${media.lessThan("medium")`
         padding-top: 8.5rem;
