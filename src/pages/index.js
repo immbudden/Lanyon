@@ -381,8 +381,8 @@ const LatestNewsStory = styled(Link) `
         margin-right: 0;
     }
 
-    &:nth-child(odd) {
-        margin-top: 16rem;
+    &:nth-child(even) {
+        // margin-top: -10rem;
     }
 
     ${media.lessThan("medium")`
@@ -395,7 +395,7 @@ const LatestNewsStory = styled(Link) `
         align-items: flex-start;
         justify-items: flex-start;
 
-        &:nth-child(odd) {
+        &:nth-child(even) {
             margin-top: 0rem;
         }
     `}
@@ -545,6 +545,7 @@ const Slide = styled.div `
 
 const SlideOne = styled(Slide) `
     height: 56.25vw;
+    min-height: 56.25vw;
     // align-items: flex-start;
     align-items: center;
 `
