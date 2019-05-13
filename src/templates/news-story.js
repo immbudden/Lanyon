@@ -360,6 +360,8 @@ const NewsStory = (props) => {
     const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
     const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
     const tags = props.data.prismicNewsStory.data.tags
+    const rootUrl = 'https://lanyongroup.com/'
+    const short_description = props.data.prismicNewsStory.data.short_description
 
     // const quote = props.data.prismicNewsStory.data.body[0].primary.quote.text
     // const featured_image = props.data.prismicNewsStory.data.body[0].primary.featured_image.url
@@ -383,14 +385,24 @@ const NewsStory = (props) => {
         <FontFace />
         <Nav />
         <NavMobile />
+
         <Helmet
             title={title}
             meta={[
                 { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
-                { name: 'keywords', content: ({tags}) },
             ]}
         >
-          <html lang="en" />
+            <meta property="keywords" content={`${tags}`}/>
+            <meta property="og:image" content={`${rootUrl}${props.data.prismicNewsStory.data.headline_image.localFile.childImageSharp.fluid.src}`}/>
+            <meta property="og:url" content={`lanyongroup.com`}/>
+            <meta property="og:title" content={`${title}`}/>
+            <meta property="og:description" content={`${short_description}`}/>
+            <meta property="og:site_name" content='Lanyon'/>
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:image" content={`${rootUrl}${props.data.prismicNewsStory.data.headline_image.localFile.childImageSharp.fluid.src}`} />
+            <meta name="twitter:image:alt" content={`${title}`} />
+            
+            <html lang="en" />
         </Helmet>
         <NewsStoryHeadingWrapper>
             {/* <HeroImg fluid={headline_image}/> */}
@@ -520,6 +532,8 @@ export const query = graphql`
                     html
                     text
                 }
+
+                short_description
 
                 published_date (formatString:"D MMMM YYYY")
 
