@@ -77,7 +77,6 @@ const SectionIntro = styled.p `
     font-weight: 100;
     width: 60%;
     margin: 0 auto;
-    text-align: justify;
 
     ${media.lessThan("medium")`
         font-size: 1.8rem; 
