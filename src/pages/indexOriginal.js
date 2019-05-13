@@ -534,6 +534,7 @@ const Slide = styled.div `
 `
 
 const SlideOne = styled(Slide) `
+    height: 56.25vw;
     // align-items: flex-start;
     align-items: center;
 `

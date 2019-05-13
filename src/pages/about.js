@@ -685,7 +685,7 @@ export const query = graphql`
                 }
             }
 
-            JIImg: file(relativePath: { eq: "people/JI-Warm.jpg" }) {
+            JIImg: file(relativePath: { eq: "people/JI.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid

@@ -95,9 +95,9 @@ const Player = styled(ReactPlayer)`
     transform: translate(-50%, -50%);
     z-index: 2;
 
-    // ${media.lessThan("medium")`
-    //     min-height: 70vh;
-    // `}
+    ${media.lessThan("medium")`
+        height: 56.25vw!important;
+    `}
 
 `
 
@@ -107,7 +107,7 @@ const Icon = styled(SvgIcon) `
 `
 
 const SlideImg = styled(Img) `
-    min-height: 100vh;
+    min-height: 56.25vw;
     
 `
 
