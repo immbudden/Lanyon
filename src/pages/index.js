@@ -873,15 +873,16 @@ const IndexPage = (props) => {
                 { name: 'twitter:site', content: '@LanyonGroup' },
             ]}
         >
-            <meta property="og:title" content={`Lanyon - Exceeding Expectations`}/>
-            <meta property="og:description" content={`Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement`}/>
-            <meta property="og:site_name" content={`Lanyon`}/>
+            <meta property="og:title" content="Lanyon - Exceeding Expectations"/>
+            <meta property="og:description" content="Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement"/>
+            <meta property="og:site_name" content="Lanyon" />
+            <meta property="og:type" content="website" />
             <meta property="og:image" content={`${rootUrl}${props.data.homeHeroImg.childImageSharp.fluid.src}`}/>
-            <meta property="og:url" content={`lanyongroup.com`}/>
+            <meta property="og:url" content="https://lanyongroup.com"/>
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:image:alt" content={`Lanyon Group - Belfast based PR and communications firm`} />
-            <meta name="twitter:site" content={`@LanyonGroup`} />
-            <meta property="og:site_name" content={`Lanyon`}/>
+            <meta name="twitter:site" content="@LanyonGroup" />
+            <meta property="og:site_name" content="Lanyon"/>
             <html lang="en" />
         </Helmet>
 
