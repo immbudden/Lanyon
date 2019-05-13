@@ -387,7 +387,8 @@ const LatestNewsStory = styled(Link) `
         margin-right: 0;
         margin-bottom: 5rem;
         height: auto;
-        flex-direction: row;
+        flex-direction: column;
+        flex-flow: row wrap;
         align-items: flex-start;
         justify-items: flex-start;
 
@@ -406,6 +407,11 @@ const LatestNewsStoryImgContainer = styled.div `
     flex-direction: row;
     -webkit-box-align: center;
     align-items: center;
+    flex: 1 1 100%;
+
+    ${media.lessThan("medium")`
+        height: 35vh;
+    `}
     
 `
 

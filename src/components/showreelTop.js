@@ -20,6 +20,10 @@ const HeadingOne = styled.h1 `
         font-size: 4.5rem;
     `}
 
+    ${media.lessThan("medium")`
+        font-size: 3rem;
+    `}
+
     // ${media.lessThan("medium")`
     //     font-size: 3.5rem;
     //     margin-bottom: 2.5rem;
@@ -39,7 +43,7 @@ const HeadingTextContainer = styled.div `
     // margin-top: 20rem;
 
     ${media.lessThan("large")`
-        flex: 0 1 80%;
+        flex: 0 1 100%;
         margin: 0 auto;
     `}
 `
@@ -104,6 +108,10 @@ const Player = styled(ReactPlayer)`
 const Icon = styled(SvgIcon) `
     font-size: 10rem!important;
     color: #FFF;
+
+    ${media.lessThan("medium")`
+        font-size: 8rem!important;
+    `}
 `
 
 const SlideImg = styled(Img) `

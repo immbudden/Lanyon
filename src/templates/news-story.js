@@ -314,6 +314,7 @@ const HeadlineContainer = styled.div `
         padding: 2.5rem 0 0; 
         max-width: 90%;
         margin: 0 auto;
+        height: 20vh;
     `}
 `
 

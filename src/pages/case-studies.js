@@ -199,7 +199,7 @@ const CaseStudyTitle = styled.h3 `
     font-size: 2.5rem;
     color: #222;
     font-weight: 400;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0;
 `
 
 const CaseStudyMainBrief = styled.h4 `
