@@ -869,18 +869,19 @@ const IndexPage = (props) => {
             meta={[
                 { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
                 { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
-                { name: 'og:title', content: 'Lanyon - Exceeding Expectations' },
-                { name: 'og:description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
-                { name: 'og:site_name', content: 'Lanyon' },
-                { name: 'twitter:image:alt', content: 'Lanyon Group - Belfast based PR and communications firm' },
                 { name: 'fb:app_id', content: 'fb_app_id' },
                 { name: 'twitter:site', content: '@LanyonGroup' },
             ]}
         >
+            <meta property="og:title" content={`Lanyon - Exceeding Expectations`}/>
+            <meta property="og:description" content={`Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement`}/>
+            <meta property="og:site_name" content={`Lanyon`}/>
             <meta property="og:image" content={`${rootUrl}${props.data.homeHeroImg.childImageSharp.fluid.src}`}/>
             <meta property="og:url" content={`lanyongroup.com`}/>
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:image" content={`${rootUrl}${props.data.homeHeroImg.childImageSharp.fluid.src}`} />
+            <meta name="twitter:image:alt" content={`Lanyon Group - Belfast based PR and communications firm`} />
+            <meta name="twitter:site" content={`@LanyonGroup`} />
+            <meta property="og:site_name" content={`Lanyon`}/>
             <html lang="en" />
         </Helmet>
 
