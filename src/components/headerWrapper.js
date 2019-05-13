@@ -3,7 +3,7 @@ import media from "styled-media-query";
 
 const HeaderWrapper = styled.div `
     position: relative;
-    height: 100vh;
+    height: 75vh;
     overflow: hidden;
     display: flex;
 
@@ -11,6 +11,7 @@ const HeaderWrapper = styled.div `
         flex-direction: row;
         -webkit-box-align: center;
         align-items: center;
+        height; 100vh;
     `}
 `
 

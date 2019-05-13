@@ -168,7 +168,6 @@ const NewsStoryTextContainer = styled.div `
 const NewsStoryText= styled.div `
     font-weight: 100;
     font-size: 1.8rem;
-    text-align: justify;
       
 
     & p {

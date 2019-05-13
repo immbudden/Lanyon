@@ -10,6 +10,7 @@ import media from "styled-media-query";
 import HQMap from "../components/HQMap";
 import DubMap from "../components/DubMap";
 import ContactForm from '../components/ContactForm'
+import Helmet from 'react-helmet'
 // import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 // To consolodate
@@ -287,6 +288,15 @@ const ContactPage = (data) => {
         <FontFace />
         <Nav />
         <NavMobile />
+        <Helmet
+            title='Get i n touch | Lanyon'
+            meta={[
+                { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
+                { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
+            ]}
+        >
+          <html lang="en" />
+        </Helmet>
         <Section>
             <Container>
             <CenterThreeContainer>

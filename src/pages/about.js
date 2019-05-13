@@ -9,6 +9,7 @@ import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import Carousel from 'nuka-carousel';
 import media from "styled-media-query";
+import Helmet from 'react-helmet'
 
 // To consolidate
 
@@ -357,6 +358,15 @@ const AboutPage = (props) => (
         <FontFace />
         <Nav />
         <NavMobile />
+        <Helmet
+            title='About us | Lanyon'
+            meta={[
+                { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
+                { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
+            ]}
+        >
+          <html lang="en" />
+        </Helmet>
         <HeroWrapper>
             <HeroImg style={{
                 position: "absolute",

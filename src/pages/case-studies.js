@@ -6,6 +6,7 @@ import FontFace from '../utils/font-face'
 import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
+import Helmet from 'react-helmet'
 
 // To consolodate
 
@@ -157,7 +158,7 @@ const ThreeColumnContainer = styled.div `
         flex: 1 1 100%;
         margin-right: 0;
 
-        &:nth-child(5n) {
+        &:nth-child(8n) {
             margin-bottom: 0;
         }
 
@@ -200,6 +201,7 @@ const CaseStudyTitle = styled.h3 `
     color: #222;
     font-weight: 400;
     margin-bottom: 0;
+    line-height: 1.35;
 `
 
 const CaseStudyMainBrief = styled.h4 `
@@ -222,6 +224,10 @@ const CaseStudyMainBrief = styled.h4 `
 const Url = styled(Link) `
     text-decoration: none;
     flex: 1 1 100%;
+
+    ${media.lessThan("medium")`
+        text-align: center;
+    `}
 `
 
 const CaseStudies = (props) => (
@@ -230,6 +236,15 @@ const CaseStudies = (props) => (
         <FontFace />
         <Nav />
         <NavMobile />
+        <Helmet
+            title="Case Studies - Lanyon"
+            meta={[
+                { name: 'description', content: 'Case studies from Lanyon - Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
+                { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
+            ]}
+        >
+          <html lang="en" />
+        </Helmet>
         <Section>
             <Container>
             <CenterThreeContainer>

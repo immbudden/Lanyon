@@ -342,9 +342,9 @@ const NewsPage = (props) => {
         <NavMobile />
 
         <Helmet
-            title='Lanyon - News and Insights'
+            title='News &amp; Insights | Lanyon'
             meta={[
-                { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
+                { name: 'description', content: 'The latest news and insights from Belfast based PR and communications firm - Lanyon' },
                 { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
             ]}
         >

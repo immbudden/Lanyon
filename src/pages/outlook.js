@@ -14,11 +14,16 @@ import CaseStudyCarousel from '../components/caseStudyCarousel';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import ReactPlayer from 'react-player';
+import Helmet from 'react-helmet'
 
 // To consolodate
 
 const HeaderImg = styled(Img) `
     min-height: 100vh;
+
+    ${media.lessThan("medium")`
+        min-height: 75vh;
+    `}
 `
 
 const Section = styled.div `
@@ -57,7 +62,7 @@ const SectionTitleLeft = styled.h2 `
     text-align: left;
 
     ${media.lessThan("medium")`
-        font-size: 4rem; 
+        font-size: 3.75rem; 
         text-align: center;
         width: 90%;
     `}
@@ -136,6 +141,9 @@ const CaseStudyIntroWrapper = styled.div `
     align-items: flex-end;
     margin-top: -40rem;
 
+    ${media.lessThan("medium")`
+        margin-top: -25rem;
+    `}
 `
 
 const CaseStudyIntroContainer = styled.div `
@@ -455,6 +463,15 @@ const CaseStudyOutlook = (props) => (
         <FontFace />
         <Nav />
         <NavMobile />
+        <Helmet
+            title='CBRE - NI Outlook | Lanyon'
+            meta={[
+                { name: 'description', content: 'Lanyon worked with CBRE on their annual NI Real Estate Market Outlook (NI Outlook) event' },
+                { name: 'keywords', content: 'communications, reputation, investment, stakeholder, belfast, marketing, MIPIM, media, design, video' },
+            ]}
+        >
+          <html lang="en" />
+        </Helmet>
         <HeaderWrapper>
             <HeaderImg style={{
                 position: "absolute",
