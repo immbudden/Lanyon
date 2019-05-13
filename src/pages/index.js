@@ -673,6 +673,7 @@ const StyledCarousel = styled(Carousel) `
     box-shadow: 0px 20px 20px -1px rgba(34,34,34,0.025);
     padding-top: 8.5rem;
     min-height: 56.25vw;
+    height: 56.25vw;
 
     ${media.lessThan("medium")`
         padding-top: 8.5rem;
