@@ -9,7 +9,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import get from "lodash.get"
 import ReactPlayer from 'react-player'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 // To consolodate 
 
@@ -403,7 +403,7 @@ const NewsStory = (props) => {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:image" content={`${rootUrl}${props.data.prismicNewsStory.data.headline_image.localFile.childImageSharp.fluid.src}`} />
             <meta name="twitter:image:alt" content={`${title}`} />
-            
+            <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
             <html lang="en" />
         </Helmet>
         <NewsStoryHeadingWrapper>

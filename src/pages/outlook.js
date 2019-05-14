@@ -14,7 +14,7 @@ import CaseStudyCarousel from '../components/caseStudyCarousel';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import ReactPlayer from 'react-player';
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 // To consolodate
 
@@ -469,6 +469,7 @@ const CaseStudyOutlook = (props) => (
                 { name: 'keywords', content: 'communications, reputation, investment, stakeholder, belfast, marketing, MIPIM, media, design, video' },
             ]}
         >
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
           <html lang="en" />
         </Helmet>
         <HeaderWrapper>

@@ -18,7 +18,7 @@ import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import HeaderContainer from '../components/headerContainer'
 import ReactPlayer from 'react-player'
 import Typed from 'react-typed'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 // import Layout from "../components/layout"
 
 const HeaderImg = styled(Img) `
@@ -883,6 +883,7 @@ const IndexPage = (props) => {
             <meta name="twitter:image:alt" content={`Lanyon Group - Belfast based PR and communications firm`} />
             <meta name="twitter:site" content="@LanyonGroup" />
             <meta property="og:site_name" content="Lanyon"/>
+            <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
             <html lang="en" />
         </Helmet>
 

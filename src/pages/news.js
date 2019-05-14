@@ -10,7 +10,7 @@ import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
 import get from "lodash.get"
 import TruncateMarkup from 'react-truncate-markup';
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 // To consolodate 
 
@@ -348,6 +348,7 @@ const NewsPage = (props) => {
                 { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
             ]}
         >
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
           <html lang="en" />
         </Helmet>
 

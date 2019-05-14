@@ -9,7 +9,7 @@ import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import Carousel from 'nuka-carousel';
 import media from "styled-media-query";
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 // To consolidate
 
@@ -364,6 +364,7 @@ const AboutPage = (props) => (
                 { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
             ]}
         >
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
           <html lang="en" />
         </Helmet>
         <HeroWrapper>

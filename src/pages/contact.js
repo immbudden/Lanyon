@@ -10,7 +10,7 @@ import media from "styled-media-query";
 import HQMap from "../components/HQMap";
 import DubMap from "../components/DubMap";
 import ContactForm from '../components/ContactForm'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 // import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 // To consolodate
@@ -295,6 +295,7 @@ const ContactPage = (data) => {
                 { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
             ]}
         >
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
           <html lang="en" />
         </Helmet>
         <Section>

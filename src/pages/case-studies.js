@@ -6,7 +6,7 @@ import FontFace from '../utils/font-face'
 import Nav from '../components/nav'
 import NavMobile from '../components/navMobile'
 import media from "styled-media-query";
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 // To consolodate
 
@@ -243,6 +243,7 @@ const CaseStudies = (props) => (
                 { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
             ]}
         >
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
           <html lang="en" />
         </Helmet>
         <Section>
