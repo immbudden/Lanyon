@@ -11,7 +11,7 @@ const HeaderWrapper = styled.div `
         flex-direction: row;
         -webkit-box-align: center;
         align-items: center;
-        height; 100vh;
+        height: 100vh;
     `}
 `
 
