@@ -883,7 +883,7 @@ const IndexPage = (props) => {
             <meta name="twitter:image:alt" content={`Lanyon Group - Belfast based PR and communications firm`} />
             <meta name="twitter:site" content="@LanyonGroup" />
             <meta property="og:site_name" content="Lanyon"/>
-            <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+            <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
             <html lang="en" />
         </Helmet>
 

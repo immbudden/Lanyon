@@ -468,7 +468,7 @@ const CaseStudyMIPIM = (props) => (
                 { name: 'keywords', content: 'communications, reputation, investment, stakeholder, belfast, marketing, MIPIM, media, design, video' },
             ]}
         >
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+        <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
           <html lang="en" />
         </Helmet>
         <HeaderWrapper>

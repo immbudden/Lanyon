@@ -403,7 +403,7 @@ const NewsStory = (props) => {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:image" content={`${rootUrl}${props.data.prismicNewsStory.data.headline_image.localFile.childImageSharp.fluid.src}`} />
             <meta name="twitter:image:alt" content={`${title}`} />
-            <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+            <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
             <html lang="en" />
         </Helmet>
         <NewsStoryHeadingWrapper>

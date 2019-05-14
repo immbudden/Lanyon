@@ -389,7 +389,7 @@ const CaseStudyStatSports = (props) => (
                 { name: 'keywords', content: 'communications, reputation, NIE, stakeholder, belfast, employee, engagement, media, design, video' },
             ]}
         >
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+        <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
           <html lang="en" />
         </Helmet>
         <HeaderWrapper>

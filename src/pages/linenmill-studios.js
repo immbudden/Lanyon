@@ -385,7 +385,7 @@ const CaseStudyLinenMill = (props) => (
                 { name: 'keywords', content: 'communications, Game, Thrones, stakeholder, belfast, marketing, HBO, media, design, video' },
             ]}
         >
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+        <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
           <html lang="en" />
         </Helmet>
         <HeaderWrapper>
