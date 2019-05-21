@@ -255,6 +255,14 @@ const ServiceContainer = styled.div `
         &:last-child {
             margin-bottom: 0;
         }
+
+        &:nth-child(1), :nth-child(4) {
+            background: #004655;
+        }
+    
+        &:nth-child(3), :nth-child(5) {
+            background: #199BAA;
+        }
     `}
 `
 
@@ -273,7 +281,7 @@ const ServiceIcon = styled(Img) `
     width: 8rem;
 `
 
-const ServiceTitle = styled.h3 `
+const ServiceTitle = styled.h1 `
     font-size: 3.5rem;
     color: #FFF;
     font-family: Didot;
@@ -522,7 +530,7 @@ const ClientLogoContainer = styled.div `
             margin-bottom: 5rem;
         }
 
-        &:nth-child(n+18) {
+        &:nth-child(n+19) {
             margin-bottom: 0;
         }
         
@@ -855,7 +863,7 @@ const IndexPage = (props) => {
         setActiveTab(tabName)
     }
 
-    const siteTitle = 'Lanyon Group - Exceeding Expectations'
+    const siteTitle = 'Lanyon Group - Strategic Communications, Reputation management and Stakeholder Engagement'
     const rootUrl = 'https://lanyongroup.com/'
 
     return (
@@ -873,7 +881,8 @@ const IndexPage = (props) => {
                 { name: 'twitter:site', content: '@LanyonGroup' },
             ]}
         >
-            <meta property="og:title" content="Lanyon - Exceeding Expectations"/>
+            <meta property="description" content="Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement"/>
+            <meta property="og:title" content="Lanyon Group - Strategic Communications, Reputation management and Stakeholder Engagement"/>
             <meta property="og:description" content="Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement"/>
             <meta property="og:site_name" content="Lanyon" />
             <meta property="og:type" content="website" />
