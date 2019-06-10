@@ -210,6 +210,36 @@ const ServiceTitle = styled.h3 `
     `}
 `
 
+const ServiceTitle2 = styled.h2 `
+    font-size: 3.5rem;
+    color: #FFF;
+    font-family: Didot;
+    font-weight: 100;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex: 1 1 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2.5rem;
+    transition: opacity 0.5s;
+
+    &:hover {
+        opacity: 0;
+    }
+
+    ${media.lessThan("medium")`
+        font-size: 3rem;
+        text-align: center;
+    `}
+`
+
 const ServiceList = styled.ul `
     font-size: 2rem;
     color: #FFF;
@@ -632,7 +662,7 @@ const AboutPage = (props) => (
                         </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <ServiceTitle>Culture and Engagement</ServiceTitle>
+                        <ServiceTitle2>Culture and Engagement</ServiceTitle2>
                         <ServiceList>
                             <li>Internal communications strategy and delivery</li>
                             <li>Employee engagement initiatives (surveys, focus groups etc.)</li>
@@ -641,7 +671,7 @@ const AboutPage = (props) => (
                         </ServiceList>
                     </ServiceContainer>
                     <ServiceContainer>
-                        <ServiceTitle>Digital and Content</ServiceTitle>
+                        <ServiceTitle2>Digital and Content</ServiceTitle2>
                         <ServiceList>
                             <li>Digital media strategy and management</li>
                             <li>Video production</li>
