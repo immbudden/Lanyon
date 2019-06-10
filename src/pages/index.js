@@ -881,7 +881,7 @@ const IndexPage = (props) => {
                 { name: 'twitter:site', content: '@LanyonGroup' },
             ]}
         >
-            <meta property="description" content="Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement"/>
+            <meta name="description" content="Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement"/>
             <meta property="keywords" content="communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video"/>
             <meta property="og:title" content="Lanyon Group - Strategic Communications, Reputation management and Stakeholder Engagement"/>
             <meta property="og:description" content="Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement"/>
