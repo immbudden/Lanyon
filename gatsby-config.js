@@ -1,7 +1,7 @@
 module.exports = {
 
     siteMetadata: {
-        title: `Lanyon | Exceeding Expectations`,
+        title: `Lanyon Group - A Belfast based Communications and PR agency`,
         siteUrl: `https://lanyongroup.com`
       },
 
