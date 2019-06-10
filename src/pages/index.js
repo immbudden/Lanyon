@@ -873,7 +873,7 @@ const IndexPage = (props) => {
         <Nav />
         <NavMobile />
         <Helmet
-            title={props.data.site.siteMetadata.title}
+            title={siteTitle}
             meta={[
                 { name: 'description', content: 'Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement' },
                 { name: 'keywords', content: 'communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video' },
@@ -882,6 +882,7 @@ const IndexPage = (props) => {
             ]}
         >
             <meta property="description" content="Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement"/>
+            <meta property="keywords" content="communications, reputation, press, stakeholder, belfast, marketing, pr, media, design, video"/>
             <meta property="og:title" content="Lanyon Group - Strategic Communications, Reputation management and Stakeholder Engagement"/>
             <meta property="og:description" content="Lanyon Group are a Belfast based PR and communications firm, specialising in strategic communications, reputation management and stakeholder engagement"/>
             <meta property="og:site_name" content="Lanyon" />
