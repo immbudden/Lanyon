@@ -35,7 +35,7 @@ const Container = styled.div `
     `}
 `
 
-const SectionTitle = styled.h2 `
+const SectionTitle = styled.h3 `
     font-size: 5.5rem;
     color: #004655;
     font-family: Didot;
@@ -53,7 +53,7 @@ const SectionTitle = styled.h2 `
     `}
 `
 
-const SectionTitleLeft = styled.h2 `
+const SectionTitleLeft = styled.h3 `
     font-size: 5.5rem;
     color: #004655;
     font-family: Didot;
@@ -210,7 +210,7 @@ const ServiceTitle = styled.h3 `
     `}
 `
 
-const ServiceTitle2 = styled.h2 `
+const ServiceTitle2 = styled.h3 `
     font-size: 3.5rem;
     color: #FFF;
     font-family: Didot;

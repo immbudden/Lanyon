@@ -26,7 +26,7 @@ const SlideImg = styled(Img) `
     
 `
 
-const CaseStudyTitle = styled.h3 `
+const CaseStudyTitle = styled.h2 `
     font-size: 10rem;
     color: #FFF;
     font-family: Didot;
