@@ -924,6 +924,7 @@ const IndexPage = (props) => {
             <meta name="twitter:site" content="@LanyonGroup" />
             <meta property="og:site_name" content="Lanyon"/>
             <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
+            <meta name="google-site-verification" content="6D12poKuMEXomGB_K_CTOyRh4eHfJ8IJgay9B6pLn00" />
             <html lang="en" />
         </Helmet>
 
