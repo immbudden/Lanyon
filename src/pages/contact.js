@@ -328,7 +328,7 @@ const ContactPage = (data) => {
                                 </AddressNav>
                             </ContactContainer>
                             <ContactContainer>
-                                <AddressText>Lanyon<br />8 Upper Crescent<br />Belfast<br />BT7 1NT</AddressText>
+                                <AddressText>The Lanyon Suite<br />1st Floor, Grand Central Hotel<br />Franklin St, Belfast<br />BT2 7GG</AddressText>
                             </ContactContainer>
                             <ContactContainer>
 
@@ -337,7 +337,7 @@ const ContactPage = (data) => {
                                 </Button>
 
                                 <ButtonInvert>
-                                    <ButtonLink href="https://www.google.com/maps/dir/Current+Location/Lanyon+Communications,+8+Upper+Cres,+Belfast+BT7+1NT,+UK/@54.5869451,-5.9367179,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x486109bc20580a23:0xd897711e3ade287c!2m2!1d-5.9345292!2d54.5869451">View directions</ButtonLink>
+                                    <ButtonLink href="https://www.google.com/maps/dir/Current+Location/Lanyon+Group,+1st+Floor,+Grand+Central+Hotel,+Franklin+St,+Belfast+BT2+7GG,+UK/@54.5950063,-5.9317781,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x486109bc20580a23:0xd897711e3ade287c!2m2!1d-5.9317781!2d54.5950063">View directions</ButtonLink>
                                 </ButtonInvert>
                             </ContactContainer>
                         </ContactDetails>

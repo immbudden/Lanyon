@@ -193,7 +193,7 @@ const HQMap = compose(
   )((props) =>
     <GoogleMap
         defaultZoom={17}
-        defaultCenter={{ lat: 54.5869451, lng: -5.93 }}
+        defaultCenter={{ lat: 54.5950063, lng: -5.93 }}
         defaultOptions={{ 
             styles: exampleMapStyles,
             streetViewControl: false,
@@ -215,7 +215,7 @@ const HQMap = compose(
         {props.isMarkerShown && 
 
             <Marker 
-                position={{ lat: 54.5869451, lng: -5.9347179 }} 
+                position={{ lat: 54.5950063, lng: -5.9317781 }} 
                 icon={markerLanyon}
             />
         }
