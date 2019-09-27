@@ -125,13 +125,6 @@ module.exports = {
             default: return true
           }
         },
-
-        schemas: {
-          author: require('./src/schemas/author.json'),
-          category: require('./src/schemas/category.json'),
-          news_story: require('./src/schemas/news_story.json'),
-        }
-
       },
     },
   ],
