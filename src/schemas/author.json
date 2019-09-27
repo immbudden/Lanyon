@@ -1,0 +1,12 @@
+{
+  "Main" : {
+    "author_name" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading6",
+        "label" : "Author Name",
+        "placeholder" : "Author Name"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "Main" : {
+      "category" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading6",
+          "label" : "Category"
+        }
+      }
+    }
+  }

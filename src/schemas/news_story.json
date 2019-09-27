@@ -1,0 +1,145 @@
+{
+    "Main" : {
+      "headline_image" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "Headline Image"
+        }
+      },
+      "main_video" : {
+        "type" : "Embed",
+        "config" : {
+          "label" : "Main Video",
+          "placeholder" : "Enter the url"
+        }
+      },
+      "title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1",
+          "label" : "Title",
+          "placeholder" : "News headline"
+        }
+      },
+      "uid" : {
+        "type" : "UID",
+        "config" : {
+          "label" : "Slug"
+        }
+      },
+      "short_description" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "Short Description"
+        }
+      },
+      "main_content" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item",
+          "label" : "Main Content"
+        }
+      },
+      "published_date" : {
+        "type" : "Date",
+        "config" : {
+          "label" : "Published Date"
+        }
+      },
+      "featured_story" : {
+        "type" : "Select",
+        "config" : {
+          "options" : [ "No", "Yes" ],
+          "default_value" : "No",
+          "label" : "Featured Story"
+        }
+      },
+      "author" : {
+        "type" : "Link",
+        "config" : {
+          "select" : "document",
+          "customtypes" : [ "author" ],
+          "label" : "Author"
+        }
+      },
+      "category" : {
+        "type" : "Link",
+        "config" : {
+          "select" : "document",
+          "customtypes" : [ "category" ],
+          "label" : "Category"
+        }
+      },
+      "body" : {
+        "type" : "Slices",
+        "fieldset" : "Slice zone",
+        "config" : {
+          "choices" : {
+            "quote" : {
+              "type" : "Slice",
+              "fieldset" : "Quote",
+              "description" : "Quote block",
+              "icon" : "format_quote",
+              "display" : "grid",
+              "non-repeat" : {
+                "quote" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph",
+                    "label" : "quote",
+                    "placeholder" : "Insert a quote from the text that you wish to highlight"
+                  }
+                },
+                "quote_by" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading6",
+                    "label" : "Quote by",
+                    "placeholder" : "Who is this quote from?"
+                  }
+                }
+              },
+              "repeat" : { }
+            },
+            "main_content" : {
+              "type" : "Slice",
+              "fieldset" : "Main Content",
+              "description" : "Main news content",
+              "icon" : "library_books",
+              "display" : "grid",
+              "non-repeat" : { },
+              "repeat" : { }
+            },
+            "featured_image" : {
+              "type" : "Slice",
+              "fieldset" : "Featured Image",
+              "description" : "Image which will be displayed on news list page",
+              "icon" : "account_box",
+              "display" : "grid",
+              "non-repeat" : {
+                "featured_image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "Featured Image"
+                  }
+                },
+                "image_caption" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Image Caption",
+                    "placeholder" : "People in photo, photo credit etc",
+                    "labels" : [ "featured_image" ]
+                  }
+                }
+              },
+              "repeat" : { }
+            }
+          }
+        }
+      }
+    }
+  }

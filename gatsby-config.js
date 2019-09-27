@@ -120,8 +120,18 @@ module.exports = {
         // This defaults to always return true.
         shouldNormalizeImage: ({ node, key, value }) => {
           // Return true to normalize the image or false to skip.
-          return true
+          switch (node.type) {
+            case 'page': return false
+            default: return true
+          }
         },
+
+        schemas: {
+          author: require('./src/schemas/author.json'),
+          category: require('./src/schemas/category.json'),
+          news_story: require('./src/schemas/news_story.json'),
+        }
+
       },
     },
   ],

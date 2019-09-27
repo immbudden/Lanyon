@@ -357,8 +357,8 @@ const NewsStory = (props) => {
     const main_content = props.data.prismicNewsStory.data.main_content.html
     // const published = props.data.prismicNewsStory.first_publication_date
     const published_date = props.data.prismicNewsStory.data.published_date
-    const category = props.data.prismicNewsStory.data.category.document[0].data.category.text
-    const author = props.data.prismicNewsStory.data.author.document[0].data.author_name.text
+    const category = props.data.prismicNewsStory.data.category.document.data.category.text
+    const author = props.data.prismicNewsStory.data.author.document.data.author_name.text
     const tags = props.data.prismicNewsStory.data.tags
     const rootUrl = 'https://lanyongroup.com/'
     const short_description = props.data.prismicNewsStory.data.short_description

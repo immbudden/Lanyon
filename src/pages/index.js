@@ -1094,7 +1094,7 @@ const IndexPage = (props) => {
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
                                 <LatestNewsStoryHeadline>{newsStoryOne.node.data.title.text}</LatestNewsStoryHeadline>
-                                <LatestNewsStoryMeta><Date>{newsStoryOne.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryOne.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryOne.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryOne.node.data.category.document.data.category.text}</Category></LatestNewsStoryMeta>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlTwo}`}>
@@ -1103,7 +1103,7 @@ const IndexPage = (props) => {
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
                                 <LatestNewsStoryHeadline>{newsStoryTwo.node.data.title.text}</LatestNewsStoryHeadline>
-                                <LatestNewsStoryMeta><Date>{newsStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryTwo.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryTwo.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryTwo.node.data.category.document.data.category.text}</Category></LatestNewsStoryMeta>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlThree}`}>
@@ -1112,7 +1112,7 @@ const IndexPage = (props) => {
                             </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
                                 <LatestNewsStoryHeadline>{newsStoryThree.node.data.title.text}</LatestNewsStoryHeadline>
-                                <LatestNewsStoryMeta><Date>{newsStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryThree.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryThree.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryThree.node.data.category.document.data.category.text}</Category></LatestNewsStoryMeta>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
                         <LatestNewsStory to={`/news/${newsStoryUrlFour}`}>
@@ -1121,7 +1121,7 @@ const IndexPage = (props) => {
                         </LatestNewsStoryImgContainer>
                             <LatestNewsTextWrapper>
                                 <LatestNewsStoryHeadline>{newsStoryFour.node.data.title.text}</LatestNewsStoryHeadline>
-                                <LatestNewsStoryMeta><Date>{newsStoryFour.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryFour.node.data.category.document[0].data.category.text}</Category></LatestNewsStoryMeta>
+                                <LatestNewsStoryMeta><Date>{newsStoryFour.node.data.published_date}</Date> &nbsp; &nbsp; <Category>{newsStoryFour.node.data.category.document.data.category.text}</Category></LatestNewsStoryMeta>
                             </LatestNewsTextWrapper>
                         </LatestNewsStory>
         

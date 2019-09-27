@@ -575,15 +575,15 @@ const AboutPage = (props) => (
                             fluid={props.data.ESImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
-                        <PersonName>Ella Simpson</PersonName>
-                        <PersonTitle>Client Executive</PersonTitle>
+                        <PersonName>Sophie Mills</PersonName>
+                        <PersonTitle>Junior Client Executive</PersonTitle>
                     </PersonInfoWrapper>
                     <PersonIntro>
                         <PersonIntroTop>
-                            <Bold>Ella Simpson</Bold><br />Client Executive
+                            <Bold>Sophie Mills</Bold><br />Junior Client Executive
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                        Ella joined Lanyon in 2017 from a magic circle law firm. She has a first class law degree from QUB and a MsC in PR &amp; Communications.
+                            Sophie joined Lanyon in 2019 upon graduating from The University of Edinburgh, where she studied Politics.
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
@@ -599,15 +599,15 @@ const AboutPage = (props) => (
                             fluid={props.data.RPImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
-                        <PersonName>Rachel Price</PersonName>
-                        <PersonTitle>Client Team Support</PersonTitle>
+                        <PersonName>Nuala McHugh</PersonName>
+                        <PersonTitle>Business Support Executive</PersonTitle>
                     </PersonInfoWrapper>
                     <PersonIntro>
                         <PersonIntroTop>
-                            <Bold>Rachel Price</Bold><br />Client Team Support
+                            <Bold>Nuala McHugh</Bold><br />Business Support Executive
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                            Upon graduating from the University of Reading Rachel secured an internship with Lanyon, where she is gaining experience in all aspects of PR and communications. 
+                            Nuala joined Lanyon in 2019. She has an English degree from QUB and a MSc in PR and Communications from UUJ. 
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
@@ -623,15 +623,15 @@ const AboutPage = (props) => (
                             fluid={props.data.MBImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
-                        <PersonName>Michael Budden</PersonName>
-                        <PersonTitle>Creative Director</PersonTitle>
+                        <PersonName>Amy Francis</PersonName>
+                        <PersonTitle>Senior Designer</PersonTitle>
                     </PersonInfoWrapper>
                     <PersonIntro>
                         <PersonIntroTop>
-                            <Bold>Michael Budden</Bold><br />Creative Director
+                            <Bold>Amy Francis</Bold><br />Senior Designer
                         </PersonIntroTop>
                         <PersonIntroBottom>
-                            With over 10 years experience as a multi-disciplinary designer; Michael has worked in senior management positions with a diverse range of companies from large corporates to start-ups. He has vast experience in the tech-sector and founded technology firm Locate a Locum. 
+                            Amy has a First Class Honours Degree in Graphic Design and was awarded the Dean's List for high achievement. She has experience working in both a studio and corporate environment. 
                         </PersonIntroBottom>
                     </PersonIntro>
                 </PersonContainer>
