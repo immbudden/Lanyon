@@ -773,7 +773,7 @@ export const query = graphql`
                 }
             }
 
-            MBImg: file(relativePath: { eq: "people/AF.jpg" }) {
+            AFImg: file(relativePath: { eq: "people/AF.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
