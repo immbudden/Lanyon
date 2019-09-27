@@ -288,8 +288,8 @@ const renderStories = (node, props) => {
     // console.log({body})
 
     const featured_image = get(body, "PrismicNewsStoryBodyFeaturedImage.featured_image.localFile.childImageSharp.fluid", null);
-    const authorName = node.data.author.document.data.author_name.text;
-    const category = node.data.category.document.data.category.text;
+    const authorName = node.data.author.document[0].data.author_name.text;
+    const category = node.data.category.document[0].data.category.text;
 
     console.log(node)
 
