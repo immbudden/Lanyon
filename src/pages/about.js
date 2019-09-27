@@ -572,7 +572,7 @@ const AboutPage = (props) => (
                             width: "100%",
                             zIndex: 0,
                         }}
-                            fluid={props.data.ESImg.childImageSharp.fluid}
+                            fluid={props.data.SMImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
                         <PersonName>Sophie Mills</PersonName>
@@ -596,7 +596,7 @@ const AboutPage = (props) => (
                             width: "100%",
                             zIndex: 0,
                         }}
-                            fluid={props.data.RPImg.childImageSharp.fluid}
+                            fluid={props.data.NMImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
                         <PersonName>Nuala McHugh</PersonName>
@@ -620,7 +620,7 @@ const AboutPage = (props) => (
                             width: "100%",
                             zIndex: 0,
                         }}
-                            fluid={props.data.MBImg.childImageSharp.fluid}
+                            fluid={props.data.AFImg.childImageSharp.fluid}
                     />
                     <PersonInfoWrapper>
                         <PersonName>Amy Francis</PersonName>
@@ -757,7 +757,7 @@ export const query = graphql`
                 }
             }
 
-            ESImg: file(relativePath: { eq: "people/ES.jpg" }) {
+            SMImg: file(relativePath: { eq: "people/SM.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -765,7 +765,7 @@ export const query = graphql`
                 }
             }
 
-            RPImg: file(relativePath: { eq: "people/RP.jpg" }) {
+            NMImg: file(relativePath: { eq: "people/NM.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
@@ -773,7 +773,7 @@ export const query = graphql`
                 }
             }
 
-            MBImg: file(relativePath: { eq: "people/MB-Warm.jpg" }) {
+            MBImg: file(relativePath: { eq: "people/AF.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 650, cropFocus: CENTER ) {
                         ...GatsbyImageSharpFluid
