@@ -120,10 +120,7 @@ module.exports = {
         // This defaults to always return true.
         shouldNormalizeImage: ({ node, key, value }) => {
           // Return true to normalize the image or false to skip.
-          switch (node.type) {
-            case 'page': return false
-            default: return true
-          }
+          return true
         },
       },
     },
