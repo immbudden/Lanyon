@@ -25,6 +25,7 @@ module.exports = {
         options: {
           name: `images`,
           path: `${__dirname}/src/images`,
+          GATSBY_CONCURRENT_DOWNLOAD: 10,
         },
     },
     `gatsby-plugin-styled-components`,
