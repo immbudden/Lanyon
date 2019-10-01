@@ -424,7 +424,6 @@ const NewsStory = (props) => {
                         // If not then render the headline_image
                     <HeroImg fluid={headline_image}/>
                 )}
-
                 {/* {main_video && (
                     <Video> 
                         <Player url={main_video} width='100%' height='100%' controls='true'/>
