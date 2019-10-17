@@ -579,7 +579,7 @@ export const query = graphql`
                                 url
                                 localFile {
                                     childImageSharp {
-                                        fluid(maxWidth: 1000, quality: 75, cropFocus: ENTROPY) {
+                                        fluid(maxWidth: 1000, quality: 65, cropFocus: ENTROPY) {
                                             src
                                             aspectRatio
                                         }

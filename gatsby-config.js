@@ -43,7 +43,14 @@ module.exports = {
 
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-netlify-cache`,
+    
+    {
+      resolve: "gatsby-plugin-netlify-cache",
+      options: {
+        cachePublic: true
+      }
+    },    
+
     {
         resolve: `gatsby-plugin-typography`,
         options: {
