@@ -1,0 +1,337 @@
+{
+  "Main": {
+    "order": {
+      "type": "Number",
+      "config": {
+        "label": "order",
+        "placeholder": "1 will display first, 2 second etc"
+      }
+    },
+    "case_study_colour": {
+      "type": "Color",
+      "config": {
+        "label": "case_study_colour"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "title",
+        "placeholder": "Title"
+      }
+    },
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "slug",
+        "placeholder": "e.g. mipim2019"
+      }
+    },
+    "headline_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "headline_image"
+      }
+    },
+    "client_name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "client_name"
+      }
+    },
+    "client_brief": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "client_brief",
+        "placeholder": "What we were asked to achieve"
+      }
+    },
+    "introduction": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "introduction",
+        "placeholder": "Introduction to the case study, set the scene"
+      }
+    },
+    "stat_1_num": {
+      "type": "Text",
+      "config": {
+        "label": "stat_1_num",
+        "placeholder": "Stat 1 Number"
+      }
+    },
+    "stat_1_text": {
+      "type": "Text",
+      "config": {
+        "label": "stat_1_text",
+        "placeholder": "Stat 1 Text"
+      }
+    },
+    "stat_2_num": {
+      "type": "Text",
+      "config": {
+        "label": "stat_2_num",
+        "placeholder": "Stat 2 Number"
+      }
+    },
+    "stat_2_text": {
+      "type": "Text",
+      "config": {
+        "label": "stat_2_text",
+        "placeholder": "Stat 2 Text"
+      }
+    },
+    "stat_3_num": {
+      "type": "Text",
+      "config": {
+        "label": "stat_3_num",
+        "placeholder": "Stat 3 Number"
+      }
+    },
+    "stat_3_text": {
+      "type": "Text",
+      "config": {
+        "label": "stat_3_text",
+        "placeholder": "Stat 3 Text"
+      }
+    },
+    "stat_4_num": {
+      "type": "Text",
+      "config": {
+        "label": "stat_4_num",
+        "placeholder": "Stat 4 Number"
+      }
+    },
+    "stat_4_text": {
+      "type": "Text",
+      "config": {
+        "label": "stat_4_text",
+        "placeholder": "Stat 4 Text"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "text_with_video": [],
+          "featured_people": [],
+          "section_image": [],
+          "section_title___text": [],
+          "image_gallery": []
+        },
+        "choices": {
+          "text_with_video": {
+            "type": "Slice",
+            "fieldset": "Text with Video",
+            "description": "Section with a title, body text and a youtube video",
+            "icon": "art_track",
+            "display": "list",
+            "non-repeat": {
+              "video_section_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "video_section_title",
+                  "placeholder": "Title for the section with video"
+                }
+              },
+              "video_section_text": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "video_section_text",
+                  "placeholder": "Text for the section with video"
+                }
+              },
+              "video_section_video": {
+                "type": "Embed",
+                "config": {
+                  "label": "video_section_video",
+                  "placeholder": "Video youtube link"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "featured_people": {
+            "type": "Slice",
+            "fieldset": "Featured People",
+            "description": "Featured people for the case study, this is usually speakers and will contain their image, name and job title",
+            "icon": "account_box",
+            "display": "grid",
+            "non-repeat": {
+              "featured_person_1_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "featured_person_1_image"
+                }
+              },
+              "featured_person_1_name": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4",
+                  "label": "featured_person_1_name",
+                  "placeholder": "e.g. Terry Tibbs"
+                }
+              },
+              "featured_person_1_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5",
+                  "label": "featured_person_1_title",
+                  "placeholder": "e.g. CEO - Tibbs Autos"
+                }
+              },
+              "featured_person_2_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "featured_person_2_image"
+                }
+              },
+              "featured_person_2_name": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4",
+                  "label": "featured_person_2_name",
+                  "placeholder": "e.g. Terry Tibbs"
+                }
+              },
+              "featured_person_2_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5",
+                  "label": "featured_person_2_title",
+                  "placeholder": "e.g. CEO - Tibbs Autos"
+                }
+              },
+              "featured_person_3_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "featured_person_3_image"
+                }
+              },
+              "featured_person_3_name": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4",
+                  "label": "featured_person_3_name",
+                  "placeholder": "e.g. Terry Tibbs"
+                }
+              },
+              "featured_person_3_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5",
+                  "label": "featured_person_3_title",
+                  "placeholder": "e.g. CEO - Tibbs Autos"
+                }
+              },
+              "featured_person_4_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "featured_person_4_image"
+                }
+              },
+              "featured_person_4_name": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4",
+                  "label": "featured_person_4_name",
+                  "placeholder": "e.g. Terry Tibbs"
+                }
+              },
+              "featured_person_4_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5",
+                  "label": "featured_person_4_title",
+                  "placeholder": "e.g. CEO - Tibbs Autos"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "section_image": {
+            "type": "Slice",
+            "fieldset": "Section Image",
+            "description": "Image that starts a new section or breaks up two sections",
+            "icon": "panorama",
+            "display": "list",
+            "non-repeat": {
+              "section_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "section_image"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "section_title___text": {
+            "type": "Slice",
+            "fieldset": "Title with Text",
+            "description": "Title and text for a section",
+            "icon": "chrome_reader_mode",
+            "display": "list",
+            "non-repeat": {
+              "section_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "section_title",
+                  "placeholder": "Section Title"
+                }
+              },
+              "section_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "section_text"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_gallery": {
+            "type": "Slice",
+            "fieldset": "Image Gallery Custom",
+            "description": "Scrollable Image Gallery",
+            "icon": "burst_mode",
+            "non-repeat": {},
+            "repeat": {
+              "gallery_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": null,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Gallery Image"
+                }
+              }
+            },
+            "display": "grid"
+          }
+        }
+      }
+    }
+  }
+}
