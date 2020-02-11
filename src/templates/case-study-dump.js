@@ -55,9 +55,9 @@ const NoTopContainer = styled.div `
 `
 
 const SectionTitleLeft = styled.h2 `
-    font-size: 5.5rem; 
-    color: #222; // Different from index.js - to consolodate 
-    display: flex; // Different from index.js 
+    font-size: 5.5rem;
+    color: #222; // Different from index.js - to consolodate
+    display: flex; // Different from index.js
     flex: 1 1 100%; // Different from index.js
     font-family: Didot;
     font-weight: 100;
@@ -65,14 +65,14 @@ const SectionTitleLeft = styled.h2 `
     text-align: left;
 
     ${media.lessThan("medium")`
-        font-size: 3.75rem; 
+        font-size: 3.75rem;
         text-align: center;
         width: 90%;
     `}
 `
 
 const Bold = styled.span `
-    font-weight: 500; 
+    font-weight: 500;
 `
 
 const CaseStudyTitle = styled.h2 `
@@ -103,7 +103,7 @@ const Slide = styled.div `
 `
 const SlideImg = styled(Img) `
     min-height: 100vh;
-    
+
 `
 
 const GallerySlide = styled.div `
@@ -121,7 +121,7 @@ const GallerySlide = styled.div `
 const GallerySlideImg = styled(Img) `
     height: 100%;
     width: 100%;
-    
+
 `
 
 const StyledCarousel = styled(Carousel) `
@@ -144,7 +144,7 @@ const MobileCarousel = styled(Carousel) `
 
 
 const CaseStudyIntroWrapper = styled.div `
-    display: flex; 
+    display: flex;
     flex: 1 1 72%;
     flex-direction: column;
     align-items: flex-end;
@@ -157,7 +157,7 @@ const CaseStudyIntroWrapper = styled.div `
 `
 
 const CaseStudyIntroContainer = styled.div `
-    display: flex; 
+    display: flex;
     justify-content: flex-end;
     flex-direction: row;
     align-items: flex-start;
@@ -182,7 +182,7 @@ const CaseStudyInfoContainer = styled.div `
 `
 
 const InfoTitle = styled.h6 `
-    display: flex; 
+    display: flex;
     flex: 1 1 100%;
     justify-content: flex-start;
     flex-direction: column;
@@ -194,7 +194,7 @@ const InfoTitle = styled.h6 `
 `
 
 const InfoText = styled.div `
-    display: flex; 
+    display: flex;
     flex: 1 1 100%;
     justify-content: flex-start;
     flex-direction: column;
@@ -205,7 +205,7 @@ const InfoText = styled.div `
 `
 
 const CaseStudyDescriptionContainer = styled.div `
-    display: flex; 
+    display: flex;
     flex: 1 1 72%;
     flex-direction: column;
     justify-content: flex-start;
@@ -293,7 +293,7 @@ const StatContainer = styled.div ` // Same as about page services
         &:nth-child(2n) {
             margin-right: 0;
         }
-        
+
         &:nth-child(n+4) {
             margin-bottom: 0rem;
         }
@@ -327,16 +327,16 @@ const StatText = styled.p `
 
 
 const SectionSubtitleLeft = styled.h3 `
-    font-size: 4rem; 
-    color: #222; 
+    font-size: 4rem;
+    color: #222;
     flex: 1 1 100%;
     font-family: Didot;
     font-weight: 100;
-    margin-bottom: 5rem; 
+    margin-bottom: 5rem;
     text-align: left;
 
     ${media.lessThan("medium")`
-        font-size: 3rem; 
+        font-size: 3rem;
         text-align: center;
         width: 100%;
         justify-content: center;
@@ -381,171 +381,171 @@ const Player = styled(ReactPlayer)`
 `
 
 // Sort and display the different slice options
-const PostSlices = ({ slices }) => {
-    return slices.map((slice, index) => {
-      const res = (() => {
-        switch(slice.type) {
+// const PostSlices = ({ slices }) => {
+//     return slices.map((slice, index) => {
+//       const res = (() => {
+//         switch(slice.type) {
 
-          case 'text_with_video': return (
-            <div key={ index }>
-              { <TextWithVideo slice={ slice } /> }
-            </div>
-          )
+//           case 'text_with_video': return (
+//             <div key={ index }>
+//               { <TextWithVideo slice={ slice } /> }
+//             </div>
+//           )
 
-        //   case 'featured_people': return (
-        //     <div key={ index }>
-        //       { <Quote slice={ slice } /> }
-        //     </div>
-        //   )
-  
-          case 'section_image': return (
-            <div key={ index }>
-              { <SectionImage slice={ slice } /> }
-            </div>
-          )
-  
-          case 'section_title___text': return (
-            <div key={ index }>
-              { <TitleAndText slice={ slice } /> }
-            </div>
-          )
+//         //   case 'featured_people': return (
+//         //     <div key={ index }>
+//         //       { <Quote slice={ slice } /> }
+//         //     </div>
+//         //   )
 
-        //   case 'image_gallery': return (
-        //     <div key={ index }>
-        //       { <ImageCaption slice={ slice } /> }
-        //     </div>
-        //   )
-  
-          default: return
-          
-        }
-      })();
-      return res;
-    })
-  }
-  
+//           case 'section_image': return (
+//             <div key={ index }>
+//               { <SectionImage slice={ slice } /> }
+//             </div>
+//           )
+
+//           case 'section_title___text': return (
+//             <div key={ index }>
+//               { <TitleAndText slice={ slice } /> }
+//             </div>
+//           )
+
+//         //   case 'image_gallery': return (
+//         //     <div key={ index }>
+//         //       { <ImageCaption slice={ slice } /> }
+//         //     </div>
+//         //   )
+
+//           default: return
+
+//         }
+//       })();
+//       return res;
+//     })
+//   }
+
   // Display the title, date, and content of the Post
-  const PostBody = ({ slicePost }) => {
-    
-    return (
-        <div>
-        <FontFace />
-        <Nav />
-        <NavMobile />
-        <Helmet
-            title={`${client_name}`}
-            meta={[
-                { name: 'description', content: `${client_brief}` },
-            ]}
-        >
-            <meta property="keywords" content={`${client_brief}`}/>
-            <meta property="og:image" content={`${rootUrl}${headline_image}`}/>
-            <meta property="og:url" content="https://lanyongroup.com"/>
-            <meta property="og:title" content={`${title}`}/>
-            <meta property="og:description" content={`${introduction}`}/>
-            <meta property="og:site_name" content="Lanyon" />
-            <meta property="og:type" content="website" />
-            <meta name="twitter:site" content="@LanyonGroup" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:image" content={`${rootUrl}${headline_image}`} />
-            <meta name="twitter:image:alt" content={`${title}`} />
-            <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
-            <html lang="en" />
-        </Helmet>
-        <HeaderWrapper>
-            <HeaderImg style={{
-                position: "absolute",
-                left: 0,
-                top: 0,
-                width: "100%",
-                zIndex: -1,
-            }}
-                fluid={headline_image} />
-        </HeaderWrapper>
-        <Section>
-            <Container>
-                <CaseStudyIntroWrapper>
-                    <CaseStudyIntroContainer>
-                        <SectionTitleLeft>{title}</SectionTitleLeft> {/* get from index */}
-                        <CaseStudyInfoContainer>
-                            <InfoTitle>Client</InfoTitle>
-                            <InfoText>{client_name}</InfoText>
-                            <InfoTitle>Brief</InfoTitle>
-                            <InfoText>{client_brief}</InfoText>
-                        </CaseStudyInfoContainer>
-                        <CaseStudyDescriptionContainer>
-                            <CaseStudyDescription>
-                                {introduction}
-                                <br /><br />
-                                Interested in working on something similar? <Bold>Let’s chat about it.</Bold>
-                            </CaseStudyDescription>
-                            <Url to="/contact">
-                                <ContactButton>Get in touch</ContactButton>
-                            </Url>
-                        </CaseStudyDescriptionContainer>
-                    </CaseStudyIntroContainer>
-                </CaseStudyIntroWrapper>
-            </Container>
-        </Section>
-        <SectionColoured>
-            <Container>
-                <StatWrapper>
-                <StatContainer>
-                    <StatHeadline>{stat_1_num}</StatHeadline>
-                    <StatText>{stat_1_text}</StatText>
-                </StatContainer>
-                <StatContainer>
-                    <StatHeadline>{stat_2_num}</StatHeadline>
-                    <StatText>{stat_2_text}</StatText>
-                </StatContainer>
-                <StatContainer>
-                    <StatHeadline>{stat_3_num}</StatHeadline>
-                    <StatText>{stat_3_text}</StatText>
-                </StatContainer>
-                <StatContainer>
-                    <StatHeadline>{stat_4_num}</StatHeadline>
-                    <StatText>{stat_4_text}</StatText>
-                </StatContainer>
-                </StatWrapper>
-            </Container>
-        </SectionColoured>
-        <Section>
-            <PostSlices />
-        </Section>
+//   const PostBody = ({ slicePost }) => {
 
-        {/* Contact Hook */}
-        <Section>
-            <Container>
-                <CenterThreeContainer>
-                    <SectionSubtitleLeft>Interested in how we can support your project?</SectionSubtitleLeft>
-                    <CaseStudyDescription>
-                        At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our Partners today.
-                    </CaseStudyDescription>
-                    <Url to="/contact">
-                        <ContactButton>Get in touch</ContactButton>
-                    </Url>
-                </CenterThreeContainer>
-            </Container>
-        </Section>
-        <Section id="caseStudies">
-            <CaseStudyCarousel/>
-        </Section>
-    </div>
-    );
-  }
-  
-  export default (props) => {
-    // Define the Post content returned from Prismic
-    const doc = data.allPrismicCaseStudy.edges.slice(0, 1).pop()
-  
-    if(!doc) return null;
-  
-    return(
-      <div>
-        <PostBody slicePost={ doc.node } />
-      </div>
-    )
-  }
+//     return (
+//         <div>
+//         <FontFace />
+//         <Nav />
+//         <NavMobile />
+//         <Helmet
+//             title={`${client_name}`}
+//             meta={[
+//                 { name: 'description', content: `${client_brief}` },
+//             ]}
+//         >
+//             <meta property="keywords" content={`${client_brief}`}/>
+//             <meta property="og:image" content={`${rootUrl}${headline_image}`}/>
+//             <meta property="og:url" content="https://lanyongroup.com"/>
+//             <meta property="og:title" content={`${title}`}/>
+//             <meta property="og:description" content={`${introduction}`}/>
+//             <meta property="og:site_name" content="Lanyon" />
+//             <meta property="og:type" content="website" />
+//             <meta name="twitter:site" content="@LanyonGroup" />
+//             <meta name="twitter:card" content="summary_large_image" />
+//             <meta name="twitter:image" content={`${rootUrl}${headline_image}`} />
+//             <meta name="twitter:image:alt" content={`${title}`} />
+//             <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,Symbol"></script>
+//             <html lang="en" />
+//         </Helmet>
+//         <HeaderWrapper>
+//             <HeaderImg style={{
+//                 position: "absolute",
+//                 left: 0,
+//                 top: 0,
+//                 width: "100%",
+//                 zIndex: -1,
+//             }}
+//                 fluid={headline_image} />
+//         </HeaderWrapper>
+//         <Section>
+//             <Container>
+//                 <CaseStudyIntroWrapper>
+//                     <CaseStudyIntroContainer>
+//                         <SectionTitleLeft>{title}</SectionTitleLeft> {/* get from index */}
+//                         <CaseStudyInfoContainer>
+//                             <InfoTitle>Client</InfoTitle>
+//                             <InfoText>{client_name}</InfoText>
+//                             <InfoTitle>Brief</InfoTitle>
+//                             <InfoText>{client_brief}</InfoText>
+//                         </CaseStudyInfoContainer>
+//                         <CaseStudyDescriptionContainer>
+//                             <CaseStudyDescription>
+//                                 {introduction}
+//                                 <br /><br />
+//                                 Interested in working on something similar? <Bold>Let’s chat about it.</Bold>
+//                             </CaseStudyDescription>
+//                             <Url to="/contact">
+//                                 <ContactButton>Get in touch</ContactButton>
+//                             </Url>
+//                         </CaseStudyDescriptionContainer>
+//                     </CaseStudyIntroContainer>
+//                 </CaseStudyIntroWrapper>
+//             </Container>
+//         </Section>
+//         <SectionColoured>
+//             <Container>
+//                 <StatWrapper>
+//                 <StatContainer>
+//                     <StatHeadline>{stat_1_num}</StatHeadline>
+//                     <StatText>{stat_1_text}</StatText>
+//                 </StatContainer>
+//                 <StatContainer>
+//                     <StatHeadline>{stat_2_num}</StatHeadline>
+//                     <StatText>{stat_2_text}</StatText>
+//                 </StatContainer>
+//                 <StatContainer>
+//                     <StatHeadline>{stat_3_num}</StatHeadline>
+//                     <StatText>{stat_3_text}</StatText>
+//                 </StatContainer>
+//                 <StatContainer>
+//                     <StatHeadline>{stat_4_num}</StatHeadline>
+//                     <StatText>{stat_4_text}</StatText>
+//                 </StatContainer>
+//                 </StatWrapper>
+//             </Container>
+//         </SectionColoured>
+//         <Section>
+//             <PostSlices />
+//         </Section>
+
+//         {/* Contact Hook */}
+//         <Section>
+//             <Container>
+//                 <CenterThreeContainer>
+//                     <SectionSubtitleLeft>Interested in how we can support your project?</SectionSubtitleLeft>
+//                     <CaseStudyDescription>
+//                         At Lanyon we are always interested in collaborating with likeminded people. If you are interested in hearing more about Lanyon and how we can support your organisation or project, get in touch with our Partners today.
+//                     </CaseStudyDescription>
+//                     <Url to="/contact">
+//                         <ContactButton>Get in touch</ContactButton>
+//                     </Url>
+//                 </CenterThreeContainer>
+//             </Container>
+//         </Section>
+//         <Section id="caseStudies">
+//             <CaseStudyCarousel/>
+//         </Section>
+//     </div>
+//     );
+//   }
+
+//   export default (props) => {
+//     // Define the Post content returned from Prismic
+//     const doc = data.allPrismicCaseStudy.edges.slice(0, 1).pop()
+
+//     if(!doc) return null;
+
+//     return(
+//       <div>
+//         <PostBody slicePost={ doc.node } />
+//       </div>
+//     )
+//   }
 
 
 
@@ -569,7 +569,7 @@ const PostSlices = ({ data }) => {
     // const featured_person_4_name = props.data.featured_person_4_name.text
     // const featured_person_4_title = props.data.featured_person_4_title.text
     // const featured_person_4_image = props.data.featured_person_4_image.localFile.childImageSharp.fluid
-    
+
 
     // Image Section
     const section_image = props.data.section_image.localFile.childImageSharp.fluid
@@ -610,8 +610,8 @@ const PostSlices = ({ data }) => {
                                 <CaseStudyDescription>
                                     {props.data.video_section_text.html}
                                 </CaseStudyDescription>
-                                <Video> 
-                                    <Player 
+                                <Video>
+                                    <Player
                                         url={props.data.video_section_video.embed_url}
                                         width='100%'
                                         height='50vh'
@@ -623,7 +623,7 @@ const PostSlices = ({ data }) => {
                         </Section>
                     </div>
                 )
-            
+
             case "PrismicCaseStudyBodySectionImage":
                 return (
                     <div key={i}>
@@ -674,8 +674,8 @@ const PostSlices = ({ data }) => {
     //                     <CaseStudyDescription>
     //                         {video_section_text}
     //                     </CaseStudyDescription>
-    //                     <Video> 
-    //                         <Player 
+    //                     <Video>
+    //                         <Player
     //                             url={video_section_video}
     //                             width='100%'
     //                             height='50vh'
@@ -725,7 +725,7 @@ const PostSlices = ({ data }) => {
 }
 
 
-const CaseStudy = (props) => { 
+const CaseStudy = (props) => {
 
 
     // Colours
@@ -748,15 +748,15 @@ const CaseStudy = (props) => {
     const stat_3_text = props.data.prismicCaseStudy.data.stat_3_text
     const stat_4_num = props.data.prismicCaseStudy.data.stat_4_num
     const stat_4_text = props.data.prismicCaseStudy.data.stat_4_text
-   
+
 
     return (
-        
+
     )
 
 }
 
-export default CaseStudy
+// export default CaseStudy
 
 // export const query = graphql`
 //     query {
@@ -770,229 +770,229 @@ export default CaseStudy
 //         }
 //     `
 
-export const query = graphql`
-    query SlicesQuery($uid: String)
-        {
-            allPrismicCaseStudy(uid: $uid): allPrismicCaseStudy(sort: {order: ASC, fields: [data___order]}) {
-            edges {
-                node {
-                id
-                uid
-                data {
-                    order
-                    case_study_colour
-                    title {
-                    text
-                    }
-                    headline_image {
-                    __typename
-                    localFile {
-                        childImageSharp {
-                        fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
-                            src
-                            aspectRatio
-                        }
-                        }
-                    }
-                    }
-                    client_name {
-                    text
-                    }
-                    client_brief {
-                    html
-                    }
-                    introduction {
-                    html
-                    }
-                    stat_1_num
-                    stat_1_text
-                    stat_2_num
-                    stat_2_text
-                    stat_3_num
-                    stat_3_text
-                    stat_4_num
-                    stat_4_text
-                    body {
-                    __typename
-                    ... on PrismicCaseStudyBodyTextWithVideo {
-                        primary {
-                        video_section_title {
-                            text
-                        }
-                        video_section_text {
-                            html
-                        }
-                        video_section_video {
-                            embed_url
-                        }
-                        }
-                    }
-                    __typename
-                    ... on PrismicCaseStudyBodyFeaturedPeople {
-                        primary {
-                        featured_person_1_name {
-                            text
-                        }
-                        featured_person_1_title {
-                            text
-                        }
-                        featured_person_1_image {
-                            localFile {
-                            childImageSharp {
-                                fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
-                                src
-                                aspectRatio
-                                }
-                            }
-                            }
-                        }
-                        featured_person_2_name {
-                            text
-                        }
-                        featured_person_2_title {
-                            text
-                        }
-                        featured_person_2_image {
-                            localFile {
-                            childImageSharp {
-                                fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
-                                src
-                                aspectRatio
-                                }
-                            }
-                            }
-                        }
-                        featured_person_3_name {
-                            text
-                        }
-                        featured_person_3_title {
-                            text
-                        }
-                        featured_person_3_image {
-                            localFile {
-                            childImageSharp {
-                                fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
-                                src
-                                aspectRatio
-                                }
-                            }
-                            }
-                        }
-                        featured_person_4_name {
-                            text
-                        }
-                        featured_person_4_title {
-                            text
-                        }
-                        featured_person_4_image {
-                            localFile {
-                            childImageSharp {
-                                fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
-                                src
-                                aspectRatio
-                                }
-                            }
-                            }
-                        }
-                        }
-                    }
-                    __typename
-                    ... on PrismicCaseStudyBodySectionImage {
-                        primary {
-                        section_image {
-                            url
-                            localFile {
-                            childImageSharp {
-                                fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
-                                src
-                                aspectRatio
-                                }
-                            }
-                            }
-                        }
-                        }
-                    }
-                    __typename
-                    ... on PrismicCaseStudyBodySectionTitleText {
-                        primary {
-                        section_title {
-                            text
-                        }
-                        section_text {
-                            html
-                        }
-                        }
-                    }
-                    __typename
-                    ... on PrismicCaseStudyBodyImageGallery {
-                        items {
-                        gallery_image {
-                            url
-                            alt
-                            localFile {
-                            childImageSharp {
-                                fluid(maxWidth: 800, quality: 60, cropFocus: ENTROPY) {
-                                src
-                                aspectRatio
-                                }
-                            }
-                            }
-                        }
-                        }
-                    }
-                    }
-                }
-                }
-            }
-            }
+// export const query = graphql`
+//     query SlicesQuery($uid: String)
+//         {
+//             allPrismicCaseStudy(uid: $uid): allPrismicCaseStudy(sort: {order: ASC, fields: [data___order]}) {
+//             edges {
+//                 node {
+//                 id
+//                 uid
+//                 data {
+//                     order
+//                     case_study_colour
+//                     title {
+//                     text
+//                     }
+//                     headline_image {
+//                     __typename
+//                     localFile {
+//                         childImageSharp {
+//                         fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
+//                             src
+//                             aspectRatio
+//                         }
+//                         }
+//                     }
+//                     }
+//                     client_name {
+//                     text
+//                     }
+//                     client_brief {
+//                     html
+//                     }
+//                     introduction {
+//                     html
+//                     }
+//                     stat_1_num
+//                     stat_1_text
+//                     stat_2_num
+//                     stat_2_text
+//                     stat_3_num
+//                     stat_3_text
+//                     stat_4_num
+//                     stat_4_text
+//                     body {
+//                     __typename
+//                     ... on PrismicCaseStudyBodyTextWithVideo {
+//                         primary {
+//                         video_section_title {
+//                             text
+//                         }
+//                         video_section_text {
+//                             html
+//                         }
+//                         video_section_video {
+//                             embed_url
+//                         }
+//                         }
+//                     }
+//                     __typename
+//                     ... on PrismicCaseStudyBodyFeaturedPeople {
+//                         primary {
+//                         featured_person_1_name {
+//                             text
+//                         }
+//                         featured_person_1_title {
+//                             text
+//                         }
+//                         featured_person_1_image {
+//                             localFile {
+//                             childImageSharp {
+//                                 fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+//                                 src
+//                                 aspectRatio
+//                                 }
+//                             }
+//                             }
+//                         }
+//                         featured_person_2_name {
+//                             text
+//                         }
+//                         featured_person_2_title {
+//                             text
+//                         }
+//                         featured_person_2_image {
+//                             localFile {
+//                             childImageSharp {
+//                                 fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+//                                 src
+//                                 aspectRatio
+//                                 }
+//                             }
+//                             }
+//                         }
+//                         featured_person_3_name {
+//                             text
+//                         }
+//                         featured_person_3_title {
+//                             text
+//                         }
+//                         featured_person_3_image {
+//                             localFile {
+//                             childImageSharp {
+//                                 fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+//                                 src
+//                                 aspectRatio
+//                                 }
+//                             }
+//                             }
+//                         }
+//                         featured_person_4_name {
+//                             text
+//                         }
+//                         featured_person_4_title {
+//                             text
+//                         }
+//                         featured_person_4_image {
+//                             localFile {
+//                             childImageSharp {
+//                                 fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+//                                 src
+//                                 aspectRatio
+//                                 }
+//                             }
+//                             }
+//                         }
+//                         }
+//                     }
+//                     __typename
+//                     ... on PrismicCaseStudyBodySectionImage {
+//                         primary {
+//                         section_image {
+//                             url
+//                             localFile {
+//                             childImageSharp {
+//                                 fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
+//                                 src
+//                                 aspectRatio
+//                                 }
+//                             }
+//                             }
+//                         }
+//                         }
+//                     }
+//                     __typename
+//                     ... on PrismicCaseStudyBodySectionTitleText {
+//                         primary {
+//                         section_title {
+//                             text
+//                         }
+//                         section_text {
+//                             html
+//                         }
+//                         }
+//                     }
+//                     __typename
+//                     ... on PrismicCaseStudyBodyImageGallery {
+//                         items {
+//                         gallery_image {
+//                             url
+//                             alt
+//                             localFile {
+//                             childImageSharp {
+//                                 fluid(maxWidth: 800, quality: 60, cropFocus: ENTROPY) {
+//                                 src
+//                                 aspectRatio
+//                                 }
+//                             }
+//                             }
+//                         }
+//                         }
+//                     }
+//                     }
+//                 }
+//                 }
+//             }
+//             }
 
-            SSCar1Img: file(relativePath: { eq: "case-studies/StatSports/SSCar1.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, maxHeight: 525, cropFocus: NORTH ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        
-            SSCar2Img: file(relativePath: { eq: "case-studies/StatSports/SSCar2.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: ENTROPY ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        
-            SSCar3Img: file(relativePath: { eq: "case-studies/StatSports/SSCar3.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        
-            SSCar4Img: file(relativePath: { eq: "case-studies/StatSports/SSCar4.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        
-            SSCar5Img: file(relativePath: { eq: "case-studies/StatSports/SSCar5.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        
-            SSCar6Img: file(relativePath: { eq: "case-studies/StatSports/SSCar6.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 850, cropFocus: CENTER ) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        }
-        
-`
+//             SSCar1Img: file(relativePath: { eq: "case-studies/StatSports/SSCar1.jpg" }) {
+//                 childImageSharp {
+//                     fluid(maxWidth: 850, maxHeight: 525, cropFocus: NORTH ) {
+//                         ...GatsbyImageSharpFluid
+//                     }
+//                 }
+//             }
+
+//             SSCar2Img: file(relativePath: { eq: "case-studies/StatSports/SSCar2.jpg" }) {
+//                 childImageSharp {
+//                     fluid(maxWidth: 850, cropFocus: ENTROPY ) {
+//                         ...GatsbyImageSharpFluid
+//                     }
+//                 }
+//             }
+
+//             SSCar3Img: file(relativePath: { eq: "case-studies/StatSports/SSCar3.jpg" }) {
+//                 childImageSharp {
+//                     fluid(maxWidth: 850, cropFocus: CENTER ) {
+//                         ...GatsbyImageSharpFluid
+//                     }
+//                 }
+//             }
+
+//             SSCar4Img: file(relativePath: { eq: "case-studies/StatSports/SSCar4.jpg" }) {
+//                 childImageSharp {
+//                     fluid(maxWidth: 850, cropFocus: CENTER ) {
+//                         ...GatsbyImageSharpFluid
+//                     }
+//                 }
+//             }
+
+//             SSCar5Img: file(relativePath: { eq: "case-studies/StatSports/SSCar5.jpg" }) {
+//                 childImageSharp {
+//                     fluid(maxWidth: 850, cropFocus: CENTER ) {
+//                         ...GatsbyImageSharpFluid
+//                     }
+//                 }
+//             }
+
+//             SSCar6Img: file(relativePath: { eq: "case-studies/StatSports/SSCar6.jpg" }) {
+//                 childImageSharp {
+//                     fluid(maxWidth: 850, cropFocus: CENTER ) {
+//                         ...GatsbyImageSharpFluid
+//                     }
+//                 }
+//             }
+//         }
+
+// `
