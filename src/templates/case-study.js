@@ -19,7 +19,8 @@ import get from "lodash.get";
 import {
   TextWithVideo,
   SectionImage,
-  TitleAndText
+  TitleAndText,
+  ImageGallery
 } from "../components/slices";
 import { RichText } from "prismic-reactjs";
 
@@ -347,9 +348,10 @@ const Url = styled(Link)`
 // Sort and display the different slice options
 const PostSlices = ({ slices }) => {
   return slices.map((slice, index) => {
+    console.log('hello', slice.__typename)
     const res = (() => {
-      switch (slice.type) {
-        case "text_with_video":
+      switch (slice.__typename) {
+        case "PrismicCaseStudyBodyTextWithVideo":
           return <div key={index}>{<TextWithVideo slice={slice} />}</div>;
 
         //   case 'featured_people': return (
@@ -358,11 +360,14 @@ const PostSlices = ({ slices }) => {
         //     </div>
         //   )
 
-        case "section_image":
+        case "PrismicCaseStudyBodySectionImage":
           return <div key={index}>{<SectionImage slice={slice} />}</div>;
 
-        case "section_title___text":
+        case "PrismicCaseStudyBodySectionTitleText":
           return <div key={index}>{<TitleAndText slice={slice} />}</div>;
+
+        case "PrismicCaseStudyBodyImageGallery":
+          return <div key={index}>{<ImageGallery slice={slice} />}</div>;
 
         //   case 'image_gallery': return (
         //     <div key={ index }>
@@ -381,27 +386,28 @@ const PostSlices = ({ slices }) => {
 // Display the title, date, and content of the Post
 const PostBody = props => {
   // Colours
-  const case_study_colour = props.data.prismicCaseStudy.data.case_study_colour;
+  const case_study_colour = props.data.case_study_colour;
+  console.log(props)
 
   // Top Section
-  const title = props.data.prismicCaseStudy.data.title.text;
-  const client_name = props.data.prismicCaseStudy.data.client_name.text;
-  const client_brief = props.data.prismicCaseStudy.data.client_brief.html;
-  const introduction = props.data.prismicCaseStudy.data.introduction.html;
+  const title = props.data.title.text;
+  const client_name = props.data.client_name.text;
+  const client_brief = props.data.client_brief.html;
+  const introduction = props.data.introduction.html;
   const headline_image =
-    props.data.prismicCaseStudy.data.headline_image.localFile.childImageSharp
+    props.data.headline_image.localFile.childImageSharp
       .fluid;
   const rootUrl = "https://lanyongroup.com/";
 
   //Stats
-  const stat_1_num = props.data.prismicCaseStudy.data.stat_1_num;
-  const stat_1_text = props.data.prismicCaseStudy.data.stat_1_text;
-  const stat_2_num = props.data.prismicCaseStudy.data.stat_2_num;
-  const stat_2_text = props.data.prismicCaseStudy.data.stat_2_text;
-  const stat_3_num = props.data.prismicCaseStudy.data.stat_3_num;
-  const stat_3_text = props.data.prismicCaseStudy.data.stat_3_text;
-  const stat_4_num = props.data.prismicCaseStudy.data.stat_4_num;
-  const stat_4_text = props.data.prismicCaseStudy.data.stat_4_text;
+  const stat_1_num = props.data.stat_1_num;
+  const stat_1_text = props.data.stat_1_text;
+  const stat_2_num = props.data.stat_2_num;
+  const stat_2_text = props.data.stat_2_text;
+  const stat_3_num = props.data.stat_3_num;
+  const stat_3_text = props.data.stat_3_text;
+  const stat_4_num = props.data.stat_4_num;
+  const stat_4_text = props.data.stat_4_text;
 
   return (
     <div>
@@ -448,11 +454,11 @@ const PostBody = props => {
                 <InfoTitle>Client</InfoTitle>
                 <InfoText>{client_name}</InfoText>
                 <InfoTitle>Brief</InfoTitle>
-                <InfoText>{client_brief}</InfoText>
+                <InfoText dangerouslySetInnerHTML={{__html:client_brief}} />
               </CaseStudyInfoContainer>
               <CaseStudyDescriptionContainer>
                 <CaseStudyDescription>
-                  {introduction}
+                  <div dangerouslySetInnerHTML={{__html:introduction}} />
                   <br />
                   <br />
                   Interested in working on something similar?{" "}
@@ -489,7 +495,7 @@ const PostBody = props => {
         </Container>
       </SectionColoured>
       <Section>
-        <PostSlices />
+        <PostSlices slices={props.data.body}/>
       </Section>
 
       {/* Contact Hook */}
@@ -526,14 +532,14 @@ export default props => {
 
   return (
     <div>
-      <PostBody slicePost={doc.node} />
+      <PostBody {...doc.node} />
     </div>
   );
 };
 
 export const query = graphql`
   query SlicesQuery {
-    allPrismicCaseStudy(sort: { order: ASC, fields: [data___order] }) {
+    allPrismicCaseStudy  {
       edges {
         node {
           id
@@ -702,66 +708,6 @@ export const query = graphql`
               }
             }
           }
-        }
-      }
-    }
-
-    SSCar1Img: file(
-      relativePath: { eq: "case-studies/StatSports/SSCar1.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 850, maxHeight: 525, cropFocus: NORTH) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    SSCar2Img: file(
-      relativePath: { eq: "case-studies/StatSports/SSCar2.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 850, cropFocus: ENTROPY) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    SSCar3Img: file(
-      relativePath: { eq: "case-studies/StatSports/SSCar3.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 850, cropFocus: CENTER) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    SSCar4Img: file(
-      relativePath: { eq: "case-studies/StatSports/SSCar4.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 850, cropFocus: CENTER) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    SSCar5Img: file(
-      relativePath: { eq: "case-studies/StatSports/SSCar5.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 850, cropFocus: CENTER) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    SSCar6Img: file(
-      relativePath: { eq: "case-studies/StatSports/SSCar6.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 850, cropFocus: CENTER) {
-          ...GatsbyImageSharpFluid
         }
       }
     }

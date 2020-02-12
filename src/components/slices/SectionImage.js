@@ -19,5 +19,5 @@ const SectionImg = styled(Img) `
 export default ({ slice }) =>
 
     <div>
-        <SectionImg fluid={slice.section_image.localFile.childImageSharp.fluid} />
+        <SectionImg fluid={slice.primary.section_image.localFile.childImageSharp.fluid} />
     </div>

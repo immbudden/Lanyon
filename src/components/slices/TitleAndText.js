@@ -68,10 +68,8 @@ export default ({ slice }) =>
     <div>
         <Container>
             <CenterThreeContainer>
-                <SectionSubtitleLeft>{ RichText.asText(slice.section_title) }</SectionSubtitleLeft>
-                <CaseStudyDescription>
-                    { RichText.asText(slice.section_text) }
-                </CaseStudyDescription>
+                <SectionSubtitleLeft>{slice.primary.section_title.text}</SectionSubtitleLeft>
+                <CaseStudyDescription dangerouslySetInnerHTML={{__html:slice.primary.section_text.html}} />
             </CenterThreeContainer>
         </Container>
     </div>

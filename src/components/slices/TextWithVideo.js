@@ -78,18 +78,17 @@ const Player = styled(ReactPlayer)`
     // const video_section_text = get(body, "PrismicCaseStudyBodyTextWithVideo.video_section_text.html", null)
     // const video_section_video = get(body, "PrismicCaseStudyBodyTextWithVideo.video_section_video.embed_url", null)
 
-export default ({ slice }) =>
-
-    <div>
+export default ({ slice }) => {
+    console.log(slice)
+    return (
+        <div>
             <Container>
             <CenterThreeContainer>
-                <SectionSubtitleLeft>{ RichText.asText(slice.video_section_title) }</SectionSubtitleLeft>
-                <CaseStudyDescription>
-                { RichText.asText(slice.video_section_text) }
-                </CaseStudyDescription>
+                <SectionSubtitleLeft>{slice.primary.video_section_title.text}</SectionSubtitleLeft>
+                <CaseStudyDescription dangerouslySetInnerHTML={{__html:slice.primary.video_section_text.html}} />
                 <Video> 
                     <Player 
-                        url={slice.video_section_video.embed_url}
+                        url={slice.primary.video_section_video.embed_url}
                         width='100%'
                         height='50vh'
                         controls={true}
@@ -97,4 +96,6 @@ export default ({ slice }) =>
                 </Video>
             </CenterThreeContainer>
             </Container>
-    </div>
+        </div>
+    )
+}
