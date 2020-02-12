@@ -20,7 +20,8 @@ import {
   TextWithVideo,
   SectionImage,
   TitleAndText,
-  ImageGallery
+  ImageGallery,
+  FeaturedPeople
 } from "../components/slices";
 import { RichText } from "prismic-reactjs";
 
@@ -348,17 +349,12 @@ const Url = styled(Link)`
 // Sort and display the different slice options
 const PostSlices = ({ slices }) => {
   return slices.map((slice, index) => {
-    console.log('hello', slice.__typename)
+    // console.log('hello', slice.__typename)
+    console.log(slice)
     const res = (() => {
       switch (slice.__typename) {
         case "PrismicCaseStudyBodyTextWithVideo":
           return <div key={index}>{<TextWithVideo slice={slice} />}</div>;
-
-        //   case 'featured_people': return (
-        //     <div key={ index }>
-        //       { <Quote slice={ slice } /> }
-        //     </div>
-        //   )
 
         case "PrismicCaseStudyBodySectionImage":
           return <div key={index}>{<SectionImage slice={slice} />}</div>;
@@ -368,12 +364,9 @@ const PostSlices = ({ slices }) => {
 
         case "PrismicCaseStudyBodyImageGallery":
           return <div key={index}>{<ImageGallery slice={slice} />}</div>;
-
-        //   case 'image_gallery': return (
-        //     <div key={ index }>
-        //       { <ImageCaption slice={ slice } /> }
-        //     </div>
-        //   )
+        
+        case "PrismicCaseStudyBodyFeaturedPeople":
+          return <div key={index}>{<FeaturedPeople slice={slice} />}</div>;
 
         default:
           return;
@@ -539,7 +532,7 @@ export default props => {
 
 export const query = graphql`
   query SlicesQuery {
-    allPrismicCaseStudy  {
+    allPrismicCaseStudy(sort: { order: DESC, fields: [data___order] }){
       edges {
         node {
           id
