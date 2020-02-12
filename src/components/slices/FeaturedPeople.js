@@ -4,15 +4,36 @@ import styled from 'styled-components'
 import media from "styled-media-query";
 
 
+const Container = styled.div `
+    margin: 0 auto;
+    padding: 10rem 0;
+    max-width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    ${media.lessThan("medium")`
+        padding: 5rem 0;
+    `}
+`
+
+const NoPadContainer = styled.div `
+    margin: 0 auto;
+    padding: 0;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+`
+
 const PeopleContainer = styled.div `
     display: flex;
     flex-flow: row wrap;
     position: relative;
     justify-content: flex-end;
-    margin-top: 7.5rem;
+    margin-top: 2.5rem;
 
     ${media.lessThan("medium")`
-        margin-top: 5rem;
+        margin-top: 0rem;
     `}
 `
 
@@ -26,6 +47,10 @@ const PersonContainer = styled.div ` // From as about
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-start;
+
+    &:last-child {
+        margin-right: 2.5rem;
+    }
 
     ${media.lessThan("medium")`
         flex: 1 1 100%;
@@ -72,7 +97,7 @@ const PersonTitle = styled.p `
 
 
 export default ({ slice }) =>
-    <div>
+    <NoPadContainer>
         <PeopleContainer>
 
             <PersonContainer>
@@ -144,4 +169,4 @@ export default ({ slice }) =>
             </PersonContainer>
 
         </PeopleContainer>
-    </div>
+    </NoPadContainer>

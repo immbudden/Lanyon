@@ -21,7 +21,7 @@ import {
   SectionImage,
   TitleAndText,
   ImageGallery,
-  // FeaturedPeople
+  FeaturedPeople
 } from "../components/slices";
 import { RichText } from "prismic-reactjs";
 
@@ -365,11 +365,11 @@ const PostSlices = ({ slices }) => {
         case "PrismicCaseStudyBodyImageGallery":
           return <div key={index}>{<ImageGallery slice={slice} />}</div>;
         
-        // case "PrismicCaseStudyBodyFeaturedPeople":
-        //   return <div key={index}>{<FeaturedPeople slice={slice} />}</div>;
+        case "PrismicCaseStudyBodyFeaturedPeople":
+          return <div key={index}>{<FeaturedPeople slice={slice} />}</div>;
 
         default:
-          return;
+          return undefined;
       }
     })();
     return res;
@@ -519,182 +519,178 @@ const PostBody = props => {
 
 export default props => {
   // Define the Post content returned from Prismic
-  const doc = props.data.allPrismicCaseStudy.edges.slice(0, 1).pop();
+  const doc = props.data.prismicCaseStudy;
 
   if (!doc) return null;
 
   return (
     <div>
-      <PostBody {...doc.node} />
+      <PostBody {...doc} />
     </div>
   );
 };
 
 export const query = graphql`
-  query SlicesQuery {
-    allPrismicCaseStudy(sort: { order: DESC, fields: [data___order] }){
-      edges {
-        node {
-          id
-          uid
-          data {
-            order
-            case_study_colour
-            title {
-              text
-            }
-            headline_image {
-              __typename
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
-                    src
-                    aspectRatio
-                  }
-                }
+  query PrismicQuery ($slug:String) {
+    prismicCaseStudy (uid:{eq: $slug}) {
+      id
+      uid
+      data {
+        order
+        case_study_colour
+        title {
+          text
+        }
+        headline_image {
+          __typename
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
+                src
+                aspectRatio
               }
             }
-            client_name {
-              text
-            }
-            client_brief {
-              html
-            }
-            introduction {
-              html
-            }
-            stat_1_num
-            stat_1_text
-            stat_2_num
-            stat_2_text
-            stat_3_num
-            stat_3_text
-            stat_4_num
-            stat_4_text
-            body {
-              __typename
-              ... on PrismicCaseStudyBodyTextWithVideo {
-                primary {
-                  video_section_title {
-                    text
-                  }
-                  video_section_text {
-                    html
-                  }
-                  video_section_video {
-                    embed_url
-                  }
-                }
+          }
+        }
+        client_name {
+          text
+        }
+        client_brief {
+          html
+        }
+        introduction {
+          html
+        }
+        stat_1_num
+        stat_1_text
+        stat_2_num
+        stat_2_text
+        stat_3_num
+        stat_3_text
+        stat_4_num
+        stat_4_text
+        body {
+          __typename
+          ... on PrismicCaseStudyBodyTextWithVideo {
+            primary {
+              video_section_title {
+                text
               }
-              __typename
-              ... on PrismicCaseStudyBodyFeaturedPeople {
-                primary {
-                  featured_person_1_name {
-                    text
-                  }
-                  featured_person_1_title {
-                    text
-                  }
-                  featured_person_1_image {
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
-                          src
-                          aspectRatio
-                        }
-                      }
-                    }
-                  }
-                  featured_person_2_name {
-                    text
-                  }
-                  featured_person_2_title {
-                    text
-                  }
-                  featured_person_2_image {
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
-                          src
-                          aspectRatio
-                        }
-                      }
-                    }
-                  }
-                  featured_person_3_name {
-                    text
-                  }
-                  featured_person_3_title {
-                    text
-                  }
-                  featured_person_3_image {
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
-                          src
-                          aspectRatio
-                        }
-                      }
-                    }
-                  }
-                  featured_person_4_name {
-                    text
-                  }
-                  featured_person_4_title {
-                    text
-                  }
-                  featured_person_4_image {
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
-                          src
-                          aspectRatio
-                        }
-                      }
+              video_section_text {
+                html
+              }
+              video_section_video {
+                embed_url
+              }
+            }
+          }
+          __typename
+          ... on PrismicCaseStudyBodyFeaturedPeople {
+            primary {
+              featured_person_1_name {
+                text
+              }
+              featured_person_1_title {
+                text
+              }
+              featured_person_1_image {
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+                      src
+                      aspectRatio
                     }
                   }
                 }
               }
-              __typename
-              ... on PrismicCaseStudyBodySectionImage {
-                primary {
-                  section_image {
-                    url
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
-                          src
-                          aspectRatio
-                        }
-                      }
+              featured_person_2_name {
+                text
+              }
+              featured_person_2_title {
+                text
+              }
+              featured_person_2_image {
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+                      src
+                      aspectRatio
                     }
                   }
                 }
               }
-              __typename
-              ... on PrismicCaseStudyBodySectionTitleText {
-                primary {
-                  section_title {
-                    text
-                  }
-                  section_text {
-                    html
+              featured_person_3_name {
+                text
+              }
+              featured_person_3_title {
+                text
+              }
+              featured_person_3_image {
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+                      src
+                      aspectRatio
+                    }
                   }
                 }
               }
-              __typename
-              ... on PrismicCaseStudyBodyImageGallery {
-                items {
-                  gallery_image {
-                    url
-                    alt
-                    localFile {
-                      childImageSharp {
-                        fluid(maxWidth: 800, quality: 60, cropFocus: ENTROPY) {
-                          src
-                          aspectRatio
-                        }
-                      }
+              featured_person_4_name {
+                text
+              }
+              featured_person_4_title {
+                text
+              }
+              featured_person_4_image {
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+                      src
+                      aspectRatio
+                    }
+                  }
+                }
+              }
+            }
+          }
+          __typename
+          ... on PrismicCaseStudyBodySectionImage {
+            primary {
+              section_image {
+                url
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
+                      src
+                      aspectRatio
+                    }
+                  }
+                }
+              }
+            }
+          }
+          __typename
+          ... on PrismicCaseStudyBodySectionTitleText {
+            primary {
+              section_title {
+                text
+              }
+              section_text {
+                html
+              }
+            }
+          }
+          __typename
+          ... on PrismicCaseStudyBodyImageGallery {
+            items {
+              gallery_image {
+                url
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 800, quality: 60, cropFocus: ENTROPY) {
+                      src
+                      aspectRatio
                     }
                   }
                 }

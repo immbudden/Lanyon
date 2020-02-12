@@ -68,6 +68,7 @@ export default ({ slice }) => {
             )}
         
         >
+            {console.log(slice)}
             {slice.items.map((item, index)=>{
                 return(
                     <GallerySlide key={index}>
