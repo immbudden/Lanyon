@@ -21,7 +21,7 @@ import {
   SectionImage,
   TitleAndText,
   ImageGallery,
-  FeaturedPeople
+  // FeaturedPeople
 } from "../components/slices";
 import { RichText } from "prismic-reactjs";
 
@@ -365,8 +365,8 @@ const PostSlices = ({ slices }) => {
         case "PrismicCaseStudyBodyImageGallery":
           return <div key={index}>{<ImageGallery slice={slice} />}</div>;
         
-        case "PrismicCaseStudyBodyFeaturedPeople":
-          return <div key={index}>{<FeaturedPeople slice={slice} />}</div>;
+        // case "PrismicCaseStudyBodyFeaturedPeople":
+        //   return <div key={index}>{<FeaturedPeople slice={slice} />}</div>;
 
         default:
           return;
