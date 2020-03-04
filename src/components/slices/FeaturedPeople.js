@@ -49,7 +49,7 @@ const PersonContainer = styled.div ` // From as about
     align-items: flex-start;
 
     &:last-child {
-        margin-right: 2.5rem;
+        margin-right: 0rem;
     }
 
     ${media.lessThan("medium")`

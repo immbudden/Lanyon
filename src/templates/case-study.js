@@ -21,7 +21,7 @@ import {
   SectionImage,
   TitleAndText,
   ImageGallery,
-  FeaturedPeople
+  // FeaturedPeople
 } from "../components/slices";
 import { RichText } from "prismic-reactjs";
 
@@ -228,7 +228,7 @@ const CaseStudyDescription = styled.p`
 `;
 
 const ContactButton = styled.button`
-  background: #004655;
+  background: ${props => props.themeColor || '#004655'};
   color: #fff;
   font-size: 2rem;
   padding: 10px 15px 5px; // Typefix
@@ -243,7 +243,7 @@ const ContactButton = styled.button`
 `;
 
 const SectionColoured = styled.div`
-  background: #004655;
+  background: ${props => props.themeColor || '#004655'};
 `;
 
 const CenterThreeContainer = styled.div`
@@ -365,8 +365,8 @@ const PostSlices = ({ slices }) => {
         case "PrismicCaseStudyBodyImageGallery":
           return <div key={index}>{<ImageGallery slice={slice} />}</div>;
         
-        case "PrismicCaseStudyBodyFeaturedPeople":
-          return <div key={index}>{<FeaturedPeople slice={slice} />}</div>;
+        // case "PrismicCaseStudyBodyFeaturedPeople":
+        //   return <div key={index}>{<FeaturedPeople slice={slice} />}</div>;
 
         default:
           return undefined;
@@ -379,8 +379,8 @@ const PostSlices = ({ slices }) => {
 // Display the title, date, and content of the Post
 const PostBody = props => {
   // Colours
-  const case_study_colour = props.data.case_study_colour;
   console.log(props)
+  const themeColor = props.data.case_study_colour;
 
   // Top Section
   const title = props.data.title.text;
@@ -458,14 +458,14 @@ const PostBody = props => {
                   <Bold>Let’s chat about it.</Bold>
                 </CaseStudyDescription>
                 <Url to="/contact">
-                  <ContactButton>Get in touch</ContactButton>
+                  <ContactButton themeColor={themeColor}>Get in touch</ContactButton>
                 </Url>
               </CaseStudyDescriptionContainer>
             </CaseStudyIntroContainer>
           </CaseStudyIntroWrapper>
         </Container>
       </Section>
-      <SectionColoured>
+      <SectionColoured themeColor={themeColor}>
         <Container>
           <StatWrapper>
             <StatContainer>
@@ -505,7 +505,7 @@ const PostBody = props => {
               touch with our Partners today.
             </CaseStudyDescription>
             <Url to="/contact">
-              <ContactButton>Get in touch</ContactButton>
+              <ContactButton themeColor={themeColor}>Get in touch</ContactButton>
             </Url>
           </CenterThreeContainer>
         </Container>
