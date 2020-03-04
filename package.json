@@ -1,6 +1,7 @@
 {
   "name": "lanyon-app",
   "description": "Lanyon",
+  "NODE_VERSION": "10",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
