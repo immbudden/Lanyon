@@ -43,7 +43,6 @@
     "gatsby-transformer-sharp": "^2.1.9",
     "got": "10.5.5",
     "lodash.get": "^4.4.2",
-    "npm": "^6.13.7",
     "nuka-carousel": "^4.5.3",
     "prismic-reactjs": "^1.2.0",
     "prop-types": "^15.6.2",
