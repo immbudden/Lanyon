@@ -17,7 +17,7 @@ const Container = styled.div `
     `}
 `
 
-const CaseStudyDescription = styled.p `
+const CaseStudyDescription = styled.div `
     font-size: 1.8rem;
     font-weight: 100;
     color: #222;
