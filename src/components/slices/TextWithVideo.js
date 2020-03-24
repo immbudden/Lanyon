@@ -24,6 +24,10 @@ const CaseStudyDescription = styled.div `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+
+    > p { 
+        margin-bottom: 0;
+    }; 
 `
 
 const CenterThreeContainer = styled.div `

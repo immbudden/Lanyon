@@ -204,6 +204,10 @@ const InfoText = styled.div`
   font-size: 1.8rem;
   margin-bottom: 3.8rem;
   font-weight: 100;
+
+  > p { 
+    margin-bottom: 0;
+  }; 
 `;
 
 const CaseStudyDescriptionContainer = styled.div`
@@ -218,13 +222,17 @@ const CaseStudyDescriptionContainer = styled.div`
     `}
 `;
 
-const CaseStudyDescription = styled.p`
+const CaseStudyDescription = styled.div`
   font-size: 1.8rem;
   font-weight: 100;
   color: #222;
   line-height: 1.75;
   flex: 1 1 100%;
   margin-bottom: 0;
+
+  > p { 
+    margin-bottom: 0;
+  }; 
 `;
 
 const ContactButton = styled.button`

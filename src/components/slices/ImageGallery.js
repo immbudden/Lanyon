@@ -27,6 +27,7 @@ const GallerySlideImg = styled(Img) `
 
 const StyledCarousel = styled(Carousel) `
     display: block!important;
+    margin-top: 10rem;
 
     ${media.lessThan("medium")`
         display: none!important;

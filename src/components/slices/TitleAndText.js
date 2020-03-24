@@ -6,7 +6,7 @@ import { RichText } from 'prismic-reactjs';
 
 const Container = styled.div `
     margin: 0 auto;
-    padding: 10rem 0;
+    padding: 10rem 0 0;
     max-width: 90%;
     position: relative;
     display: flex;
@@ -24,6 +24,10 @@ const CaseStudyDescription = styled.div `
     line-height: 1.75;
     flex: 1 1 100%;
     margin-bottom: 0;
+
+    > p { 
+        margin-bottom: 0;
+    }; 
 `
 
 const CenterThreeContainer = styled.div `

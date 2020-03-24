@@ -7,6 +7,7 @@ const SectionImg = styled(Img) `
     width: 100%;
     min-height: 50vh;
     height: 50vh;
+    margin-top: 10rem;
 `
 
     // console.log(body)
