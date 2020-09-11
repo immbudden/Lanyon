@@ -716,6 +716,7 @@ const AboutPage = (props) => (
             </PersonIntroBottom>
           </PersonIntro>
         </PersonContainer>
+        <PersonContainer></PersonContainer>
       </PeopleContainer>
     </Section>
     <Section>
@@ -839,6 +840,14 @@ export const query = graphql`
     }
 
     SMImg: file(relativePath: { eq: "people/SM.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 650, cropFocus: CENTER) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    NMImg: file(relativePath: { eq: "people/NM.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 650, cropFocus: CENTER) {
           ...GatsbyImageSharpFluid
