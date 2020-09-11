@@ -846,14 +846,6 @@ export const query = graphql`
       }
     }
 
-    NMImg: file(relativePath: { eq: "people/NM.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 650, cropFocus: CENTER) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
     AFImg: file(relativePath: { eq: "people/AF.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 650, cropFocus: CENTER) {
