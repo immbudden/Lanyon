@@ -651,7 +651,7 @@ const AboutPage = (props) => (
             <PersonIntroTop>
               <Bold>Matthew Jeffrey</Bold>
               <br />
-              Associate
+              Senior Associate
             </PersonIntroTop>
             <PersonIntroBottom>
               Upon graduating from QUB, Matthew joined Lanyon in 2015 and has a
