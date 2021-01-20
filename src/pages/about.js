@@ -624,12 +624,11 @@ const AboutPage = (props) => (
             <PersonIntroTop>
               <Bold>Gavin Williamson</Bold>
               <br />
-              Associate
+              Senior Associate
             </PersonIntroTop>
             <PersonIntroBottom>
-              Gavin joined the Lanyon team in January 2016. He holds a
-              first-class honours degree in Marketing and is an Accredited CIPR
-              PR Practitioner.
+              A Chartered PR Practitioner, Gavin joined the Lanyon team in 
+              January 2016 and holds a first-class honours degree in Marketing.
             </PersonIntroBottom>
           </PersonIntro>
         </PersonContainer>
@@ -646,7 +645,7 @@ const AboutPage = (props) => (
           />
           <PersonInfoWrapper>
             <PersonName>Matthew Jeffrey</PersonName>
-            <PersonTitle>Associate</PersonTitle>
+            <PersonTitle>Senior Associate</PersonTitle>
           </PersonInfoWrapper>
           <PersonIntro>
             <PersonIntroTop>
