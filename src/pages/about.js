@@ -627,7 +627,7 @@ const AboutPage = (props) => (
               Senior Associate
             </PersonIntroTop>
             <PersonIntroBottom>
-              A Chartered PR Practitioner, Gavin joined the Lanyon team in 
+              A Chartered PR Practitioner, Gavin joined the Lanyon team in
               January 2016 and holds a first-class honours degree in Marketing.
             </PersonIntroBottom>
           </PersonIntro>
@@ -669,21 +669,25 @@ const AboutPage = (props) => (
               width: "100%",
               zIndex: 0,
             }}
-            fluid={props.data.SMImg.childImageSharp.fluid}
+            fluid={props.data.EHImg.childImageSharp.fluid}
           />
           <PersonInfoWrapper>
-            <PersonName>Sophie Mills</PersonName>
-            <PersonTitle>Junior Client Executive</PersonTitle>
+            <PersonName>Esmée Hall</PersonName>
+            <PersonTitle>Client Executive</PersonTitle>
           </PersonInfoWrapper>
           <PersonIntro>
             <PersonIntroTop>
-              <Bold>Sophie Mills</Bold>
+              <Bold>Esmée Hall</Bold>
               <br />
-              Junior Client Executive
+              Client Executive
             </PersonIntroTop>
             <PersonIntroBottom>
-              Sophie joined Lanyon in 2019 upon graduating from The University
-              of Edinburgh, where she studied Politics.
+              Esmée is a Durham University graduate with marketing, brand and PR
+              experience within the food, alcohol, sports and entertainment
+              industries. She has an ever-growing passion for all things social
+              and digital, and recently obtained an Executive Diploma in
+              Strategic Digital Marketing from the Marketing Institute of
+              Ireland.
             </PersonIntroBottom>
           </PersonIntro>
         </PersonContainer>
@@ -696,26 +700,61 @@ const AboutPage = (props) => (
               width: "100%",
               zIndex: 0,
             }}
-            fluid={props.data.AFImg.childImageSharp.fluid}
+            fluid={props.data.SMImg.childImageSharp.fluid}
           />
           <PersonInfoWrapper>
-            <PersonName>Amy Francis</PersonName>
+            <PersonName>Shauna Murphy</PersonName>
+            <PersonTitle>Client Executive</PersonTitle>
+          </PersonInfoWrapper>
+          <PersonIntro>
+            <PersonIntroTop>
+              <Bold>Shauna Murphy</Bold>
+              <br />
+              Client Executive
+            </PersonIntroTop>
+            <PersonIntroBottom>
+              Shauna graduated from Ulster University in 2019, where she studied
+              Interior Design. Before joining Lanyon in June 2021, she spent two
+              years working at Ulster University as Vice President for Belfast
+              for Ulster University's Students' Union.
+            </PersonIntroBottom>
+          </PersonIntro>
+        </PersonContainer>
+        <PersonContainer>
+          <PersonImg
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              zIndex: 0,
+            }}
+            fluid={props.data.ASImg.childImageSharp.fluid}
+          />
+          <PersonInfoWrapper>
+            <PersonName>Athena Stokes</PersonName>
             <PersonTitle>Senior Designer</PersonTitle>
           </PersonInfoWrapper>
           <PersonIntro>
             <PersonIntroTop>
-              <Bold>Amy Francis</Bold>
+              <Bold>Athena Stokes</Bold>
               <br />
-              Senior Designer
+              Designer
             </PersonIntroTop>
             <PersonIntroBottom>
-              Amy has a First Class Honours Degree in Graphic Design and was
-              awarded the Dean's List for high achievement. She has experience
-              working in both a studio and corporate environment.
+              Graduating in 2020, Athena holds a degree in Graphic Design and
+              Illustration with a diploma in Professional Practice with
+              distinction, an Ulster EDGE Excel Award, and a Postgraduate
+              Certificate in Graduate Leadership from Ulster University. <br />
+              <br />
+              She was a creative participant in the Publicity Association of
+              Northern Ireland (PANI) Advertising Competition in partnership
+              with Ulster University for two years in a row, winning in 2017.
+              Athena has experience working within corporate, studio and
+              freelance environments.
             </PersonIntroBottom>
           </PersonIntro>
         </PersonContainer>
-        <PersonContainer></PersonContainer>
       </PeopleContainer>
     </Section>
     <Section>
@@ -792,7 +831,7 @@ export const query = graphql`
   query {
     aboutHeroImg: file(relativePath: { eq: "LanyonBelfast.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2500, maxHeight: 1100) {
+        fluid(maxWidth: 2500, maxHeight: 1100, cropFocus: ENTROPY) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -838,7 +877,7 @@ export const query = graphql`
       }
     }
 
-    SMImg: file(relativePath: { eq: "people/SM.jpg" }) {
+    EHImg: file(relativePath: { eq: "people/EH.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 650, cropFocus: CENTER) {
           ...GatsbyImageSharpFluid
@@ -846,7 +885,7 @@ export const query = graphql`
       }
     }
 
-    NMImg: file(relativePath: { eq: "people/NM.jpg" }) {
+    SMImg: file(relativePath: { eq: "people/SM2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 650, cropFocus: CENTER) {
           ...GatsbyImageSharpFluid
@@ -854,7 +893,7 @@ export const query = graphql`
       }
     }
 
-    AFImg: file(relativePath: { eq: "people/AF.jpg" }) {
+    ASImg: file(relativePath: { eq: "people/AS.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 650, cropFocus: CENTER) {
           ...GatsbyImageSharpFluid
