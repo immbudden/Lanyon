@@ -733,7 +733,7 @@ const AboutPage = (props) => (
           />
           <PersonInfoWrapper>
             <PersonName>Athena Stokes</PersonName>
-            <PersonTitle>Senior Designer</PersonTitle>
+            <PersonTitle>Designer</PersonTitle>
           </PersonInfoWrapper>
           <PersonIntro>
             <PersonIntroTop>
