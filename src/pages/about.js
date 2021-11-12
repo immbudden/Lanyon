@@ -528,28 +528,24 @@ const AboutPage = (props) => (
               Co-Founder &amp; Partner
             </PersonIntroTop>
             <PersonIntroBottom>
-              A founding partner of Lanyon, Jonathan has worked with leading
-              retail banks, international law firms, investment funds and
-              utilities, as well as a diverse portfolio of blue chip companies
-              drawn from a range of other business sectors in the UK, Ireland
-              and further afield.
+              Jonathan has worked with leading retail banks and professional
+              services firms, utilities and local government organisations, as
+              well as consumer brands and a diverse portfolio of blue chip
+              companies drawn from a range of other business sectors in the UK,
+              Ireland and further afield.
               <br />
               <br />
-              He advises clients on a wide portfolio of issues to support their
-              business growth and success – including cultural change management
-              and business transformation; business development and stakeholder
-              engagement; investor relations; media relations and marketing;
-              reputation/issues management; and sponsorship/partnership
-              management.
+              He advises clients on a wide range of issues to support their
+              business growth and success – including media relations and
+              marketing; employee engagement and cultural change management;
+              stakeholder engagement; reputation/crisis management; and
+              sponsorship/partnership management.
               <br />
               <br />
-              Jonathan sits on the Boards of Thrive Audience Development,
-              Crimestoppers and The Ireland Funds Young Leaders in Northern
-              Ireland. He is a member Council of the Northern Ireland Chamber of
-              Commerce &amp; Industry and the Confederation of British Industry
-              [CBI] 35 Under 35 Committee and is a Governor at Strathearn
-              School. He was named by Business First in the ‘Top 40 Under 40’
-              2016 and 2017.
+              Jonathan sits of Boards of The Ireland Funds and Crimestoppers in
+              Northern Ireland, and CRY Ireland in Dublin. He is a member
+              Council of the Northern Ireland Chamber of Commerce &amp; Industry
+              and is a School Governor at a Belfast Grammar School.
             </PersonIntroBottom>
           </PersonIntro>
         </PersonContainer>
