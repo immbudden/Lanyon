@@ -614,7 +614,7 @@ const AboutPage = (props) => (
           />
           <PersonInfoWrapper>
             <PersonName>Gavin Williamson</PersonName>
-            <PersonTitle>Associate</PersonTitle>
+            <PersonTitle>Senior Associate</PersonTitle>
           </PersonInfoWrapper>
           <PersonIntro>
             <PersonIntroTop>
