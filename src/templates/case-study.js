@@ -21,7 +21,7 @@ import {
   SectionImage,
   TitleAndText,
   ImageGallery,
-  FeaturedPeople
+  FeaturedPeople,
 } from "../components/slices";
 import { RichText } from "prismic-reactjs";
 
@@ -205,9 +205,9 @@ const InfoText = styled.div`
   margin-bottom: 3.8rem;
   font-weight: 100;
 
-  > p { 
+  > p {
     margin-bottom: 0;
-  }; 
+  }
 `;
 
 const CaseStudyDescriptionContainer = styled.div`
@@ -230,13 +230,13 @@ const CaseStudyDescription = styled.div`
   flex: 1 1 100%;
   margin-bottom: 0;
 
-  > p { 
+  > p {
     margin-bottom: 0;
-  }; 
+  }
 `;
 
 const ContactButton = styled.button`
-  background: ${props => props.themeColor || '#004655'};
+  background: ${(props) => props.themeColor || "#004655"};
   color: #fff;
   font-size: 2rem;
   padding: 10px 15px 5px; // Typefix
@@ -251,7 +251,7 @@ const ContactButton = styled.button`
 `;
 
 const SectionColoured = styled.div`
-  background: ${props => props.themeColor || '#004655'};
+  background: ${(props) => props.themeColor || "#004655"};
 `;
 
 const CenterThreeContainer = styled.div`
@@ -358,7 +358,7 @@ const Url = styled(Link)`
 const PostSlices = ({ slices }) => {
   return slices.map((slice, index) => {
     // console.log('hello', slice.__typename)
-    console.log(slice)
+    console.log(slice);
     const res = (() => {
       switch (slice.__typename) {
         case "PrismicCaseStudyBodyTextWithVideo":
@@ -372,7 +372,7 @@ const PostSlices = ({ slices }) => {
 
         case "PrismicCaseStudyBodyImageGallery":
           return <div key={index}>{<ImageGallery slice={slice} />}</div>;
-        
+
         case "PrismicCaseStudyBodyFeaturedPeople":
           return <div key={index}>{<FeaturedPeople slice={slice} />}</div>;
 
@@ -385,9 +385,9 @@ const PostSlices = ({ slices }) => {
 };
 
 // Display the title, date, and content of the Post
-const PostBody = props => {
+const PostBody = (props) => {
   // Colours
-  console.log(props)
+  console.log(props);
   const themeColor = props.data.case_study_colour;
 
   // Top Section
@@ -396,8 +396,7 @@ const PostBody = props => {
   const client_brief = props.data.client_brief.html;
   const introduction = props.data.introduction.html;
   const headline_image =
-    props.data.headline_image.localFile.childImageSharp
-      .fluid;
+    props.data.headline_image.localFile.childImageSharp.fluid;
   const rootUrl = "https://lanyongroup.com/";
 
   //Stats
@@ -440,7 +439,7 @@ const PostBody = props => {
             left: 0,
             top: 0,
             width: "100%",
-            zIndex: -1
+            zIndex: -1,
           }}
           fluid={headline_image}
         />
@@ -455,18 +454,20 @@ const PostBody = props => {
                 <InfoTitle>Client</InfoTitle>
                 <InfoText>{client_name}</InfoText>
                 <InfoTitle>Brief</InfoTitle>
-                <InfoText dangerouslySetInnerHTML={{__html:client_brief}} />
+                <InfoText dangerouslySetInnerHTML={{ __html: client_brief }} />
               </CaseStudyInfoContainer>
               <CaseStudyDescriptionContainer>
                 <CaseStudyDescription>
-                  <div dangerouslySetInnerHTML={{__html:introduction}} />
+                  <div dangerouslySetInnerHTML={{ __html: introduction }} />
                   <br />
                   <br />
                   Interested in working on something similar?{" "}
                   <Bold>Let’s chat about it.</Bold>
                 </CaseStudyDescription>
                 <Url to="/contact">
-                  <ContactButton themeColor={themeColor}>Get in touch</ContactButton>
+                  <ContactButton themeColor={themeColor}>
+                    Get in touch
+                  </ContactButton>
                 </Url>
               </CaseStudyDescriptionContainer>
             </CaseStudyIntroContainer>
@@ -496,7 +497,7 @@ const PostBody = props => {
         </Container>
       </SectionColoured>
       <Section>
-        <PostSlices slices={props.data.body}/>
+        <PostSlices slices={props.data.body} />
       </Section>
 
       {/* Contact Hook */}
@@ -513,7 +514,9 @@ const PostBody = props => {
               touch with our Partners today.
             </CaseStudyDescription>
             <Url to="/contact">
-              <ContactButton themeColor={themeColor}>Get in touch</ContactButton>
+              <ContactButton themeColor={themeColor}>
+                Get in touch
+              </ContactButton>
             </Url>
           </CenterThreeContainer>
         </Container>
@@ -525,7 +528,7 @@ const PostBody = props => {
   );
 };
 
-export default props => {
+export default (props) => {
   // Define the Post content returned from Prismic
   const doc = props.data.prismicCaseStudy;
 
@@ -539,8 +542,8 @@ export default props => {
 };
 
 export const query = graphql`
-  query PrismicQuery ($slug:String) {
-    prismicCaseStudy (uid:{eq: $slug}) {
+  query PrismicQuery($slug: String) {
+    prismicCaseStudy(uid: { eq: $slug }) {
       id
       uid
       data {
@@ -553,7 +556,7 @@ export const query = graphql`
           __typename
           localFile {
             childImageSharp {
-              fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
+              fluid(maxWidth: 2000, quality: 80, cropFocus: ENTROPY) {
                 src
                 aspectRatio
               }
@@ -604,7 +607,7 @@ export const query = graphql`
               featured_person_1_image {
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+                    fluid(maxWidth: 500, quality: 65, cropFocus: ENTROPY) {
                       src
                       aspectRatio
                     }
@@ -620,7 +623,7 @@ export const query = graphql`
               featured_person_2_image {
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+                    fluid(maxWidth: 500, quality: 65, cropFocus: ENTROPY) {
                       src
                       aspectRatio
                     }
@@ -636,7 +639,7 @@ export const query = graphql`
               featured_person_3_image {
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 600, quality: 65, cropFocus: ENTROPY) {
+                    fluid(maxWidth: 500, quality: 65, cropFocus: ENTROPY) {
                       src
                       aspectRatio
                     }
@@ -668,7 +671,7 @@ export const query = graphql`
                 url
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 2500, quality: 80, cropFocus: ENTROPY) {
+                    fluid(maxWidth: 2000, quality: 80, cropFocus: ENTROPY) {
                       src
                       aspectRatio
                     }
@@ -696,7 +699,7 @@ export const query = graphql`
                 alt
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 800, quality: 60, cropFocus: ENTROPY) {
+                    fluid(maxWidth: 500, quality: 60, cropFocus: ENTROPY) {
                       src
                       aspectRatio
                     }
