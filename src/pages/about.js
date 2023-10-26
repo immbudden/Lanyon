@@ -289,7 +289,8 @@ const ServiceList = styled.ul`
 const PeopleContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  width: 60%;
+  margin: 0 auto;
   position: relative;
   justify-content: flex-end;
 `;
@@ -452,110 +453,112 @@ const AboutPage = (props) => (
       </Container>
     </Section>
     <Section>
-      <PeopleContainer>
-        <PersonContainer>
-          <PersonImg
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              width: "100%",
-              zIndex: 0,
-            }}
-            fluid={props.data.KDImg.childImageSharp.fluid}
-          />
-          <PersonInfoWrapper>
-            <PersonName>Katie Doran</PersonName>
-            <PersonTitle>Co-Founder &amp; Partner</PersonTitle>
-          </PersonInfoWrapper>
-          <PersonIntro>
-            <PersonIntroTop>
-              <Bold>Katie Doran</Bold>
-              <br />
-              Co-Founder &amp; Partner
-            </PersonIntroTop>
-            <PersonIntroBottom>
-              A founding partner of Lanyon, Katie Doran is one of the most
-              experienced communications specialists in Northern Ireland. She
-              has over twenty years’ experience advising many of Northern
-              Ireland’s leading firms across a multitude of sectors. These
-              include law and accounting firms, financial institutions,
-              utilities, charities, technology companies and real estate
-              investors.
-              <br />
-              <br />
-              She regularly acts as a strategic advisor to CEOs and senior
-              leaders across a range of internal and external communication
-              themes, including strategy, culture, leadership communications,
-              stakeholder engagement and issues management.
-              <br />
-              <br />
-              Katie has acted as a lead advisor on a number of high profile
-              serious situation issues, and is regarded as a “go to” person for
-              issues management in Northern Ireland. She is also widely renowned
-              for her knowledge of the real estate investment sector and
-              placemaking and has unparalleled expertise and experience in
-              working closely with institutional investors and developers across
-              office, residential, mixed use and regeneration developments in
-              the UK and Ireland.
-              <br />
-              <br />
-              Katie is a member of the Connect Leadership Team at Catalyst Inc,
-              the Communications Leadership Group at Business in the Community,
-              and she also sits on the CBI Economic Affairs Committee in NI.
-            </PersonIntroBottom>
-          </PersonIntro>
-        </PersonContainer>
-        <PersonContainer>
-          <PersonImg
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              width: "100%",
-              zIndex: 0,
-            }}
-            fluid={props.data.JIImg.childImageSharp.fluid}
-          />
-          <PersonInfoWrapper>
-            <PersonName>Jonathan Ireland</PersonName>
-            <PersonTitle>Co-Founder &amp; Partner</PersonTitle>
-          </PersonInfoWrapper>
-          <PersonIntro>
-            <PersonIntroTop>
-              <Bold>Jonathan Ireland</Bold>
-              <br />
-              Co-Founder &amp; Partner
-            </PersonIntroTop>
-            <PersonIntroBottom>
-              Jonathan recorded a wealth of experience across international
-              consumer brands, professional services firms, major utilities and
-              energy companies, and diverse portfolio of public sector and local
-              government organisations.
-              <br />
-              <br />
-              He advises clients on a wide range of issues to support their
-              business growth and success – including PR and media relations;
-              public affairs; employee engagement and cultural change
-              management; stakeholder engagement; reputation/crisis management;
-              and sponsorship/partnership management.
-              <br />
-              <br />
-              His client portfolio at Lanyon includes A&L Goodbody; Antrim &
-              Newtownabbey Borough Council; Belfast Harbour; the Centre for
-              Advance Sustainable Energy (CASE) at Queen’s University Belfast;
-              Mid & East Antrim Borough Council; McDonald’s UK and Ireland; NIE
-              Networks; the Special EU Programmes Body (SEUPB) and the UK
-              Covid-19 Inquiry.
-              <br />
-              <br />
-              Jonathan sits on the Boards of The Grand Opera House Belfast,
-              Crimestoppers and CRY Ireland in Dublin. He is a School Governor
-              at Strathearn School in Belfast.
-            </PersonIntroBottom>
-          </PersonIntro>
-        </PersonContainer>
-        <PersonContainer>
+      <Container>
+        <PeopleContainer>
+          <PersonContainer>
+            <PersonImg
+              style={{
+                position: "absolute",
+                left: 0,
+                top: 0,
+                width: "100%",
+                zIndex: 0,
+              }}
+              fluid={props.data.KDImg.childImageSharp.fluid}
+            />
+            <PersonInfoWrapper>
+              <PersonName>Katie Doran</PersonName>
+              <PersonTitle>Co-Founder &amp; Partner</PersonTitle>
+            </PersonInfoWrapper>
+            <PersonIntro>
+              <PersonIntroTop>
+                <Bold>Katie Doran</Bold>
+                <br />
+                Co-Founder &amp; Partner
+              </PersonIntroTop>
+              <PersonIntroBottom>
+                A founding partner of Lanyon, Katie Doran is one of the most
+                experienced communications specialists in Northern Ireland. She
+                has over twenty years’ experience advising many of Northern
+                Ireland’s leading firms across a multitude of sectors. These
+                include law and accounting firms, financial institutions,
+                utilities, charities, technology companies and real estate
+                investors.
+                <br />
+                <br />
+                She regularly acts as a strategic advisor to CEOs and senior
+                leaders across a range of internal and external communication
+                themes, including strategy, culture, leadership communications,
+                stakeholder engagement and issues management.
+                <br />
+                <br />
+                Katie has acted as a lead advisor on a number of high profile
+                serious situation issues, and is regarded as a “go to” person
+                for issues management in Northern Ireland. She is also widely
+                renowned for her knowledge of the real estate investment sector
+                and placemaking and has unparalleled expertise and experience in
+                working closely with institutional investors and developers
+                across office, residential, mixed use and regeneration
+                developments in the UK and Ireland.
+                <br />
+                <br />
+                Katie is a member of the Connect Leadership Team at Catalyst
+                Inc, the Communications Leadership Group at Business in the
+                Community, and she also sits on the CBI Economic Affairs
+                Committee in NI.
+              </PersonIntroBottom>
+            </PersonIntro>
+          </PersonContainer>
+          <PersonContainer>
+            <PersonImg
+              style={{
+                position: "absolute",
+                left: 0,
+                top: 0,
+                width: "100%",
+                zIndex: 0,
+              }}
+              fluid={props.data.JIImg.childImageSharp.fluid}
+            />
+            <PersonInfoWrapper>
+              <PersonName>Jonathan Ireland</PersonName>
+              <PersonTitle>Co-Founder &amp; Partner</PersonTitle>
+            </PersonInfoWrapper>
+            <PersonIntro>
+              <PersonIntroTop>
+                <Bold>Jonathan Ireland</Bold>
+                <br />
+                Co-Founder &amp; Partner
+              </PersonIntroTop>
+              <PersonIntroBottom>
+                Jonathan recorded a wealth of experience across international
+                consumer brands, professional services firms, major utilities
+                and energy companies, and diverse portfolio of public sector and
+                local government organisations.
+                <br />
+                <br />
+                He advises clients on a wide range of issues to support their
+                business growth and success – including PR and media relations;
+                public affairs; employee engagement and cultural change
+                management; stakeholder engagement; reputation/crisis
+                management; and sponsorship/partnership management.
+                <br />
+                <br />
+                His client portfolio at Lanyon includes A&L Goodbody; Antrim &
+                Newtownabbey Borough Council; Belfast Harbour; the Centre for
+                Advance Sustainable Energy (CASE) at Queen’s University Belfast;
+                Mid & East Antrim Borough Council; McDonald’s UK and Ireland;
+                NIE Networks; the Special EU Programmes Body (SEUPB) and the UK
+                Covid-19 Inquiry.
+                <br />
+                <br />
+                Jonathan sits on the Boards of The Grand Opera House Belfast,
+                Crimestoppers and CRY Ireland in Dublin. He is a School Governor
+                at Strathearn School in Belfast.
+              </PersonIntroBottom>
+            </PersonIntro>
+          </PersonContainer>
+          {/* <PersonContainer>
           <PersonImg
             style={{
               position: "absolute",
@@ -606,8 +609,8 @@ const AboutPage = (props) => (
               David sits on the board of Crimestoppers Northern Ireland.
             </PersonIntroBottom>
           </PersonIntro>
-        </PersonContainer>
-        <PersonContainer>
+        </PersonContainer> */}
+          {/* <PersonContainer>
           <PersonImg
             style={{
               position: "absolute",
@@ -756,8 +759,9 @@ const AboutPage = (props) => (
               freelance environments.
             </PersonIntroBottom>
           </PersonIntro>
-        </PersonContainer>
-      </PeopleContainer>
+        </PersonContainer> */}
+        </PeopleContainer>
+      </Container>
     </Section>
     <Section>
       <Container>
