@@ -528,24 +528,30 @@ const AboutPage = (props) => (
               Co-Founder &amp; Partner
             </PersonIntroTop>
             <PersonIntroBottom>
-              Jonathan has worked with leading retail banks and professional
-              services firms, utilities and local government organisations, as
-              well as consumer brands and a diverse portfolio of blue chip
-              companies drawn from a range of other business sectors in the UK,
-              Ireland and further afield.
+              Jonathan recorded a wealth of experience across international
+              consumer brands, professional services firms, major utilities and
+              energy companies, and diverse portfolio of public sector and local
+              government organisations.
               <br />
               <br />
               He advises clients on a wide range of issues to support their
-              business growth and success – including media relations and
-              marketing; employee engagement and cultural change management;
-              stakeholder engagement; reputation/crisis management; and
-              sponsorship/partnership management.
+              business growth and success – including PR and media relations;
+              public affairs; employee engagement and cultural change
+              management; stakeholder engagement; reputation/crisis management;
+              and sponsorship/partnership management.
               <br />
               <br />
-              Jonathan sits of Boards of The Ireland Funds and Crimestoppers in
-              Northern Ireland, and CRY Ireland in Dublin. He is a member
-              Council of the Northern Ireland Chamber of Commerce &amp; Industry
-              and is a School Governor at a Belfast Grammar School.
+              His client portfolio at Lanyon includes A&L Goodbody; Antrim &
+              Newtownabbey Borough Council; Belfast Harbour; the Centre for
+              Advance Sustainable Energy (CASE) at Queen’s University Belfast;
+              Mid & East Antrim Borough Council; McDonald’s UK and Ireland; NIE
+              Networks; the Special EU Programmes Body (SEUPB) and the UK
+              Covid-19 Inquiry.
+              <br />
+              <br />
+              Jonathan sits on the Boards of The Grand Opera House Belfast,
+              Crimestoppers and CRY Ireland in Dublin. He is a School Governor
+              at Strathearn School in Belfast.
             </PersonIntroBottom>
           </PersonIntro>
         </PersonContainer>
