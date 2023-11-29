@@ -140,7 +140,7 @@ module.exports = {
         },
 
         schemas: {
-          author: require("./src/schemas/author.json"),
+          author_name: require("./src/schemas/author.json"),
           // category: require("./src/schemas/category.json"),
           // news_story: require("./src/schemas/news_story.json"),
           // "case-study": require("./src/schemas/case-study.json"),
