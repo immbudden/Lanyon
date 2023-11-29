@@ -136,7 +136,7 @@ module.exports = {
         },
 
         schemas: {
-          page: require("./src/schemas/news_story.json"),
+          news_story: require("./src/schemas/news_story.json"),
         },
       },
     },
