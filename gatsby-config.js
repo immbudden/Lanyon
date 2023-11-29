@@ -139,7 +139,7 @@ module.exports = {
           author: require("./src/schemas/author.json"),
           category: require("./src/schemas/category.json"),
           news_story: require("./src/schemas/news_story.json"),
-          case_study: require("./src/schemas/case_study.json"),
+          "case-study": require("./src/schemas/case-study.json"),
         },
       },
     },
