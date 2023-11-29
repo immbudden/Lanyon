@@ -11,14 +11,14 @@ module.exports = {
         output: `/sitemap.xml`,
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-robots-txt",
-    //   options: {
-    //     host: "https://lanyongroup.com",
-    //     sitemap: "https://lanyongroup.com/sitemap.xml",
-    //     policy: [{ userAgent: "*", allow: "/" }],
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://lanyongroup.com",
+        sitemap: "https://lanyongroup.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -86,6 +86,8 @@ module.exports = {
         accessToken:
           "MC5YQzAxQVJBQUFETUFVNmd4.Q--_ve-_ve-_vSYF77-9JO-_vTzvv71b77-9Te-_ve-_ve-_ve-_ve-_vRcQUQnvv70zPe-_vQLvv70877-9Mg",
 
+        customTypesApiToken:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoibWFjaGluZTJtYWNoaW5lIiwiZGJpZCI6Imxhbnlvbi05ZjMyNGE4Mi00MWZjLTQ1ZTYtYmQ4Mi03ZjY3MDgwMGVlYTFfMyIsImRhdGUiOjE2NDkxMTI4OTEsImRvbWFpbiI6ImxhbnlvbiIsImlhdCI6MTY0OTExMjg5MX0.XoohpwCuFuTZTTi9OTm1qPb24_jph2svKFiidM-6Cgo",
         // Set a link resolver function used to process links in your content.
         // Fields with rich text formatting or links to internal content use this
         // function to generate the correct link URL.
