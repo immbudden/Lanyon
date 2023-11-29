@@ -44,7 +44,7 @@
     "got": "^10.5.5",
     "lodash.get": "^4.4.2",
     "nuka-carousel": "^4.5.3",
-    "prismic-reactjs": "^1.2.0",
+    "prismic-reactjs": "1.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.13.0",
     "react-burger-menu": "^2.6.8",
