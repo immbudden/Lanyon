@@ -23,7 +23,6 @@ import {
   ImageGallery,
   FeaturedPeople,
 } from "../components/slices";
-import { RichText } from "prismic-reactjs";
 
 // To consolodate
 
