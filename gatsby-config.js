@@ -134,6 +134,10 @@ module.exports = {
           // Return true to normalize the image or false to skip.
           return true;
         },
+
+        schemas: {
+          page: require("./src/schemas/news_story.json"),
+        },
       },
     },
   ],
