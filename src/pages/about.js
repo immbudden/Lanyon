@@ -284,7 +284,7 @@ const ServiceList = styled.ul`
   }
 `;
 
-// Close consolidate
+// Close consolidate section
 
 const PeopleContainer = styled.div`
   display: flex;
