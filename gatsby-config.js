@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Lanyon Group - A Belfast based Communications and PR agency`,
@@ -77,17 +81,15 @@ module.exports = {
         // The name of your prismic.io repository. This is required.
         // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
         // is 'gatsby-source-prismic-test-site.prismic.io'.
-        repositoryName: "lanyon",
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
 
         // An API access token to your prismic.io repository. This is required.
         // You can generate an access token in the "API & Security" section of
         // your repository settings. Setting a "Callback URL" is not necessary.
         // The token will be listed under "Permanent access tokens".
-        accessToken:
-          "MC5YQzAxQVJBQUFETUFVNmd4.Q--_ve-_ve-_vSYF77-9JO-_vTzvv71b77-9Te-_ve-_ve-_ve-_ve-_vRcQUQnvv70zPe-_vQLvv70877-9Mg",
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
 
-        customTypesApiToken:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoibWFjaGluZTJtYWNoaW5lIiwiZGJpZCI6Imxhbnlvbi05ZjMyNGE4Mi00MWZjLTQ1ZTYtYmQ4Mi03ZjY3MDgwMGVlYTFfMyIsImRhdGUiOjE2NDkxMTI4OTEsImRvbWFpbiI6ImxhbnlvbiIsImlhdCI6MTY0OTExMjg5MX0.XoohpwCuFuTZTTi9OTm1qPb24_jph2svKFiidM-6Cgo",
+        customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
         // Set a link resolver function used to process links in your content.
         // Fields with rich text formatting or links to internal content use this
         // function to generate the correct link URL.
@@ -137,12 +139,12 @@ module.exports = {
           return true;
         },
 
-        // schemas: {
-        //   author: require("./src/schemas/author.json"),
-        //   category: require("./src/schemas/category.json"),
-        //   news_story: require("./src/schemas/news_story.json"),
-        //   "case-study": require("./src/schemas/case-study.json"),
-        // },
+        schemas: {
+          author: require("./src/schemas/author.json"),
+          // category: require("./src/schemas/category.json"),
+          // news_story: require("./src/schemas/news_story.json"),
+          // "case-study": require("./src/schemas/case-study.json"),
+        },
       },
     },
   ],
