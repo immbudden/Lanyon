@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
-        destination: "https://consello.com/:path*", // Redirect all paths
-        permanent: true, // Use 301 for permanent redirect
+        destination: "https://consello.com/:path*",
+        permanent: true,
       },
     ];
   },
